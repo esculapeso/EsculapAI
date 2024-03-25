@@ -71,7 +71,7 @@ class NotificationsTest(AipgTestFramework):
         self.nodes[1].generate(41)
         self.sync_all()
 
-        # Give aipgd 10 seconds to write the alert notification
+        # Give esad 10 seconds to write the alert notification
         wait_until(lambda: os.path.isfile(self.alert_filename) and os.path.getsize(self.alert_filename), err_msg="Wait for FileSize", timeout=10)
 
         with open(self.alert_filename, 'r', encoding='utf8') as f:

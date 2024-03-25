@@ -12,7 +12,7 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between aipg-cli and aipgd)
+ * CBaseChainParams defines the base parameters (shared between aipg-cli and esad)
  * of a given instance of the Aipg system.
  */
 class CBaseChainParams

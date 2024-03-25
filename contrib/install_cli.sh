@@ -9,5 +9,5 @@
  sudo mkdir -p /usr/local/bin
 
  # Create symlinks to the cli tools
- sudo ln -s ${LOCATION}/Aipg-Qt.app/Contents/MacOS/aipgd /usr/local/bin/aipgd
+ sudo ln -s ${LOCATION}/Aipg-Qt.app/Contents/MacOS/esad /usr/local/bin/esad
  sudo ln -s ${LOCATION}/Aipg-Qt.app/Contents/MacOS/aipg-cli /usr/local/bin/aipg-cli

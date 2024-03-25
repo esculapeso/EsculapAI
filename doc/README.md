@@ -25,7 +25,7 @@ The following are some helpful notes on how to run AIPGcoin on your native platf
 
    b. Core deamon:
 
-   `./aipgd -deamon`
+   `./esad -deamon`
 
 #### Ubuntu
 

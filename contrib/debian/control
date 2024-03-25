@@ -30,7 +30,7 @@ Homepage: https://aipgcrypto.com
 Vcs-Git: git://github.com/JustAResearcher/Aipg.git
 Vcs-Browser: https://github.com/JustAResearcher/Aipg
 
-Package: aipgd
+Package: esad
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
@@ -40,7 +40,7 @@ Description: peer-to-peer network based digital currency - daemon
  transact directly with each other, with the help of a P2P network to
  check for double-spending.
  .
- This package provides the daemon, aipgd, and the CLI tool
+ This package provides the daemon, esad, and the CLI tool
  aipg-cli to interact with the daemon.
 
 Package: aipg-qt

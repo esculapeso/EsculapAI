@@ -51,10 +51,10 @@ RUN useradd -ms /bin/bash aipg && \
 VOLUME /var/lib/aipg
 
 #Copy the compiled binaries from the build
-COPY --from=build /home/aipg/build/Aipg/src/aipgd /usr/local/bin/aipgd
+COPY --from=build /home/aipg/build/Aipg/src/esad /usr/local/bin/esad
 COPY --from=build /home/aipg/build/Aipg/src/aipg-cli /usr/local/bin/aipg-cli
 
 WORKDIR /home/aipg
 USER aipg
 
-CMD /usr/local/bin/aipgd -datadir=/var/lib/aipg -printtoconsole -onlynet=ipv4
+CMD /usr/local/bin/esad -datadir=/var/lib/aipg -printtoconsole -onlynet=ipv4

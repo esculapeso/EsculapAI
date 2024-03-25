@@ -65,8 +65,8 @@ noinst_PROGRAMS =
 TESTS =
 BENCHMARKS =
 
-if BUILD_AIPGD
-  bin_PROGRAMS += aipgd
+if BUILD_ESAD
+  bin_PROGRAMS += esad
 endif
 
 if BUILD_AIPG_CLI
@@ -242,7 +242,7 @@ obj/build.h: FORCE
 	  "$(abs_top_srcdir)"
 libaipg_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between aipgd and aipg-qt
+# server: shared between esad and aipg-qt
 libaipg_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(AIPG_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libaipg_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libaipg_server_a_SOURCES = \
@@ -309,7 +309,7 @@ libaipg_zmq_a_SOURCES = \
 endif
 
 
-# wallet: shared between aipgd and aipg-qt, but only linked
+# wallet: shared between esad and aipg-qt, but only linked
 # when wallet enabled
 libaipg_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(AIPG_INCLUDES)
 libaipg_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -415,7 +415,7 @@ libaipg_consensus_a_SOURCES = \
   LibBoolEE.h \
   $(AIPG_CORE_H)
 
-# common: shared between aipgd, and aipg-qt and non-server tools
+# common: shared between esad, and aipg-qt and non-server tools
 libaipg_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(AIPG_INCLUDES)
 libaipg_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libaipg_common_a_SOURCES = \
@@ -475,17 +475,17 @@ libaipg_cli_a_SOURCES = \
 nodist_libaipg_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# aipgd binary #
-aipgd_SOURCES = aipgd.cpp
-aipgd_CPPFLAGS = $(AM_CPPFLAGS) $(AIPG_INCLUDES)
-aipgd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-aipgd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# esad binary #
+esad_SOURCES = esad.cpp
+esad_CPPFLAGS = $(AM_CPPFLAGS) $(AIPG_INCLUDES)
+esad_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+esad_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-aipgd_SOURCES += aipgd-res.rc
+esad_SOURCES += esad-res.rc
 endif
 
-aipgd_LDADD = \
+esad_LDADD = \
   $(LIBAIPG_SERVER) \
   $(LIBAIPG_COMMON) \
   $(LIBUNIVALUE) \
@@ -499,7 +499,7 @@ aipgd_LDADD = \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-aipgd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
+esad_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
 # aipg-cli binary #
 aipg_cli_SOURCES = aipg-cli.cpp

@@ -1,33 +1,33 @@
-# /etc/conf.d/aipgd: config file for /etc/init.d/aipgd
+# /etc/conf.d/esad: config file for /etc/init.d/esad
 
 # Config file location
-#AIPGD_CONFIGFILE="/etc/aipg/aipg.conf"
+#ESAD_CONFIGFILE="/etc/aipg/aipg.conf"
 
-# What directory to write pidfile to?  (created and owned by $AIPGD_USER)
-#AIPGD_PIDDIR="/var/run/aipgd"
+# What directory to write pidfile to?  (created and owned by $ESAD_USER)
+#ESAD_PIDDIR="/var/run/esad"
 
 # What filename to give the pidfile
-#AIPGD_PIDFILE="${AIPGD_PIDDIR}/aipgd.pid"
+#ESAD_PIDFILE="${ESAD_PIDDIR}/esad.pid"
 
-# Where to write aipgd data (be mindful that the blockchain is large)
-#AIPGD_DATADIR="/var/lib/aipgd"
+# Where to write esad data (be mindful that the blockchain is large)
+#ESAD_DATADIR="/var/lib/esad"
 
-# User and group to own aipgd process
-#AIPGD_USER="aipg"
-#AIPGD_GROUP="aipg"
+# User and group to own esad process
+#ESAD_USER="aipg"
+#ESAD_GROUP="aipg"
 
-# Path to aipgd executable
-#AIPGD_BIN="/usr/bin/aipgd"
+# Path to esad executable
+#ESAD_BIN="/usr/bin/esad"
 
-# Nice value to run aipgd under
-#AIPGD_NICE=0
+# Nice value to run esad under
+#ESAD_NICE=0
 
 # Additional options (avoid -conf and -datadir, use flags above)
-#AIPGD_OPTS=""
+#ESAD_OPTS=""
 
-# The timeout in seconds OpenRC will wait for aipgd to terminate
+# The timeout in seconds OpenRC will wait for esad to terminate
 # after a SIGTERM has been raised.
 # Note that this will be mapped as argument to start-stop-daemon's
 # '--retry' option, which means you can specify a retry schedule
 # here. For more information see man 8 start-stop-daemon.
-AIPGD_SIGTERM_TIMEOUT=60
+ESAD_SIGTERM_TIMEOUT=60

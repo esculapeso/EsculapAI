@@ -90,7 +90,7 @@
 const int64_t nStartupTime = GetTime();
 
 const char *const AIPG_CONF_FILENAME = "aipg.conf";
-const char *const AIPG_PID_FILENAME = "aipgd.pid";
+const char *const AIPG_PID_FILENAME = "esad.pid";
 
 ArgsManager gArgs;
 bool fPrintToConsole = false;

@@ -216,7 +216,7 @@ UniValue validateaddress(const JSONRPCRequest& request)
 	//#################################################################
 	//AIPG START FOR LOOKING FOR BURN ADDRESS -- BEGIN
 	//Just use to looking suitable prefix address.
-	//1 use command 'aipgd -daemon=0', do not use command aipgd -daemon
+	//1 use command 'esad -daemon=0', do not use command esad -daemon
 	//2 'aipg-cli validateaddress HSFs8aqGLDbYk242PQiv5oguQL5Tqk5d' in other console window.
 	//In step 1 command window will to calculate the suitable prefix address for burn address.
 	/*

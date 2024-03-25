@@ -84,15 +84,15 @@ class ChainstateWriteCrashTest(AipgTestFramework):
                 return utxo_hash
             except:
                 # An exception here should mean the node is about to crash.
-                # If aipgd exits, then try again.  wait_for_node_exit()
-                # should raise an exception if aipgd doesn't exit.
+                # If esad exits, then try again.  wait_for_node_exit()
+                # should raise an exception if esad doesn't exit.
                 self.log.debug("Wait for node exit ~~ during restart, node: %s", node_index)
                 self.wait_for_node_exit(node_index, timeout=10)
             self.crashed_on_restart += 1
             time.sleep(1)
 
-        # If we got here, aipgd isn't coming back up on restart.  Could be a
-        # bug in aipgd, or we've gotten unlucky with our dbcrash ratio --
+        # If we got here, esad isn't coming back up on restart.  Could be a
+        # bug in esad, or we've gotten unlucky with our dbcrash ratio --
         # perhaps we generated a test case that blew up our cache?
         # TODO: If this happens a lot, we should try to restart without -dbcrashratio
         # and make sure that recovery happens.

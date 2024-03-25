@@ -732,8 +732,8 @@ BUILD_AIPG_TX_FALSE
 BUILD_AIPG_TX_TRUE
 BUILD_AIPG_CLI_FALSE
 BUILD_AIPG_CLI_TRUE
-BUILD_AIPGD_FALSE
-BUILD_AIPGD_TRUE
+BUILD_ESAD_FALSE
+BUILD_ESAD_TRUE
 PROTOC
 EMBEDDED_UNIVALUE_FALSE
 EMBEDDED_UNIVALUE_TRUE
@@ -1774,7 +1774,7 @@ Optional Packages:
   --with-cli              build aipg-cli (default=yes)
   --with-tx               build aipg-tx (default=no)
   --with-libs             build libraries (default=yes)
-  --with-daemon           build aipgd daemon (default=yes)
+  --with-daemon           build esad daemon (default=yes)
   --with-incompatible-bdb allow using a bdb version other than 4.8
   --with-gui[=no|qt4|qt5|auto]
                           build aipg-qt GUI (default=auto, qt5 tried first)
@@ -3496,7 +3496,7 @@ ac_config_headers="$ac_config_headers src/config/aipg-config.h"
 
 
 
-AIPG_DAEMON_NAME=aipgd
+AIPG_DAEMON_NAME=esad
 AIPG_GUI_NAME=aipg-qt
 aipg_cli_NAME=aipg-cli
 AIPG_TX_NAME=aipg-tx
@@ -20211,9 +20211,9 @@ fi
 # Check whether --with-daemon was given.
 if test ${with_daemon+y}
 then :
-  withval=$with_daemon; build_aipgd=$withval
+  withval=$with_daemon; build_esad=$withval
 else $as_nop
-  build_aipgd=yes
+  build_esad=yes
 fi
 
 
@@ -28758,7 +28758,7 @@ printf "%s\n" "$aipg_enable_qt (Qt${aipg_qt_got_major_vers})" >&6; }
 
 
 
-if test x$build_aipg_cli$build_aipg_tx$build_aipgd$aipg_enable_qt$use_tests$use_bench = xnononononono; then
+if test x$build_aipg_cli$build_aipg_tx$build_esad$aipg_enable_qt$use_tests$use_bench = xnononononono; then
     use_boost=no
 else
     use_boost=yes
@@ -31061,7 +31061,7 @@ fi
   fi
 
       fi
-      if test x$build_aipg_cli$build_aipg_tx$build_aipgd$aipg_enable_qt$use_tests != xnonononono; then
+      if test x$build_aipg_cli$build_aipg_tx$build_esad$aipg_enable_qt$use_tests != xnonononono; then
 
 pkg_failed=no
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for libevent" >&5
@@ -31400,7 +31400,7 @@ else $as_nop
 fi
 
 
-  if test x$build_aipg_cli$build_aipg_tx$build_aipgd$aipg_enable_qt$use_tests != xnonononono; then
+  if test x$build_aipg_cli$build_aipg_tx$build_esad$aipg_enable_qt$use_tests != xnonononono; then
     ac_fn_cxx_check_header_compile "$LINENO" "event2/event.h" "ac_cv_header_event2_event_h" "$ac_includes_default"
 if test "x$ac_cv_header_event2_event_h" = xyes
 then :
@@ -31721,7 +31721,7 @@ CXXFLAGS="${save_CXXFLAGS}"
 
 need_bundled_univalue=yes
 
-if test x$build_aipg_cli$build_aipg_tx$build_aipgd$aipg_enable_qt$use_tests$use_bench = xnonononono; then
+if test x$build_aipg_cli$build_aipg_tx$build_esad$aipg_enable_qt$use_tests$use_bench = xnonononono; then
   need_bundled_univalue=no
 else
 
@@ -32017,18 +32017,18 @@ printf "%s\n" "$as_me: WARNING: PROTOC not found; aipg-qt frontend will not be b
 
 
 
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether to build aipgd" >&5
-printf %s "checking whether to build aipgd... " >&6; }
- if test x$build_aipgd = xyes; then
-  BUILD_AIPGD_TRUE=
-  BUILD_AIPGD_FALSE='#'
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether to build esad" >&5
+printf %s "checking whether to build esad... " >&6; }
+ if test x$build_esad = xyes; then
+  BUILD_ESAD_TRUE=
+  BUILD_ESAD_FALSE='#'
 else
-  BUILD_AIPGD_TRUE='#'
-  BUILD_AIPGD_FALSE=
+  BUILD_ESAD_TRUE='#'
+  BUILD_ESAD_FALSE=
 fi
 
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $build_aipgd" >&5
-printf "%s\n" "$build_aipgd" >&6; }
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $build_esad" >&5
+printf "%s\n" "$build_esad" >&6; }
 
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether to build aipg-cli" >&5
 printf %s "checking whether to build aipg-cli... " >&6; }
@@ -32271,7 +32271,7 @@ else
 printf "%s\n" "no" >&6; }
 fi
 
-if test x$build_aipg_cli$build_aipg_tx$build_aipg_libs$build_aipgd$aipg_enable_qt$use_bench$use_tests = xnonononononono; then
+if test x$build_aipg_cli$build_aipg_tx$build_aipg_libs$build_esad$aipg_enable_qt$use_bench$use_tests = xnonononononono; then
   as_fn_error $? "No targets! Please specify at least one of: --with-cli --with-tx --with-libs --with-daemon --with-gui --enable-bench or --enable-tests" "$LINENO" 5
 fi
 
@@ -32673,8 +32673,8 @@ if test -z "${EMBEDDED_UNIVALUE_TRUE}" && test -z "${EMBEDDED_UNIVALUE_FALSE}"; 
   as_fn_error $? "conditional \"EMBEDDED_UNIVALUE\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
-if test -z "${BUILD_AIPGD_TRUE}" && test -z "${BUILD_AIPGD_FALSE}"; then
-  as_fn_error $? "conditional \"BUILD_AIPGD\" was never defined.
+if test -z "${BUILD_ESAD_TRUE}" && test -z "${BUILD_ESAD_FALSE}"; then
+  as_fn_error $? "conditional \"BUILD_ESAD\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${BUILD_AIPG_CLI_TRUE}" && test -z "${BUILD_AIPG_CLI_FALSE}"; then

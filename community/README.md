@@ -14,7 +14,7 @@ We’re all in this together. There are new capabilities included in the latest 
     * REST API to RPC (business specific)
     * REST API to memos/messages
 * Core
-    * Asset Exchange Proxy (simulate sending an ASSET like aipgd does for AIPG)
+    * Asset Exchange Proxy (simulate sending an ASSET like esad does for AIPG)
     * Improved messaging/memo RPC calls
     * 24 word - master key (not seed) - direct to/from master xprv and pub
     * Local Filter (whitelist/blacklist) for assets

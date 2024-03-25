@@ -83,7 +83,7 @@ In this case there is no dependency on Berkeley DB 4.8 and SQLite.
 Mining is also possible in disable-wallet mode using the `getblocktemplate` RPC call.
 
 ## Running
-AIPG Core is now available at `./src/aipgd`
+AIPG Core is now available at `./src/esad`
 
 Before running, you may create an empty configuration file:
 ```shell
@@ -94,7 +94,7 @@ touch "/Users/${USER}/Library/Application Support/AIPG/aipg.conf"
 chmod 600 "/Users/${USER}/Library/Application Support/AIPG/aipg.conf"
 ```
 
-The first time you run aipgd, it will start downloading the blockchain. This process could
+The first time you run esad, it will start downloading the blockchain. This process could
 take many hours, or even days on slower than average systems.
 
 You can monitor the download process by looking at the debug.log file:
@@ -105,7 +105,7 @@ tail -f $HOME/Library/Application\ Support/AIPG/debug.log
 Other commands:
 -------
 
-    ./src/aipgd -daemon # Starts the aipg daemon.
+    ./src/esad -daemon # Starts the aipg daemon.
     ./src/aipg-cli --help # Outputs a list of command-line options.
     ./src/aipg-cli help # Outputs a list of RPC commands when the daemon is running.
 

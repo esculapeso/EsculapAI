@@ -2,13 +2,13 @@ VERSION=1.0.2.0
 rm -rf ./release-linux
 mkdir release-linux
 
-cp ./src/aipgd ./release-linux/
+cp ./src/esad ./release-linux/
 cp ./src/aipg-cli ./release-linux/
 cp ./src/qt/aipg-qt ./release-linux/
 cp ./AIPGCOIN_small.png ./release-linux/
 
 cd ./release-linux/
-strip aipgd
+strip esad
 strip aipg-cli
 strip aipg-qt
 
@@ -28,7 +28,7 @@ Maintainer: Aipg
 Description: Aipg coin wallet and service.
 ' > ./DEBIAN/control
 mkdir -p ./usr/local/bin/
-cp ../aipgd ./usr/local/bin/
+cp ../esad ./usr/local/bin/
 cp ../aipg-cli ./usr/local/bin/
 cp ../aipg-qt ./usr/local/bin/
 
@@ -69,7 +69,7 @@ mkdir aipgcoin-$VERSION
 cd aipgcoin-$VERSION
 
 mkdir -p ./usr/bin/
-cp ../aipgd ./usr/bin/
+cp ../esad ./usr/bin/
 cp ../aipg-cli ./usr/bin/
 cp ../aipg-qt ./usr/bin/
 

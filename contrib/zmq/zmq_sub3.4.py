@@ -9,7 +9,7 @@
     ZMQ example using python3's asyncio
 
     Aipg should be started with the command line arguments:
-        aipgd -testnet -daemon \
+        esad -testnet -daemon \
                 -zmqpubhashblock=tcp://127.0.0.1:28766 \
                 -zmqpubrawtx=tcp://127.0.0.1:28766 \
                 -zmqpubhashtx=tcp://127.0.0.1:28766 \

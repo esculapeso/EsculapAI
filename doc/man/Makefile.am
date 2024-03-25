@@ -1,7 +1,7 @@
 dist_man1_MANS=
 
-if BUILD_AIPGD
-  dist_man1_MANS+=aipgd.1
+if BUILD_ESAD
+  dist_man1_MANS+=esad.1
 endif
 
 if ENABLE_QT

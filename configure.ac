@@ -14,7 +14,7 @@ AC_CONFIG_HEADERS([src/config/aipg-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
-AIPG_DAEMON_NAME=aipgd
+AIPG_DAEMON_NAME=esad
 AIPG_GUI_NAME=aipg-qt
 aipg_cli_NAME=aipg-cli
 AIPG_TX_NAME=aipg-tx
@@ -316,9 +316,9 @@ AC_ARG_WITH([libs],
 
 AC_ARG_WITH([daemon],
   [AS_HELP_STRING([--with-daemon],
-  [build aipgd daemon (default=yes)])],
-  [build_aipgd=$withval],
-  [build_aipgd=yes])
+  [build esad daemon (default=yes)])],
+  [build_esad=$withval],
+  [build_esad=yes])
 
 use_pkgconfig=yes
 case $host in
@@ -737,7 +737,7 @@ AIPG_QT_INIT
 dnl sets $aipg_enable_qt, $aipg_enable_qt_test, $aipg_enable_qt_dbus
 AIPG_QT_CONFIGURE([$use_pkgconfig], [qt5])
 
-if test x$build_aipg_cli$build_aipg_tx$build_aipgd$aipg_enable_qt$use_tests$use_bench = xnononononono; then
+if test x$build_aipg_cli$build_aipg_tx$build_esad$aipg_enable_qt$use_tests$use_bench = xnononononono; then
     use_boost=no
 else
     use_boost=yes
@@ -923,7 +923,7 @@ if test x$use_pkgconfig = xyes; then
       if test x$use_qr != xno; then
         AIPG_QT_CHECK([PKG_CHECK_MODULES([QR], [libqrencode], [have_qrencode=yes], [have_qrencode=no])])
       fi
-      if test x$build_aipg_cli$build_aipg_tx$build_aipgd$aipg_enable_qt$use_tests != xnonononono; then
+      if test x$build_aipg_cli$build_aipg_tx$build_esad$aipg_enable_qt$use_tests != xnonononono; then
         PKG_CHECK_MODULES([EVENT], [libevent],, [AC_MSG_ERROR(libevent not found.)])
         if test x$TARGET_OS != xwindows; then
           PKG_CHECK_MODULES([EVENT_PTHREADS], [libevent_pthreads],, [AC_MSG_ERROR(libevent_pthreads not found.)])
@@ -948,7 +948,7 @@ else
   AC_CHECK_HEADER([openssl/ssl.h],, AC_MSG_ERROR(libssl headers missing),)
   AC_CHECK_LIB([ssl],         [main],SSL_LIBS=-lssl, AC_MSG_ERROR(libssl missing))
 
-  if test x$build_aipg_cli$build_aipg_tx$build_aipgd$aipg_enable_qt$use_tests != xnonononono; then
+  if test x$build_aipg_cli$build_aipg_tx$build_esad$aipg_enable_qt$use_tests != xnonononono; then
     AC_CHECK_HEADER([event2/event.h],, AC_MSG_ERROR(libevent headers missing),)
     AC_CHECK_LIB([event],[main],EVENT_LIBS=-levent,AC_MSG_ERROR(libevent missing))
     if test x$TARGET_OS != xwindows; then
@@ -997,7 +997,7 @@ dnl univalue check
 
 need_bundled_univalue=yes
 
-if test x$build_aipg_cli$build_aipg_tx$build_aipgd$aipg_enable_qt$use_tests$use_bench = xnonononono; then
+if test x$build_aipg_cli$build_aipg_tx$build_esad$aipg_enable_qt$use_tests$use_bench = xnonononono; then
   need_bundled_univalue=no
 else
 
@@ -1043,9 +1043,9 @@ AC_SUBST(UNIVALUE_LIBS)
 
 AIPG_QT_PATH_PROGS([PROTOC], [protoc],$protoc_bin_path)
 
-AC_MSG_CHECKING([whether to build aipgd])
-AM_CONDITIONAL([BUILD_AIPGD], [test x$build_aipgd = xyes])
-AC_MSG_RESULT($build_aipgd)
+AC_MSG_CHECKING([whether to build esad])
+AM_CONDITIONAL([BUILD_ESAD], [test x$build_esad = xyes])
+AC_MSG_RESULT($build_esad)
 
 AC_MSG_CHECKING([whether to build aipg-cli])
 AM_CONDITIONAL([BUILD_AIPG_CLI], [test x$build_aipg_cli = xyes])
@@ -1179,7 +1179,7 @@ else
   AC_MSG_RESULT([no])
 fi
 
-if test x$build_aipg_cli$build_aipg_tx$build_aipg_libs$build_aipgd$aipg_enable_qt$use_bench$use_tests = xnonononononono; then
+if test x$build_aipg_cli$build_aipg_tx$build_aipg_libs$build_esad$aipg_enable_qt$use_bench$use_tests = xnonononononono; then
   AC_MSG_ERROR([No targets! Please specify at least one of: --with-cli --with-tx --with-libs --with-daemon --with-gui --enable-bench or --enable-tests])
 fi
 
