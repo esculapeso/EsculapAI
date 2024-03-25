@@ -1,15 +1,15 @@
 [Unit]
-Description=Aipg's distributed currency daemon
+Description=Esa's distributed currency daemon
 After=network.target
 
 [Service]
-User=aipg
-Group=aipg
+User=esa
+Group=esa
 
 Type=forking
 PIDFile=/var/lib/esad/esad.pid
 ExecStart=/usr/bin/esad -daemon -pid=/var/lib/esad/esad.pid \
--conf=/etc/aipg/aipg.conf -datadir=/var/lib/esad -disablewallet
+-conf=/etc/esa/esa.conf -datadir=/var/lib/esad -disablewallet
 
 Restart=always
 PrivateTmp=true

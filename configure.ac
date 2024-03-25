@@ -7,17 +7,17 @@ define(_CLIENT_VERSION_BUILD, 0)
 define(_CLIENT_VERSION_IS_RELEASE, true)
 define(_COPYRIGHT_YEAR, 2023)
 define(_COPYRIGHT_HOLDERS,[The %s developers])
-define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Aipg Core]])
-AC_INIT([AIPG Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/AIPowerGrid/AI-Power-Grid-Core/issues],[aipg],[https://aip])
+define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Esa Core]])
+AC_INIT([ESA Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/AIPowerGrid/AI-Power-Grid-Core/issues],[esa],[https://aip])
 AC_CONFIG_SRCDIR([src/validation.cpp])
-AC_CONFIG_HEADERS([src/config/aipg-config.h])
+AC_CONFIG_HEADERS([src/config/esa-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
-AIPG_DAEMON_NAME=esad
-AIPG_GUI_NAME=aipg-qt
-aipg_cli_NAME=aipg-cli
-AIPG_TX_NAME=aipg-tx
+ESA_DAEMON_NAME=esad
+ESA_GUI_NAME=esa-qt
+esa_cli_NAME=esa-cli
+ESA_TX_NAME=esa-tx
 
 dnl Unless the user specified ARFLAGS, force it to be cr
 AC_ARG_VAR(ARFLAGS, [Flags for the archiver, defaults to <cr> if not set])
@@ -27,9 +27,9 @@ fi
 
 AC_CANONICAL_HOST
 
-AH_TOP([#ifndef AIPG_CONFIG_H])
-AH_TOP([#define AIPG_CONFIG_H])
-AH_BOTTOM([#endif //AIPG_CONFIG_H])
+AH_TOP([#ifndef ESA_CONFIG_H])
+AH_TOP([#define ESA_CONFIG_H])
+AH_BOTTOM([#endif //ESA_CONFIG_H])
 
 dnl faketime breaks configure and is only needed for make. Disable it here.
 unset FAKETIME
@@ -83,7 +83,7 @@ AC_PATH_TOOL(RANLIB, ranlib)
 AC_PATH_TOOL(STRIP, strip)
 AC_PATH_TOOL(GCOV, gcov)
 AC_PATH_PROG(LCOV, lcov)
-dnl Python 3.x is supported from 3.4 on (see https://github.com/JustAResearcher/Aipg/issues/7893)
+dnl Python 3.x is supported from 3.4 on (see https://github.com/JustAResearcher/Esa/issues/7893)
 AC_PATH_PROGS([PYTHON], [python3.6 python3.5 python3.4 python3 python2.7 python2 python])
 AC_PATH_PROG(GENHTML, genhtml)
 AC_PATH_PROG([GIT], [git])
@@ -298,21 +298,21 @@ CPPFLAGS="$CPPFLAGS -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS"
 
 AC_ARG_WITH([cli],
   [AS_HELP_STRING([--with-cli],
-  [build aipg-cli (default=yes)])],
-  [build_aipg_cli=$withval],
-  [build_aipg_cli=yes])
+  [build esa-cli (default=yes)])],
+  [build_esa_cli=$withval],
+  [build_esa_cli=yes])
 
 AC_ARG_WITH([tx],
   [AS_HELP_STRING([--with-tx],
-  [build aipg-tx (default=no)])],
-  [build_aipg_tx=$withval],
-  [build_aipg_tx=no])
+  [build esa-tx (default=no)])],
+  [build_esa_tx=$withval],
+  [build_esa_tx=no])
 
 AC_ARG_WITH([libs],
   [AS_HELP_STRING([--with-libs],
   [build libraries (default=yes)])],
-  [build_aipg_libs=$withval],
-  [build_aipg_libs=yes])
+  [build_esa_libs=$withval],
+  [build_esa_libs=yes])
 
 AC_ARG_WITH([daemon],
   [AS_HELP_STRING([--with-daemon],
@@ -515,7 +515,7 @@ AC_C_BIGENDIAN
 dnl Check for pthread compile/link requirements
 AX_PTHREAD
 
-# The following macro will add the necessary defines to aipg-config.h, but
+# The following macro will add the necessary defines to esa-config.h, but
 # they also need to be passed down to any subprojects. Pull the results out of
 # the cache and add them to CPPFLAGS.
 AC_SYS_LARGEFILE
@@ -720,7 +720,7 @@ AC_SUBST(LIBMEMENV)
 
 if test x$enable_wallet != xno; then
     dnl Check for libdb_cxx only if wallet enabled
-    AIPG_FIND_BDB48
+    ESA_FIND_BDB48
 fi
 
 dnl Check for libminiupnpc (optional)
@@ -732,12 +732,12 @@ if test x$use_upnp != xno; then
   )
 fi
 
-AIPG_QT_INIT
+ESA_QT_INIT
 
-dnl sets $aipg_enable_qt, $aipg_enable_qt_test, $aipg_enable_qt_dbus
-AIPG_QT_CONFIGURE([$use_pkgconfig], [qt5])
+dnl sets $esa_enable_qt, $esa_enable_qt_test, $esa_enable_qt_dbus
+ESA_QT_CONFIGURE([$use_pkgconfig], [qt5])
 
-if test x$build_aipg_cli$build_aipg_tx$build_esad$aipg_enable_qt$use_tests$use_bench = xnononononono; then
+if test x$build_esa_cli$build_esa_tx$build_esad$esa_enable_qt$use_tests$use_bench = xnononononono; then
     use_boost=no
 else
     use_boost=yes
@@ -919,11 +919,11 @@ if test x$use_pkgconfig = xyes; then
     [
       PKG_CHECK_MODULES([SSL], [libssl],, [AC_MSG_ERROR(openssl  not found.)])
       PKG_CHECK_MODULES([CRYPTO], [libcrypto],,[AC_MSG_ERROR(libcrypto  not found.)])
-      AIPG_QT_CHECK([PKG_CHECK_MODULES([PROTOBUF], [protobuf], [have_protobuf=yes], [AIPG_QT_FAIL(libprotobuf not found)])])
+      ESA_QT_CHECK([PKG_CHECK_MODULES([PROTOBUF], [protobuf], [have_protobuf=yes], [ESA_QT_FAIL(libprotobuf not found)])])
       if test x$use_qr != xno; then
-        AIPG_QT_CHECK([PKG_CHECK_MODULES([QR], [libqrencode], [have_qrencode=yes], [have_qrencode=no])])
+        ESA_QT_CHECK([PKG_CHECK_MODULES([QR], [libqrencode], [have_qrencode=yes], [have_qrencode=no])])
       fi
-      if test x$build_aipg_cli$build_aipg_tx$build_esad$aipg_enable_qt$use_tests != xnonononono; then
+      if test x$build_esa_cli$build_esa_tx$build_esad$esa_enable_qt$use_tests != xnonononono; then
         PKG_CHECK_MODULES([EVENT], [libevent],, [AC_MSG_ERROR(libevent not found.)])
         if test x$TARGET_OS != xwindows; then
           PKG_CHECK_MODULES([EVENT_PTHREADS], [libevent_pthreads],, [AC_MSG_ERROR(libevent_pthreads not found.)])
@@ -948,7 +948,7 @@ else
   AC_CHECK_HEADER([openssl/ssl.h],, AC_MSG_ERROR(libssl headers missing),)
   AC_CHECK_LIB([ssl],         [main],SSL_LIBS=-lssl, AC_MSG_ERROR(libssl missing))
 
-  if test x$build_aipg_cli$build_aipg_tx$build_esad$aipg_enable_qt$use_tests != xnonononono; then
+  if test x$build_esa_cli$build_esa_tx$build_esad$esa_enable_qt$use_tests != xnonononono; then
     AC_CHECK_HEADER([event2/event.h],, AC_MSG_ERROR(libevent headers missing),)
     AC_CHECK_LIB([event],[main],EVENT_LIBS=-levent,AC_MSG_ERROR(libevent missing))
     if test x$TARGET_OS != xwindows; then
@@ -979,10 +979,10 @@ else
     esac
   fi
 
-  AIPG_QT_CHECK(AC_CHECK_LIB([protobuf] ,[main],[PROTOBUF_LIBS=-lprotobuf], AIPG_QT_FAIL(libprotobuf not found)))
+  ESA_QT_CHECK(AC_CHECK_LIB([protobuf] ,[main],[PROTOBUF_LIBS=-lprotobuf], ESA_QT_FAIL(libprotobuf not found)))
   if test x$use_qr != xno; then
-    AIPG_QT_CHECK([AC_CHECK_LIB([qrencode], [main],[QR_LIBS=-lqrencode], [have_qrencode=no])])
-    AIPG_QT_CHECK([AC_CHECK_HEADER([qrencode.h],, have_qrencode=no)])
+    ESA_QT_CHECK([AC_CHECK_LIB([qrencode], [main],[QR_LIBS=-lqrencode], [have_qrencode=no])])
+    ESA_QT_CHECK([AC_CHECK_HEADER([qrencode.h],, have_qrencode=no)])
   fi
 fi
 
@@ -997,7 +997,7 @@ dnl univalue check
 
 need_bundled_univalue=yes
 
-if test x$build_aipg_cli$build_aipg_tx$build_esad$aipg_enable_qt$use_tests$use_bench = xnonononono; then
+if test x$build_esa_cli$build_esa_tx$build_esad$esa_enable_qt$use_tests$use_bench = xnonononono; then
   need_bundled_univalue=no
 else
 
@@ -1041,27 +1041,27 @@ AM_CONDITIONAL([EMBEDDED_UNIVALUE],[test x$need_bundled_univalue = xyes])
 AC_SUBST(UNIVALUE_CFLAGS)
 AC_SUBST(UNIVALUE_LIBS)
 
-AIPG_QT_PATH_PROGS([PROTOC], [protoc],$protoc_bin_path)
+ESA_QT_PATH_PROGS([PROTOC], [protoc],$protoc_bin_path)
 
 AC_MSG_CHECKING([whether to build esad])
 AM_CONDITIONAL([BUILD_ESAD], [test x$build_esad = xyes])
 AC_MSG_RESULT($build_esad)
 
-AC_MSG_CHECKING([whether to build aipg-cli])
-AM_CONDITIONAL([BUILD_AIPG_CLI], [test x$build_aipg_cli = xyes])
-AC_MSG_RESULT($build_aipg_cli)
+AC_MSG_CHECKING([whether to build esa-cli])
+AM_CONDITIONAL([BUILD_ESA_CLI], [test x$build_esa_cli = xyes])
+AC_MSG_RESULT($build_esa_cli)
 
-AC_MSG_CHECKING([whether to build aipg-tx])
-AM_CONDITIONAL([BUILD_AIPG_TX], [test x$build_aipg_tx = xyes])
-AC_MSG_RESULT($build_aipg_tx)
+AC_MSG_CHECKING([whether to build esa-tx])
+AM_CONDITIONAL([BUILD_ESA_TX], [test x$build_esa_tx = xyes])
+AC_MSG_RESULT($build_esa_tx)
 
 AC_MSG_CHECKING([whether to build libraries])
-AM_CONDITIONAL([BUILD_AIPG_LIBS], [test x$build_aipg_libs = xyes])
-if test x$build_aipg_libs = xyes; then
+AM_CONDITIONAL([BUILD_ESA_LIBS], [test x$build_esa_libs = xyes])
+if test x$build_esa_libs = xyes; then
   AC_DEFINE(HAVE_CONSENSUS_LIB, 1, [Define this symbol if the consensus lib has been built])
-  AC_CONFIG_FILES([libaipgconsensus.pc:libaipgconsensus.pc.in])
+  AC_CONFIG_FILES([libesaconsensus.pc:libesaconsensus.pc.in])
 fi
-AC_MSG_RESULT($build_aipg_libs)
+AC_MSG_RESULT($build_esa_libs)
 
 AC_LANG_POP
 
@@ -1123,13 +1123,13 @@ fi
 
 dnl these are only used when qt is enabled
 BUILD_TEST_QT=""
-if test x$aipg_enable_qt != xno; then
+if test x$esa_enable_qt != xno; then
   dnl enable dbus support
   AC_MSG_CHECKING([whether to build GUI with support for D-Bus])
-  if test x$aipg_enable_qt_dbus != xno; then
+  if test x$esa_enable_qt_dbus != xno; then
     AC_DEFINE([USE_DBUS],[1],[Define if dbus support should be compiled in])
   fi
-  AC_MSG_RESULT($aipg_enable_qt_dbus)
+  AC_MSG_RESULT($esa_enable_qt_dbus)
 
   dnl enable qr support
   AC_MSG_CHECKING([whether to build GUI with support for QR codes])
@@ -1152,8 +1152,8 @@ if test x$aipg_enable_qt != xno; then
     AC_MSG_WARN("xgettext is required to update qt translations")
   fi
 
-  AC_MSG_CHECKING([whether to build test_aipg-qt])
-  if test x$use_gui_tests$aipg_enable_qt_test = xyesyes; then
+  AC_MSG_CHECKING([whether to build test_esa-qt])
+  if test x$use_gui_tests$esa_enable_qt_test = xyesyes; then
     AC_MSG_RESULT([yes])
     BUILD_TEST_QT="yes"
   else
@@ -1163,7 +1163,7 @@ fi
 
 AM_CONDITIONAL([ENABLE_ZMQ], [test "x$use_zmq" = "xyes"])
 
-AC_MSG_CHECKING([whether to build test_aipg])
+AC_MSG_CHECKING([whether to build test_esa])
 if test x$use_tests = xyes; then
   AC_MSG_RESULT([yes])
   BUILD_TEST="yes"
@@ -1179,7 +1179,7 @@ else
   AC_MSG_RESULT([no])
 fi
 
-if test x$build_aipg_cli$build_aipg_tx$build_aipg_libs$build_esad$aipg_enable_qt$use_bench$use_tests = xnonononononono; then
+if test x$build_esa_cli$build_esa_tx$build_esa_libs$build_esad$esa_enable_qt$use_bench$use_tests = xnonononononono; then
   AC_MSG_ERROR([No targets! Please specify at least one of: --with-cli --with-tx --with-libs --with-daemon --with-gui --enable-bench or --enable-tests])
 fi
 
@@ -1188,7 +1188,7 @@ AM_CONDITIONAL([BUILD_DARWIN], [test x$BUILD_OS = xdarwin])
 AM_CONDITIONAL([TARGET_WINDOWS], [test x$TARGET_OS = xwindows])
 AM_CONDITIONAL([ENABLE_WALLET],[test x$enable_wallet = xyes])
 AM_CONDITIONAL([ENABLE_TESTS],[test x$BUILD_TEST = xyes])
-AM_CONDITIONAL([ENABLE_QT],[test x$aipg_enable_qt = xyes])
+AM_CONDITIONAL([ENABLE_QT],[test x$esa_enable_qt = xyes])
 AM_CONDITIONAL([ENABLE_QT_TESTS],[test x$BUILD_TEST_QT = xyes])
 AM_CONDITIONAL([ENABLE_BENCH],[test x$use_bench = xyes])
 AM_CONDITIONAL([USE_QRCODE], [test x$use_qr = xyes])
@@ -1217,10 +1217,10 @@ AC_SUBST(COPYRIGHT_YEAR, _COPYRIGHT_YEAR)
 AC_SUBST(COPYRIGHT_HOLDERS, "_COPYRIGHT_HOLDERS")
 AC_SUBST(COPYRIGHT_HOLDERS_SUBSTITUTION, "_COPYRIGHT_HOLDERS_SUBSTITUTION")
 AC_SUBST(COPYRIGHT_HOLDERS_FINAL, "_COPYRIGHT_HOLDERS_FINAL")
-AC_SUBST(AIPG_DAEMON_NAME)
-AC_SUBST(AIPG_GUI_NAME)
-AC_SUBST(aipg_cli_NAME)
-AC_SUBST(AIPG_TX_NAME)
+AC_SUBST(ESA_DAEMON_NAME)
+AC_SUBST(ESA_GUI_NAME)
+AC_SUBST(esa_cli_NAME)
+AC_SUBST(ESA_TX_NAME)
 
 AC_SUBST(RELDFLAGS)
 AC_SUBST(COMPAT_LDFLAGS)
@@ -1251,7 +1251,7 @@ AC_CONFIG_FILES([contrib/devtools/split-debug.sh],[chmod +x contrib/devtools/spl
 AM_COND_IF([HAVE_DOXYGEN], [AC_CONFIG_FILES([doc/Doxyfile])])
 AC_CONFIG_LINKS([contrib/filter-lcov.py:contrib/filter-lcov.py])
 AC_CONFIG_LINKS([test/functional/test_runner.py:test/functional/test_runner.py])
-AC_CONFIG_LINKS([test/util/aipg-util-test.py:test/util/aipg-util-test.py])
+AC_CONFIG_LINKS([test/util/esa-util-test.py:test/util/esa-util-test.py])
 AC_CONFIG_LINKS([src/crypto/md_helper.c:src/crypto/md_helper.c])
 
 dnl boost's m4 checks do something really nasty: they export these vars. As a
@@ -1307,12 +1307,12 @@ esac
 
 echo
 echo "Options used to compile and link:"
-echo "  build aipg-cli = $build_aipg_cli"
-echo "  build aipg-tx  = $build_aipg_tx"
+echo "  build esa-cli = $build_esa_cli"
+echo "  build esa-tx  = $build_esa_tx"
 echo "  with wallet     = $enable_wallet"
-echo "  with gui / qt   = $aipg_enable_qt"
-if test x$aipg_enable_qt != xno; then
-    echo "    qt version    = $aipg_qt_got_major_vers"
+echo "  with gui / qt   = $esa_enable_qt"
+if test x$esa_enable_qt != xno; then
+    echo "    qt version    = $esa_qt_got_major_vers"
     echo "    with qr       = $use_qr"
 fi
 echo "  with zmq        = $use_zmq"

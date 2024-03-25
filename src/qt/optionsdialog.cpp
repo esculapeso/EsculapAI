@@ -1,17 +1,17 @@
 // Copyright (c) 2011-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/aipg-config.h"
+#include "config/esa-config.h"
 #endif
 
 #include "optionsdialog.h"
 #include "ui_optionsdialog.h"
 
-#include "aipgunits.h"
+#include "esaunits.h"
 #include "guiutil.h"
 #include "optionsmodel.h"
 
@@ -75,10 +75,10 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     /* Display elements init */
     QDir translations(":translations");
 
-    ui->aipgAtStartup->setToolTip(ui->aipgAtStartup->toolTip().arg(tr(PACKAGE_NAME)));
-    ui->aipgAtStartup->setText(ui->aipgAtStartup->text().arg(tr(PACKAGE_NAME)));
+    ui->esaAtStartup->setToolTip(ui->esaAtStartup->toolTip().arg(tr(PACKAGE_NAME)));
+    ui->esaAtStartup->setText(ui->esaAtStartup->text().arg(tr(PACKAGE_NAME)));
 
-    ui->openAipgConfButton->setToolTip(ui->openAipgConfButton->toolTip().arg(tr(PACKAGE_NAME)));
+    ui->openEsaConfButton->setToolTip(ui->openEsaConfButton->toolTip().arg(tr(PACKAGE_NAME)));
 
     ui->lang->setToolTip(ui->lang->toolTip().arg(tr(PACKAGE_NAME)));
     ui->lang->addItem(QString("(") + tr("default") + QString(")"), QVariant(""));
@@ -112,7 +112,7 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     ui->thirdPartyTxUrls->setPlaceholderText("https://example.com/tx/%s");
 #endif
 
-    ui->unit->setModel(new AipgUnits(this));
+    ui->unit->setModel(new EsaUnits(this));
 
     /* Widget-to-option mapper */
     mapper = new QDataWidgetMapper(this);
@@ -175,7 +175,7 @@ void OptionsDialog::setModel(OptionsModel *_model)
 void OptionsDialog::setMapper()
 {
     /* Main */
-    mapper->addMapping(ui->aipgAtStartup, OptionsModel::StartAtStartup);
+    mapper->addMapping(ui->esaAtStartup, OptionsModel::StartAtStartup);
     mapper->addMapping(ui->threadsScriptVerif, OptionsModel::ThreadsScriptVerif);
     mapper->addMapping(ui->databaseCache, OptionsModel::DatabaseCache);
 
@@ -233,7 +233,7 @@ void OptionsDialog::on_resetButton_clicked()
     }
 }
 
-void OptionsDialog::on_openAipgConfButton_clicked()
+void OptionsDialog::on_openEsaConfButton_clicked()
 {
     /* explain the purpose of the config file */
     QMessageBox::information(this, tr("Configuration options"),
@@ -241,7 +241,7 @@ void OptionsDialog::on_openAipgConfButton_clicked()
            "Additionally, any command-line options will override this configuration file."));
 
     /* show an error if there was some problem opening the file */
-    if (!GUIUtil::openAipgConf())
+    if (!GUIUtil::openEsaConf())
         QMessageBox::critical(this, tr("Error"), tr("The configuration file could not be opened."));
 }
 

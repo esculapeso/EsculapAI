@@ -1,12 +1,12 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_TEST_SCRIPTNUM10_H
-#define AIPG_TEST_SCRIPTNUM10_H
+#ifndef ESA_TEST_SCRIPTNUM10_H
+#define ESA_TEST_SCRIPTNUM10_H
 
 #include <algorithm>
 #include <limits>
@@ -26,7 +26,7 @@ public:
 class CScriptNum10
 {
 /**
- * The ScriptNum implementation from Aipg Core 0.10.0, for cross-comparison.
+ * The ScriptNum implementation from Esa Core 0.10.0, for cross-comparison.
  */
 public:
 
@@ -219,4 +219,4 @@ private:
 };
 
 
-#endif // AIPG_TEST_BIGNUM_H
+#endif // ESA_TEST_BIGNUM_H

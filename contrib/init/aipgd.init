@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#  esad The aipg core server.
+#  esad The esa core server.
 #
 #
 # chkconfig: 345 80 20

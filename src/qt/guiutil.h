@@ -1,11 +1,11 @@
 // Copyright (c) 2011-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_QT_GUIUTIL_H
-#define AIPG_QT_GUIUTIL_H
+#ifndef ESA_QT_GUIUTIL_H
+#define ESA_QT_GUIUTIL_H
 
 #include "amount.h"
 #include "fs.h"
@@ -32,7 +32,7 @@ class QWidget;
 class QGraphicsDropShadowEffect;
 QT_END_NAMESPACE
 
-/** Utility functions used by the aipg Qt UI.
+/** Utility functions used by the esa Qt UI.
  */
 namespace GUIUtil
 {
@@ -58,10 +58,10 @@ namespace GUIUtil
     void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent);
     void setupAmountWidget(QLineEdit *widget, QWidget *parent);
 
-    // Parse "aipg:" URI into recipient object, return true on successful parsing
-    bool parseAipgURI(const QUrl &uri, SendCoinsRecipient *out);
-    bool parseAipgURI(QString uri, SendCoinsRecipient *out);
-    QString formatAipgURI(const SendCoinsRecipient &info);
+    // Parse "esa:" URI into recipient object, return true on successful parsing
+    bool parseEsaURI(const QUrl &uri, SendCoinsRecipient *out);
+    bool parseEsaURI(QString uri, SendCoinsRecipient *out);
+    QString formatEsaURI(const SendCoinsRecipient &info);
 
     // Returns true if given address+amount meets "dust" definition
     bool isDust(const QString& address, const CAmount& amount);
@@ -128,7 +128,7 @@ namespace GUIUtil
     void openDebugLogfile();
 
     // Open the config file
-    bool openAipgConf();
+    bool openEsaConf();
 
     // Replace invalid default fonts with known good ones
     void SubstituteFonts(const QString& language);
@@ -273,4 +273,4 @@ namespace GUIUtil
 
 } // namespace GUIUtil
 
-#endif // AIPG_QT_GUIUTIL_H
+#endif // ESA_QT_GUIUTIL_H

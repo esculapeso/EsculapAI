@@ -78,7 +78,7 @@
     </message>
 </context>
 <context>
-    <name>AipgGUI</name>
+    <name>EsaGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Semnează &amp;mesaj...</translation>
@@ -156,8 +156,8 @@
         <translation>Se reindexează blocurile pe disc...</translation>
     </message>
     <message>
-        <source>Send coins to a Aipg address</source>
-        <translation>Trimite monede către o adresă Aipg</translation>
+        <source>Send coins to a Esa address</source>
+        <translation>Trimite monede către o adresă Esa</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -180,8 +180,8 @@
         <translation>&amp;Verifică mesaj...</translation>
     </message>
     <message>
-        <source>Aipg</source>
-        <translation>Aipg</translation>
+        <source>Esa</source>
+        <translation>Esa</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -208,12 +208,12 @@
         <translation>Criptează cheile private ale portofelului dvs.</translation>
     </message>
     <message>
-        <source>Sign messages with your Aipg addresses to prove you own them</source>
-        <translation>Semnaţi mesaje cu adresa dvs. Aipg pentru a dovedi că vă aparţin</translation>
+        <source>Sign messages with your Esa addresses to prove you own them</source>
+        <translation>Semnaţi mesaje cu adresa dvs. Esa pentru a dovedi că vă aparţin</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Aipg addresses</source>
-        <translation>Verificaţi mesaje pentru a vă asigura că au fost semnate cu adresa Aipg specificată</translation>
+        <source>Verify messages to ensure they were signed with specified Esa addresses</source>
+        <translation>Verificaţi mesaje pentru a vă asigura că au fost semnate cu adresa Esa specificată</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -232,8 +232,8 @@
         <translation>Bara de unelte</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and aipg: URIs)</source>
-        <translation>Cereţi plăţi (generează coduri QR şi aipg-uri: URls)</translation>
+        <source>Request payments (generates QR codes and esa: URIs)</source>
+        <translation>Cereţi plăţi (generează coduri QR şi esa-uri: URls)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -244,16 +244,16 @@
         <translation>Arată lista de adrese pentru primire şi etichetele</translation>
     </message>
     <message>
-        <source>Open a aipg: URI or payment request</source>
-        <translation>Deschidere aipg: o adresa URI sau o cerere de plată</translation>
+        <source>Open a esa: URI or payment request</source>
+        <translation>Deschidere esa: o adresa URI sau o cerere de plată</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>Opţiuni linie de &amp;comandă</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Aipg network</source>
-        <translation><numerusform>%n conexiune activă către reţeaua Aipg</numerusform><numerusform>%n conexiuni active către reţeaua Aipg</numerusform><numerusform>%n de conexiuni active către reţeaua Aipg</numerusform></translation>
+        <source>%n active connection(s) to Esa network</source>
+        <translation><numerusform>%n conexiune activă către reţeaua Esa</numerusform><numerusform>%n conexiuni active către reţeaua Esa</numerusform><numerusform>%n de conexiuni active către reţeaua Esa</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
@@ -658,16 +658,16 @@
         <translation>Cheltuire rest neconfirmat</translation>
     </message>
     <message>
-        <source>Automatically open the Aipg client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Deschide automat în router portul aferent clientului Aipg. Funcţionează doar dacă routerul duportă UPnP şi e activat.</translation>
+        <source>Automatically open the Esa client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Deschide automat în router portul aferent clientului Esa. Funcţionează doar dacă routerul duportă UPnP şi e activat.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Mapare port folosind &amp;UPnP</translation>
     </message>
     <message>
-        <source>Connect to the Aipg network through a SOCKS5 proxy.</source>
-        <translation>Conectare la reţeaua Aipg printr-un proxy SOCKS.</translation>
+        <source>Connect to the Esa network through a SOCKS5 proxy.</source>
+        <translation>Conectare la reţeaua Esa printr-un proxy SOCKS.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -727,7 +727,7 @@
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Alegeţi subdiviziunea folosită la afişarea interfeţei şi la trimiterea de aipg.</translation>
+        <translation>Alegeţi subdiviziunea folosită la afişarea interfeţei şi la trimiterea de esa.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -767,7 +767,7 @@
     </message>
     <message>
         <source>The supplied proxy address is invalid.</source>
-        <translation>Adresa aipg pe care aţi specificat-o nu este validă.</translation>
+        <translation>Adresa esa pe care aţi specificat-o nu este validă.</translation>
     </message>
 </context>
 <context>
@@ -777,8 +777,8 @@
         <translation>Form</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Aipg network after a connection is established, but this process has not completed yet.</source>
-        <translation>Informaţiile afişate pot fi neactualizate. Portofelul dvs. se sincronizează automat cu reţeaua Aipg după ce o conexiune este stabilită, dar acest proces nu a fost finalizat încă.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Esa network after a connection is established, but this process has not completed yet.</source>
+        <translation>Informaţiile afişate pot fi neactualizate. Portofelul dvs. se sincronizează automat cu reţeaua Esa după ce o conexiune este stabilită, dar acest proces nu a fost finalizat încă.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -866,8 +866,8 @@
         <translation>Cantitate</translation>
     </message>
     <message>
-        <source>Enter a Aipg address (e.g. %1)</source>
-        <translation>Introduceţi o adresă Aipg (de exemplu %1)</translation>
+        <source>Enter a Esa address (e.g. %1)</source>
+        <translation>Introduceţi o adresă Esa (de exemplu %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1166,8 +1166,8 @@
         <translation>R&amp;efoloseşte o adresă de primire (nu este recomandat)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Aipg network.</source>
-        <translation>Un mesaj opţional de ataşat la cererea de plată, care va fi afişat cînd cererea este deschisă. Notă: Acest mesaj nu va fi trimis cu plata către reţeaua Aipg.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Esa network.</source>
+        <translation>Un mesaj opţional de ataşat la cererea de plată, care va fi afişat cînd cererea este deschisă. Notă: Acest mesaj nu va fi trimis cu plata către reţeaua Esa.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -1386,8 +1386,8 @@
         <translation>Aceasta este o tranzacţie normală.</translation>
     </message>
     <message>
-        <source>The Aipg address to send the payment to</source>
-        <translation>Adresa aipg către care se face plata</translation>
+        <source>The Esa address to send the payment to</source>
+        <translation>Adresa esa către care se face plata</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -1414,8 +1414,8 @@
         <translation>Introduceţi eticheta pentru ca această adresa să fie introdusă în lista de adrese folosite</translation>
     </message>
     <message>
-        <source>A message that was attached to the aipg: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Aipg network.</source>
-        <translation>un mesaj a fost ataşat la aipg: URI care va fi stocat cu tranzacţia pentru referinţa dvs. Notă: Acest mesaj nu va fi trimis către reţeaua aipg.</translation>
+        <source>A message that was attached to the esa: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Esa network.</source>
+        <translation>un mesaj a fost ataşat la esa: URI care va fi stocat cu tranzacţia pentru referinţa dvs. Notă: Acest mesaj nu va fi trimis către reţeaua esa.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -1451,7 +1451,7 @@
         <translation>&amp;Semnează mesaj</translation>
     </message>
     <message>
-        <source>The Aipg address to sign the message with</source>
+        <source>The Esa address to sign the message with</source>
         <translation>Adresa cu care semnaţi mesajul</translation>
     </message>
     <message>
@@ -1483,8 +1483,8 @@
         <translation>Copiază semnatura curentă în clipboard-ul sistemului</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Aipg address</source>
-        <translation>Semnează mesajul pentru a dovedi ca deţineţi acestă adresă Aipg</translation>
+        <source>Sign the message to prove you own this Esa address</source>
+        <translation>Semnează mesajul pentru a dovedi ca deţineţi acestă adresă Esa</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1503,12 +1503,12 @@
         <translation>&amp;Verifică mesaj</translation>
     </message>
     <message>
-        <source>The Aipg address the message was signed with</source>
-        <translation>Introduceţi o adresă Aipg</translation>
+        <source>The Esa address the message was signed with</source>
+        <translation>Introduceţi o adresă Esa</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Aipg address</source>
-        <translation>Verificaţi mesajul pentru a vă asigura că a fost semnat cu adresa Aipg specificată</translation>
+        <source>Verify the message to ensure it was signed with the specified Esa address</source>
+        <translation>Verificaţi mesajul pentru a vă asigura că a fost semnat cu adresa Esa specificată</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -1570,7 +1570,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>aipg-core</name>
+    <name>esa-core</name>
     <message>
         <source>Options:</source>
         <translation>Opţiuni:</translation>
@@ -1596,8 +1596,8 @@
         <translation>Rulează în fundal ca un demon şi acceptă comenzi</translation>
     </message>
     <message>
-        <source>Aipg Core</source>
-        <translation>Nucleul Aipg</translation>
+        <source>Esa Core</source>
+        <translation>Nucleul Esa</translation>
     </message>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>

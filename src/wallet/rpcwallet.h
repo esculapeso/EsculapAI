@@ -1,11 +1,11 @@
 // Copyright (c) 2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_WALLET_RPCWALLET_H
-#define AIPG_WALLET_RPCWALLET_H
+#ifndef ESA_WALLET_RPCWALLET_H
+#define ESA_WALLET_RPCWALLET_H
 
 #include <string>
 
@@ -27,4 +27,4 @@ std::string HelpRequiringPassphrase(CWallet *);
 void EnsureWalletIsUnlocked(CWallet *);
 bool EnsureWalletIsAvailable(CWallet *, bool avoidException);
 
-#endif //AIPG_WALLET_RPCWALLET_H
+#endif //ESA_WALLET_RPCWALLET_H

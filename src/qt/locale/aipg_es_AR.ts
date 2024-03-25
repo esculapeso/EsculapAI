@@ -70,7 +70,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>AipgGUI</name>
+    <name>EsaGUI</name>
     </context>
 <context>
     <name>CoinControlDialog</name>
@@ -172,6 +172,6 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>aipg-core</name>
+    <name>esa-core</name>
     </context>
 </TS>

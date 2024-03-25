@@ -1,10 +1,10 @@
 ## Build for linux version, see /doc/build-unix.md
 
 
-AIPG_ROOT=$(pwd)
+ESA_ROOT=$(pwd)
 
-# Pick some path to install BDB to, here we create a directory within the Aipg directory
-BDB_PREFIX="${AIPG_ROOT}/db4"
+# Pick some path to install BDB to, here we create a directory within the Esa directory
+BDB_PREFIX="${ESA_ROOT}/db4"
 mkdir -p $BDB_PREFIX
 
 # Fetch the source and verify that it is not tampered with
@@ -24,8 +24,8 @@ cd db-4.8.30.NC/build_unix/
 make
 make install
 
-# Configure Aipg Core to use our own-built instance of BDB
-cd $AIPG_ROOT
+# Configure Esa Core to use our own-built instance of BDB
+cd $ESA_ROOT
 cd depends
 make HOST=x86_64-pc-linux-gnu
 

@@ -1,5 +1,5 @@
 # Copyright (c) 2016 The Bitcoin Core developers
-# Copyright (c) 2017-2019 The AIPG Core developers
+# Copyright (c) 2017-2019 The ESA Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -18,7 +18,7 @@ osx=true
 SIGNER=
 VERSION=
 commit=false
-url=https://github.com/JustAResearcher/Aipg
+url=https://github.com/JustAResearcher/Esa
 proc=2
 mem=2000
 lxc=true
@@ -32,7 +32,7 @@ commitFiles=true
 read -d '' usage <<- EOF
 Usage: $scriptName [-c|u|v|b|s|B|o|h|j|m|] signer version
 
-Run this script from the directory containing the aipg, gitian-builder, gitian.sigs, and aipg-detached-sigs.
+Run this script from the directory containing the esa, gitian-builder, gitian.sigs, and esa-detached-sigs.
 
 Arguments:
 signer          GPG signer to sign each build assert file
@@ -40,7 +40,7 @@ version		Version number, commit, or branch to build. If building a commit or bra
 
 Options:
 -c|--commit	Indicate that the version argument is for a commit or branch
--u|--url	Specify the URL of the repository. Default is https://github.com/JustAResearcher/Aipg
+-u|--url	Specify the URL of the repository. Default is https://github.com/JustAResearcher/Esa
 -v|--verify 	Verify the Gitian build
 -b|--build	Do a Gitian build
 -s|--sign	Make signed binaries for Windows and Mac OSX
@@ -231,8 +231,8 @@ echo ${COMMIT}
 if [[ $setup = true ]]
 then
     sudo apt-get install ruby apache2 git apt-cacher-ng python-vm-builder qemu-kvm qemu-utils
-    git clone https://github.com/aipg-core/gitian.sigs.git
-    git clone https://github.com/aipg-core/aipg-detached-sigs.git
+    git clone https://github.com/esa-core/gitian.sigs.git
+    git clone https://github.com/esa-core/esa-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
     pushd ./gitian-builder
     if [[ -n "$USE_LXC" ]]
@@ -246,7 +246,7 @@ then
 fi
 
 # Set up build
-pushd ./aipg
+pushd ./esa
 git fetch
 git checkout ${COMMIT}
 popd
@@ -255,7 +255,7 @@ popd
 if [[ $build = true ]]
 then
 	# Make output folder
-	mkdir -p ./aipg-binaries/${VERSION}
+	mkdir -p ./esa-binaries/${VERSION}
 	
 	# Build Dependencies
 	echo ""
@@ -265,7 +265,7 @@ then
 	mkdir -p inputs
 	wget -N -P inputs $osslPatchUrl
 	wget -N -P inputs $osslTarUrl
-	make -C ../aipg/depends download SOURCES_PATH=`pwd`/cache/common
+	make -C ../esa/depends download SOURCES_PATH=`pwd`/cache/common
 
 	# Linux
 	if [[ $linux = true ]]
@@ -273,9 +273,9 @@ then
             echo ""
 	    echo "Compiling ${VERSION} Linux"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit aipg=${COMMIT} --url aipg=${url} ../aipg/contrib/gitian-descriptors/gitian-linux.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../aipg/contrib/gitian-descriptors/gitian-linux.yml
-	    mv build/out/aipg-*.tar.gz build/out/src/aipg-*.tar.gz ../aipg-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit esa=${COMMIT} --url esa=${url} ../esa/contrib/gitian-descriptors/gitian-linux.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../esa/contrib/gitian-descriptors/gitian-linux.yml
+	    mv build/out/esa-*.tar.gz build/out/src/esa-*.tar.gz ../esa-binaries/${VERSION}
 	fi
 	# Windows
 	if [[ $windows = true ]]
@@ -283,10 +283,10 @@ then
 	    echo ""
 	    echo "Compiling ${VERSION} Windows"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit aipg=${COMMIT} --url aipg=${url} ../aipg/contrib/gitian-descriptors/gitian-win.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../aipg/contrib/gitian-descriptors/gitian-win.yml
-	    mv build/out/aipg-*-win-unsigned.tar.gz inputs/aipg-win-unsigned.tar.gz
-	    mv build/out/aipg-*.zip build/out/aipg-*.exe ../aipg-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit esa=${COMMIT} --url esa=${url} ../esa/contrib/gitian-descriptors/gitian-win.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../esa/contrib/gitian-descriptors/gitian-win.yml
+	    mv build/out/esa-*-win-unsigned.tar.gz inputs/esa-win-unsigned.tar.gz
+	    mv build/out/esa-*.zip build/out/esa-*.exe ../esa-binaries/${VERSION}
 	fi
 	# Mac OSX
 	if [[ $osx = true ]]
@@ -294,10 +294,10 @@ then
 	    echo ""
 	    echo "Compiling ${VERSION} Mac OSX"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit aipg=${COMMIT} --url aipg=${url} ../aipg/contrib/gitian-descriptors/gitian-osx.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../aipg/contrib/gitian-descriptors/gitian-osx.yml
-	    mv build/out/aipg-*-osx-unsigned.tar.gz inputs/aipg-osx-unsigned.tar.gz
-	    mv build/out/aipg-*.tar.gz build/out/aipg-*.dmg ../aipg-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit esa=${COMMIT} --url esa=${url} ../esa/contrib/gitian-descriptors/gitian-osx.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../esa/contrib/gitian-descriptors/gitian-osx.yml
+	    mv build/out/esa-*-osx-unsigned.tar.gz inputs/esa-osx-unsigned.tar.gz
+	    mv build/out/esa-*.tar.gz build/out/esa-*.dmg ../esa-binaries/${VERSION}
 	fi
 	popd
 
@@ -324,27 +324,27 @@ then
 	echo ""
 	echo "Verifying v${VERSION} Linux"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../aipg/contrib/gitian-descriptors/gitian-linux.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../esa/contrib/gitian-descriptors/gitian-linux.yml
 	# Windows
 	echo ""
 	echo "Verifying v${VERSION} Windows"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../aipg/contrib/gitian-descriptors/gitian-win.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../esa/contrib/gitian-descriptors/gitian-win.yml
 	# Mac OSX	
 	echo ""
 	echo "Verifying v${VERSION} Mac OSX"
 	echo ""	
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../aipg/contrib/gitian-descriptors/gitian-osx.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../esa/contrib/gitian-descriptors/gitian-osx.yml
 	# Signed Windows
 	echo ""
 	echo "Verifying v${VERSION} Signed Windows"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../aipg/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../esa/contrib/gitian-descriptors/gitian-osx-signer.yml
 	# Signed Mac OSX
 	echo ""
 	echo "Verifying v${VERSION} Signed Mac OSX"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../aipg/contrib/gitian-descriptors/gitian-osx-signer.yml	
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../esa/contrib/gitian-descriptors/gitian-osx-signer.yml	
 	popd
 fi
 
@@ -359,10 +359,10 @@ then
 	    echo ""
 	    echo "Signing ${VERSION} Windows"
 	    echo ""
-	    ./bin/gbuild -i --commit signature=${COMMIT} ../aipg/contrib/gitian-descriptors/gitian-win-signer.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../aipg/contrib/gitian-descriptors/gitian-win-signer.yml
-	    mv build/out/aipg-*win64-setup.exe ../aipg-binaries/${VERSION}
-	    mv build/out/aipg-*win32-setup.exe ../aipg-binaries/${VERSION}
+	    ./bin/gbuild -i --commit signature=${COMMIT} ../esa/contrib/gitian-descriptors/gitian-win-signer.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../esa/contrib/gitian-descriptors/gitian-win-signer.yml
+	    mv build/out/esa-*win64-setup.exe ../esa-binaries/${VERSION}
+	    mv build/out/esa-*win32-setup.exe ../esa-binaries/${VERSION}
 	fi
 	# Sign Mac OSX
 	if [[ $osx = true ]]
@@ -370,9 +370,9 @@ then
 	    echo ""
 	    echo "Signing ${VERSION} Mac OSX"
 	    echo ""
-	    ./bin/gbuild -i --commit signature=${COMMIT} ../aipg/contrib/gitian-descriptors/gitian-osx-signer.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../aipg/contrib/gitian-descriptors/gitian-osx-signer.yml
-	    mv build/out/aipg-osx-signed.dmg ../aipg-binaries/${VERSION}/aipg-${VERSION}-osx.dmg
+	    ./bin/gbuild -i --commit signature=${COMMIT} ../esa/contrib/gitian-descriptors/gitian-osx-signer.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../esa/contrib/gitian-descriptors/gitian-osx-signer.yml
+	    mv build/out/esa-osx-signed.dmg ../esa-binaries/${VERSION}/esa-${VERSION}-osx.dmg
 	fi
 	popd
 

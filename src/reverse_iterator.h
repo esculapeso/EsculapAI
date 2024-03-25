@@ -1,7 +1,7 @@
 // Taken from https://gist.github.com/arvidsson/7231973
 
-#ifndef AIPG_REVERSE_ITERATOR_H
-#define AIPG_REVERSE_ITERATOR_H
+#ifndef ESA_REVERSE_ITERATOR_H
+#define ESA_REVERSE_ITERATOR_H
 
 /**
  * Template used for reverse iteration in C++11 range-based for loops.
@@ -36,4 +36,4 @@ reverse_range<T> reverse_iterate(T &x)
     return reverse_range<T>(x);
 }
 
-#endif // AIPG_REVERSE_ITERATOR_H
+#endif // ESA_REVERSE_ITERATOR_H

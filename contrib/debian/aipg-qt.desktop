@@ -1,13 +1,13 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=AIPG Core
-Comment=Connect to the Aipg P2P Network
-Comment[de]=Verbinde mit dem Aipg peer-to-peer Netzwerk
-Comment[fr]=Aipg, monnaie virtuelle cryptographique pair à pair
-Comment[tr]=Aipg, eşten eşe kriptografik sanal para birimi
-Exec=aipg-qt %u
+Name=ESA Core
+Comment=Connect to the Esa P2P Network
+Comment[de]=Verbinde mit dem Esa peer-to-peer Netzwerk
+Comment[fr]=Esa, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Esa, eşten eşe kriptografik sanal para birimi
+Exec=esa-qt %u
 Terminal=false
 Type=Application
-Icon=aipg128
-MimeType=x-scheme-handler/aipg;
+Icon=esa128
+MimeType=x-scheme-handler/esa;
 Categories=Office;Finance;

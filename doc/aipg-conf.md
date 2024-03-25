@@ -1,6 +1,6 @@
-# `aipg.conf` Configuration File
+# `esa.conf` Configuration File
 
-The configuration file is used by `esad`, `aipg-qt` and `aipg-cli`.
+The configuration file is used by `esad`, `esa-qt` and `esa-cli`.
 
 All command-line options (except for `-?`, `-help`, `-version` and `-conf`) may be specified in a configuration file, and all configuration file options (except for `includeconf`) may also be specified on the command line. Command-line options override values set in the configuration file and configuration file options override values set in the GUI.
 
@@ -46,16 +46,16 @@ rpcport=4000
 
 ## Configuration File Path
 
-The configuration file is not automatically created; you can create it using your favorite text editor. By default, the configuration file name is `aipg.conf` and it is located in the AIPG data directory, but both the AIPG data directory and the configuration file path may be changed using the `-datadir` and `-conf` command-line options.
+The configuration file is not automatically created; you can create it using your favorite text editor. By default, the configuration file name is `esa.conf` and it is located in the ESA data directory, but both the ESA data directory and the configuration file path may be changed using the `-datadir` and `-conf` command-line options.
 
-The `includeconf=<file>` option in the `aipg.conf` file can be used to include additional configuration files.
+The `includeconf=<file>` option in the `esa.conf` file can be used to include additional configuration files.
 
 ### Default configuration file locations
 
 Operating System | Data Directory | Example Path
 -- | -- | --
-Windows | `%APPDATA%\AIPG\` | `C:\Users\username\AppData\Roaming\AIPG\aipg.conf`
-Linux | `$HOME/.aipg/` | `/home/username/.aipg/aipg.conf`
-macOS | `$HOME/Library/Application Support/Rave /` | `/Users/username/Library/Application Support/AIPG/aipg.conf`
+Windows | `%APPDATA%\ESA\` | `C:\Users\username\AppData\Roaming\ESA\esa.conf`
+Linux | `$HOME/.esa/` | `/home/username/.esa/esa.conf`
+macOS | `$HOME/Library/Application Support/Rave /` | `/Users/username/Library/Application Support/ESA/esa.conf`
 
-You can find an example aipg.conf file in [share/examples/aipg.conf](../share/examples/aipg.conf).
+You can find an example esa.conf file in [share/examples/esa.conf](../share/examples/esa.conf).

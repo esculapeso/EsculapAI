@@ -100,7 +100,7 @@ Only supports JSON as output format.
 * bytes : (numeric) size of the TX mempool in bytes
 * usage : (numeric) total TX mempool memory usage
 * maxmempool : (numeric) maximum memory usage for the mempool in bytes
-* mempoolminfee : (numeric) minimum feerate (AIPG per KB) for tx to be accepted
+* mempoolminfee : (numeric) minimum feerate (ESA per KB) for tx to be accepted
 
 `GET /rest/mempool/contents.json`
 

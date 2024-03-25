@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Copyright (c) 2015-2016 The Bitcoin Core developers
 # Copyright (c) 2017-2019 The Raven Core developers
-# Copyright (c) 2020-2021 The AIPG Core developers
+# Copyright (c) 2020-2021 The ESA Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -34,13 +34,13 @@ addnode connect to generic DNS name
 import socket
 import os
 from test_framework.socks5 import Socks5Configuration, Socks5Command, Socks5Server, AddressType
-from test_framework.test_framework import AipgTestFramework
+from test_framework.test_framework import EsaTestFramework
 from test_framework.util import PORT_MIN, PORT_RANGE, assert_equal
 from test_framework.netutil import test_ipv6_local
 
 RANGE_BEGIN = PORT_MIN + 2 * PORT_RANGE  # Start after p2p and rpc ports
 
-class ProxyTest(AipgTestFramework):
+class ProxyTest(EsaTestFramework):
     def set_test_params(self):
         self.num_nodes = 4
 

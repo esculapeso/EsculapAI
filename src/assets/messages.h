@@ -3,8 +3,8 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 
-#ifndef AIPGCOIN_MESSAGES_H
-#define AIPGCOIN_MESSAGES_H
+#ifndef ESACOIN_MESSAGES_H
+#define ESACOIN_MESSAGES_H
 
 #include <uint256.h>
 #include <serialize.h>
@@ -140,4 +140,4 @@ public:
     std::string createJsonString();
 };
 
-#endif //AIPGCOIN_MESSAGES_H
+#endif //ESACOIN_MESSAGES_H

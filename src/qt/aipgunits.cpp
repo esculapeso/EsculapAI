@@ -1,77 +1,77 @@
 // Copyright (c) 2011-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "aipgunits.h"
+#include "esaunits.h"
 
 #include "primitives/transaction.h"
 
 #include <QStringList>
 
-AipgUnits::AipgUnits(QObject *parent):
+EsaUnits::EsaUnits(QObject *parent):
         QAbstractListModel(parent),
         unitlist(availableUnits())
 {
 }
 
-QList<AipgUnits::Unit> AipgUnits::availableUnits()
+QList<EsaUnits::Unit> EsaUnits::availableUnits()
 {
-    QList<AipgUnits::Unit> unitlist;
-    unitlist.append(aipg);
-    unitlist.append(maipg);
-    unitlist.append(uaipg);
+    QList<EsaUnits::Unit> unitlist;
+    unitlist.append(esa);
+    unitlist.append(mesa);
+    unitlist.append(uesa);
     return unitlist;
 }
 
-bool AipgUnits::valid(int unit)
+bool EsaUnits::valid(int unit)
 {
     switch(unit)
     {
-    case aipg:
-    case maipg:
-    case uaipg:
+    case esa:
+    case mesa:
+    case uesa:
         return true;
     default:
         return false;
     }
 }
 
-QString AipgUnits::name(int unit)
+QString EsaUnits::name(int unit)
 {
     switch(unit)
     {
-    case aipg: return QString("aipg");
-    case maipg: return QString("maipg");
-    case uaipg: return QString::fromUtf8("μaipg");
+    case esa: return QString("esa");
+    case mesa: return QString("mesa");
+    case uesa: return QString::fromUtf8("μesa");
     default: return QString("???");
     }
 }
 
-QString AipgUnits::description(int unit)
+QString EsaUnits::description(int unit)
 {
     switch(unit)
     {
-    case aipg: return QString("Aipg");
-    case maipg: return QString("Milli-Aipg (1 / 1" THIN_SP_UTF8 "000)");
-    case uaipg: return QString("Micro-Aipg (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case esa: return QString("Esa");
+    case mesa: return QString("Milli-Esa (1 / 1" THIN_SP_UTF8 "000)");
+    case uesa: return QString("Micro-Esa (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }
 }
 
-qint64 AipgUnits::factor(int unit)
+qint64 EsaUnits::factor(int unit)
 {
     switch(unit)
     {
-    case aipg:  return 100000000;
-    case maipg: return 100000;
-    case uaipg: return 100;
+    case esa:  return 100000000;
+    case mesa: return 100000;
+    case uesa: return 100;
     default:   return 100000000;
     }
 }
 
-qint64 AipgUnits::factorAsset(int unit)
+qint64 EsaUnits::factorAsset(int unit)
 {
     switch(unit)
     {
@@ -88,18 +88,18 @@ qint64 AipgUnits::factorAsset(int unit)
     }
 }
 
-int AipgUnits::decimals(int unit)
+int EsaUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case aipg: return 8;
-    case maipg: return 5;
-    case uaipg: return 2;
+    case esa: return 8;
+    case mesa: return 5;
+    case uesa: return 2;
     default: return 0;
     }
 }
 
-QString AipgUnits::format(int unit, const CAmount& nIn, bool fPlus, SeparatorStyle separators, const int nAssetUnit)
+QString EsaUnits::format(int unit, const CAmount& nIn, bool fPlus, SeparatorStyle separators, const int nAssetUnit)
 {
     // Note: not using straight sprintf here because we do NOT want
     // localized number formatting.
@@ -144,17 +144,17 @@ QString AipgUnits::format(int unit, const CAmount& nIn, bool fPlus, SeparatorSty
 // Please take care to use formatHtmlWithUnit instead, when
 // appropriate.
 
-QString AipgUnits::formatWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString EsaUnits::formatWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     return format(unit, amount, plussign, separators) + QString(" ") + name(unit);
 }
 
-QString AipgUnits::formatWithCustomName(QString customName, const CAmount& amount, int unit, bool plussign, SeparatorStyle separators)
+QString EsaUnits::formatWithCustomName(QString customName, const CAmount& amount, int unit, bool plussign, SeparatorStyle separators)
 {
-    return format(aipg, amount / factorAsset(MAX_ASSET_UNITS - unit), plussign, separators, unit) + QString(" ") + customName;
+    return format(esa, amount / factorAsset(MAX_ASSET_UNITS - unit), plussign, separators, unit) + QString(" ") + customName;
 }
 
-QString AipgUnits::formatHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString EsaUnits::formatHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     QString str(formatWithUnit(unit, amount, plussign, separators));
     str.replace(QChar(THIN_SP_CP), QString(THIN_SP_HTML));
@@ -162,7 +162,7 @@ QString AipgUnits::formatHtmlWithUnit(int unit, const CAmount& amount, bool plus
 }
 
 
-bool AipgUnits::parse(int unit, const QString &value, CAmount *val_out)
+bool EsaUnits::parse(int unit, const QString &value, CAmount *val_out)
 {
     if(!valid(unit) || value.isEmpty())
         return false; // Refuse to parse invalid unit or empty string
@@ -201,7 +201,7 @@ bool AipgUnits::parse(int unit, const QString &value, CAmount *val_out)
     return ok;
 }
 
-bool AipgUnits::assetParse(int assetUnit, const QString &value, CAmount *val_out)
+bool EsaUnits::assetParse(int assetUnit, const QString &value, CAmount *val_out)
 {
     if(!(assetUnit >= 0 && assetUnit <= 8) || value.isEmpty())
         return false; // Refuse to parse invalid unit or empty string
@@ -240,23 +240,23 @@ bool AipgUnits::assetParse(int assetUnit, const QString &value, CAmount *val_out
     return ok;
 }
 
-QString AipgUnits::getAmountColumnTitle(int unit)
+QString EsaUnits::getAmountColumnTitle(int unit)
 {
     QString amountTitle = QObject::tr("Amount");
-    if (AipgUnits::valid(unit))
+    if (EsaUnits::valid(unit))
     {
-        amountTitle += " ("+AipgUnits::name(unit) + ")";
+        amountTitle += " ("+EsaUnits::name(unit) + ")";
     }
     return amountTitle;
 }
 
-int AipgUnits::rowCount(const QModelIndex &parent) const
+int EsaUnits::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
     return unitlist.size();
 }
 
-QVariant AipgUnits::data(const QModelIndex &index, int role) const
+QVariant EsaUnits::data(const QModelIndex &index, int role) const
 {
     int row = index.row();
     if(row >= 0 && row < unitlist.size())
@@ -276,7 +276,7 @@ QVariant AipgUnits::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-CAmount AipgUnits::maxMoney()
+CAmount EsaUnits::maxMoney()
 {
     return MAX_MONEY;
 }

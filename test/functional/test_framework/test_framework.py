@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Copyright (c) 2014-2016 The Bitcoin Core developers
 # Copyright (c) 2017-2019 The Raven Core developers
-# Copyright (c) 2020-2021 The AIPG Core developers
+# Copyright (c) 2020-2021 The ESA Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -36,10 +36,10 @@ TEST_EXIT_FAILED = 1
 TEST_EXIT_SKIPPED = 77
 
 
-class AipgTestFramework:
-    """Base class for a aipg test script.
+class EsaTestFramework:
+    """Base class for a esa test script.
 
-    Individual aipg test scripts should subclass this class and override the set_test_params() and run_test() methods.
+    Individual esa test scripts should subclass this class and override the set_test_params() and run_test() methods.
 
     Individual tests can also override the following methods to customize the test setup:
 
@@ -73,7 +73,7 @@ class AipgTestFramework:
         parser.add_option("--noshutdown", dest="noshutdown", default=False, action="store_true", help="Don't stop esads after the test execution")
         parser.add_option("--pdbonfailure", dest="pdbonfailure", default=False, action="store_true", help="Attach a python debugger if test fails")
         parser.add_option("--portseed", dest="port_seed", default=os.getpid(), type='int', help="The seed to use for assigning port numbers (default: current process id)")
-        parser.add_option("--srcdir", dest="srcdir", default=os.path.normpath(os.path.dirname(os.path.realpath(__file__)) + "/../../../src"), help="Source directory containing esad/aipg-cli (default: %default)")
+        parser.add_option("--srcdir", dest="srcdir", default=os.path.normpath(os.path.dirname(os.path.realpath(__file__)) + "/../../../src"), help="Source directory containing esad/esa-cli (default: %default)")
         parser.add_option("--tmpdir", dest="tmpdir", help="Root directory for datadirs")
         parser.add_option("--tracerpc", dest="trace_rpc", default=False, action="store_true", help="Print out all RPC calls as they are made")
 
@@ -356,7 +356,7 @@ class AipgTestFramework:
         self.log.addHandler(ch)
 
         if self.options.trace_rpc:
-            rpc_logger = logging.getLogger("AipgRPC")
+            rpc_logger = logging.getLogger("EsaRPC")
             rpc_logger.setLevel(logging.DEBUG)
             rpc_handler = logging.StreamHandler(sys.stdout)
             rpc_handler.setLevel(logging.DEBUG)
@@ -431,7 +431,7 @@ class AipgTestFramework:
             from_dir = os.path.join(self.options.cachedir, "node" + str(i))
             to_dir = os.path.join(self.options.tmpdir, "node" + str(i))
             shutil.copytree(from_dir, to_dir)
-            initialize_data_dir(self.options.tmpdir, i)  # Overwrite port/rpcport in aipg.conf
+            initialize_data_dir(self.options.tmpdir, i)  # Overwrite port/rpcport in esa.conf
 
     def _initialize_chain_clean(self):
         """Initialize empty blockchain for use by the test.

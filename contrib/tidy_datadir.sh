@@ -1,6 +1,6 @@
 #!/bin/bash
 # Copyright (c) 2013 The Bitcoin Core developers
-# Copyright (c) 2017-2019 The AIPG Core developers
+# Copyright (c) 2017-2019 The ESA Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -8,7 +8,7 @@ if [ -d "$1" ]; then
   cd "$1"
 else
   echo "Usage: $0 <datadir>" >&2
-  echo "Removes obsolete Aipg database files" >&2
+  echo "Removes obsolete Esa database files" >&2
   exit 1
 fi
 
@@ -20,22 +20,22 @@ if [ -f wallet.dat -a -f peers.dat -a -f chainstate/CURRENT -a -f blocks/index/C
 
 case $LEVEL in
   0)
-    echo "Error: no Aipg datadir detected."
+    echo "Error: no Esa datadir detected."
     exit 1
     ;;
   1)
-    echo "Detected old Aipg datadir (before 0.7)."
+    echo "Detected old Esa datadir (before 0.7)."
     echo "Nothing to do."
     exit 0
     ;;
   2)
-    echo "Detected Aipg 0.7 datadir."
+    echo "Detected Esa 0.7 datadir."
     ;;
   3)
-    echo "Detected Aipg pre-0.8 datadir."
+    echo "Detected Esa pre-0.8 datadir."
     ;;
   4)
-    echo "Detected Aipg 0.8 datadir."
+    echo "Detected Esa 0.8 datadir."
     ;;
 esac
 

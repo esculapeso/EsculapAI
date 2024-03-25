@@ -1,8 +1,8 @@
-# AIPGcoin - Community Ideas
+# ESAcoin - Community Ideas
 
 “Every new mechanism frees the human mind for more creative adventures and accomplishments” - Life After Google by George Gilder  
 
-We’re all in this together. There are new capabilities included in the latest Phoenix version (3.2+) of AIPGcoin that open up new business opportunities.  Join in and build something.  This is not an exhaustive list, but just a starting point to fire the imagination.  
+We’re all in this together. There are new capabilities included in the latest Phoenix version (3.2+) of ESAcoin that open up new business opportunities.  Join in and build something.  This is not an exhaustive list, but just a starting point to fire the imagination.  
 
 
 ### Anyone with a computer
@@ -14,7 +14,7 @@ We’re all in this together. There are new capabilities included in the latest 
     * REST API to RPC (business specific)
     * REST API to memos/messages
 * Core
-    * Asset Exchange Proxy (simulate sending an ASSET like esad does for AIPG)
+    * Asset Exchange Proxy (simulate sending an ASSET like esad does for ESA)
     * Improved messaging/memo RPC calls
     * 24 word - master key (not seed) - direct to/from master xprv and pub
     * Local Filter (whitelist/blacklist) for assets
@@ -41,7 +41,7 @@ We’re all in this together. There are new capabilities included in the latest 
     * List of Tags per Address
     * Tighter integration with IPFS
 * Mobile wallet enhancements
-    * Fix dark mode on AIPG Wallet
+    * Fix dark mode on ESA Wallet
     * Fix GitHub Issues on Wallet
     * Asset Sweeping on Android
 * Mobile Wallet
@@ -52,7 +52,7 @@ We’re all in this together. There are new capabilities included in the latest 
     * Memo/Message explorer
 
 
-### AIPGcoin.com
+### ESAcoin.com
 * Build website specifically for businesses / consultants
 
 
@@ -61,36 +61,36 @@ We’re all in this together. There are new capabilities included in the latest 
 * IPFS Integration benefits (education)
 * Digital Twin capabilities (education)
 * Security Token issuer benefits (education)
-* Run a contest: AIPG prize for best idea for new AIPGcoin based Business
+* Run a contest: ESA prize for best idea for new ESAcoin based Business
 
 
 ### Entrepreneur (Business Opportunities)
 * Security Token Issuance Platform
 * Back-office for security issuance
 * Digital Twins / Proof-of-Authenticity Business
-* Back-end API platform for AIPGcoin
+* Back-end API platform for ESAcoin
     * Other people to hit high-availablity API
-* Fee system to pay AIPG fees automatically
+* Fee system to pay ESA fees automatically
     * Auto-pay fees
     * Can take X% of fees
     * Auto-cosign transactions
     * Constructs a transaction for signing , adds fees, cosigns and publishes
 * Auto fee funder (so users of ABC token doesn’t need to worry about fees)
     * Watches for a specific token
-    * Sends small amount of AIPG for fees.
+    * Sends small amount of ESA for fees.
 * #BLUE_CHECK_MARK tag issuer as a trust mark.  Not just KYC, but a history of being a good actor.  Mirrors the blue check mark from twitter.
-* #KYC tagger - store info and tag AIPGcoin addresses
-* #ACCREDITED - verify accredited status and tag AIPGcoin addresses
+* #KYC tagger - store info and tag ESAcoin addresses
+* #ACCREDITED - verify accredited status and tag ESAcoin addresses
  
 ### Technical Consultant
-* Help companies apply AIPGcoin capabilities to real-world problems
+* Help companies apply ESAcoin capabilities to real-world problems
 * Security Token Issuance Platform
 * Collaborate with exchanges for more listings
 * Collaborate with custodial Security Token exchanges for deposit/withdrawal
-* Collaborate with hardware wallets for additional AIPG and asset support
+* Collaborate with hardware wallets for additional ESA and asset support
 
 
-### Areas for AIPGcoin Innovation
+### Areas for ESAcoin Innovation
 * Financial
 * Supply-chain - Paperless record keeping
 * Tokenized Game Items - spanning game companies

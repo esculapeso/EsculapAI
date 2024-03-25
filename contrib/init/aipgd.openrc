@@ -2,24 +2,24 @@
 
 # backward compatibility for existing gentoo layout 
 #
-if [ -d "/var/lib/aipg/.aipg" ]; then
-	ESAD_DEFAULT_DATADIR="/var/lib/aipg/.aipg"
+if [ -d "/var/lib/esa/.esa" ]; then
+	ESAD_DEFAULT_DATADIR="/var/lib/esa/.esa"
 else
 	ESAD_DEFAULT_DATADIR="/var/lib/esad"
 fi
 
-ESAD_CONFIGFILE=${ESAD_CONFIGFILE:-/etc/aipg/aipg.conf}
+ESAD_CONFIGFILE=${ESAD_CONFIGFILE:-/etc/esa/esa.conf}
 ESAD_PIDDIR=${ESAD_PIDDIR:-/var/run/esad}
 ESAD_PIDFILE=${ESAD_PIDFILE:-${ESAD_PIDDIR}/esad.pid}
 ESAD_DATADIR=${ESAD_DATADIR:-${ESAD_DEFAULT_DATADIR}}
-ESAD_USER=${ESAD_USER:-${AIPG_USER:-aipg}}
-ESAD_GROUP=${ESAD_GROUP:-aipg}
+ESAD_USER=${ESAD_USER:-${ESA_USER:-esa}}
+ESAD_GROUP=${ESAD_GROUP:-esa}
 ESAD_BIN=${ESAD_BIN:-/usr/bin/esad}
 ESAD_NICE=${ESAD_NICE:-${NICELEVEL:-0}}
-ESAD_OPTS="${ESAD_OPTS:-${AIPG_OPTS}}"
+ESAD_OPTS="${ESAD_OPTS:-${ESA_OPTS}}"
 
-name="Aipg Core Daemon"
-description="Aipg cryptocurrency P2P network daemon"
+name="Esa Core Daemon"
+description="Esa cryptocurrency P2P network daemon"
 
 command="/usr/bin/esad"
 command_args="-pid=\"${ESAD_PIDFILE}\" \
@@ -84,7 +84,7 @@ checkconfig()
 		eerror "It is recommended that you also set alertnotify so you are "
 		eerror "notified of problems:"
 		eerror ""
-		eerror "ie: alertnotify=echo %%s | mail -s \"Aipg Alert\"" \
+		eerror "ie: alertnotify=echo %%s | mail -s \"Esa Alert\"" \
 			"admin@foo.com"
 		eerror ""
 		return 1

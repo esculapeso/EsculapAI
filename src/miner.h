@@ -1,12 +1,12 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_MINER_H
-#define AIPG_MINER_H
+#ifndef ESA_MINER_H
+#define ESA_MINER_H
 
 #include "primitives/block.h"
 #include "txmempool.h"
@@ -207,5 +207,5 @@ private:
 void IncrementExtraNonce(CBlock* pblock, const CBlockIndex* pindexPrev, unsigned int& nExtraNonce);
 int64_t UpdateTime(CBlockHeader* pblock, const Consensus::Params& consensusParams, const CBlockIndex* pindexPrev);
 
-int GenerateAipgs(bool fGenerate, int nThreads, const CChainParams& chainparams);
-#endif // AIPG_MINER_H
+int GenerateEsas(bool fGenerate, int nThreads, const CChainParams& chainparams);
+#endif // ESA_MINER_H

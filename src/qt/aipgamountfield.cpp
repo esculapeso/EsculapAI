@@ -1,12 +1,12 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "aipgamountfield.h"
+#include "esaamountfield.h"
 
-#include "aipgunits.h"
+#include "esaunits.h"
 #include "guiconstants.h"
 #include "qvaluecombobox.h"
 #include "platformstyle.h"
@@ -32,7 +32,7 @@ class AmountSpinBox: public QAbstractSpinBox
 public:
     explicit AmountSpinBox(QWidget *parent):
         QAbstractSpinBox(parent),
-        currentUnit(AipgUnits::aipg),
+        currentUnit(EsaUnits::esa),
         singleStep(100000), // satoshis
         assetUnit(-1)
     {
@@ -57,7 +57,7 @@ public:
         CAmount val = parse(input, &valid);
         if(valid)
         {
-            input = AipgUnits::format(currentUnit, val, false, AipgUnits::separatorAlways, assetUnit);
+            input = EsaUnits::format(currentUnit, val, false, EsaUnits::separatorAlways, assetUnit);
             lineEdit()->setText(input);
         }
     }
@@ -69,7 +69,7 @@ public:
 
     void setValue(const CAmount& value)
     {
-        lineEdit()->setText(AipgUnits::format(currentUnit, value, false, AipgUnits::separatorAlways, assetUnit));
+        lineEdit()->setText(EsaUnits::format(currentUnit, value, false, EsaUnits::separatorAlways, assetUnit));
         Q_EMIT valueChanged();
     }
 
@@ -78,7 +78,7 @@ public:
         bool valid = false;
         CAmount val = value(&valid);
         val = val + steps * singleStep;
-        val = qMin(qMax(val, CAmount(0)), AipgUnits::maxMoney());
+        val = qMin(qMax(val, CAmount(0)), EsaUnits::maxMoney());
         setValue(val);
     }
 
@@ -125,9 +125,9 @@ public:
             const QFontMetrics fm(fontMetrics());
             int h = lineEdit()->minimumSizeHint().height();
 			#ifndef QTversionPreFiveEleven
-            	int w = fm.horizontalAdvance(AipgUnits::format(AipgUnits::aipg, AipgUnits::maxMoney(), false, AipgUnits::separatorAlways, assetUnit));
+            	int w = fm.horizontalAdvance(EsaUnits::format(EsaUnits::esa, EsaUnits::maxMoney(), false, EsaUnits::separatorAlways, assetUnit));
 			#else
-				int w = fm.width(AipgUnits::format(AipgUnits::aipg, AipgUnits::maxMoney(), false, AipgUnits::separatorAlways, assetUnit));
+				int w = fm.width(EsaUnits::format(EsaUnits::esa, EsaUnits::maxMoney(), false, EsaUnits::separatorAlways, assetUnit));
 			#endif
             w += 2; // cursor blinking space
 
@@ -171,14 +171,14 @@ private:
         // Update parsing function to work with asset parsing units
         bool valid = false;
         if (assetUnit >= 0) {
-            valid = AipgUnits::assetParse(assetUnit, text, &val);
+            valid = EsaUnits::assetParse(assetUnit, text, &val);
         }
         else
-            valid = AipgUnits::parse(currentUnit, text, &val);
+            valid = EsaUnits::parse(currentUnit, text, &val);
 
         if(valid)
         {
-            if(val < 0 || val > AipgUnits::maxMoney())
+            if(val < 0 || val > EsaUnits::maxMoney())
                 valid = false;
         }
         if(valid_out)
@@ -216,7 +216,7 @@ protected:
         {
             if(val > 0)
                 rv |= StepDownEnabled;
-            if(val < AipgUnits::maxMoney())
+            if(val < EsaUnits::maxMoney())
                 rv |= StepUpEnabled;
         }
         return rv;
@@ -226,9 +226,9 @@ Q_SIGNALS:
     void valueChanged();
 };
 
-#include "aipgamountfield.moc"
+#include "esaamountfield.moc"
 
-AipgAmountField::AipgAmountField(QWidget *parent) :
+EsaAmountField::EsaAmountField(QWidget *parent) :
     QWidget(parent),
     amount(0)
 {
@@ -240,7 +240,7 @@ AipgAmountField::AipgAmountField(QWidget *parent) :
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->addWidget(amount);
     unit = new QValueComboBox();
-    unit->setModel(new AipgUnits(this));
+    unit->setModel(new EsaUnits(this));
     layout->addWidget(unit);
     layout->addStretch(1);
     layout->setContentsMargins(0,0,0,0);
@@ -259,19 +259,19 @@ AipgAmountField::AipgAmountField(QWidget *parent) :
 
 }
 
-void AipgAmountField::clear()
+void EsaAmountField::clear()
 {
     amount->clear();
     unit->setCurrentIndex(0);
 }
 
-void AipgAmountField::setEnabled(bool fEnabled)
+void EsaAmountField::setEnabled(bool fEnabled)
 {
     amount->setEnabled(fEnabled);
     unit->setEnabled(fEnabled);
 }
 
-bool AipgAmountField::validate()
+bool EsaAmountField::validate()
 {
     bool valid = false;
     value(&valid);
@@ -279,7 +279,7 @@ bool AipgAmountField::validate()
     return valid;
 }
 
-void AipgAmountField::setValid(bool valid)
+void EsaAmountField::setValid(bool valid)
 {
     if (valid) {
             amount->setStyleSheet("");
@@ -288,7 +288,7 @@ void AipgAmountField::setValid(bool valid)
     }
 }
 
-bool AipgAmountField::eventFilter(QObject *object, QEvent *event)
+bool EsaAmountField::eventFilter(QObject *object, QEvent *event)
 {
     if (event->type() == QEvent::FocusIn)
     {
@@ -298,45 +298,45 @@ bool AipgAmountField::eventFilter(QObject *object, QEvent *event)
     return QWidget::eventFilter(object, event);
 }
 
-QWidget *AipgAmountField::setupTabChain(QWidget *prev)
+QWidget *EsaAmountField::setupTabChain(QWidget *prev)
 {
     QWidget::setTabOrder(prev, amount);
     QWidget::setTabOrder(amount, unit);
     return unit;
 }
 
-CAmount AipgAmountField::value(bool *valid_out) const
+CAmount EsaAmountField::value(bool *valid_out) const
 {
     return amount->value(valid_out);
 }
 
-void AipgAmountField::setValue(const CAmount& value)
+void EsaAmountField::setValue(const CAmount& value)
 {
     amount->setValue(value);
 }
 
-void AipgAmountField::setReadOnly(bool fReadOnly)
+void EsaAmountField::setReadOnly(bool fReadOnly)
 {
     amount->setReadOnly(fReadOnly);
 }
 
-void AipgAmountField::unitChanged(int idx)
+void EsaAmountField::unitChanged(int idx)
 {
     // Use description tooltip for current unit for the combobox
     unit->setToolTip(unit->itemData(idx, Qt::ToolTipRole).toString());
 
     // Determine new unit ID
-    int newUnit = unit->itemData(idx, AipgUnits::UnitRole).toInt();
+    int newUnit = unit->itemData(idx, EsaUnits::UnitRole).toInt();
 
     amount->setDisplayUnit(newUnit);
 }
 
-void AipgAmountField::setDisplayUnit(int newUnit)
+void EsaAmountField::setDisplayUnit(int newUnit)
 {
     unit->setValue(newUnit);
 }
 
-void AipgAmountField::setSingleStep(const CAmount& step)
+void EsaAmountField::setSingleStep(const CAmount& step)
 {
     amount->setSingleStep(step);
 }
@@ -407,7 +407,7 @@ bool AssetAmountField::eventFilter(QObject *object, QEvent *event)
 
 CAmount AssetAmountField::value(bool *valid_out) const
 {
-    return amount->value(valid_out) * AipgUnits::factorAsset(8 - assetUnit);
+    return amount->value(valid_out) * EsaUnits::factorAsset(8 - assetUnit);
 }
 
 void AssetAmountField::setValue(const CAmount& value)

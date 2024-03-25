@@ -1,12 +1,12 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_SYNC_H
-#define AIPG_SYNC_H
+#ifndef ESA_SYNC_H
+#define ESA_SYNC_H
 
 #include "threadsafety.h"
 
@@ -288,4 +288,4 @@ public:
     }
 };
 
-#endif // AIPG_SYNC_H
+#endif // ESA_SYNC_H

@@ -1,12 +1,12 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2017 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_WALLET_INIT_H
-#define AIPG_WALLET_INIT_H
+#ifndef ESA_WALLET_INIT_H
+#define ESA_WALLET_INIT_H
 
 #include <string>
 
@@ -42,4 +42,4 @@ void StopWallets();
 //! Close all wallets.
 void CloseWallets();
 
-#endif // AIPG_WALLET_INIT_H
+#endif // ESA_WALLET_INIT_H

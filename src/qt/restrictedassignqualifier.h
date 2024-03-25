@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_QT_ASSIGNQUALIFIER_H
-#define AIPG_QT_ASSIGNQUALIFIER_H
+#ifndef ESA_QT_ASSIGNQUALIFIER_H
+#define ESA_QT_ASSIGNQUALIFIER_H
 
 #include "amount.h"
 
@@ -64,4 +64,4 @@ private Q_SLOTS:
     void changeAddressChanged(int);
 };
 
-#endif // AIPG_QT_ASSIGNQUALIFIER_H
+#endif // ESA_QT_ASSIGNQUALIFIER_H

@@ -1,12 +1,12 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_VALIDATIONINTERFACE_H
-#define AIPG_VALIDATIONINTERFACE_H
+#ifndef ESA_VALIDATIONINTERFACE_H
+#define ESA_VALIDATIONINTERFACE_H
 
 #include <memory>
 
@@ -115,4 +115,4 @@ public:
 
 CMainSignals& GetMainSignals();
 
-#endif // AIPG_VALIDATIONINTERFACE_H
+#endif // ESA_VALIDATIONINTERFACE_H

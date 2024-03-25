@@ -34,27 +34,27 @@ RUN apt-get update && \
 	apt-get clean
 
 
-#Build Aipg from source
-COPY . /home/aipg/build/Aipg/
-WORKDIR /home/aipg/build/Aipg
+#Build Esa from source
+COPY . /home/esa/build/Esa/
+WORKDIR /home/esa/build/Esa
 RUN ./autogen.sh && ./configure --disable-tests --with-gui=no && make
 
 FROM base AS final
 
 #Add our service account user
-RUN useradd -ms /bin/bash aipg && \
-	mkdir /var/lib/aipg && \
-	chown aipg:aipg /var/lib/aipg && \
-	ln -s /var/lib/aipg /home/aipg/.aipg && \
-	chown -h aipg:aipg /home/aipg/.aipg
+RUN useradd -ms /bin/bash esa && \
+	mkdir /var/lib/esa && \
+	chown esa:esa /var/lib/esa && \
+	ln -s /var/lib/esa /home/esa/.esa && \
+	chown -h esa:esa /home/esa/.esa
 
-VOLUME /var/lib/aipg
+VOLUME /var/lib/esa
 
 #Copy the compiled binaries from the build
-COPY --from=build /home/aipg/build/Aipg/src/esad /usr/local/bin/esad
-COPY --from=build /home/aipg/build/Aipg/src/aipg-cli /usr/local/bin/aipg-cli
+COPY --from=build /home/esa/build/Esa/src/esad /usr/local/bin/esad
+COPY --from=build /home/esa/build/Esa/src/esa-cli /usr/local/bin/esa-cli
 
-WORKDIR /home/aipg
-USER aipg
+WORKDIR /home/esa
+USER esa
 
-CMD /usr/local/bin/esad -datadir=/var/lib/aipg -printtoconsole -onlynet=ipv4
+CMD /usr/local/bin/esad -datadir=/var/lib/esa -printtoconsole -onlynet=ipv4

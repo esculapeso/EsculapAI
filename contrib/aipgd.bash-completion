@@ -1,6 +1,6 @@
-# bash programmable completion for esad(1) and aipg-qt(1)
+# bash programmable completion for esad(1) and esa-qt(1)
 # Copyright (c) 2012-2016 The Bitcoin Core developers
-# Copyright (c) 2017-2019 The AIPG Core developers
+# Copyright (c) 2017-2019 The ESA Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -46,7 +46,7 @@ _esad() {
             ;;
     esac
 } &&
-complete -F _esad esad aipg-qt
+complete -F _esad esad esa-qt
 
 # Local variables:
 # mode: shell-script

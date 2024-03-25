@@ -64,12 +64,12 @@
         <translation>Ontvanger adresse</translation>
     </message>
     <message>
-        <source>These are your Aipg addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Hierdie is die adresse vanwaar u Aipg betalings stuur. U moet altyd die bedrag en die adres van die ontvanger nagaan voordat u enige munte stuur.</translation>
+        <source>These are your Esa addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Hierdie is die adresse vanwaar u Esa betalings stuur. U moet altyd die bedrag en die adres van die ontvanger nagaan voordat u enige munte stuur.</translation>
     </message>
     <message>
-        <source>These are your Aipg addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Hierdie is die adresse waar u Aipg sal ontvang. Ons beveel aan dat u 'n nuwe adres kies vir elke transaksie</translation>
+        <source>These are your Esa addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Hierdie is die adresse waar u Esa sal ontvang. Ons beveel aan dat u 'n nuwe adres kies vir elke transaksie</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -170,8 +170,8 @@
         <translation>Bevestig dat die beursie gekodifiseer is</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Aipg&lt;/b&gt;!</source>
-        <translation>Waarskuwing: Indien u die beursie kodifiseer en u vergeet u wagwoord &lt;b&gt;VERLOOR U AL U Aipg&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Esa&lt;/b&gt;!</source>
+        <translation>Waarskuwing: Indien u die beursie kodifiseer en u vergeet u wagwoord &lt;b&gt;VERLOOR U AL U Esa&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -230,7 +230,7 @@
     </message>
 </context>
 <context>
-    <name>AipgGUI</name>
+    <name>EsaGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Teken &amp;boodskap...</translation>
@@ -332,8 +332,8 @@
         <translation>Besig met herindeksering van blokke op hardeskyf...</translation>
     </message>
     <message>
-        <source>Send coins to a Aipg address</source>
-        <translation>Stuur munte na 'n Aipg adres</translation>
+        <source>Send coins to a Esa address</source>
+        <translation>Stuur munte na 'n Esa adres</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -352,8 +352,8 @@
         <translation>Maak ontfouting en diagnostiese konsole oop</translation>
     </message>
     <message>
-        <source>Aipg</source>
-        <translation>Aipg</translation>
+        <source>Esa</source>
+        <translation>Esa</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -380,12 +380,12 @@
         <translation>Kodifiseer die private sleutes wat aan jou beursie gekoppel is.</translation>
     </message>
     <message>
-        <source>Sign messages with your Aipg addresses to prove you own them</source>
-        <translation>Onderteken boodskappe met u Aipg adresse om u eienaarskap te bewys</translation>
+        <source>Sign messages with your Esa addresses to prove you own them</source>
+        <translation>Onderteken boodskappe met u Esa adresse om u eienaarskap te bewys</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Aipg addresses</source>
-        <translation>Verifieër boodskappe om seker te maak dat dit met die gespesifiseerde Aipg adresse</translation>
+        <source>Verify messages to ensure they were signed with specified Esa addresses</source>
+        <translation>Verifieër boodskappe om seker te maak dat dit met die gespesifiseerde Esa adresse</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -400,8 +400,8 @@
         <translation>Orebalk</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and aipg: URIs)</source>
-        <translation>Versoek betalings (genereer QR-kodes en aipg: URI's)</translation>
+        <source>Request payments (generates QR codes and esa: URIs)</source>
+        <translation>Versoek betalings (genereer QR-kodes en esa: URI's)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -412,8 +412,8 @@
         <translation>Vertoon die lys van gebruikte ontvangers-adresse en etikette</translation>
     </message>
     <message>
-        <source>Open a aipg: URI or payment request</source>
-        <translation>Skep 'n aipg: URI of betalingsversoek</translation>
+        <source>Open a esa: URI or payment request</source>
+        <translation>Skep 'n esa: URI of betalingsversoek</translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -1012,10 +1012,10 @@
     </message>
     </context>
 <context>
-    <name>aipg-core</name>
+    <name>esa-core</name>
     <message>
-        <source>Aipg Core</source>
-        <translation>Aipg Kern</translation>
+        <source>Esa Core</source>
+        <translation>Esa Kern</translation>
     </message>
     <message>
         <source>Information</source>

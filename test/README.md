@@ -6,10 +6,10 @@ etc.
 There are currently two sets of tests in this directory:
 
 - [functional](/test/functional) which test the functionality of 
-esad and aipg-qt by interacting with them through the RPC and P2P
+esad and esa-qt by interacting with them through the RPC and P2P
 interfaces.
-- [util](test/util) which tests the aipg utilities, currently only
-aipg-tx.
+- [util](test/util) which tests the esa utilities, currently only
+esa-tx.
 
 The util tests are run as part of `make check` target. The functional
 tests are run by the travis continuous build process whenever a pull
@@ -177,7 +177,7 @@ Note: gdb attach step may require `sudo`
 
 ### Util tests
 
-Util tests can be run locally by running `test/util/aipg-util-test.py`. 
+Util tests can be run locally by running `test/util/esa-util-test.py`. 
 Use the `-v` option for verbose output.
 
 # Writing functional tests

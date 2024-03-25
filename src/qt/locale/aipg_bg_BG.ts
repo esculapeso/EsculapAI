@@ -64,11 +64,11 @@
         <translation>Адрес за получаване</translation>
     </message>
     <message>
-        <source>These are your Aipg addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Esa addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>Тези са вашите Биткойн адреси за изпращане на монети. Винаги проверявайте количеството и получаващия адрес преди изпращане. </translation>
     </message>
     <message>
-        <source>These are your Aipg addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your Esa addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>Това са вашите Биткойн адреси за получаване на монети. Препоръчително е да ползвате нов адрес на всяка транзакция.</translation>
     </message>
     <message>
@@ -174,7 +174,7 @@
     </message>
 </context>
 <context>
-    <name>AipgGUI</name>
+    <name>EsaGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Подпиши съобщение...</translation>
@@ -420,9 +420,9 @@
     </message>
     </context>
 <context>
-    <name>aipg-core</name>
+    <name>esa-core</name>
     <message>
-        <source>Aipg Core</source>
+        <source>Esa Core</source>
         <translation>Биткойн ядро</translation>
     </message>
     </context>

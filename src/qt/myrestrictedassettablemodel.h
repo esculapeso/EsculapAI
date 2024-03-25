@@ -1,4 +1,4 @@
-#include "aipgunits.h"
+#include "esaunits.h"
 
 #include <QAbstractTableModel>
 #include <QStringList>
@@ -53,7 +53,7 @@ public:
                 TxPlainTextRole,
         /** Unprocessed icon */
                 RawDecorationRole,
-        /** aipg or name of an asset */
+        /** esa or name of an asset */
                 AssetNameRole,
     };
 

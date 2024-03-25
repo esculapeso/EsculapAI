@@ -3,14 +3,14 @@ Jenkinsfile
 *.tar.gz
 
 *.exe
-src/aipg
+src/esa
 src/esad
-src/aipg-cli
-src/aipg-tx
-src/test/test_aipg
-src/test/test_aipg_fuzzy
-src/test/test_aipg_hash
-src/qt/test/test_aipg-qt
+src/esa-cli
+src/esa-tx
+src/test/test_esa
+src/test/test_esa_fuzzy
+src/test/test_esa_hash
+src/qt/test/test_esa-qt
 .vscode
 output.txt
 
@@ -35,8 +35,8 @@ config.log
 config.status
 configure
 libtool
-src/config/aipg-config.h
-src/config/aipg-config.h.in
+src/config/esa-config.h
+src/config/esa-config.h.in
 src/config/stamp-h1
 share/setup.nsi
 share/qt/Info.plist
@@ -83,12 +83,12 @@ src/qt/test/moc*.cpp
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-aipg-qt
-Aipg-Qt.app
+esa-qt
+Esa-Qt.app
 
 # Unit-tests
 Makefile.test
-aipg-qt_test
+esa-qt_test
 
 # Resources cpp
 qrc_*.cpp
@@ -101,7 +101,7 @@ build
 *.gcno
 *.gcda
 /*.info
-test_aipg.coverage/
+test_esa.coverage/
 total.coverage/
 coverage_percent.txt
 
@@ -116,7 +116,7 @@ test/cache/*
 
 /doc/doxygen/
 
-libaipgconsensus.pc
+libesaconsensus.pc
 contrib/devtools/split-debug.sh
 .idea
 cmake-build-debug

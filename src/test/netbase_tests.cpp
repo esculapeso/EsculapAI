@@ -1,11 +1,11 @@
 // Copyright (c) 2012-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "netbase.h"
-#include "test/test_aipg.h"
+#include "test/test_esa.h"
 #include "utilstrencodings.h"
 
 #include <string>
@@ -90,10 +90,10 @@ BOOST_FIXTURE_TEST_SUITE(netbase_tests, BasicTestingSetup)
     {
         BOOST_TEST_MESSAGE("Running NetBase SplitHost Test");
 
-        BOOST_CHECK(TestSplitHost("www.aipgcoin.net", "www.aipgcoin.net", -1));
-        BOOST_CHECK(TestSplitHost("[www.aipgcoin.net]", "www.aipgcoin.net", -1));
-        BOOST_CHECK(TestSplitHost("www.aipgcoin.net:80", "www.aipgcoin.net", 80));
-        BOOST_CHECK(TestSplitHost("[www.aipgcoin.net]:80", "www.aipgcoin.net", 80));
+        BOOST_CHECK(TestSplitHost("www.esacoin.net", "www.esacoin.net", -1));
+        BOOST_CHECK(TestSplitHost("[www.esacoin.net]", "www.esacoin.net", -1));
+        BOOST_CHECK(TestSplitHost("www.esacoin.net:80", "www.esacoin.net", 80));
+        BOOST_CHECK(TestSplitHost("[www.esacoin.net]:80", "www.esacoin.net", 80));
         BOOST_CHECK(TestSplitHost("127.0.0.1", "127.0.0.1", -1));
         BOOST_CHECK(TestSplitHost("127.0.0.1:8767", "127.0.0.1", 8767));
         BOOST_CHECK(TestSplitHost("[127.0.0.1]", "127.0.0.1", -1));

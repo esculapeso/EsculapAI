@@ -13,7 +13,7 @@ can be found in the contrib/init folder.
 Service User
 ---------------------------------
 
-All three Linux startup configurations assume the existence of a "aipg" user
+All three Linux startup configurations assume the existence of a "esa" user
 and group.  They must be created before attempting to use these scripts.
 The OS X configuration assumes esad will be set up for the current user.
 
@@ -44,7 +44,7 @@ This allows for running esad without having to do any manual configuration.
 relative to the data directory. `wallet` *only* supports relative paths.
 
 For an example configuration file that describes the configuration settings,
-see `contrib/debian/examples/aipg.conf`.
+see `contrib/debian/examples/esa.conf`.
 
 Paths
 ---------------------------------
@@ -54,29 +54,29 @@ Paths
 All three configurations assume several paths that might need to be adjusted.
 
 Binary:              `/usr/bin/esad`  
-Configuration file:  `/etc/aipg/aipg.conf`  
+Configuration file:  `/etc/esa/esa.conf`  
 Data directory:      `/var/lib/esad`  
 PID file:            `/var/run/esad/esad.pid` (OpenRC and Upstart) or `/var/lib/esad/esad.pid` (systemd)  
 Lock file:           `/var/lock/subsys/esad` (CentOS)  
 
 The configuration file, PID directory (if applicable) and data directory
-should all be owned by the aipg user and group.  It is advised for security
+should all be owned by the esa user and group.  It is advised for security
 reasons to make the configuration file and data directory only readable by the
-aipg user and group.  Access to aipg-cli and other esad rpc clients
+esa user and group.  Access to esa-cli and other esad rpc clients
 can then be controlled by group membership.
 
 NOTE: When using the systemd .service file, the creation of the aforementioned
 directories and the setting of their permissions is automatically handled by
-systemd. Directories are given a permission of 710, giving the aipgcoin group
+systemd. Directories are given a permission of 710, giving the esacoin group
 access to files under it _if_ the files themselves give permission to the
-aipgcoin group to do so (e.g. when `-sysperms` is specified). This does not allow
+esacoin group to do so (e.g. when `-sysperms` is specified). This does not allow
 for the listing of files under the directory.
 
 NOTE: It is not currently possible to override `datadir` in
-`/etc/aipg/aipg.conf` with the current systemd, OpenRC, and Upstart init
+`/etc/esa/esa.conf` with the current systemd, OpenRC, and Upstart init
 files out-of-the-box. This is because the command line options specified in the
 init files take precedence over the configurations in
-`/etc/aipg/aipg.conf`. However, some init systems have their own
+`/etc/esa/esa.conf`. However, some init systems have their own
 configuration mechanisms that would allow for overriding the command line
 options specified in the init files (e.g. setting `ESAD_DATADIR` for
 OpenRC).
@@ -84,9 +84,9 @@ OpenRC).
 ### macOS
 
 Binary:              `/usr/local/bin/esad`  
-Configuration file:  `~/Library/Application Support/AIPG/aipg.conf`  
-Data directory:      `~/Library/Application Support/AIPG`  
-Lock file:           `~/Library/Application Support/AIPG/.lock`  
+Configuration file:  `~/Library/Application Support/ESA/esa.conf`  
+Data directory:      `~/Library/Application Support/ESA`  
+Lock file:           `~/Library/Application Support/ESA/.lock`  
 
 Installing Service Configuration
 -----------------------------------
@@ -125,14 +125,14 @@ setting the ESAD and FLAGS environment variables in the file
 
 ### Mac OS X
 
-Copy org.aipg.esad.plist into ~/Library/LaunchAgents. Load the launch agent by
-running `launchctl load ~/Library/LaunchAgents/org.aipg.esad.plist`.
+Copy org.esa.esad.plist into ~/Library/LaunchAgents. Load the launch agent by
+running `launchctl load ~/Library/LaunchAgents/org.esa.esad.plist`.
 
 This Launch Agent will cause esad to start whenever the user logs in.
 
 NOTE: This approach is intended for those wanting to run esad as the current user.
-You will need to modify org.aipg.esad.plist if you intend to use it as a
-Launch Daemon with a dedicated aipg user.
+You will need to modify org.esa.esad.plist if you intend to use it as a
+Launch Daemon with a dedicated esa user.
 
 Auto-respawn
 -----------------------------------

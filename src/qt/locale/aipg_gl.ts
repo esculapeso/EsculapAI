@@ -66,7 +66,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>AipgGUI</name>
+    <name>EsaGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>&amp;Asinar mensaxe...</translation>
@@ -132,8 +132,8 @@
         <translation>Reindexando bloques no disco...</translation>
     </message>
     <message>
-        <source>Send coins to a Aipg address</source>
-        <translation>Enviar moedas a unha dirección Aipg</translation>
+        <source>Send coins to a Esa address</source>
+        <translation>Enviar moedas a unha dirección Esa</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -156,8 +156,8 @@
         <translation>&amp;Verificar mensaxe...</translation>
     </message>
     <message>
-        <source>Aipg</source>
-        <translation>Aipg</translation>
+        <source>Esa</source>
+        <translation>Esa</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -184,12 +184,12 @@
         <translation>Encriptar as claves privadas que pertencen ao teu moedeiro</translation>
     </message>
     <message>
-        <source>Sign messages with your Aipg addresses to prove you own them</source>
-        <translation>Asina mensaxes coas túas direccións Aipg para probar que te pertencen</translation>
+        <source>Sign messages with your Esa addresses to prove you own them</source>
+        <translation>Asina mensaxes coas túas direccións Esa para probar que te pertencen</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Aipg addresses</source>
-        <translation>Verificar mensaxes para asegurar que foron asinados con direccións Aipg dadas.</translation>
+        <source>Verify messages to ensure they were signed with specified Esa addresses</source>
+        <translation>Verificar mensaxes para asegurar que foron asinados con direccións Esa dadas.</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -208,8 +208,8 @@
         <translation>Barra de ferramentas</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and aipg: URIs)</source>
-        <translation>Solicitar pagos (xenera códigos QR e aipg: URIs)</translation>
+        <source>Request payments (generates QR codes and esa: URIs)</source>
+        <translation>Solicitar pagos (xenera códigos QR e esa: URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -220,8 +220,8 @@
         <translation>Amosar a listaxe de etiquetas e direccións para recibir empregadas</translation>
     </message>
     <message>
-        <source>Open a aipg: URI or payment request</source>
-        <translation>Abrir un aipg: URI ou solicitude de pago</translation>
+        <source>Open a esa: URI or payment request</source>
+        <translation>Abrir un esa: URI ou solicitude de pago</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -468,8 +468,8 @@
         <translation>Moedeiro</translation>
     </message>
     <message>
-        <source>Automatically open the Aipg client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abrir automáticamente o porto do cliente Aipg no router. Esto so funciona se o teu router soporta UPnP e está habilitado.</translation>
+        <source>Automatically open the Esa client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abrir automáticamente o porto do cliente Esa no router. Esto so funciona se o teu router soporta UPnP e está habilitado.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -547,8 +547,8 @@
         <translation>Formulario</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Aipg network after a connection is established, but this process has not completed yet.</source>
-        <translation>A información amosada por estar desactualizada. O teu moedeiro sincronízase automáticamente coa rede Aipg despois de que se estableza unha conexión, pero este proceso non está todavía rematado.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Esa network after a connection is established, but this process has not completed yet.</source>
+        <translation>A información amosada por estar desactualizada. O teu moedeiro sincronízase automáticamente coa rede Esa despois de que se estableza unha conexión, pero este proceso non está todavía rematado.</translation>
     </message>
     <message>
         <source>Your current spendable balance</source>
@@ -929,8 +929,8 @@
         <translation>Copiar a sinatura actual ao portapapeis do sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Aipg address</source>
-        <translation>Asina a mensaxe para probar que posees esta dirección Aipg</translation>
+        <source>Sign the message to prove you own this Esa address</source>
+        <translation>Asina a mensaxe para probar que posees esta dirección Esa</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -949,8 +949,8 @@
         <translation>&amp;Verificar Mensaxe</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Aipg address</source>
-        <translation>Verificar a mensaxe para asegurar que foi asinada coa dirección Aipg especificada</translation>
+        <source>Verify the message to ensure it was signed with the specified Esa address</source>
+        <translation>Verificar a mensaxe para asegurar que foi asinada coa dirección Esa especificada</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -1004,7 +1004,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>aipg-core</name>
+    <name>esa-core</name>
     <message>
         <source>Options:</source>
         <translation>Opcións:</translation>
@@ -1030,8 +1030,8 @@
         <translation>Executar no fondo como un demo e aceptar comandos</translation>
     </message>
     <message>
-        <source>Aipg Core</source>
-        <translation>Core de Aipg</translation>
+        <source>Esa Core</source>
+        <translation>Core de Esa</translation>
     </message>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>

@@ -1,14 +1,14 @@
 // Copyright (c) 2011-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/aipg-config.h"
+#include "config/esa-config.h"
 #endif
 
-#include "aipggui.h"
+#include "esagui.h"
 
 #include "chainparams.h"
 #include "clientmodel.h"
@@ -100,7 +100,7 @@ static void InitMessage(const std::string &message)
  */
 static std::string Translate(const char* psz)
 {
-    return QCoreApplication::translate("aipg-core", psz).toStdString();
+    return QCoreApplication::translate("esa-core", psz).toStdString();
 }
 
 static QString GetLangTerritory()
@@ -147,11 +147,11 @@ static void initTranslations(QTranslator &qtTranslatorBase, QTranslator &qtTrans
     if (qtTranslator.load("qt_" + lang_territory, QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
         QApplication::installTranslator(&qtTranslator);
 
-    // Load e.g. aipg_de.qm (shortcut "de" needs to be defined in aipg.qrc)
+    // Load e.g. esa_de.qm (shortcut "de" needs to be defined in esa.qrc)
     if (translatorBase.load(lang, ":/translations/"))
         QApplication::installTranslator(&translatorBase);
 
-    // Load e.g. aipg_de_DE.qm (shortcut "de_DE" needs to be defined in aipg.qrc)
+    // Load e.g. esa_de_DE.qm (shortcut "de_DE" needs to be defined in esa.qrc)
     if (translator.load(lang_territory, ":/translations/"))
         QApplication::installTranslator(&translator);
 }
@@ -181,11 +181,11 @@ void DebugMessageHandler(QtMsgType type, const QMessageLogContext& context, cons
 /** Class encapsulating OLDNAMENEEDKEEP__Core startup and shutdown.
  * Allows running startup and shutdown in a different thread from the UI thread.
  */
-class AipgCore: public QObject
+class EsaCore: public QObject
 {
     Q_OBJECT
 public:
-    explicit AipgCore();
+    explicit EsaCore();
     /** Basic initialization, before starting initialization/shutdown thread.
      * Return true on success.
      */
@@ -209,13 +209,13 @@ private:
     void handleRunawayException(const std::exception *e);
 };
 
-/** Main aipg application object */
-class AipgApplication: public QApplication
+/** Main esa application object */
+class EsaApplication: public QApplication
 {
     Q_OBJECT
 public:
-    explicit AipgApplication(int &argc, char **argv);
-    ~AipgApplication();
+    explicit EsaApplication(int &argc, char **argv);
+    ~EsaApplication();
 
 #ifdef ENABLE_WALLET
     /// Create payment server
@@ -238,7 +238,7 @@ public:
     /// Get process return value
     int getReturnValue() const { return returnValue; }
 
-    /// Get window identifier of QMainWindow (AipgGUI)
+    /// Get window identifier of QMainWindow (EsaGUI)
     WId getMainWinId() const;
 
     OptionsModel* getOptionsModel() const { return optionsModel; }
@@ -260,7 +260,7 @@ private:
     QThread *coreThread;
     OptionsModel *optionsModel;
     ClientModel *clientModel;
-    AipgGUI *window;
+    EsaGUI *window;
     QTimer *pollShutdownTimer;
 #ifdef ENABLE_WALLET
     PaymentServer* paymentServer;
@@ -273,20 +273,20 @@ private:
     void startThread();
 };
 
-#include "aipg.moc"
+#include "esa.moc"
 
-AipgCore::AipgCore():
+EsaCore::EsaCore():
     QObject()
 {
 }
 
-void AipgCore::handleRunawayException(const std::exception *e)
+void EsaCore::handleRunawayException(const std::exception *e)
 {
     PrintExceptionContinue(e, "Runaway exception");
     Q_EMIT runawayException(QString::fromStdString(GetWarnings("gui")));
 }
 
-bool AipgCore::baseInitialize()
+bool EsaCore::baseInitialize()
 {
     if (!AppInitBasicSetup())
     {
@@ -307,7 +307,7 @@ bool AipgCore::baseInitialize()
     return true;
 }
 
-void AipgCore::initialize()
+void EsaCore::initialize()
 {
     try
     {
@@ -321,7 +321,7 @@ void AipgCore::initialize()
     }
 }
 
-void AipgCore::restart(QStringList args)
+void EsaCore::restart(QStringList args)
 {
     static bool executing_restart{false};
 
@@ -348,7 +348,7 @@ void AipgCore::restart(QStringList args)
     }
 }
 
-void AipgCore::shutdown()
+void EsaCore::shutdown()
 {
     try
     {
@@ -365,7 +365,7 @@ void AipgCore::shutdown()
     }
 }
 
-AipgApplication::AipgApplication(int &argc, char **argv):
+EsaApplication::EsaApplication(int &argc, char **argv):
     QApplication(argc, argv),
     coreThread(0),
     optionsModel(0),
@@ -381,17 +381,17 @@ AipgApplication::AipgApplication(int &argc, char **argv):
     setQuitOnLastWindowClosed(false);
 
     // UI per-platform customization
-    // This must be done inside the AipgApplication constructor, or after it, because
+    // This must be done inside the EsaApplication constructor, or after it, because
     // PlatformStyle::instantiate requires a QApplication
     std::string platformName;
-    platformName = gArgs.GetArg("-uiplatform", AipgGUI::DEFAULT_UIPLATFORM);
+    platformName = gArgs.GetArg("-uiplatform", EsaGUI::DEFAULT_UIPLATFORM);
     platformStyle = PlatformStyle::instantiate(QString::fromStdString(platformName));
     if (!platformStyle) // Fall back to "other" if specified name not found
         platformStyle = PlatformStyle::instantiate("other");
     assert(platformStyle);
 }
 
-AipgApplication::~AipgApplication()
+EsaApplication::~EsaApplication()
 {
     if(coreThread)
     {
@@ -414,20 +414,20 @@ AipgApplication::~AipgApplication()
 }
 
 #ifdef ENABLE_WALLET
-void AipgApplication::createPaymentServer()
+void EsaApplication::createPaymentServer()
 {
     paymentServer = new PaymentServer(this);
 }
 #endif
 
-void AipgApplication::createOptionsModel(bool resetSettings)
+void EsaApplication::createOptionsModel(bool resetSettings)
 {
     optionsModel = new OptionsModel(nullptr, resetSettings);
 }
 
-void AipgApplication::createWindow(const NetworkStyle *networkStyle)
+void EsaApplication::createWindow(const NetworkStyle *networkStyle)
 {
-    window = new AipgGUI(platformStyle, networkStyle, 0);
+    window = new EsaGUI(platformStyle, networkStyle, 0);
     window->setMinimumSize(200,200);
     window->setBaseSize(640,640);
 
@@ -436,7 +436,7 @@ void AipgApplication::createWindow(const NetworkStyle *networkStyle)
     pollShutdownTimer->start(200);
 }
 
-void AipgApplication::createSplashScreen(const NetworkStyle *networkStyle)
+void EsaApplication::createSplashScreen(const NetworkStyle *networkStyle)
 {
     SplashScreen *splash = new SplashScreen(0, networkStyle);
     // We don't hold a direct pointer to the splash screen after creation, but the splash
@@ -446,12 +446,12 @@ void AipgApplication::createSplashScreen(const NetworkStyle *networkStyle)
     connect(this, SIGNAL(requestedShutdown()), splash, SLOT(close()));
 }
 
-void AipgApplication::startThread()
+void EsaApplication::startThread()
 {
     if(coreThread)
         return;
     coreThread = new QThread(this);
-    AipgCore *executor = new AipgCore();
+    EsaCore *executor = new EsaCore();
     executor->moveToThread(coreThread);
 
     /*  communication to and from thread */
@@ -468,20 +468,20 @@ void AipgApplication::startThread()
     coreThread->start();
 }
 
-void AipgApplication::parameterSetup()
+void EsaApplication::parameterSetup()
 {
     InitLogging();
     InitParameterInteraction();
 }
 
-void AipgApplication::requestInitialize()
+void EsaApplication::requestInitialize()
 {
     qDebug() << __func__ << ": Requesting initialize";
     startThread();
     Q_EMIT requestedInitialize();
 }
 
-void AipgApplication::requestShutdown()
+void EsaApplication::requestShutdown()
 {
     // Show a simple window indicating shutdown status
     // Do this first as some of the steps may take some time below,
@@ -508,7 +508,7 @@ void AipgApplication::requestShutdown()
     Q_EMIT requestedShutdown();
 }
 
-void AipgApplication::initializeResult(bool success)
+void EsaApplication::initializeResult(bool success)
 {
     qDebug() << __func__ << ": Initialization result: " << success;
     // Set exit result.
@@ -531,8 +531,8 @@ void AipgApplication::initializeResult(bool success)
         {
             walletModel = new WalletModel(platformStyle, vpwallets[0], optionsModel);
 
-            window->addWallet(AipgGUI::DEFAULT_WALLET, walletModel);
-            window->setCurrentWallet(AipgGUI::DEFAULT_WALLET);
+            window->addWallet(EsaGUI::DEFAULT_WALLET, walletModel);
+            window->setCurrentWallet(EsaGUI::DEFAULT_WALLET);
 
             connect(walletModel, SIGNAL(coinsSent(CWallet*,SendCoinsRecipient,QByteArray)),
                              paymentServer, SLOT(fetchPaymentACK(CWallet*,const SendCoinsRecipient&,QByteArray)));
@@ -552,7 +552,7 @@ void AipgApplication::initializeResult(bool success)
 
 #ifdef ENABLE_WALLET
         // Now that initialization/startup is done, process any command-line
-        // aipg: URIs or payment requests:
+        // esa: URIs or payment requests:
         connect(paymentServer, SIGNAL(receivedPaymentRequest(SendCoinsRecipient)),
                          window, SLOT(handlePaymentRequest(SendCoinsRecipient)));
         connect(window, SIGNAL(receivedURI(QString)),
@@ -576,20 +576,20 @@ void AipgApplication::initializeResult(bool success)
     }
 }
 
-void AipgApplication::shutdownResult(bool success)
+void EsaApplication::shutdownResult(bool success)
 {
     returnValue = success ? EXIT_SUCCESS : EXIT_FAILURE;
     qDebug() << __func__ << ": Shutdown result: " << returnValue;
     quit(); // Exit main loop after shutdown finished
 }
 
-void AipgApplication::handleRunawayException(const QString &message)
+void EsaApplication::handleRunawayException(const QString &message)
 {
-    QMessageBox::critical(0, "Runaway exception", AipgGUI::tr("A fatal error occurred. aipg can no longer continue safely and will quit.") + QString("\n\n") + message);
+    QMessageBox::critical(0, "Runaway exception", EsaGUI::tr("A fatal error occurred. esa can no longer continue safely and will quit.") + QString("\n\n") + message);
     ::exit(EXIT_FAILURE);
 }
 
-WId AipgApplication::getMainWinId() const
+WId EsaApplication::getMainWinId() const
 {
     if (!window)
         return 0;
@@ -597,7 +597,7 @@ WId AipgApplication::getMainWinId() const
     return window->winId();
 }
 
-#ifndef AIPG_QT_TEST
+#ifndef ESA_QT_TEST
 int main(int argc, char *argv[])
 {
     SetupEnvironment();
@@ -615,8 +615,8 @@ int main(int argc, char *argv[])
     QTextCodec::setCodecForCStrings(QTextCodec::codecForTr());
 #endif
 
-    Q_INIT_RESOURCE(aipg);
-    Q_INIT_RESOURCE(aipg_locale);
+    Q_INIT_RESOURCE(esa);
+    Q_INIT_RESOURCE(esa_locale);
 
 #if QT_VERSION > 0x050100
     // Generate high-dpi pixmaps
@@ -636,7 +636,7 @@ int main(int argc, char *argv[])
     QSslConfiguration::setDefaultConfiguration(sslconf);
 #endif
 
-    AipgApplication app(argc, argv);
+    EsaApplication app(argc, argv);
     // Register meta types used for QMetaObject::invokeMethod
     qRegisterMetaType< bool* >();
     //   Need to pass name here as CAmount is a typedef (see http://qt-project.org/doc/qt-5/qmetatype.html#qRegisterMetaType)
@@ -672,7 +672,7 @@ int main(int argc, char *argv[])
     if (!Intro::pickDataDirectory())
         return EXIT_SUCCESS;
 
-    /// 6. Determine availability of data directory and parse aipg.conf
+    /// 6. Determine availability of data directory and parse esa.conf
     /// - Do not call GetDataDir(true) before this step finishes
     if (!fs::is_directory(GetDataDir(false)))
     {
@@ -681,7 +681,7 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
     try {
-        gArgs.ReadConfigFile(gArgs.GetArg("-conf", AIPG_CONF_FILENAME));
+        gArgs.ReadConfigFile(gArgs.GetArg("-conf", ESA_CONF_FILENAME));
     } catch (const std::exception& e) {
         QMessageBox::critical(0, QObject::tr(PACKAGE_NAME),
                               QObject::tr("Error: Cannot parse configuration file: %1. Only use key=value syntax.").arg(e.what()));
@@ -724,7 +724,7 @@ int main(int argc, char *argv[])
         exit(EXIT_SUCCESS);
 
     // Start up the payment server early, too, so impatient users that click on
-    // aipg: links repeatedly have their payment requests routed to this process:
+    // esa: links repeatedly have their payment requests routed to this process:
     app.createPaymentServer();
 #endif
 
@@ -767,7 +767,7 @@ int main(int argc, char *argv[])
         // Perform base initialization before spinning up initialization/shutdown thread
         // This is acceptable because this function only contains steps that are quick to execute,
         // so the GUI thread won't be held up.
-        if (AipgCore::baseInitialize()) {
+        if (EsaCore::baseInitialize()) {
             app.requestInitialize();
 #if defined(Q_OS_WIN) && QT_VERSION >= 0x050000
             WinShutdownMonitor::registerShutdownBlockReason(QObject::tr("%1 didn't yet exit safely...").arg(QObject::tr(PACKAGE_NAME)), (HWND)app.getMainWinId());
@@ -789,4 +789,4 @@ int main(int argc, char *argv[])
     }
     return rv;
 }
-#endif // AIPG_QT_TEST
+#endif // ESA_QT_TEST

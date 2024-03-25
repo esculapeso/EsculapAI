@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 
 env
-if [[ -e /etc/aipg/esad.conf ]]; then
-    source /etc/aipg/esad.conf
-    /home/aipg/esad \
+if [[ -e /etc/esa/esad.conf ]]; then
+    source /etc/esa/esad.conf
+    /home/esa/esad \
       -server=$SERVER \
       -printtoconsole=$PRINTTOCONSOLE \
       -maxconnections=$MAXCONNECTIONS \
@@ -37,7 +37,7 @@ else
     $SERVER_ARG = "-server=$SERVER"
   fi
 
-  /home/aipg/esad \
+  /home/esa/esad \
     $SERVER_ARG \
     -printtoconsole=$PRINTTOCONSOLE \
     -maxconnections=$MAXCONNECTIONS \

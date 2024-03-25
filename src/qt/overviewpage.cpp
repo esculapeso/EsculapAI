@@ -6,7 +6,7 @@
 #include "overviewpage.h"
 #include "ui_overviewpage.h"
 
-#include "aipgunits.h"
+#include "esaunits.h"
 #include "clientmodel.h"
 #include "guiconstants.h"
 #include "guiutil.h"
@@ -45,7 +45,7 @@ class TxViewDelegate : public QAbstractItemDelegate
     Q_OBJECT
 public:
     explicit TxViewDelegate(const PlatformStyle *_platformStyle, QObject *parent=nullptr):
-        QAbstractItemDelegate(parent), unit(AipgUnits::aipg),
+        QAbstractItemDelegate(parent), unit(EsaUnits::esa),
         platformStyle(_platformStyle)
     {
 
@@ -154,7 +154,7 @@ class AssetViewDelegate : public QAbstractItemDelegate
 Q_OBJECT
 public:
     explicit AssetViewDelegate(const PlatformStyle *_platformStyle, QObject *parent=nullptr):
-            QAbstractItemDelegate(parent), unit(AipgUnits::aipg),
+            QAbstractItemDelegate(parent), unit(EsaUnits::esa),
             platformStyle(_platformStyle)
     {
 
@@ -298,7 +298,7 @@ public:
 
 };
 #include "overviewpage.moc"
-#include "aipggui.h"
+#include "esagui.h"
 #include <QFontDatabase>
 
 OverviewPage::OverviewPage(const PlatformStyle *platformStyle, QWidget *parent) :
@@ -367,7 +367,7 @@ OverviewPage::OverviewPage(const PlatformStyle *platformStyle, QWidget *parent) 
 
     /** Update the labels colors */
     ui->assetBalanceLabel->setStyleSheet(STRING_LABEL_COLOR);
-    ui->aipgBalancesLabel->setStyleSheet(STRING_LABEL_COLOR);
+    ui->esaBalancesLabel->setStyleSheet(STRING_LABEL_COLOR);
     ui->labelBalanceText->setStyleSheet(STRING_LABEL_COLOR);
     ui->labelPendingText->setStyleSheet(STRING_LABEL_COLOR);
     ui->labelImmatureText->setStyleSheet(STRING_LABEL_COLOR);
@@ -377,7 +377,7 @@ OverviewPage::OverviewPage(const PlatformStyle *platformStyle, QWidget *parent) 
     ui->recentTransactionsLabel->setStyleSheet(STRING_LABEL_COLOR);
 
     /** Update the labels font */
-    ui->aipgBalancesLabel->setFont(GUIUtil::getTopLabelFont());
+    ui->esaBalancesLabel->setFont(GUIUtil::getTopLabelFont());
     ui->assetBalanceLabel->setFont(GUIUtil::getTopLabelFont());
     ui->recentTransactionsLabel->setFont(GUIUtil::getTopLabelFont());
 
@@ -547,14 +547,14 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     currentWatchOnlyBalance = watchOnlyBalance;
     currentWatchUnconfBalance = watchUnconfBalance;
     currentWatchImmatureBalance = watchImmatureBalance;
-    ui->labelBalance->setText(AipgUnits::formatWithUnit(unit, balance, false, AipgUnits::separatorAlways));
-    ui->labelUnconfirmed->setText(AipgUnits::formatWithUnit(unit, unconfirmedBalance, false, AipgUnits::separatorAlways));
-    ui->labelImmature->setText(AipgUnits::formatWithUnit(unit, immatureBalance, false, AipgUnits::separatorAlways));
-    ui->labelTotal->setText(AipgUnits::formatWithUnit(unit, balance + unconfirmedBalance + immatureBalance, false, AipgUnits::separatorAlways));
-    ui->labelWatchAvailable->setText(AipgUnits::formatWithUnit(unit, watchOnlyBalance, false, AipgUnits::separatorAlways));
-    ui->labelWatchPending->setText(AipgUnits::formatWithUnit(unit, watchUnconfBalance, false, AipgUnits::separatorAlways));
-    ui->labelWatchImmature->setText(AipgUnits::formatWithUnit(unit, watchImmatureBalance, false, AipgUnits::separatorAlways));
-    ui->labelWatchTotal->setText(AipgUnits::formatWithUnit(unit, watchOnlyBalance + watchUnconfBalance + watchImmatureBalance, false, AipgUnits::separatorAlways));
+    ui->labelBalance->setText(EsaUnits::formatWithUnit(unit, balance, false, EsaUnits::separatorAlways));
+    ui->labelUnconfirmed->setText(EsaUnits::formatWithUnit(unit, unconfirmedBalance, false, EsaUnits::separatorAlways));
+    ui->labelImmature->setText(EsaUnits::formatWithUnit(unit, immatureBalance, false, EsaUnits::separatorAlways));
+    ui->labelTotal->setText(EsaUnits::formatWithUnit(unit, balance + unconfirmedBalance + immatureBalance, false, EsaUnits::separatorAlways));
+    ui->labelWatchAvailable->setText(EsaUnits::formatWithUnit(unit, watchOnlyBalance, false, EsaUnits::separatorAlways));
+    ui->labelWatchPending->setText(EsaUnits::formatWithUnit(unit, watchUnconfBalance, false, EsaUnits::separatorAlways));
+    ui->labelWatchImmature->setText(EsaUnits::formatWithUnit(unit, watchImmatureBalance, false, EsaUnits::separatorAlways));
+    ui->labelWatchTotal->setText(EsaUnits::formatWithUnit(unit, watchOnlyBalance + watchUnconfBalance + watchImmatureBalance, false, EsaUnits::separatorAlways));
 
     // only show immature (newly mined) balance if it's non-zero, so as not to complicate things
     // for the non-mining users
@@ -630,7 +630,7 @@ void OverviewPage::setWalletModel(WalletModel *model)
         connect(model, SIGNAL(notifyWatchonlyChanged(bool)), this, SLOT(updateWatchOnlyLabels(bool)));
     }
 
-    // update the display unit, to not use the default ("aipg")
+    // update the display unit, to not use the default ("esa")
     updateDisplayUnit();
 }
 
@@ -679,7 +679,7 @@ void OverviewPage::showAssets()
         ui->assetBalanceLabel->hide();
         ui->labelAssetStatus->hide();
 
-        // This keeps the aipg balance grid from expanding and looking terrible when asset balance is hidden
+        // This keeps the esa balance grid from expanding and looking terrible when asset balance is hidden
         ui->assetVerticalSpaceWidget->show();
         ui->assetVerticalSpaceWidget2->show();
     }

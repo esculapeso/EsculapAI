@@ -23,7 +23,7 @@ don't have test cases for.
 - Avoid wildcard imports where possible
 - Use a module-level docstring to describe what the test is testing, and how it
   is testing it.
-- When subclassing the AipgTestFramwork, place overrides for the
+- When subclassing the EsaTestFramwork, place overrides for the
   `set_test_params()`, `add_options()` and `setup_xxxx()` methods at the top of
   the subclass, then locally-defined helper methods, then the `run_test()` method.
 
@@ -39,7 +39,7 @@ don't have test cases for.
 - Set the `self.setup_clean_chain` variable in `set_test_params()` to control whether
   or not to use the cached data directories. The cached data directories
   contain a 200-block pre-mined blockchain and wallets for four nodes. Each node
-  has 25 mature blocks (25x5000=12500 AIPG) in its wallet.
+  has 25 mature blocks (25x5000=12500 ESA) in its wallet.
 - When calling RPCs with lots of arguments, consider using named keyword
   arguments instead of positional arguments to make the intent of the call
   clear to readers.
@@ -78,7 +78,7 @@ Examples tests are `p2p-accept-block.py`, `p2p-compactblocks.py`.
 ### test-framework modules
 
 #### [test_framework/authproxy.py](test_framework/authproxy.py)
-Taken from the [python-AipgRPC repository](https://github.com/jgarzik/python-AipgRPC).
+Taken from the [python-EsaRPC repository](https://github.com/jgarzik/python-EsaRPC).
 
 #### [test_framework/test_framework.py](test_framework/test_framework.py)
 Base class for functional tests.
@@ -90,10 +90,10 @@ Generally useful functions.
 Basic code to support P2P connectivity to a esad.
 
 #### [test_framework/script.py](test_framework/script.py)
-Utilities for manipulating transaction scripts (originally from python-aipglib)
+Utilities for manipulating transaction scripts (originally from python-esalib)
 
 #### [test_framework/key.py](test_framework/key.py)
-Wrapper around OpenSSL EC_Key (originally from python-aipglib)
+Wrapper around OpenSSL EC_Key (originally from python-esalib)
 
 #### [test_framework/bignum.py](test_framework/bignum.py)
 Helpers for script.py

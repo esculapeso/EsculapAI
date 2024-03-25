@@ -1,6 +1,6 @@
 [Protocol]
-exec=aipg-qt '%u'
-protocol=aipg
+exec=esa-qt '%u'
+protocol=esa
 input=none
 output=none
 helper=true

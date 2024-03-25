@@ -78,7 +78,7 @@
     </message>
 </context>
 <context>
-    <name>AipgGUI</name>
+    <name>EsaGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Semnează &amp;mesajul...</translation>
@@ -144,8 +144,8 @@
         <translation>Deschide &amp;URI...</translation>
     </message>
     <message>
-        <source>Send coins to a Aipg address</source>
-        <translation>Trimite monedele către o adresă Aipg</translation>
+        <source>Send coins to a Esa address</source>
+        <translation>Trimite monedele către o adresă Esa</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -168,8 +168,8 @@
         <translation>&amp;Verifică mesajul...</translation>
     </message>
     <message>
-        <source>Aipg</source>
-        <translation>Aipg</translation>
+        <source>Esa</source>
+        <translation>Esa</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -196,12 +196,12 @@
         <translation>Criptează cheile private care aparțin portofelului tău.</translation>
     </message>
     <message>
-        <source>Sign messages with your Aipg addresses to prove you own them</source>
-        <translation>Semnează mesajele cu adresa ta de Aipg pentru a face dovada că îți aparțin.</translation>
+        <source>Sign messages with your Esa addresses to prove you own them</source>
+        <translation>Semnează mesajele cu adresa ta de Esa pentru a face dovada că îți aparțin.</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Aipg addresses</source>
-        <translation>Verifică mesajele cu scopul de a asigura faptul că au fost semnate cu adresa de Aipg specificată.</translation>
+        <source>Verify messages to ensure they were signed with specified Esa addresses</source>
+        <translation>Verifică mesajele cu scopul de a asigura faptul că au fost semnate cu adresa de Esa specificată.</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -216,12 +216,12 @@
         <translation>&amp;Ajutor</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and aipg: URIs)</source>
-        <translation>Cerere plată (generează coduri QR și aipg: URIs)</translation>
+        <source>Request payments (generates QR codes and esa: URIs)</source>
+        <translation>Cerere plată (generează coduri QR și esa: URIs)</translation>
     </message>
     <message>
-        <source>Open a aipg: URI or payment request</source>
-        <translation>Deschide un aipg: URI sau cerere de plată</translation>
+        <source>Open a esa: URI or payment request</source>
+        <translation>Deschide un esa: URI sau cerere de plată</translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -748,10 +748,10 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>aipg-core</name>
+    <name>esa-core</name>
     <message>
-        <source>Aipg Core</source>
-        <translation>Aipg Core</translation>
+        <source>Esa Core</source>
+        <translation>Esa Core</translation>
     </message>
     <message>
         <source>Information</source>

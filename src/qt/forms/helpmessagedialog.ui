@@ -52,7 +52,7 @@
         </size>
        </property>
        <property name="pixmap">
-        <pixmap resource="../aipg.qrc">:/icons/aipg</pixmap>
+        <pixmap resource="../esa.qrc">:/icons/esa</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -150,7 +150,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../aipg.qrc"/>
+  <include location="../esa.qrc"/>
  </resources>
  <connections>
   <connection>

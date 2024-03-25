@@ -1,11 +1,11 @@
 // Copyright (c) 2015-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_MEMUSAGE_H
-#define AIPG_MEMUSAGE_H
+#ifndef ESA_MEMUSAGE_H
+#define ESA_MEMUSAGE_H
 
 #include "indirectmap.h"
 
@@ -168,4 +168,4 @@ static inline size_t DynamicUsage(const std::unordered_map<X, Y, Z>& m)
 
 }
 
-#endif // AIPG_MEMUSAGE_H
+#endif // ESA_MEMUSAGE_H

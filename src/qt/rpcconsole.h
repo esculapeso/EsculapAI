@@ -1,11 +1,11 @@
 // Copyright (c) 2011-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_QT_RPCCONSOLE_H
-#define AIPG_QT_RPCCONSOLE_H
+#ifndef ESA_QT_RPCCONSOLE_H
+#define ESA_QT_RPCCONSOLE_H
 
 #include "guiutil.h"
 #include "peertablemodel.h"
@@ -29,7 +29,7 @@ class QMenu;
 class QItemSelection;
 QT_END_NAMESPACE
 
-/** Local aipg RPC console. */
+/** Local esa RPC console. */
 class RPCConsole: public QWidget
 {
     Q_OBJECT
@@ -171,4 +171,4 @@ private:
     void updateNetworkState();
 };
 
-#endif // AIPG_QT_RPCCONSOLE_H
+#endif // ESA_QT_RPCCONSOLE_H

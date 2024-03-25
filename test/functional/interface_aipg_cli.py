@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 # Copyright (c) 2017 The Bitcoin Core developers
 # Copyright (c) 2017-2019 The Raven Core developers
-# Copyright (c) 2020-2021 The AIPG Core developers
+# Copyright (c) 2020-2021 The ESA Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Test aipg-cli"""
-from test_framework.test_framework import AipgTestFramework
+"""Test esa-cli"""
+from test_framework.test_framework import EsaTestFramework
 from test_framework.util import (assert_equal, assert_raises_process_error, get_auth_cookie)
 
-class TestAipgCli(AipgTestFramework):
+class TestEsaCli(EsaTestFramework):
 
     def set_test_params(self):
         self.setup_clean_chain = True
@@ -17,7 +17,7 @@ class TestAipgCli(AipgTestFramework):
     def run_test(self):
         """Main test logic"""
 
-        self.log.info("Compare responses from getinfo RPC and `aipg-cli getinfo`")
+        self.log.info("Compare responses from getinfo RPC and `esa-cli getinfo`")
         cli_get_info = self.nodes[0].cli.getinfo()
         rpc_get_info = self.nodes[0].getinfo()
 
@@ -33,7 +33,7 @@ class TestAipgCli(AipgTestFramework):
         assert_equal(["foo", "bar"], self.nodes[0].cli('-rpcuser=%s' % user, '-stdin', '-stdinrpcpass', input_data=password + "\nfoo\nbar").echo())
         assert_raises_process_error(1, "incorrect rpcuser or rpcpassword", self.nodes[0].cli('-rpcuser=%s' % user, '-stdin', '-stdinrpcpass', input_data="foo").echo)
 
-        self.log.info("Compare responses from `aipg-cli -getinfo` and the RPCs data is retrieved from.")
+        self.log.info("Compare responses from `esa-cli -getinfo` and the RPCs data is retrieved from.")
         cli_get_info = self.nodes[0].cli('-getinfo').help()
         wallet_info = self.nodes[0].getwalletinfo()
         network_info = self.nodes[0].getnetworkinfo()
@@ -57,4 +57,4 @@ class TestAipgCli(AipgTestFramework):
         # unlocked_until is not tested because the wallet is not encrypted
 
 if __name__ == '__main__':
-    TestAipgCli().main()
+    TestEsaCli().main()

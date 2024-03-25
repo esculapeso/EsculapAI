@@ -1,14 +1,14 @@
 // Copyright (c) 2011-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_QT_PAYMENTSERVER_H
-#define AIPG_QT_PAYMENTSERVER_H
+#ifndef ESA_QT_PAYMENTSERVER_H
+#define ESA_QT_PAYMENTSERVER_H
 
 // This class handles payment requests from clicking on
-// aipg: URIs
+// esa: URIs
 //
 // This is somewhat tricky, because we have to deal with
 // the situation where the user clicks on a link during
@@ -147,4 +147,4 @@ private:
     OptionsModel *optionsModel;
 };
 
-#endif // AIPG_QT_PAYMENTSERVER_H
+#endif // ESA_QT_PAYMENTSERVER_H

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Copyright (c) 2014-2016 The Bitcoin Core developers
 # Copyright (c) 2017-2019 The Raven Core developers
-# Copyright (c) 2020-2021 The AIPG Core developers
+# Copyright (c) 2020-2021 The ESA Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test mining RPCs
@@ -16,7 +16,7 @@ from decimal import Decimal
 
 from test_framework.blocktools import create_coinbase
 from test_framework.mininode import CBlock
-from test_framework.test_framework import AipgTestFramework
+from test_framework.test_framework import EsaTestFramework
 from test_framework.util import (assert_equal, assert_raises_rpc_error)
 
 def b2x(b):
@@ -28,7 +28,7 @@ def assert_template(node, block, expect, rehash=True):
     rsp = node.getblocktemplate({'data': b2x(block.serialize()), 'mode': 'proposal'})
     assert_equal(rsp, expect)
 
-class MiningTest(AipgTestFramework):
+class MiningTest(EsaTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
         self.setup_clean_chain = False

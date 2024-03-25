@@ -1,17 +1,17 @@
 // Copyright (c) 2011-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_QT_WALLETVIEW_H
-#define AIPG_QT_WALLETVIEW_H
+#ifndef ESA_QT_WALLETVIEW_H
+#define ESA_QT_WALLETVIEW_H
 
 #include "amount.h"
 
 #include <QStackedWidget>
 
-class AipgGUI;
+class EsaGUI;
 class ClientModel;
 class OverviewPage;
 class PlatformStyle;
@@ -45,13 +45,13 @@ public:
     explicit WalletView(const PlatformStyle *platformStyle, QWidget *parent);
     ~WalletView();
 
-    void setAipgGUI(AipgGUI *gui);
+    void setEsaGUI(EsaGUI *gui);
     /** Set the client model.
         The client model represents the part of the core that communicates with the P2P network, and is wallet-agnostic.
     */
     void setClientModel(ClientModel *clientModel);
     /** Set the wallet model.
-        The wallet model represents a aipg wallet, and offers access to the list of transactions, address book and sending
+        The wallet model represents a esa wallet, and offers access to the list of transactions, address book and sending
         functionality.
     */
     void setWalletModel(WalletModel *walletModel);
@@ -77,12 +77,12 @@ private:
     const PlatformStyle *platformStyle;
 
 
-    /** AIPG START */
+    /** ESA START */
     AssetsDialog *assetsPage;
     CreateAssetDialog *createAssetsPage;
     ReissueAssetDialog *manageAssetsPage;
     RestrictedAssetsDialog *restrictedAssetsPage;
-    /** AIPG END */
+    /** ESA END */
 
 public Q_SLOTS:
     /** Switch to overview (home) page */
@@ -129,7 +129,7 @@ public Q_SLOTS:
     void requestedSyncWarningInfo();
 
 
-    /** AIPG START */
+    /** ESA START */
     /** Switch to assets page */
 
     void gotoAssetsPage();
@@ -137,7 +137,7 @@ public Q_SLOTS:
     void gotoManageAssetsPage();
     void gotoRestrictedAssetsPage();
 
-    /** AIPG END */
+    /** ESA END */
 
 Q_SIGNALS:
     /** Signal that we want to show the main window */
@@ -156,4 +156,4 @@ Q_SIGNALS:
     void checkAssets();
 };
 
-#endif // AIPG_QT_WALLETVIEW_H
+#endif // ESA_QT_WALLETVIEW_H

@@ -1,24 +1,24 @@
 dnl Copyright (c) 2013-2016 The Bitcoin Core developers
-dnl Copyright (c) 2017 The AIPG Core developers
+dnl Copyright (c) 2017 The ESA Core developers
 dnl Distributed under the MIT software license, see the accompanying
 dnl file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 dnl Helper for cases where a qt dependency is not met.
-dnl Output: If qt version is auto, set aipg_enable_qt to false. Else, exit.
-AC_DEFUN([AIPG_QT_FAIL],[
-  if test "x$aipg_qt_want_version" = "xauto" && test x$aipg_qt_force != xyes; then
-    if test x$aipg_enable_qt != xno; then
-      AC_MSG_WARN([$1; aipg-qt frontend will not be built])
+dnl Output: If qt version is auto, set esa_enable_qt to false. Else, exit.
+AC_DEFUN([ESA_QT_FAIL],[
+  if test "x$esa_qt_want_version" = "xauto" && test x$esa_qt_force != xyes; then
+    if test x$esa_enable_qt != xno; then
+      AC_MSG_WARN([$1; esa-qt frontend will not be built])
     fi
-    aipg_enable_qt=no
-    aipg_enable_qt_test=no
+    esa_enable_qt=no
+    esa_enable_qt_test=no
   else
     AC_MSG_ERROR([$1])
   fi
 ])
 
-AC_DEFUN([AIPG_QT_CHECK],[
-  if test "x$aipg_enable_qt" != "xno" && test x$aipg_qt_want_version != xno; then
+AC_DEFUN([ESA_QT_CHECK],[
+  if test "x$esa_enable_qt" != "xno" && test x$esa_qt_want_version != xno; then
     true
     $1
   else
@@ -27,43 +27,43 @@ AC_DEFUN([AIPG_QT_CHECK],[
   fi
 ])
 
-dnl AIPG_QT_PATH_PROGS([FOO], [foo foo2], [/path/to/search/first], [continue if missing])
+dnl ESA_QT_PATH_PROGS([FOO], [foo foo2], [/path/to/search/first], [continue if missing])
 dnl Helper for finding the path of programs needed for Qt.
 dnl Inputs: $1: Variable to be set
 dnl Inputs: $2: List of programs to search for
 dnl Inputs: $3: Look for $2 here before $PATH
 dnl Inputs: $4: If "yes", don't fail if $2 is not found.
 dnl Output: $1 is set to the path of $2 if found. $2 are searched in order.
-AC_DEFUN([AIPG_QT_PATH_PROGS],[
-  AIPG_QT_CHECK([
+AC_DEFUN([ESA_QT_PATH_PROGS],[
+  ESA_QT_CHECK([
     if test "x$3" != "x"; then
       AC_PATH_PROGS($1,$2,,$3)
     else
       AC_PATH_PROGS($1,$2)
     fi
     if test "x$$1" = "x" && test "x$4" != "xyes"; then
-      AIPG_QT_FAIL([$1 not found])
+      ESA_QT_FAIL([$1 not found])
     fi
   ])
 ])
 
 dnl Initialize qt input.
-dnl This must be called before any other AIPG_QT* macros to ensure that
+dnl This must be called before any other ESA_QT* macros to ensure that
 dnl input variables are set correctly.
 dnl CAUTION: Do not use this inside of a conditional.
-AC_DEFUN([AIPG_QT_INIT],[
+AC_DEFUN([ESA_QT_INIT],[
   dnl enable qt support
   AC_ARG_WITH([gui],
     [AS_HELP_STRING([--with-gui@<:@=no|qt4|qt5|auto@:>@],
-    [build aipg-qt GUI (default=auto, qt5 tried first)])],
+    [build esa-qt GUI (default=auto, qt5 tried first)])],
     [
-     aipg_qt_want_version=$withval
-     if test x$aipg_qt_want_version = xyes; then
-       aipg_qt_force=yes
-       aipg_qt_want_version=auto
+     esa_qt_want_version=$withval
+     if test x$esa_qt_want_version = xyes; then
+       esa_qt_force=yes
+       esa_qt_want_version=auto
      fi
     ],
-    [aipg_qt_want_version=auto])
+    [esa_qt_want_version=auto])
 
   AC_ARG_WITH([qt-incdir],[AS_HELP_STRING([--with-qt-incdir=INC_DIR],[specify qt include path (overridden by pkgconfig)])], [qt_include_path=$withval], [])
   AC_ARG_WITH([qt-libdir],[AS_HELP_STRING([--with-qt-libdir=LIB_DIR],[specify qt lib path (overridden by pkgconfig)])], [qt_lib_path=$withval], [])
@@ -84,10 +84,10 @@ dnl Find the appropriate version of Qt libraries and includes.
 dnl Inputs: $1: Whether or not pkg-config should be used. yes|no. Default: yes.
 dnl Inputs: $2: If $1 is "yes" and --with-gui=auto, which qt version should be
 dnl         tried first.
-dnl Outputs: See _AIPG_QT_FIND_LIBS_*
+dnl Outputs: See _ESA_QT_FIND_LIBS_*
 dnl Outputs: Sets variables for all qt-related tools.
-dnl Outputs: aipg_enable_qt, aipg_enable_qt_dbus, aipg_enable_qt_test
-AC_DEFUN([AIPG_QT_CONFIGURE],[
+dnl Outputs: esa_enable_qt, esa_enable_qt_dbus, esa_enable_qt_test
+AC_DEFUN([ESA_QT_CONFIGURE],[
   use_pkgconfig=$1
 
   if test x$use_pkgconfig = x; then
@@ -95,9 +95,9 @@ AC_DEFUN([AIPG_QT_CONFIGURE],[
   fi
 
   if test x$use_pkgconfig = xyes; then
-    AIPG_QT_CHECK([_AIPG_QT_FIND_LIBS_WITH_PKGCONFIG([$2])])
+    ESA_QT_CHECK([_ESA_QT_FIND_LIBS_WITH_PKGCONFIG([$2])])
   else
-    AIPG_QT_CHECK([_AIPG_QT_FIND_LIBS_WITHOUT_PKGCONFIG])
+    ESA_QT_CHECK([_ESA_QT_FIND_LIBS_WITHOUT_PKGCONFIG])
   fi
 
   dnl This is ugly and complicated. Yuck. Works as follows:
@@ -107,48 +107,48 @@ AC_DEFUN([AIPG_QT_CONFIGURE],[
   dnl Qt4 and Qt5. With Qt5, languages moved into core and the WindowsIntegration
   dnl plugin was added. Since we can't tell if Qt4 is static or not, it is
   dnl assumed for windows builds.
-  dnl _AIPG_QT_CHECK_STATIC_PLUGINS does a quick link-check and appends the
+  dnl _ESA_QT_CHECK_STATIC_PLUGINS does a quick link-check and appends the
   dnl results to QT_LIBS.
-  AIPG_QT_CHECK([
+  ESA_QT_CHECK([
   TEMP_CPPFLAGS=$CPPFLAGS
   TEMP_CXXFLAGS=$CXXFLAGS
   CPPFLAGS="$QT_INCLUDES $CPPFLAGS"
   CXXFLAGS="$PIC_FLAGS $CXXFLAGS"
-  if test x$aipg_qt_got_major_vers = x5; then
-    _AIPG_QT_IS_STATIC
-    if test x$aipg_cv_static_qt = xyes; then
-      _AIPG_QT_FIND_STATIC_PLUGINS
+  if test x$esa_qt_got_major_vers = x5; then
+    _ESA_QT_IS_STATIC
+    if test x$esa_cv_static_qt = xyes; then
+      _ESA_QT_FIND_STATIC_PLUGINS
       AC_DEFINE(QT_STATICPLUGIN, 1, [Define this symbol if qt plugins are static])
-      AC_CACHE_CHECK(for Qt < 5.4, aipg_cv_need_acc_widget,[AC_COMPILE_IFELSE([AC_LANG_PROGRAM(
+      AC_CACHE_CHECK(for Qt < 5.4, esa_cv_need_acc_widget,[AC_COMPILE_IFELSE([AC_LANG_PROGRAM(
           [[#include <QtCore>]],[[
           #if QT_VERSION >= 0x050400
           choke;
           #endif
           ]])],
-        [aipg_cv_need_acc_widget=yes],
-        [aipg_cv_need_acc_widget=no])
+        [esa_cv_need_acc_widget=yes],
+        [esa_cv_need_acc_widget=no])
       ])
-      if test "x$aipg_cv_need_acc_widget" = "xyes"; then
-        _AIPG_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(AccessibleFactory)], [-lqtaccessiblewidgets])
+      if test "x$esa_cv_need_acc_widget" = "xyes"; then
+        _ESA_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(AccessibleFactory)], [-lqtaccessiblewidgets])
       fi
-      _AIPG_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QMinimalIntegrationPlugin)],[-lqminimal])
+      _ESA_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QMinimalIntegrationPlugin)],[-lqminimal])
       AC_DEFINE(QT_QPA_PLATFORM_MINIMAL, 1, [Define this symbol if the minimal qt platform exists])
       if test x$TARGET_OS = xwindows; then
-        _AIPG_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)],[-lqwindows])
+        _ESA_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)],[-lqwindows])
         AC_DEFINE(QT_QPA_PLATFORM_WINDOWS, 1, [Define this symbol if the qt platform is windows])
       elif test x$TARGET_OS = xlinux; then
-        _AIPG_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QXcbIntegrationPlugin)],[-lqxcb -lxcb-static])
+        _ESA_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QXcbIntegrationPlugin)],[-lqxcb -lxcb-static])
         AC_DEFINE(QT_QPA_PLATFORM_XCB, 1, [Define this symbol if the qt platform is xcb])
       elif test x$TARGET_OS = xdarwin; then
         AX_CHECK_LINK_FLAG([[-framework IOKit]],[QT_LIBS="$QT_LIBS -framework IOKit"],[AC_MSG_ERROR(could not iokit framework)])
-        _AIPG_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QCocoaIntegrationPlugin)],[-lqcocoa])
+        _ESA_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QCocoaIntegrationPlugin)],[-lqcocoa])
         AC_DEFINE(QT_QPA_PLATFORM_COCOA, 1, [Define this symbol if the qt platform is cocoa])
       fi
     fi
   else
     if test x$TARGET_OS = xwindows; then
       AC_DEFINE(QT_STATICPLUGIN, 1, [Define this symbol if qt plugins are static])
-      _AIPG_QT_CHECK_STATIC_PLUGINS([
+      _ESA_QT_CHECK_STATIC_PLUGINS([
          Q_IMPORT_PLUGIN(qcncodecs)
          Q_IMPORT_PLUGIN(qjpcodecs)
          Q_IMPORT_PLUGIN(qtwcodecs)
@@ -162,13 +162,13 @@ AC_DEFUN([AIPG_QT_CONFIGURE],[
   ])
 
   if test x$use_pkgconfig$qt_bin_path = xyes; then
-    if test x$aipg_qt_got_major_vers = x5; then
+    if test x$esa_qt_got_major_vers = x5; then
       qt_bin_path="`$PKG_CONFIG --variable=host_bins Qt5Core 2>/dev/null`"
     fi
   fi
 
   if test x$use_hardening != xno; then
-    AIPG_QT_CHECK([
+    ESA_QT_CHECK([
     AC_MSG_CHECKING(whether -fPIE can be used with this Qt config)
     TEMP_CPPFLAGS=$CPPFLAGS
     TEMP_CXXFLAGS=$CXXFLAGS
@@ -187,7 +187,7 @@ AC_DEFUN([AIPG_QT_CONFIGURE],[
     CXXFLAGS=$TEMP_CXXFLAGS
     ])
   else
-    AIPG_QT_CHECK([
+    ESA_QT_CHECK([
     AC_MSG_CHECKING(whether -fPIC is needed with this Qt config)
     TEMP_CPPFLAGS=$CPPFLAGS
     CPPFLAGS="$QT_INCLUDES $CPPFLAGS"
@@ -204,23 +204,23 @@ AC_DEFUN([AIPG_QT_CONFIGURE],[
     ])
   fi
 
-  AIPG_QT_PATH_PROGS([MOC], [moc-qt${aipg_qt_got_major_vers} moc${aipg_qt_got_major_vers} moc], $qt_bin_path)
-  AIPG_QT_PATH_PROGS([UIC], [uic-qt${aipg_qt_got_major_vers} uic${aipg_qt_got_major_vers} uic], $qt_bin_path)
-  AIPG_QT_PATH_PROGS([RCC], [rcc-qt${aipg_qt_got_major_vers} rcc${aipg_qt_got_major_vers} rcc], $qt_bin_path)
-  AIPG_QT_PATH_PROGS([LRELEASE], [lrelease-qt${aipg_qt_got_major_vers} lrelease${aipg_qt_got_major_vers} lrelease], $qt_bin_path)
-  AIPG_QT_PATH_PROGS([LUPDATE], [lupdate-qt${aipg_qt_got_major_vers} lupdate${aipg_qt_got_major_vers} lupdate],$qt_bin_path, yes)
+  ESA_QT_PATH_PROGS([MOC], [moc-qt${esa_qt_got_major_vers} moc${esa_qt_got_major_vers} moc], $qt_bin_path)
+  ESA_QT_PATH_PROGS([UIC], [uic-qt${esa_qt_got_major_vers} uic${esa_qt_got_major_vers} uic], $qt_bin_path)
+  ESA_QT_PATH_PROGS([RCC], [rcc-qt${esa_qt_got_major_vers} rcc${esa_qt_got_major_vers} rcc], $qt_bin_path)
+  ESA_QT_PATH_PROGS([LRELEASE], [lrelease-qt${esa_qt_got_major_vers} lrelease${esa_qt_got_major_vers} lrelease], $qt_bin_path)
+  ESA_QT_PATH_PROGS([LUPDATE], [lupdate-qt${esa_qt_got_major_vers} lupdate${esa_qt_got_major_vers} lupdate],$qt_bin_path, yes)
 
   MOC_DEFS='-DHAVE_CONFIG_H -I$(srcdir)'
   case $host in
     *darwin*)
-     AIPG_QT_CHECK([
+     ESA_QT_CHECK([
        MOC_DEFS="${MOC_DEFS} -DQ_OS_MAC"
        base_frameworks="-framework Foundation -framework ApplicationServices -framework AppKit"
        AX_CHECK_LINK_FLAG([[$base_frameworks]],[QT_LIBS="$QT_LIBS $base_frameworks"],[AC_MSG_ERROR(could not find base frameworks)])
      ])
     ;;
     *mingw*)
-       AIPG_QT_CHECK([
+       ESA_QT_CHECK([
          AX_CHECK_LINK_FLAG([[-mwindows]],[QT_LDFLAGS="$QT_LDFLAGS -mwindows"],[AC_MSG_WARN(-mwindows linker support not detected)])
        ])
   esac
@@ -228,15 +228,15 @@ AC_DEFUN([AIPG_QT_CONFIGURE],[
 
   dnl enable qt support
   AC_MSG_CHECKING(whether to build ]AC_PACKAGE_NAME[ GUI)
-  AIPG_QT_CHECK([
-    aipg_enable_qt=yes
-    aipg_enable_qt_test=yes
+  ESA_QT_CHECK([
+    esa_enable_qt=yes
+    esa_enable_qt_test=yes
     if test x$have_qt_test = xno; then
-      aipg_enable_qt_test=no
+      esa_enable_qt_test=no
     fi
-    aipg_enable_qt_dbus=no
+    esa_enable_qt_dbus=no
     if test x$use_dbus != xno && test x$have_qt_dbus = xyes; then
-      aipg_enable_qt_dbus=yes
+      esa_enable_qt_dbus=yes
     fi
     if test x$use_dbus = xyes && test x$have_qt_dbus = xno; then
       AC_MSG_ERROR("libQtDBus not found. Install libQtDBus or remove --with-qtdbus.")
@@ -245,9 +245,9 @@ AC_DEFUN([AIPG_QT_CONFIGURE],[
       AC_MSG_WARN("lupdate is required to update qt translations")
     fi
   ],[
-    aipg_enable_qt=no
+    esa_enable_qt=no
   ])
-  AC_MSG_RESULT([$aipg_enable_qt (Qt${aipg_qt_got_major_vers})])
+  AC_MSG_RESULT([$esa_enable_qt (Qt${esa_qt_got_major_vers})])
 
   AC_SUBST(QT_PIE_FLAGS)
   AC_SUBST(QT_INCLUDES)
@@ -257,7 +257,7 @@ AC_DEFUN([AIPG_QT_CONFIGURE],[
   AC_SUBST(QT_DBUS_LIBS)
   AC_SUBST(QT_TEST_INCLUDES)
   AC_SUBST(QT_TEST_LIBS)
-  AC_SUBST(QT_SELECT, qt${aipg_qt_got_major_vers})
+  AC_SUBST(QT_SELECT, qt${esa_qt_got_major_vers})
   AC_SUBST(MOC_DEFS)
 ])
 
@@ -267,9 +267,9 @@ dnl ----
 
 dnl Internal. Check if the included version of Qt is Qt5.
 dnl Requires: INCLUDES must be populated as necessary.
-dnl Output: aipg_cv_qt5=yes|no
-AC_DEFUN([_AIPG_QT_CHECK_QT5],[
-  AC_CACHE_CHECK(for Qt 5, aipg_cv_qt5,[
+dnl Output: esa_cv_qt5=yes|no
+AC_DEFUN([_ESA_QT_CHECK_QT5],[
+  AC_CACHE_CHECK(for Qt 5, esa_cv_qt5,[
   AC_COMPILE_IFELSE([AC_LANG_PROGRAM(
     [[#include <QtCore>]],
     [[
@@ -279,17 +279,17 @@ AC_DEFUN([_AIPG_QT_CHECK_QT5],[
       return 0;
       #endif
     ]])],
-    [aipg_cv_qt5=yes],
-    [aipg_cv_qt5=no])
+    [esa_cv_qt5=yes],
+    [esa_cv_qt5=no])
 ])])
 
 dnl Internal. Check if the linked version of Qt was built as static libs.
 dnl Requires: Qt5. This check cannot determine if Qt4 is static.
 dnl Requires: INCLUDES and LIBS must be populated as necessary.
-dnl Output: aipg_cv_static_qt=yes|no
+dnl Output: esa_cv_static_qt=yes|no
 dnl Output: Defines QT_STATICPLUGIN if plugins are static.
-AC_DEFUN([_AIPG_QT_IS_STATIC],[
-  AC_CACHE_CHECK(for static Qt, aipg_cv_static_qt,[
+AC_DEFUN([_ESA_QT_IS_STATIC],[
+  AC_CACHE_CHECK(for static Qt, esa_cv_static_qt,[
   AC_COMPILE_IFELSE([AC_LANG_PROGRAM(
     [[#include <QtCore>]],
     [[
@@ -299,10 +299,10 @@ AC_DEFUN([_AIPG_QT_IS_STATIC],[
       choke me
       #endif
     ]])],
-    [aipg_cv_static_qt=yes],
-    [aipg_cv_static_qt=no])
+    [esa_cv_static_qt=yes],
+    [esa_cv_static_qt=no])
   ])
-  if test xaipg_cv_static_qt = xyes; then
+  if test xesa_cv_static_qt = xyes; then
     AC_DEFINE(QT_STATICPLUGIN, 1, [Define this symbol for static Qt plugins])
   fi
 ])
@@ -312,7 +312,7 @@ dnl Requires: INCLUDES and LIBS must be populated as necessary.
 dnl Inputs: $1: A series of Q_IMPORT_PLUGIN().
 dnl Inputs: $2: The libraries that resolve $1.
 dnl Output: QT_LIBS is prepended or configure exits.
-AC_DEFUN([_AIPG_QT_CHECK_STATIC_PLUGINS],[
+AC_DEFUN([_ESA_QT_CHECK_STATIC_PLUGINS],[
   AC_MSG_CHECKING(for static Qt plugins: $2)
   CHECK_STATIC_PLUGINS_TEMP_LIBS="$LIBS"
   LIBS="$2 $QT_LIBS $LIBS"
@@ -322,16 +322,16 @@ AC_DEFUN([_AIPG_QT_CHECK_STATIC_PLUGINS],[
     $1]],
     [[return 0;]])],
     [AC_MSG_RESULT(yes); QT_LIBS="$2 $QT_LIBS"],
-    [AC_MSG_RESULT(no); AIPG_QT_FAIL(Could not resolve: $2)])
+    [AC_MSG_RESULT(no); ESA_QT_FAIL(Could not resolve: $2)])
   LIBS="$CHECK_STATIC_PLUGINS_TEMP_LIBS"
 ])
 
 dnl Internal. Find paths necessary for linking qt static plugins
-dnl Inputs: aipg_qt_got_major_vers. 4 or 5.
+dnl Inputs: esa_qt_got_major_vers. 4 or 5.
 dnl Inputs: qt_plugin_path. optional.
 dnl Outputs: QT_LIBS is appended
-AC_DEFUN([_AIPG_QT_FIND_STATIC_PLUGINS],[
-  if test x$aipg_qt_got_major_vers = x5; then
+AC_DEFUN([_ESA_QT_FIND_STATIC_PLUGINS],[
+  if test x$esa_qt_got_major_vers = x5; then
       if test x$qt_plugin_path != x; then
         QT_LIBS="$QT_LIBS -L$qt_plugin_path/platforms"
         if test -d "$qt_plugin_path/accessible"; then
@@ -353,17 +353,17 @@ AC_DEFUN([_AIPG_QT_FIND_STATIC_PLUGINS],[
      ])
      else
        if test x$TARGET_OS = xwindows; then
-         AC_CACHE_CHECK(for Qt >= 5.6, aipg_cv_need_platformsupport,[AC_COMPILE_IFELSE([AC_LANG_PROGRAM(
+         AC_CACHE_CHECK(for Qt >= 5.6, esa_cv_need_platformsupport,[AC_COMPILE_IFELSE([AC_LANG_PROGRAM(
              [[#include <QtCore>]],[[
              #if QT_VERSION < 0x050600
              choke;
              #endif
              ]])],
-           [aipg_cv_need_platformsupport=yes],
-           [aipg_cv_need_platformsupport=no])
+           [esa_cv_need_platformsupport=yes],
+           [esa_cv_need_platformsupport=no])
          ])
-         if test x$aipg_cv_need_platformsupport = xyes; then
-           AIPG_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}PlatformSupport],[main],,AIPG_QT_FAIL(lib$QT_LIB_PREFIXPlatformSupport not found)))
+         if test x$esa_cv_need_platformsupport = xyes; then
+           ESA_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}PlatformSupport],[main],,ESA_QT_FAIL(lib$QT_LIB_PREFIXPlatformSupport not found)))
          fi
        fi
      fi
@@ -376,49 +376,49 @@ AC_DEFUN([_AIPG_QT_FIND_STATIC_PLUGINS],[
 ])
 
 dnl Internal. Find Qt libraries using pkg-config.
-dnl Inputs: aipg_qt_want_version (from --with-gui=). The version to check
+dnl Inputs: esa_qt_want_version (from --with-gui=). The version to check
 dnl         first.
-dnl Inputs: $1: If aipg_qt_want_version is "auto", check for this version
+dnl Inputs: $1: If esa_qt_want_version is "auto", check for this version
 dnl         first.
 dnl Outputs: All necessary QT_* variables are set.
-dnl Outputs: aipg_qt_got_major_vers is set to "4" or "5".
+dnl Outputs: esa_qt_got_major_vers is set to "4" or "5".
 dnl Outputs: have_qt_test and have_qt_dbus are set (if applicable) to yes|no.
-AC_DEFUN([_AIPG_QT_FIND_LIBS_WITH_PKGCONFIG],[
+AC_DEFUN([_ESA_QT_FIND_LIBS_WITH_PKGCONFIG],[
   m4_ifdef([PKG_CHECK_MODULES],[
   auto_priority_version=$1
   if test x$auto_priority_version = x; then
     auto_priority_version=qt5
   fi
-    if test x$aipg_qt_want_version = xqt5 ||  ( test x$aipg_qt_want_version = xauto && test x$auto_priority_version = xqt5 ); then
+    if test x$esa_qt_want_version = xqt5 ||  ( test x$esa_qt_want_version = xauto && test x$auto_priority_version = xqt5 ); then
       QT_LIB_PREFIX=Qt5
-      aipg_qt_got_major_vers=5
+      esa_qt_got_major_vers=5
     else
       QT_LIB_PREFIX=Qt
-      aipg_qt_got_major_vers=4
+      esa_qt_got_major_vers=4
     fi
     qt5_modules="Qt5Core Qt5Gui Qt5Network Qt5Widgets"
     qt4_modules="QtCore QtGui QtNetwork"
-    AIPG_QT_CHECK([
-      if test x$aipg_qt_want_version = xqt5 || ( test x$aipg_qt_want_version = xauto && test x$auto_priority_version = xqt5 ); then
+    ESA_QT_CHECK([
+      if test x$esa_qt_want_version = xqt5 || ( test x$esa_qt_want_version = xauto && test x$auto_priority_version = xqt5 ); then
         PKG_CHECK_MODULES([QT5], [$qt5_modules], [QT_INCLUDES="$QT5_CFLAGS"; QT_LIBS="$QT5_LIBS" have_qt=yes],[have_qt=no])
-      elif test x$aipg_qt_want_version = xqt4 || ( test x$aipg_qt_want_version = xauto && test x$auto_priority_version = xqt4 ); then
+      elif test x$esa_qt_want_version = xqt4 || ( test x$esa_qt_want_version = xauto && test x$auto_priority_version = xqt4 ); then
         PKG_CHECK_MODULES([QT4], [$qt4_modules], [QT_INCLUDES="$QT4_CFLAGS"; QT_LIBS="$QT4_LIBS" ; have_qt=yes], [have_qt=no])
       fi
 
       dnl qt version is set to 'auto' and the preferred version wasn't found. Now try the other.
-      if test x$have_qt = xno && test x$aipg_qt_want_version = xauto; then
+      if test x$have_qt = xno && test x$esa_qt_want_version = xauto; then
         if test x$auto_priority_version = xqt5; then
-          PKG_CHECK_MODULES([QT4], [$qt4_modules], [QT_INCLUDES="$QT4_CFLAGS"; QT_LIBS="$QT4_LIBS" ; have_qt=yes; QT_LIB_PREFIX=Qt; aipg_qt_got_major_vers=4], [have_qt=no])
+          PKG_CHECK_MODULES([QT4], [$qt4_modules], [QT_INCLUDES="$QT4_CFLAGS"; QT_LIBS="$QT4_LIBS" ; have_qt=yes; QT_LIB_PREFIX=Qt; esa_qt_got_major_vers=4], [have_qt=no])
         else
-          PKG_CHECK_MODULES([QT5], [$qt5_modules], [QT_INCLUDES="$QT5_CFLAGS"; QT_LIBS="$QT5_LIBS" ; have_qt=yes; QT_LIB_PREFIX=Qt5; aipg_qt_got_major_vers=5], [have_qt=no])
+          PKG_CHECK_MODULES([QT5], [$qt5_modules], [QT_INCLUDES="$QT5_CFLAGS"; QT_LIBS="$QT5_LIBS" ; have_qt=yes; QT_LIB_PREFIX=Qt5; esa_qt_got_major_vers=5], [have_qt=no])
         fi
       fi
       if test x$have_qt != xyes; then
         have_qt=no
-        AIPG_QT_FAIL([Qt dependencies not found])
+        ESA_QT_FAIL([Qt dependencies not found])
       fi
     ])
-    AIPG_QT_CHECK([
+    ESA_QT_CHECK([
       PKG_CHECK_MODULES([QT_TEST], [${QT_LIB_PREFIX}Test], [QT_TEST_INCLUDES="$QT_TEST_CFLAGS"; have_qt_test=yes], [have_qt_test=no])
       if test x$use_dbus != xno; then
         PKG_CHECK_MODULES([QT_DBUS], [${QT_LIB_PREFIX}DBus], [QT_DBUS_INCLUDES="$QT_DBUS_CFLAGS"; have_qt_dbus=yes], [have_qt_dbus=no])
@@ -430,66 +430,66 @@ AC_DEFUN([_AIPG_QT_FIND_LIBS_WITH_PKGCONFIG],[
 
 dnl Internal. Find Qt libraries without using pkg-config. Version is deduced
 dnl from the discovered headers.
-dnl Inputs: aipg_qt_want_version (from --with-gui=). The version to use.
-dnl         If "auto", the version will be discovered by _AIPG_QT_CHECK_QT5.
+dnl Inputs: esa_qt_want_version (from --with-gui=). The version to use.
+dnl         If "auto", the version will be discovered by _ESA_QT_CHECK_QT5.
 dnl Outputs: All necessary QT_* variables are set.
-dnl Outputs: aipg_qt_got_major_vers is set to "4" or "5".
+dnl Outputs: esa_qt_got_major_vers is set to "4" or "5".
 dnl Outputs: have_qt_test and have_qt_dbus are set (if applicable) to yes|no.
-AC_DEFUN([_AIPG_QT_FIND_LIBS_WITHOUT_PKGCONFIG],[
+AC_DEFUN([_ESA_QT_FIND_LIBS_WITHOUT_PKGCONFIG],[
   TEMP_CPPFLAGS="$CPPFLAGS"
   TEMP_CXXFLAGS="$CXXFLAGS"
   CXXFLAGS="$PIC_FLAGS $CXXFLAGS"
   TEMP_LIBS="$LIBS"
-  AIPG_QT_CHECK([
+  ESA_QT_CHECK([
     if test x$qt_include_path != x; then
       QT_INCLUDES="-I$qt_include_path -I$qt_include_path/QtCore -I$qt_include_path/QtGui -I$qt_include_path/QtWidgets -I$qt_include_path/QtNetwork -I$qt_include_path/QtTest -I$qt_include_path/QtDBus"
       CPPFLAGS="$QT_INCLUDES $CPPFLAGS"
     fi
   ])
 
-  AIPG_QT_CHECK([AC_CHECK_HEADER([QtPlugin],,AIPG_QT_FAIL(QtCore headers missing))])
-  AIPG_QT_CHECK([AC_CHECK_HEADER([QApplication],, AIPG_QT_FAIL(QtGui headers missing))])
-  AIPG_QT_CHECK([AC_CHECK_HEADER([QLocalSocket],, AIPG_QT_FAIL(QtNetwork headers missing))])
+  ESA_QT_CHECK([AC_CHECK_HEADER([QtPlugin],,ESA_QT_FAIL(QtCore headers missing))])
+  ESA_QT_CHECK([AC_CHECK_HEADER([QApplication],, ESA_QT_FAIL(QtGui headers missing))])
+  ESA_QT_CHECK([AC_CHECK_HEADER([QLocalSocket],, ESA_QT_FAIL(QtNetwork headers missing))])
 
-  AIPG_QT_CHECK([
-    if test x$aipg_qt_want_version = xauto; then
-      _AIPG_QT_CHECK_QT5
+  ESA_QT_CHECK([
+    if test x$esa_qt_want_version = xauto; then
+      _ESA_QT_CHECK_QT5
     fi
-    if test x$aipg_cv_qt5 = xyes || test x$aipg_qt_want_version = xqt5; then
+    if test x$esa_cv_qt5 = xyes || test x$esa_qt_want_version = xqt5; then
       QT_LIB_PREFIX=Qt5
-      aipg_qt_got_major_vers=5
+      esa_qt_got_major_vers=5
     else
       QT_LIB_PREFIX=Qt
-      aipg_qt_got_major_vers=4
+      esa_qt_got_major_vers=4
     fi
   ])
 
-  AIPG_QT_CHECK([
+  ESA_QT_CHECK([
     LIBS=
     if test x$qt_lib_path != x; then
       LIBS="$LIBS -L$qt_lib_path"
     fi
 
     if test x$TARGET_OS = xwindows; then
-      AC_CHECK_LIB([imm32],      [main],, AIPG_QT_FAIL(libimm32 not found))
+      AC_CHECK_LIB([imm32],      [main],, ESA_QT_FAIL(libimm32 not found))
     fi
   ])
 
-  AIPG_QT_CHECK(AC_CHECK_LIB([z] ,[main],,AC_MSG_WARN([zlib not found. Assuming qt has it built-in])))
-  AIPG_QT_CHECK(AC_SEARCH_LIBS([png_error] ,[qtpng png],,AC_MSG_WARN([libpng not found. Assuming qt has it built-in])))
-  AIPG_QT_CHECK(AC_SEARCH_LIBS([jpeg_create_decompress] ,[qtjpeg jpeg],,AC_MSG_WARN([libjpeg not found. Assuming qt has it built-in])))
-  AIPG_QT_CHECK(AC_SEARCH_LIBS([pcre16_exec], [qtpcre pcre16],,AC_MSG_WARN([libpcre16 not found. Assuming qt has it built-in])))
-  AIPG_QT_CHECK(AC_SEARCH_LIBS([hb_ot_tags_from_script] ,[qtharfbuzzng harfbuzz],,AC_MSG_WARN([libharfbuzz not found. Assuming qt has it built-in or support is disabled])))
-  AIPG_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}Core]   ,[main],,AIPG_QT_FAIL(lib$QT_LIB_PREFIXCore not found)))
-  AIPG_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}Gui]    ,[main],,AIPG_QT_FAIL(lib$QT_LIB_PREFIXGui not found)))
-  AIPG_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}Network],[main],,AIPG_QT_FAIL(lib$QT_LIB_PREFIXNetwork not found)))
-  if test x$aipg_qt_got_major_vers = x5; then
-    AIPG_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}Widgets],[main],,AIPG_QT_FAIL(lib$QT_LIB_PREFIXWidgets not found)))
+  ESA_QT_CHECK(AC_CHECK_LIB([z] ,[main],,AC_MSG_WARN([zlib not found. Assuming qt has it built-in])))
+  ESA_QT_CHECK(AC_SEARCH_LIBS([png_error] ,[qtpng png],,AC_MSG_WARN([libpng not found. Assuming qt has it built-in])))
+  ESA_QT_CHECK(AC_SEARCH_LIBS([jpeg_create_decompress] ,[qtjpeg jpeg],,AC_MSG_WARN([libjpeg not found. Assuming qt has it built-in])))
+  ESA_QT_CHECK(AC_SEARCH_LIBS([pcre16_exec], [qtpcre pcre16],,AC_MSG_WARN([libpcre16 not found. Assuming qt has it built-in])))
+  ESA_QT_CHECK(AC_SEARCH_LIBS([hb_ot_tags_from_script] ,[qtharfbuzzng harfbuzz],,AC_MSG_WARN([libharfbuzz not found. Assuming qt has it built-in or support is disabled])))
+  ESA_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}Core]   ,[main],,ESA_QT_FAIL(lib$QT_LIB_PREFIXCore not found)))
+  ESA_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}Gui]    ,[main],,ESA_QT_FAIL(lib$QT_LIB_PREFIXGui not found)))
+  ESA_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}Network],[main],,ESA_QT_FAIL(lib$QT_LIB_PREFIXNetwork not found)))
+  if test x$esa_qt_got_major_vers = x5; then
+    ESA_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}Widgets],[main],,ESA_QT_FAIL(lib$QT_LIB_PREFIXWidgets not found)))
   fi
   QT_LIBS="$LIBS"
   LIBS="$TEMP_LIBS"
 
-  AIPG_QT_CHECK([
+  ESA_QT_CHECK([
     LIBS=
     if test x$qt_lib_path != x; then
       LIBS="-L$qt_lib_path"

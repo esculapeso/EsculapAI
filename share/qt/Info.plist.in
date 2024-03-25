@@ -11,7 +11,7 @@
   </array>
 
   <key>CFBundleIconFile</key>
-  <string>aipg.icns</string>
+  <string>esa.icns</string>
 
   <key>CFBundlePackageType</key>
   <string>APPL</string>
@@ -29,16 +29,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>Aipg-Qt</string>
+  <string>Esa-Qt</string>
   
   <key>CFBundleName</key>
-  <string>Aipg-Qt</string>
+  <string>Esa-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.aipgfoundation.Aipg-Qt</string>
+  <string>org.esafoundation.Esa-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,10 +46,10 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.aipg.AipgPayment</string>
+      <string>org.esa.EsaPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
-        <string>aipg</string>
+        <string>esa</string>
       </array>
     </dict>
   </array>
@@ -58,9 +58,9 @@
   <array>
     <dict>
       <key>UTTypeIdentifier</key>
-      <string>org.aipg.paymentrequest</string>
+      <string>org.esa.paymentrequest</string>
       <key>UTTypeDescription</key>
-      <string>Aipg payment request</string>
+      <string>Esa payment request</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>
@@ -68,10 +68,10 @@
       <key>UTTypeTagSpecification</key>
       <dict>
         <key>public.mime-type</key>
-        <string>application/x-aipg-payment-request</string>
+        <string>application/x-esa-payment-request</string>
         <key>public.filename-extension</key>
         <array>
-          <string>aipgpaymentrequest</string>
+          <string>esapaymentrequest</string>
         </array>
       </dict>
     </dict>
@@ -84,7 +84,7 @@
       <string>Editor</string>
       <key>LSItemContentTypes</key>
       <array>
-        <string>org.aipg.paymentrequest</string>
+        <string>org.esa.paymentrequest</string>
       </array>
       <key>LSHandlerRank</key>
       <string>Owner</string>

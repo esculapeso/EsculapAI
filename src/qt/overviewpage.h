@@ -1,11 +1,11 @@
 // Copyright (c) 2011-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_QT_OVERVIEWPAGE_H
-#define AIPG_QT_OVERVIEWPAGE_H
+#ifndef ESA_QT_OVERVIEWPAGE_H
+#define ESA_QT_OVERVIEWPAGE_H
 
 #include "amount.h"
 
@@ -94,4 +94,4 @@ private Q_SLOTS:
     void assetSearchChanged();
 };
 
-#endif // AIPG_QT_OVERVIEWPAGE_H
+#endif // ESA_QT_OVERVIEWPAGE_H

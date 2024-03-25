@@ -3,38 +3,38 @@ rm -rf ./release-linux
 mkdir release-linux
 
 cp ./src/esad ./release-linux/
-cp ./src/aipg-cli ./release-linux/
-cp ./src/qt/aipg-qt ./release-linux/
-cp ./AIPGCOIN_small.png ./release-linux/
+cp ./src/esa-cli ./release-linux/
+cp ./src/qt/esa-qt ./release-linux/
+cp ./ESACOIN_small.png ./release-linux/
 
 cd ./release-linux/
 strip esad
-strip aipg-cli
-strip aipg-qt
+strip esa-cli
+strip esa-qt
 
 #==========================================================
 # prepare for packaging deb file.
 
-mkdir aipgcoin-$VERSION
-cd aipgcoin-$VERSION
+mkdir esacoin-$VERSION
+cd esacoin-$VERSION
 mkdir -p DEBIAN
-echo 'Package: aipgcoin
+echo 'Package: esacoin
 Version: '$VERSION'
 Section: base 
 Priority: optional 
 Architecture: all 
 Depends:
-Maintainer: Aipg
-Description: Aipg coin wallet and service.
+Maintainer: Esa
+Description: Esa coin wallet and service.
 ' > ./DEBIAN/control
 mkdir -p ./usr/local/bin/
 cp ../esad ./usr/local/bin/
-cp ../aipg-cli ./usr/local/bin/
-cp ../aipg-qt ./usr/local/bin/
+cp ../esa-cli ./usr/local/bin/
+cp ../esa-qt ./usr/local/bin/
 
 # prepare for desktop shortcut
 mkdir -p ./usr/share/icons/
-cp ../AIPGCOIN_small.png ./usr/share/icons/
+cp ../ESACOIN_small.png ./usr/share/icons/
 mkdir -p ./usr/share/applications/
 echo '
 #!/usr/bin/env xdg-open
@@ -43,15 +43,15 @@ echo '
 Version=1.0
 Type=Application
 Terminal=false
-Exec=/usr/local/bin/aipg-qt
-Name=aipgcoin
-Comment= aipg coin wallet
-Icon=/usr/share/icons/AIPGCOIN_small.png
-' > ./usr/share/applications/aipgcoin.desktop
+Exec=/usr/local/bin/esa-qt
+Name=esacoin
+Comment= esa coin wallet
+Icon=/usr/share/icons/ESACOIN_small.png
+' > ./usr/share/applications/esacoin.desktop
 
 cd ../
 # build deb file.
-dpkg-deb --build aipgcoin-$VERSION
+dpkg-deb --build esacoin-$VERSION
 
 #==========================================================
 # build rpm package
@@ -64,50 +64,50 @@ cat <<EOF >~/.rpmmacros
 EOF
 
 #prepare for build rpm package.
-rm -rf aipgcoin-$VERSION
-mkdir aipgcoin-$VERSION
-cd aipgcoin-$VERSION
+rm -rf esacoin-$VERSION
+mkdir esacoin-$VERSION
+cd esacoin-$VERSION
 
 mkdir -p ./usr/bin/
 cp ../esad ./usr/bin/
-cp ../aipg-cli ./usr/bin/
-cp ../aipg-qt ./usr/bin/
+cp ../esa-cli ./usr/bin/
+cp ../esa-qt ./usr/bin/
 
 # prepare for desktop shortcut
 mkdir -p ./usr/share/icons/
-cp ../AIPGCOIN_small.png ./usr/share/icons/
+cp ../ESACOIN_small.png ./usr/share/icons/
 mkdir -p ./usr/share/applications/
 echo '
 [Desktop Entry]
 Version=1.0
 Type=Application
 Terminal=false
-Exec=/usr/bin/aipg-qt
-Name=aipgcoin
-Comment= aipg coin wallet
-Icon=/usr/share/icons/AIPGCOIN_small.png
-' > ./usr/share/applications/aipgcoin.desktop
+Exec=/usr/bin/esa-qt
+Name=esacoin
+Comment= esa coin wallet
+Icon=/usr/share/icons/ESACOIN_small.png
+' > ./usr/share/applications/esacoin.desktop
 cd ../
 
 # make tar ball to source folder.
-tar -zcvf aipgcoin-$VERSION.tar.gz ./aipgcoin-$VERSION
-cp aipgcoin-$VERSION.tar.gz ~/rpmbuild/SOURCES/
+tar -zcvf esacoin-$VERSION.tar.gz ./esacoin-$VERSION
+cp esacoin-$VERSION.tar.gz ~/rpmbuild/SOURCES/
 
 # build rpm package.
 cd ~/rpmbuild
 
-cat <<EOF > SPECS/aipgcoin.spec
+cat <<EOF > SPECS/esacoin.spec
 # Don't try fancy stuff like debuginfo, which is useless on binary-only
 # packages. Don't strip binary too
 # Be sure buildpolicy set to do nothing
 
-Summary: Aipg wallet rpm package
-Name: aipgcoin
+Summary: Esa wallet rpm package
+Name: esacoin
 Version: $VERSION
 Release: 1
 License: MIT
 SOURCE0 : %{name}-%{version}.tar.gz
-URL: https://www.aipgcoin.net/
+URL: https://www.esacoin.net/
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
@@ -133,18 +133,18 @@ rm -rf %{buildroot}
 
 
 %files
-/usr/share/applications/aipgcoin.desktop
-/usr/share/icons/AIPGCOIN_small.png
+/usr/share/applications/esacoin.desktop
+/usr/share/icons/ESACOIN_small.png
 %defattr(-,root,root,-)
 %{_bindir}/*
 
 %changelog
-* Tue Aug 24 2021  Aipg Project Team.
+* Tue Aug 24 2021  Esa Project Team.
 - First Build
 
 EOF
 
-rpmbuild -ba SPECS/aipgcoin.spec
+rpmbuild -ba SPECS/esacoin.spec
 
 
 

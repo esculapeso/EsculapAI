@@ -1,4 +1,4 @@
-Build instructions for AIPG
+Build instructions for ESA
 ===========================
 
 This will install most of the dependencies from ubuntu.
@@ -130,12 +130,12 @@ protobuf-compiler
 
 Directory structure
 ------------------
-AIPGcoin sources in `$HOME/src`
+ESAcoin sources in `$HOME/src`
 
 Berkeley DB will be installed to `$HOME/src/db4`
 
 
-AIPG
+ESA
 ------------------
 
 Start in $HOME
@@ -146,7 +146,7 @@ Make the directory for sources and go into it.
 
 `cd src`
 
-__Download AIPG source.__
+__Download ESA source.__
 
 `git clone https://github.com/AIPowerGrid/AI-Power-Grid-Core`
 
@@ -171,11 +171,11 @@ _Adjust to own needs. This will install the binaries to `/usr/local/bin`_
 
 `make -j8`  # 8 for 8 build threads, adjust to fit your setup.
 
-You can now start aipg-qt from the build directory.
+You can now start esa-qt from the build directory.
 
-`src/qt/aipg-qt`
+`src/qt/esa-qt`
 
-esad and aipg-cli are in `src/`
+esad and esa-cli are in `src/`
 
 
 __Optional:__

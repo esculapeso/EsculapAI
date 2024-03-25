@@ -3,17 +3,17 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-bin_PROGRAMS += bench/bench_aipg
+bin_PROGRAMS += bench/bench_esa
 BENCH_SRCDIR = bench
-BENCH_BINARY = bench/bench_aipg$(EXEEXT)
+BENCH_BINARY = bench/bench_esa$(EXEEXT)
 
 RAW_BENCH_FILES = \
   bench/data/block566553.raw
 GENERATED_BENCH_FILES = $(RAW_BENCH_FILES:.raw=.raw.h)
 
-bench_bench_aipg_SOURCES = \
+bench_bench_esa_SOURCES = \
   $(RAW_BENCH_FILES) \
-  bench/bench_aipg.cpp \
+  bench/bench_esa.cpp \
   bench/bench.cpp \
   bench/bench.h \
   bench/checkblock.cpp \
@@ -30,16 +30,16 @@ bench_bench_aipg_SOURCES = \
   bench/perf.h \
   bench/prevector_destructor.cpp
 
-nodist_bench_bench_aipg_SOURCES = $(GENERATED_BENCH_FILES)
+nodist_bench_bench_esa_SOURCES = $(GENERATED_BENCH_FILES)
 
-bench_bench_aipg_CPPFLAGS = $(AM_CPPFLAGS) $(AIPG_INCLUDES) $(EVENT_CLFAGS) $(EVENT_PTHREADS_CFLAGS) -I$(builddir)/bench/
-bench_bench_aipg_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-bench_bench_aipg_LDADD = \
-  $(LIBAIPG_SERVER) \
-  $(LIBAIPG_COMMON) \
-  $(LIBAIPG_UTIL) \
-  $(LIBAIPG_CONSENSUS) \
-  $(LIBAIPG_CRYPTO) \
+bench_bench_esa_CPPFLAGS = $(AM_CPPFLAGS) $(ESA_INCLUDES) $(EVENT_CLFAGS) $(EVENT_PTHREADS_CFLAGS) -I$(builddir)/bench/
+bench_bench_esa_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+bench_bench_esa_LDADD = \
+  $(LIBESA_SERVER) \
+  $(LIBESA_COMMON) \
+  $(LIBESA_UTIL) \
+  $(LIBESA_CONSENSUS) \
+  $(LIBESA_CRYPTO) \
   $(LIBLEVELDB) \
   $(LIBLEVELDB_SSE42) \
   $(LIBMEMENV) \
@@ -47,30 +47,30 @@ bench_bench_aipg_LDADD = \
   $(LIBUNIVALUE)
 
 if ENABLE_ZMQ
-bench_bench_aipg_LDADD += $(LIBAIPG_ZMQ) $(ZMQ_LIBS)
+bench_bench_esa_LDADD += $(LIBESA_ZMQ) $(ZMQ_LIBS)
 endif
 
 if ENABLE_WALLET
-bench_bench_aipg_SOURCES += bench/coin_selection.cpp
-bench_bench_aipg_LDADD += $(LIBAIPG_WALLET) $(LIBAIPG_CRYPTO)
+bench_bench_esa_SOURCES += bench/coin_selection.cpp
+bench_bench_esa_LDADD += $(LIBESA_WALLET) $(LIBESA_CRYPTO)
 endif
 
-bench_bench_aipg_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-bench_bench_aipg_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+bench_bench_esa_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+bench_bench_esa_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
-CLEAN_AIPG_BENCH = bench/*.gcda bench/*.gcno $(GENERATED_BENCH_FILES)
+CLEAN_ESA_BENCH = bench/*.gcda bench/*.gcno $(GENERATED_BENCH_FILES)
 
-CLEANFILES += $(CLEAN_AIPG_BENCH)
+CLEANFILES += $(CLEAN_ESA_BENCH)
 
 bench/checkblock.cpp: bench/data/block566553.raw.h
 
-aipg_bench: $(BENCH_BINARY)
+esa_bench: $(BENCH_BINARY)
 
 bench: $(BENCH_BINARY) FORCE
 	$(BENCH_BINARY)
 
-aipg_bench_clean : FORCE
-	rm -f $(CLEAN_AIPG_BENCH) $(bench_bench_aipg_OBJECTS) $(BENCH_BINARY)
+esa_bench_clean : FORCE
+	rm -f $(CLEAN_ESA_BENCH) $(bench_bench_esa_OBJECTS) $(BENCH_BINARY)
 
 %.raw.h: %.raw
 	@$(MKDIR_P) $(@D)

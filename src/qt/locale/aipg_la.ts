@@ -54,7 +54,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>AipgGUI</name>
+    <name>EsaGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Signa &amp;nuntium...</translation>
@@ -116,8 +116,8 @@
         <translation>Recreans indicem frustorum in disco...</translation>
     </message>
     <message>
-        <source>Send coins to a Aipg address</source>
-        <translation>Mitte nummos ad inscriptionem Aipg</translation>
+        <source>Send coins to a Esa address</source>
+        <translation>Mitte nummos ad inscriptionem Esa</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -140,8 +140,8 @@
         <translation>&amp;Verifica nuntium...</translation>
     </message>
     <message>
-        <source>Aipg</source>
-        <translation>Aipg</translation>
+        <source>Esa</source>
+        <translation>Esa</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -168,12 +168,12 @@
         <translation>Cifra claves privatas quae cassidili tui sunt</translation>
     </message>
     <message>
-        <source>Sign messages with your Aipg addresses to prove you own them</source>
-        <translation>Signa nuntios cum tuis inscriptionibus Aipg ut demonstres te eas possidere</translation>
+        <source>Sign messages with your Esa addresses to prove you own them</source>
+        <translation>Signa nuntios cum tuis inscriptionibus Esa ut demonstres te eas possidere</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Aipg addresses</source>
-        <translation>Verifica nuntios ut certus sis eos signatos esse cum specificatis inscriptionibus Aipg</translation>
+        <source>Verify messages to ensure they were signed with specified Esa addresses</source>
+        <translation>Verifica nuntios ut certus sis eos signatos esse cum specificatis inscriptionibus Esa</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -348,8 +348,8 @@
         <translation>Cassidile</translation>
     </message>
     <message>
-        <source>Automatically open the Aipg client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Aperi per se portam clientis Aipg in itineratore.  Hoc tantum effectivum est si itineratrum tuum supportat UPnP et id activum est.</translation>
+        <source>Automatically open the Esa client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Aperi per se portam clientis Esa in itineratore.  Hoc tantum effectivum est si itineratrum tuum supportat UPnP et id activum est.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -427,8 +427,8 @@
         <translation>Schema</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Aipg network after a connection is established, but this process has not completed yet.</source>
-        <translation>Monstrata informatio fortasse non recentissima est.  Tuum cassidile per se synchronizat cum rete Aipg postquam conexio constabilita est, sed hoc actio nondum perfecta est.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Esa network after a connection is established, but this process has not completed yet.</source>
+        <translation>Monstrata informatio fortasse non recentissima est.  Tuum cassidile per se synchronizat cum rete Esa postquam conexio constabilita est, sed hoc actio nondum perfecta est.</translation>
     </message>
     <message>
         <source>Immature:</source>
@@ -673,8 +673,8 @@
         <translation>Copia signationem in latibulum systematis</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Aipg address</source>
-        <translation>Signa nuntium ut demonstres hanc inscriptionem Aipg a te possessa esse</translation>
+        <source>Sign the message to prove you own this Esa address</source>
+        <translation>Signa nuntium ut demonstres hanc inscriptionem Esa a te possessa esse</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -693,8 +693,8 @@
         <translation>&amp;Verifica Nuntium</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Aipg address</source>
-        <translation>Verifica nuntium ut cures signatum esse cum specifica inscriptione Aipg</translation>
+        <source>Verify the message to ensure it was signed with the specified Esa address</source>
+        <translation>Verifica nuntium ut cures signatum esse cum specifica inscriptione Esa</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -744,7 +744,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>aipg-core</name>
+    <name>esa-core</name>
     <message>
         <source>Options:</source>
         <translation>Optiones:</translation>
@@ -770,8 +770,8 @@
         <translation>Operare infere sicut daemon et mandata accipe</translation>
     </message>
     <message>
-        <source>Aipg Core</source>
-        <translation>Aipg Nucleus</translation>
+        <source>Esa Core</source>
+        <translation>Esa Nucleus</translation>
     </message>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>

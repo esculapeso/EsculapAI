@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.aipg;
+package org.esa;
 
 /**
  * This class holds the context reference used in native methods 

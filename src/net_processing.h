@@ -1,12 +1,12 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_NET_PROCESSING_H
-#define AIPG_NET_PROCESSING_H
+#ifndef ESA_NET_PROCESSING_H
+#define ESA_NET_PROCESSING_H
 
 #include "net.h"
 #include "validationinterface.h"
@@ -83,4 +83,4 @@ bool GetNodeStateStats(NodeId nodeid, CNodeStateStats &stats);
 /** Increase a node's misbehavior score. */
 void Misbehaving(NodeId nodeid, int howmuch);
 
-#endif // AIPG_NET_PROCESSING_H
+#endif // ESA_NET_PROCESSING_H

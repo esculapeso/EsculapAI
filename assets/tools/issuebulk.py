@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Script to issue assets on the Aipg platform
+# Script to issue assets on the Esa platform
 # Reads from a csv file
 # Template Google Spreadsheet at:  
 #   https://docs.google.com/spreadsheets/d/1Ym88-ggbw8yiMgVxOtVYDsCXJGNGZqlpOfgdbVK8iYU
@@ -23,15 +23,15 @@ import json
 import hashlib
 
 
-#Set this to your aipg-cli program
-cli = "aipg-cli"
+#Set this to your esa-cli program
+cli = "esa-cli"
 
 mode =  "-testnet"
 rpc_port = 18766
 #mode =  "-regtest"
 #rpc_port = 18443
-csv_file = "Aipg Assets - Sheet1.csv"
-#Set this information in your aipg.conf file (in datadir, not testnet3)
+csv_file = "Esa Assets - Sheet1.csv"
+#Set this information in your esa.conf file (in datadir, not testnet3)
 rpc_user = 'rpcuser'
 rpc_pass = 'rpcpass555'
 

@@ -6,18 +6,18 @@ EXPOSE $RPCPORT
 
 EXPOSE $PORT
 
-RUN useradd -ms /bin/bash aipg
+RUN useradd -ms /bin/bash esa
 
-RUN mkdir /etc/aipg
+RUN mkdir /etc/esa
 
-RUN mkdir /var/lib/aipg
+RUN mkdir /var/lib/esa
 
-RUN chown aipg:aipg /etc/aipg /var/lib/aipg
+RUN chown esa:esa /etc/esa /var/lib/esa
 
-WORKDIR /home/aipg
+WORKDIR /home/esa
 
-COPY --chown=aipg:aipg linux64/* ./run.sh /home/aipg/
+COPY --chown=esa:esa linux64/* ./run.sh /home/esa/
 
-USER aipg
+USER esa
 
-CMD ["/home/aipg/run.sh"]
+CMD ["/home/esa/run.sh"]

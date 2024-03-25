@@ -1,10 +1,10 @@
-package org.aipg;
+package org.esa;
 
 import com.google.common.io.BaseEncoding;
 import java.util.Arrays;
 import java.math.BigInteger;
 import javax.xml.bind.DatatypeConverter;
-import static org.aipg.NativeSecp256k1Util.*;
+import static org.esa.NativeSecp256k1Util.*;
 
 /**
  * This class holds test cases defined for testing this library.

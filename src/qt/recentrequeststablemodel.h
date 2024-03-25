@@ -1,11 +1,11 @@
 // Copyright (c) 2011-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_QT_RECENTREQUESTSTABLEMODEL_H
-#define AIPG_QT_RECENTREQUESTSTABLEMODEL_H
+#ifndef ESA_QT_RECENTREQUESTSTABLEMODEL_H
+#define ESA_QT_RECENTREQUESTSTABLEMODEL_H
 
 #include "walletmodel.h"
 
@@ -54,7 +54,7 @@ private:
     Qt::SortOrder order;
 };
 
-/** Model for list of recently generated payment requests / aipg: URIs.
+/** Model for list of recently generated payment requests / esa: URIs.
  * Part of wallet model.
  */
 class RecentRequestsTableModel: public QAbstractTableModel
@@ -106,4 +106,4 @@ private:
     QString getAmountTitle();
 };
 
-#endif // AIPG_QT_RECENTREQUESTSTABLEMODEL_H
+#endif // ESA_QT_RECENTREQUESTSTABLEMODEL_H

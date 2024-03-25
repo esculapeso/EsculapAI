@@ -1,14 +1,14 @@
 // Copyright (c) 2014-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_COMPAT_BYTESWAP_H
-#define AIPG_COMPAT_BYTESWAP_H
+#ifndef ESA_COMPAT_BYTESWAP_H
+#define ESA_COMPAT_BYTESWAP_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/aipg-config.h"
+#include "config/esa-config.h"
 #endif
 
 #include <stdint.h>
@@ -65,4 +65,4 @@ inline uint64_t bswap_64(uint64_t x)
 
 #endif // defined(__APPLE__)
 
-#endif // AIPG_COMPAT_BYTESWAP_H
+#endif // ESA_COMPAT_BYTESWAP_H

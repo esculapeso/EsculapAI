@@ -343,16 +343,16 @@
         <translation type="vanished">Szakértő</translation>
     </message>
     <message>
-        <source>Automatically open the Aipg client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation type="vanished">A Aipg-kliens portjának automatikus megnyitása a routeren. Ez csak akkor működik, ha a routered támogatja az UPnP-t és az engedélyezve is van rajta.</translation>
+        <source>Automatically open the Esa client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation type="vanished">A Esa-kliens portjának automatikus megnyitása a routeren. Ez csak akkor működik, ha a routered támogatja az UPnP-t és az engedélyezve is van rajta.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation type="vanished">&amp;UPnP port-feltérképezés</translation>
     </message>
     <message>
-        <source>Connect to the Aipg network through a SOCKS5 proxy.</source>
-        <translation type="vanished">Csatlakozás a Aipg hálózatához SOCKS5 proxyn keresztül</translation>
+        <source>Connect to the Esa network through a SOCKS5 proxy.</source>
+        <translation type="vanished">Csatlakozás a Esa hálózatához SOCKS5 proxyn keresztül</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -446,8 +446,8 @@
         <translation type="vanished">Űrlap</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Aipg network after a connection is established, but this process has not completed yet.</source>
-        <translation type="vanished">A kijelzett információ lehet, hogy elavult. A pénztárcája automatikusan szinkronizálja magát a Aipg hálózattal miután a kapcsolat létrejön, de ez e folyamat még nem fejeződött be.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Esa network after a connection is established, but this process has not completed yet.</source>
+        <translation type="vanished">A kijelzett információ lehet, hogy elavult. A pénztárcája automatikusan szinkronizálja magát a Esa hálózattal miután a kapcsolat létrejön, de ez e folyamat még nem fejeződött be.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -512,8 +512,8 @@
         <translation type="vanished">Összeg</translation>
     </message>
     <message>
-        <source>Enter a Aipg address (e.g. %1)</source>
-        <translation type="vanished">Ad meg egy Aipg címet (pl: %1)</translation>
+        <source>Enter a Esa address (e.g. %1)</source>
+        <translation type="vanished">Ad meg egy Esa címet (pl: %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -760,7 +760,7 @@
     </message>
 </context>
 <context>
-    <name>AipgGUI</name>
+    <name>EsaGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation type="vanished">Üzenet aláírása...</translation>
@@ -842,8 +842,8 @@
         <translation type="vanished">Lemezen lévő blokkok újraindexelése...</translation>
     </message>
     <message>
-        <source>Send coins to a Aipg address</source>
-        <translation type="vanished">Aipg küldése megadott címre</translation>
+        <source>Send coins to a Esa address</source>
+        <translation type="vanished">Esa küldése megadott címre</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -866,8 +866,8 @@
         <translation type="vanished">Üzenet &amp;valódiságának ellenőrzése</translation>
     </message>
     <message>
-        <source>Aipg</source>
-        <translation type="vanished">Aipg</translation>
+        <source>Esa</source>
+        <translation type="vanished">Esa</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -894,12 +894,12 @@
         <translation type="vanished">A tárcádhoz tartozó privát kulcsok titkosítása</translation>
     </message>
     <message>
-        <source>Sign messages with your Aipg addresses to prove you own them</source>
-        <translation type="vanished">Üzenetek aláírása a Aipg-címmeiddel, amivel bizonyítod, hogy a cím a sajátod</translation>
+        <source>Sign messages with your Esa addresses to prove you own them</source>
+        <translation type="vanished">Üzenetek aláírása a Esa-címmeiddel, amivel bizonyítod, hogy a cím a sajátod</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Aipg addresses</source>
-        <translation type="vanished">Üzenetek ellenőrzése, hogy valóban a megjelölt Aipg-címekkel vannak-e aláírva</translation>
+        <source>Verify messages to ensure they were signed with specified Esa addresses</source>
+        <translation type="vanished">Üzenetek ellenőrzése, hogy valóban a megjelölt Esa-címekkel vannak-e aláírva</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -918,8 +918,8 @@
         <translation type="vanished">Fül eszköztár</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and aipg: URIs)</source>
-        <translation type="vanished">Fizetési kérelem (QR-kódot és &quot;aipg:&quot; URI azonosítót hoz létre)</translation>
+        <source>Request payments (generates QR codes and esa: URIs)</source>
+        <translation type="vanished">Fizetési kérelem (QR-kódot és &quot;esa:&quot; URI azonosítót hoz létre)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -930,17 +930,17 @@
         <translation type="vanished">A használt fogadó címek és címkék megtekintése</translation>
     </message>
     <message>
-        <source>Open a aipg: URI or payment request</source>
-        <translation type="vanished">&quot;aipg:&quot; URI azonosító vagy fizetési kérelem megnyitása</translation>
+        <source>Open a esa: URI or payment request</source>
+        <translation type="vanished">&quot;esa:&quot; URI azonosító vagy fizetési kérelem megnyitása</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation type="vanished">Paran&amp;cssor kapcsolók</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Aipg network</source>
+        <source>%n active connection(s) to Esa network</source>
         <translation type="vanished">
-            <numerusform>%n aktív kapcsolat a Aipg hálózathoz</numerusform>
+            <numerusform>%n aktív kapcsolat a Esa hálózathoz</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -1301,7 +1301,7 @@
         <translation type="vanished">A jelenleg kiválasztott aláírás másolása a rendszer-vágólapra</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Aipg address</source>
+        <source>Sign the message to prove you own this Esa address</source>
         <translation type="vanished">Üzenet </translation>
     </message>
     <message>
@@ -1357,7 +1357,7 @@
     </message>
 </context>
 <context>
-    <name>aipg-core</name>
+    <name>esa-core</name>
     <message>
         <source>Options:</source>
         <translation type="vanished">Opciók
@@ -1387,8 +1387,8 @@
 </translation>
     </message>
     <message>
-        <source>Aipg Core</source>
-        <translation type="vanished">Aipg Core</translation>
+        <source>Esa Core</source>
+        <translation type="vanished">Esa Core</translation>
     </message>
     <message>
         <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>
@@ -1542,7 +1542,7 @@
     </message>
     <message>
         <source>Insufficient funds</source>
-        <translation type="vanished">Nincs elég aipgsod.</translation>
+        <translation type="vanished">Nincs elég esasod.</translation>
     </message>
     <message>
         <source>Loading block index...</source>

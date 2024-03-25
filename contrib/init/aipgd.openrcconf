@@ -1,7 +1,7 @@
 # /etc/conf.d/esad: config file for /etc/init.d/esad
 
 # Config file location
-#ESAD_CONFIGFILE="/etc/aipg/aipg.conf"
+#ESAD_CONFIGFILE="/etc/esa/esa.conf"
 
 # What directory to write pidfile to?  (created and owned by $ESAD_USER)
 #ESAD_PIDDIR="/var/run/esad"
@@ -13,8 +13,8 @@
 #ESAD_DATADIR="/var/lib/esad"
 
 # User and group to own esad process
-#ESAD_USER="aipg"
-#ESAD_GROUP="aipg"
+#ESAD_USER="esa"
+#ESAD_GROUP="esa"
 
 # Path to esad executable
 #ESAD_BIN="/usr/bin/esad"

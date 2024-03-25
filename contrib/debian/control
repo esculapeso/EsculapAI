@@ -1,4 +1,4 @@
-Source: aipg
+Source: esa
 Section: utils
 Priority: optional
 Maintainer: Matt Corallo <matt@mattcorallo.com>
@@ -26,45 +26,45 @@ Build-Depends: debhelper,
  python,
  libzmq3-dev
 Standards-Version: 3.9.2
-Homepage: https://aipgcrypto.com
-Vcs-Git: git://github.com/JustAResearcher/Aipg.git
-Vcs-Browser: https://github.com/JustAResearcher/Aipg
+Homepage: https://esacrypto.com
+Vcs-Git: git://github.com/JustAResearcher/Esa.git
+Vcs-Browser: https://github.com/JustAResearcher/Esa
 
 Package: esad
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- Aipg is a free open source peer-to-peer electronic cash system that
+ Esa is a free open source peer-to-peer electronic cash system that
  is completely decentralized, without the need for a central server or
  trusted parties.  Users hold the crypto keys to their own money and
  transact directly with each other, with the help of a P2P network to
  check for double-spending.
  .
  This package provides the daemon, esad, and the CLI tool
- aipg-cli to interact with the daemon.
+ esa-cli to interact with the daemon.
 
-Package: aipg-qt
+Package: esa-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- Aipg is a free open source peer-to-peer electronic cash system that
+ Esa is a free open source peer-to-peer electronic cash system that
  is completely decentralized, without the need for a central server or
  trusted parties.  Users hold the crypto keys to their own money and
  transact directly with each other, with the help of a P2P network to
  check for double-spending.
  .
- This package provides Aipg-Qt, a GUI for Aipg based on Qt.
+ This package provides Esa-Qt, a GUI for Esa based on Qt.
 
-Package: aipg-tx
+Package: esa-tx
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer digital currency - standalone transaction tool
- Aipg is a free open source peer-to-peer electronic cash system that
+ Esa is a free open source peer-to-peer electronic cash system that
  is completely decentralized, without the need for a central server or
  trusted parties.  Users hold the crypto keys to their own money and
  transact directly with each other, with the help of a P2P network to
  check for double-spending.
  .
- This package provides aipg-tx, a command-line transaction creation
- tool which can be used without a aipg daemon.  Some means of
+ This package provides esa-tx, a command-line transaction creation
+ tool which can be used without a esa daemon.  Some means of
  exchanging minimal transaction data with peers is still required.

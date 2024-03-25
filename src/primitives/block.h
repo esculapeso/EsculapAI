@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_PRIMITIVES_BLOCK_H
-#define AIPG_PRIMITIVES_BLOCK_H
+#ifndef ESA_PRIMITIVES_BLOCK_H
+#define ESA_PRIMITIVES_BLOCK_H
 
 #include "primitives/transaction.h"
 #include "serialize.h"
@@ -232,4 +232,4 @@ public:
     }
 };
 
-#endif // AIPG_PRIMITIVES_BLOCK_H
+#endif // ESA_PRIMITIVES_BLOCK_H

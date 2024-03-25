@@ -1,11 +1,11 @@
 // Copyright (c) 2011-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_QT_OPTIONSMODEL_H
-#define AIPG_QT_OPTIONSMODEL_H
+#ifndef ESA_QT_OPTIONSMODEL_H
+#define ESA_QT_OPTIONSMODEL_H
 
 #include "amount.h"
 
@@ -15,7 +15,7 @@ QT_BEGIN_NAMESPACE
 class QNetworkProxy;
 QT_END_NAMESPACE
 
-/** Interface from Qt to configuration data structure for aipg client.
+/** Interface from Qt to configuration data structure for esa client.
    To Qt, the options are presented as a list with the different options
    laid out vertically.
    This can be changed to a tree once the settings become sufficiently
@@ -40,7 +40,7 @@ public:
         ProxyUseTor,            // bool
         ProxyIPTor,             // QString
         ProxyPortTor,           // int
-        DisplayUnit,            // AipgUnits::Unit
+        DisplayUnit,            // EsaUnits::Unit
         ThirdPartyTxUrls,       // QString
         Language,               // QString
         CoinControlFeatures,    // bool
@@ -87,10 +87,10 @@ private:
     int nDisplayUnit;
     QString strThirdPartyTxUrls;
     bool fCoinControlFeatures;
-    /** AIPG START*/
+    /** ESA START*/
     bool fCustomFeeFeatures;
     bool fDarkModeEnabled;
-    /** AIPG END*/
+    /** ESA END*/
     /* settings that were overridden by command-line */
     QString strOverriddenByCommandLine;
 
@@ -106,4 +106,4 @@ Q_SIGNALS:
     void hideTrayIconChanged(bool);
 };
 
-#endif // AIPG_QT_OPTIONSMODEL_H
+#endif // ESA_QT_OPTIONSMODEL_H
