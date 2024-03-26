@@ -1,28 +1,28 @@
-AIPG Core version *0.15.0.1* is now available from:
+ESA Core version *0.15.0.1* is now available from:
 
-  <https://aipg.org/bin/aipg-core-0.15.0.1/>
+  <https://esa.org/bin/esa-core-0.15.0.1/>
 
 and
 
-  <https://aipgcoin.org/bin/aipg-core-0.15.0.1/>
+  <https://esacoin.org/bin/esa-core-0.15.0.1/>
 
 This is a minor bug fix for 0.15.0.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/AIPGProject/AIPGcoin/issues>
+  <https://github.com/ESAProject/ESAcoin/issues>
 
 To receive security and update notifications, please subscribe to:
 
-  <https://aipgcoin.org/en/list/announcements/join/>
+  <https://esacoin.org/en/list/announcements/join/>
 
 How to Upgrade
 ==============
 
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the 
-installer (on Windows) or just copy over `/Applications/AIPG-Qt` (on Mac)
-or `aipgd`/`aipg-qt` (on Linux).
+installer (on Windows) or just copy over `/Applications/ESA-Qt` (on Mac)
+or `esad`/`esa-qt` (on Linux).
 
 The first time you run version 0.15.0 or higher, your chainstate database will
 be converted to a new format, which will take anywhere from a few minutes to
@@ -51,10 +51,10 @@ processing the entire blockchain.
 Compatibility
 ==============
 
-AIPG Core is extensively tested on multiple operating systems using
+ESA Core is extensively tested on multiple operating systems using
 the Linux kernel, macOS 10.8+, and Windows Vista and later. Windows XP is not supported.
 
-AIPG Core should also work on most other Unix-like systems but is not
+ESA Core should also work on most other Unix-like systems but is not
 frequently tested on them.
 
 Notable changes
@@ -84,4 +84,4 @@ Thanks to everyone who directly contributed to this release:
 - Jonas Schnelli
 - Wladimir J. van der Laan
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/aipg/).
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/esa/).

@@ -1,5 +1,5 @@
-#ifndef AIPG_QT_TEST_WALLETTESTS_H
-#define AIPG_QT_TEST_WALLETTESTS_H
+#ifndef ESA_QT_TEST_WALLETTESTS_H
+#define ESA_QT_TEST_WALLETTESTS_H
 
 #include <QObject>
 #include <QTest>
@@ -12,4 +12,4 @@ private Q_SLOTS:
     void walletTests();
 };
 
-#endif // AIPG_QT_TEST_WALLETTESTS_H
+#endif // ESA_QT_TEST_WALLETTESTS_H

@@ -1,11 +1,11 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_QT_TRAFFICGRAPHWIDGET_H
-#define AIPG_QT_TRAFFICGRAPHWIDGET_H
+#ifndef ESA_QT_TRAFFICGRAPHWIDGET_H
+#define ESA_QT_TRAFFICGRAPHWIDGET_H
 
 #include <QWidget>
 #include <QQueue>
@@ -47,4 +47,4 @@ private:
     ClientModel *clientModel;
 };
 
-#endif // AIPG_QT_TRAFFICGRAPHWIDGET_H
+#endif // ESA_QT_TRAFFICGRAPHWIDGET_H

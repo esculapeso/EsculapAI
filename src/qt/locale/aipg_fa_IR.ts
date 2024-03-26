@@ -64,11 +64,11 @@
         <translation>آدرس‌های گیرنده</translation>
     </message>
     <message>
-        <source>These are your Aipg addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Esa addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>اینها آدرس‌های بیتکوین شما برای ارسال وجوه هستند. همیشه قبل از ارسال، مقدار و آدرس گیرنده را بررسی کنید.</translation>
     </message>
     <message>
-        <source>These are your Aipg addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your Esa addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>اینها آدرس‌های بیتکوین شما برای دریافت وجوه هستند. توصیه می‌شود برای هر دریافت از یک آدرس جدید استفاده کنید.</translation>
     </message>
     <message>
@@ -146,7 +146,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>AipgGUI</name>
+    <name>EsaGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>امضا و پیام</translation>
@@ -208,7 +208,7 @@
         <translation>دریافت آدرس ها</translation>
     </message>
     <message>
-        <source>Send coins to a Aipg address</source>
+        <source>Send coins to a Esa address</source>
         <translation>ارسال کوین به آدرس بیت کوین</translation>
     </message>
     <message>
@@ -228,7 +228,7 @@
         <translation>تایید پیام</translation>
     </message>
     <message>
-        <source>Aipg</source>
+        <source>Esa</source>
         <translation>بیت کوین</translation>
     </message>
     <message>
@@ -507,8 +507,8 @@
         <translation>فرم</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Aipg network after a connection is established, but this process has not completed yet.</source>
-        <translation>اطلاعات نمایش داده شده ممکن است روزآمد نباشد. wallet شما به صورت خودکار بعد از برقراری اتصال با شبکه aipg به روز می شود اما این فرایند هنوز تکمیل نشده است.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Esa network after a connection is established, but this process has not completed yet.</source>
+        <translation>اطلاعات نمایش داده شده ممکن است روزآمد نباشد. wallet شما به صورت خودکار بعد از برقراری اتصال با شبکه esa به روز می شود اما این فرایند هنوز تکمیل نشده است.</translation>
     </message>
     <message>
         <source>Available:</source>
@@ -880,7 +880,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>aipg-core</name>
+    <name>esa-core</name>
     <message>
         <source>Options:</source>
         <translation>انتخابها:</translation>

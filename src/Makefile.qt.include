@@ -3,94 +3,94 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-bin_PROGRAMS += qt/aipg-qt
-EXTRA_LIBRARIES += qt/libaipgqt.a
+bin_PROGRAMS += qt/esa-qt
+EXTRA_LIBRARIES += qt/libesaqt.a
 
-# aipg qt core #
+# esa qt core #
 QT_TS = \
-  qt/locale/aipg_af.ts \
-  qt/locale/aipg_af_ZA.ts \
-  qt/locale/aipg_ar.ts \
-  qt/locale/aipg_be_BY.ts \
-  qt/locale/aipg_bg_BG.ts \
-  qt/locale/aipg_bg.ts \
-  qt/locale/aipg_ca_ES.ts \
-  qt/locale/aipg_ca.ts \
-  qt/locale/aipg_ca@valencia.ts \
-  qt/locale/aipg_cs.ts \
-  qt/locale/aipg_cy.ts \
-  qt/locale/aipg_da.ts \
-  qt/locale/aipg_de.ts \
-  qt/locale/aipg_el_GR.ts \
-  qt/locale/aipg_el.ts \
-  qt/locale/aipg_en_GB.ts \
-  qt/locale/aipg_en.ts \
-  qt/locale/aipg_eo.ts \
-  qt/locale/aipg_es_AR.ts \
-  qt/locale/aipg_es_CL.ts \
-  qt/locale/aipg_es_CO.ts \
-  qt/locale/aipg_es_DO.ts \
-  qt/locale/aipg_es_ES.ts \
-  qt/locale/aipg_es_MX.ts \
-  qt/locale/aipg_es.ts \
-  qt/locale/aipg_es_UY.ts \
-  qt/locale/aipg_es_VE.ts \
-  qt/locale/aipg_et_EE.ts \
-  qt/locale/aipg_et.ts \
-  qt/locale/aipg_eu_ES.ts \
-  qt/locale/aipg_fa_IR.ts \
-  qt/locale/aipg_fa.ts \
-  qt/locale/aipg_fi.ts \
-  qt/locale/aipg_fr_CA.ts \
-  qt/locale/aipg_fr_FR.ts \
-  qt/locale/aipg_fr.ts \
-  qt/locale/aipg_gl.ts \
-  qt/locale/aipg_he.ts \
-  qt/locale/aipg_hi_IN.ts \
-  qt/locale/aipg_hr.ts \
-  qt/locale/aipg_hu.ts \
-  qt/locale/aipg_id_ID.ts \
-  qt/locale/aipg_it_IT.ts \
-  qt/locale/aipg_it.ts \
-  qt/locale/aipg_ja.ts \
-  qt/locale/aipg_ka.ts \
-  qt/locale/aipg_kk_KZ.ts \
-  qt/locale/aipg_ko_KR.ts \
-  qt/locale/aipg_ku_IQ.ts \
-  qt/locale/aipg_ky.ts \
-  qt/locale/aipg_la.ts \
-  qt/locale/aipg_lt.ts \
-  qt/locale/aipg_lv_LV.ts \
-  qt/locale/aipg_mk_MK.ts \
-  qt/locale/aipg_mn.ts \
-  qt/locale/aipg_ms_MY.ts \
-  qt/locale/aipg_nb.ts \
-  qt/locale/aipg_ne.ts \
-  qt/locale/aipg_nl.ts \
-  qt/locale/aipg_pl.ts \
-  qt/locale/aipg_pt_BR.ts \
-  qt/locale/aipg_pt_PT.ts \
-  qt/locale/aipg_ro_RO.ts \
-  qt/locale/aipg_ro.ts \
-  qt/locale/aipg_ru.ts \
-  qt/locale/aipg_sk.ts \
-  qt/locale/aipg_sl_SI.ts \
-  qt/locale/aipg_sq.ts \
-  qt/locale/aipg_sr@latin.ts \
-  qt/locale/aipg_sr.ts \
-  qt/locale/aipg_sv.ts \
-  qt/locale/aipg_ta.ts \
-  qt/locale/aipg_th_TH.ts \
-  qt/locale/aipg_tr_TR.ts \
-  qt/locale/aipg_tr.ts \
-  qt/locale/aipg_uk.ts \
-  qt/locale/aipg_ur_PK.ts \
-  qt/locale/aipg_uz@Cyrl.ts \
-  qt/locale/aipg_vi.ts \
-  qt/locale/aipg_vi_VN.ts \
-  qt/locale/aipg_zh_CN.ts \
-  qt/locale/aipg_zh_HK.ts \
-  qt/locale/aipg_zh_TW.ts
+  qt/locale/esa_af.ts \
+  qt/locale/esa_af_ZA.ts \
+  qt/locale/esa_ar.ts \
+  qt/locale/esa_be_BY.ts \
+  qt/locale/esa_bg_BG.ts \
+  qt/locale/esa_bg.ts \
+  qt/locale/esa_ca_ES.ts \
+  qt/locale/esa_ca.ts \
+  qt/locale/esa_ca@valencia.ts \
+  qt/locale/esa_cs.ts \
+  qt/locale/esa_cy.ts \
+  qt/locale/esa_da.ts \
+  qt/locale/esa_de.ts \
+  qt/locale/esa_el_GR.ts \
+  qt/locale/esa_el.ts \
+  qt/locale/esa_en_GB.ts \
+  qt/locale/esa_en.ts \
+  qt/locale/esa_eo.ts \
+  qt/locale/esa_es_AR.ts \
+  qt/locale/esa_es_CL.ts \
+  qt/locale/esa_es_CO.ts \
+  qt/locale/esa_es_DO.ts \
+  qt/locale/esa_es_ES.ts \
+  qt/locale/esa_es_MX.ts \
+  qt/locale/esa_es.ts \
+  qt/locale/esa_es_UY.ts \
+  qt/locale/esa_es_VE.ts \
+  qt/locale/esa_et_EE.ts \
+  qt/locale/esa_et.ts \
+  qt/locale/esa_eu_ES.ts \
+  qt/locale/esa_fa_IR.ts \
+  qt/locale/esa_fa.ts \
+  qt/locale/esa_fi.ts \
+  qt/locale/esa_fr_CA.ts \
+  qt/locale/esa_fr_FR.ts \
+  qt/locale/esa_fr.ts \
+  qt/locale/esa_gl.ts \
+  qt/locale/esa_he.ts \
+  qt/locale/esa_hi_IN.ts \
+  qt/locale/esa_hr.ts \
+  qt/locale/esa_hu.ts \
+  qt/locale/esa_id_ID.ts \
+  qt/locale/esa_it_IT.ts \
+  qt/locale/esa_it.ts \
+  qt/locale/esa_ja.ts \
+  qt/locale/esa_ka.ts \
+  qt/locale/esa_kk_KZ.ts \
+  qt/locale/esa_ko_KR.ts \
+  qt/locale/esa_ku_IQ.ts \
+  qt/locale/esa_ky.ts \
+  qt/locale/esa_la.ts \
+  qt/locale/esa_lt.ts \
+  qt/locale/esa_lv_LV.ts \
+  qt/locale/esa_mk_MK.ts \
+  qt/locale/esa_mn.ts \
+  qt/locale/esa_ms_MY.ts \
+  qt/locale/esa_nb.ts \
+  qt/locale/esa_ne.ts \
+  qt/locale/esa_nl.ts \
+  qt/locale/esa_pl.ts \
+  qt/locale/esa_pt_BR.ts \
+  qt/locale/esa_pt_PT.ts \
+  qt/locale/esa_ro_RO.ts \
+  qt/locale/esa_ro.ts \
+  qt/locale/esa_ru.ts \
+  qt/locale/esa_sk.ts \
+  qt/locale/esa_sl_SI.ts \
+  qt/locale/esa_sq.ts \
+  qt/locale/esa_sr@latin.ts \
+  qt/locale/esa_sr.ts \
+  qt/locale/esa_sv.ts \
+  qt/locale/esa_ta.ts \
+  qt/locale/esa_th_TH.ts \
+  qt/locale/esa_tr_TR.ts \
+  qt/locale/esa_tr.ts \
+  qt/locale/esa_uk.ts \
+  qt/locale/esa_ur_PK.ts \
+  qt/locale/esa_uz@Cyrl.ts \
+  qt/locale/esa_vi.ts \
+  qt/locale/esa_vi_VN.ts \
+  qt/locale/esa_zh_CN.ts \
+  qt/locale/esa_zh_HK.ts \
+  qt/locale/esa_zh_TW.ts
 
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
@@ -129,10 +129,10 @@ QT_MOC_CPP = \
   qt/moc_assetcontroltreewidget.cpp \
   qt/moc_assetfilterproxy.cpp \
   qt/moc_bantablemodel.cpp \
-  qt/moc_aipgaddressvalidator.cpp \
-  qt/moc_aipgamountfield.cpp \
-  qt/moc_aipggui.cpp \
-  qt/moc_aipgunits.cpp \
+  qt/moc_esaaddressvalidator.cpp \
+  qt/moc_esaamountfield.cpp \
+  qt/moc_esagui.cpp \
+  qt/moc_esaunits.cpp \
   qt/moc_callback.cpp \
   qt/moc_clientmodel.cpp \
   qt/moc_coincontroldialog.cpp \
@@ -184,28 +184,28 @@ QT_MOC_CPP = \
   qt/moc_sendassetsentry.cpp \
   qt/moc_mnemonicdialog.cpp
 
-AIPG_MM = \
+ESA_MM = \
   qt/macdockiconhandler.mm \
   qt/macnotificationhandler.mm
 
 QT_MOC = \
-  qt/aipg.moc \
-  qt/aipgamountfield.moc \
+  qt/esa.moc \
+  qt/esaamountfield.moc \
   qt/callback.moc \
   qt/intro.moc \
   qt/overviewpage.moc \
   qt/rpcconsole.moc
 
-QT_QRC_CPP = qt/qrc_aipg.cpp
-QT_QRC = qt/aipg.qrc
-QT_QRC_LOCALE_CPP = qt/qrc_aipg_locale.cpp
-QT_QRC_LOCALE = qt/aipg_locale.qrc
+QT_QRC_CPP = qt/qrc_esa.cpp
+QT_QRC = qt/esa.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_esa_locale.cpp
+QT_QRC_LOCALE = qt/esa_locale.qrc
 
 PROTOBUF_CC = qt/paymentrequest.pb.cc
 PROTOBUF_H = qt/paymentrequest.pb.h
 PROTOBUF_PROTO = qt/paymentrequest.proto
 
-AIPG_QT_H = \
+ESA_QT_H = \
   qt/addressbookpage.h \
   qt/addresstablemodel.h \
   qt/askpassphrasedialog.h \
@@ -216,10 +216,10 @@ AIPG_QT_H = \
   qt/assetsdialog.h \
   qt/createassetdialog.h \
   qt/bantablemodel.h \
-  qt/aipgaddressvalidator.h \
-  qt/aipgamountfield.h \
-  qt/aipggui.h \
-  qt/aipgunits.h \
+  qt/esaaddressvalidator.h \
+  qt/esaamountfield.h \
+  qt/esagui.h \
+  qt/esaunits.h \
   qt/callback.h \
   qt/clientmodel.h \
   qt/coincontroldialog.h \
@@ -290,10 +290,10 @@ RES_ICONS = \
   qt/res/icons/asset_manage_selected.png \
   qt/res/icons/asset_transfer.png \
   qt/res/icons/asset_transfer_selected.png \
-  qt/res/icons/aipgcointext.png \
-  qt/res/icons/aipg.ico \
-  qt/res/icons/aipg_testnet.ico \
-  qt/res/icons/aipg.png \
+  qt/res/icons/esacointext.png \
+  qt/res/icons/esa.ico \
+  qt/res/icons/esa_testnet.ico \
+  qt/res/icons/esa.png \
   qt/res/icons/chevron.png \
   qt/res/icons/clock1.png \
   qt/res/icons/clock2.png \
@@ -386,12 +386,12 @@ RES_ICONS = \
   qt/res/fonts/OpenSans-SemiBoldItalic.ttf
 
 
-AIPG_QT_BASE_CPP = \
+ESA_QT_BASE_CPP = \
   qt/bantablemodel.cpp \
-  qt/aipgaddressvalidator.cpp \
-  qt/aipgamountfield.cpp \
-  qt/aipggui.cpp \
-  qt/aipgunits.cpp \
+  qt/esaaddressvalidator.cpp \
+  qt/esaamountfield.cpp \
+  qt/esagui.cpp \
+  qt/esaunits.cpp \
   qt/clientmodel.cpp \
   qt/csvmodelwriter.cpp \
   qt/darkstyle.cpp \
@@ -412,9 +412,9 @@ AIPG_QT_BASE_CPP = \
   qt/trafficgraphwidget.cpp \
   qt/utilitydialog.cpp
 
-AIPG_QT_WINDOWS_CPP = qt/winshutdownmonitor.cpp
+ESA_QT_WINDOWS_CPP = qt/winshutdownmonitor.cpp
 
-AIPG_QT_WALLET_CPP = \
+ESA_QT_WALLET_CPP = \
   qt/addressbookpage.cpp \
   qt/addresstablemodel.cpp \
   qt/askpassphrasedialog.cpp \
@@ -456,31 +456,31 @@ AIPG_QT_WALLET_CPP = \
   qt/walletview.cpp \
   qt/mnemonicdialog.cpp
 
-AIPG_QT_CPP = $(AIPG_QT_BASE_CPP)
+ESA_QT_CPP = $(ESA_QT_BASE_CPP)
 if TARGET_WINDOWS
-AIPG_QT_CPP += $(AIPG_QT_WINDOWS_CPP)
+ESA_QT_CPP += $(ESA_QT_WINDOWS_CPP)
 endif
 if ENABLE_WALLET
-AIPG_QT_CPP += $(AIPG_QT_WALLET_CPP)
+ESA_QT_CPP += $(ESA_QT_WALLET_CPP)
 endif
 
 RES_IMAGES = 
 
 RES_MOVIES = $(wildcard $(srcdir)/qt/res/movies/spinner-*.png)
 
-AIPG_RC = qt/res/aipg-qt-res.rc
+ESA_RC = qt/res/esa-qt-res.rc
 
-AIPG_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
+ESA_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
   -I$(builddir)/qt/forms -DQT_NO_KEYWORDS
 
-qt_libaipgqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(AIPG_INCLUDES) $(AIPG_QT_INCLUDES) \
+qt_libesaqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(ESA_INCLUDES) $(ESA_QT_INCLUDES) \
   $(QT_INCLUDES) $(QT_DBUS_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
-qt_libaipgqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_libesaqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
-qt_libaipgqt_a_SOURCES = $(AIPG_QT_CPP) $(AIPG_QT_H) $(QT_FORMS_UI) \
+qt_libesaqt_a_SOURCES = $(ESA_QT_CPP) $(ESA_QT_H) $(QT_FORMS_UI) \
   $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_MOVIES)
 
-nodist_qt_libaipgqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
+nodist_qt_libesaqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
   $(PROTOBUF_H) $(QT_QRC_CPP) $(QT_QRC_LOCALE_CPP)
 
 # forms/foo.h -> forms/ui_foo.h
@@ -489,71 +489,71 @@ QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:
 # Most files will depend on the forms and moc files as includes. Generate them
 # before anything else.
 $(QT_MOC): $(QT_FORMS_H)
-$(qt_libaipgqt_a_OBJECTS) $(qt_aipg_qt_OBJECTS) : | $(QT_MOC)
+$(qt_libesaqt_a_OBJECTS) $(qt_esa_qt_OBJECTS) : | $(QT_MOC)
 
 #Generating these with a half-written protobuf header leads to wacky results.
 #This makes sure it's done.
 $(QT_MOC): $(PROTOBUF_H)
 $(QT_MOC_CPP): $(PROTOBUF_H)
 
-# aipg-qt binary #
-qt_aipg_qt_CPPFLAGS = $(AM_CPPFLAGS) $(AIPG_INCLUDES) $(AIPG_QT_INCLUDES) \
+# esa-qt binary #
+qt_esa_qt_CPPFLAGS = $(AM_CPPFLAGS) $(ESA_INCLUDES) $(ESA_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
-qt_aipg_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_esa_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
-qt_aipg_qt_SOURCES = qt/aipg.cpp
+qt_esa_qt_SOURCES = qt/esa.cpp
 if TARGET_DARWIN
-  qt_aipg_qt_SOURCES += $(AIPG_MM)
+  qt_esa_qt_SOURCES += $(ESA_MM)
 endif
 if TARGET_WINDOWS
-  qt_aipg_qt_SOURCES += $(AIPG_RC)
+  qt_esa_qt_SOURCES += $(ESA_RC)
 endif
-qt_aipg_qt_LDADD = qt/libaipgqt.a $(LIBAIPG_SERVER)
+qt_esa_qt_LDADD = qt/libesaqt.a $(LIBESA_SERVER)
 if ENABLE_WALLET
-qt_aipg_qt_LDADD += $(LIBAIPG_WALLET)
+qt_esa_qt_LDADD += $(LIBESA_WALLET)
 endif
 if ENABLE_ZMQ
-qt_aipg_qt_LDADD += $(LIBAIPG_ZMQ) $(ZMQ_LIBS)
+qt_esa_qt_LDADD += $(LIBESA_ZMQ) $(ZMQ_LIBS)
 endif
-qt_aipg_qt_LDADD += $(LIBAIPG_CLI) $(LIBAIPG_COMMON) $(LIBAIPG_UTIL) $(LIBAIPG_CONSENSUS) $(LIBAIPG_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
+qt_esa_qt_LDADD += $(LIBESA_CLI) $(LIBESA_COMMON) $(LIBESA_UTIL) $(LIBESA_CONSENSUS) $(LIBESA_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-qt_aipg_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-qt_aipg_qt_LIBTOOLFLAGS = --tag CXX
+qt_esa_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_esa_qt_LIBTOOLFLAGS = --tag CXX
 
 #locale/foo.ts -> locale/foo.qm
 QT_QM=$(QT_TS:.ts=.qm)
 
 SECONDARY: $(QT_QM)
 
-$(srcdir)/qt/aipgstrings.cpp: $(libaipg_server_a_SOURCES) $(libaipg_wallet_a_SOURCES) $(libaipg_common_a_SOURCES) $(libaipg_zmq_a_SOURCES) $(libaipg_consensus_a_SOURCES) $(libaipg_util_a_SOURCES)
+$(srcdir)/qt/esastrings.cpp: $(libesa_server_a_SOURCES) $(libesa_wallet_a_SOURCES) $(libesa_common_a_SOURCES) $(libesa_zmq_a_SOURCES) $(libesa_consensus_a_SOURCES) $(libesa_util_a_SOURCES)
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" COPYRIGHT_HOLDERS="$(COPYRIGHT_HOLDERS)" COPYRIGHT_HOLDERS_SUBSTITUTION="$(COPYRIGHT_HOLDERS_SUBSTITUTION)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
 
-translate: $(srcdir)/qt/aipgstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(AIPG_QT_BASE_CPP) qt/aipg.cpp $(AIPG_QT_WINDOWS_CPP) $(AIPG_QT_WALLET_CPP) $(AIPG_QT_H) $(AIPG_MM)
+translate: $(srcdir)/qt/esastrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(ESA_QT_BASE_CPP) qt/esa.cpp $(ESA_QT_WINDOWS_CPP) $(ESA_QT_WALLET_CPP) $(ESA_QT_H) $(ESA_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/aipg_en.ts
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/esa_en.ts
 
 $(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
 	@test -f $(RCC)
 	@cp -f $< $(@D)/temp_$(<F)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name aipg_locale $(@D)/temp_$(<F) | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name esa_locale $(@D)/temp_$(<F) | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 	@rm $(@D)/temp_$(<F)
 
 $(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_MOVIES) $(PROTOBUF_H)
 	@test -f $(RCC)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name aipg $< | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name esa $< | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
-CLEAN_QT = $(nodist_qt_libaipgqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno
+CLEAN_QT = $(nodist_qt_libesaqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno
 
 CLEANFILES += $(CLEAN_QT)
 
-aipg_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libaipgqt_a_OBJECTS) $(qt_aipg_qt_OBJECTS) qt/aipg-qt$(EXEEXT) $(LIBAIPGQT)
+esa_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libesaqt_a_OBJECTS) $(qt_esa_qt_OBJECTS) qt/esa-qt$(EXEEXT) $(LIBESAQT)
 
-aipg_qt : qt/aipg-qt$(EXEEXT)
+esa_qt : qt/esa-qt$(EXEEXT)
 
 ui_%.h: %.ui
 	@test -f $(UIC)

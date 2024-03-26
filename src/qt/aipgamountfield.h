@@ -1,11 +1,11 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_QT_AipgAmountField_H
-#define AIPG_QT_AipgAmountField_H
+#ifndef ESA_QT_EsaAmountField_H
+#define ESA_QT_EsaAmountField_H
 
 #include "amount.h"
 
@@ -17,9 +17,9 @@ QT_BEGIN_NAMESPACE
 class QValueComboBox;
 QT_END_NAMESPACE
 
-/** Widget for entering aipg amounts.
+/** Widget for entering esa amounts.
   */
-class AipgAmountField: public QWidget
+class EsaAmountField: public QWidget
 {
     Q_OBJECT
 
@@ -28,7 +28,7 @@ class AipgAmountField: public QWidget
     Q_PROPERTY(qint64 value READ value WRITE setValue NOTIFY valueChanged USER true)
 
 public:
-    explicit AipgAmountField(QWidget *parent = 0);
+    explicit EsaAmountField(QWidget *parent = 0);
 
     CAmount value(bool *value=0) const;
     void setValue(const CAmount& value);
@@ -128,4 +128,4 @@ private:
 };
 
 
-#endif // AIPG_QT_AipgAmountField_H
+#endif // ESA_QT_EsaAmountField_H

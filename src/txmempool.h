@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_TXMEMPOOL_H
-#define AIPG_TXMEMPOOL_H
+#ifndef ESA_TXMEMPOOL_H
+#define ESA_TXMEMPOOL_H
 
 #include <memory>
 #include <set>
@@ -847,4 +847,4 @@ struct ConnectedBlockAssetData
     std::set<CAssetCacheQualifierAddress> newQualifiersToAdd;
 };
 
-#endif // AIPG_TXMEMPOOL_H
+#endif // ESA_TXMEMPOOL_H

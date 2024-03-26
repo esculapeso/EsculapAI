@@ -7,8 +7,8 @@
 /**
  * Utilities for converting data from/to strings.
  */
-#ifndef AIPG_UTILSTRENCODINGS_H
-#define AIPG_UTILSTRENCODINGS_H
+#ifndef ESA_UTILSTRENCODINGS_H
+#define ESA_UTILSTRENCODINGS_H
 
 #include <stdint.h>
 #include <string>
@@ -157,4 +157,4 @@ bool TimingResistantEqual(const T& a, const T& b)
  */
 bool ParseFixedPoint(const std::string &val, int decimals, int64_t *amount_out);
 
-#endif // AIPG_UTILSTRENCODINGS_H
+#endif // ESA_UTILSTRENCODINGS_H

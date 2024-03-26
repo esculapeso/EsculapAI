@@ -64,12 +64,12 @@
         <translation>Vastaanotto-osoitteet</translation>
     </message>
     <message>
-        <source>These are your Aipg addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Nämä ovat Aipg-osoitteesi maksujen lähettämistä varten. Tarkista aina määrä ja vastaanotto-osoite ennen kolikoiden lähettämistä.</translation>
+        <source>These are your Esa addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Nämä ovat Esa-osoitteesi maksujen lähettämistä varten. Tarkista aina määrä ja vastaanotto-osoite ennen kolikoiden lähettämistä.</translation>
     </message>
     <message>
-        <source>These are your Aipg addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Tässä ovat Aipg vastaanotto-osoitteesi. On suositeltavaa käyttää uutta vastaanotto-osoitetta jokaista lähetystä varten.</translation>
+        <source>These are your Esa addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Tässä ovat Esa vastaanotto-osoitteesi. On suositeltavaa käyttää uutta vastaanotto-osoitetta jokaista lähetystä varten.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -170,8 +170,8 @@
         <translation>Vahvista lompakon salaaminen</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR AIPG&lt;/b&gt;!</source>
-        <translation>Varoitus: Jos salaat lompakkosi ja menetät tunnuslauseesi, &lt;b&gt;MENETÄT KAIKKI Aipg&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ESA&lt;/b&gt;!</source>
+        <translation>Varoitus: Jos salaat lompakkosi ja menetät tunnuslauseesi, &lt;b&gt;MENETÄT KAIKKI Esa&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -182,7 +182,7 @@
         <translation>Lompakko salattiin</translation>
     </message>
     <message>
-        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your aipgss from being stolen by malware infecting your computer.</source>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your esass from being stolen by malware infecting your computer.</source>
         <translation>%1 sulkeutuu lopettaakseen salausprosessin. Muista, että salattukaan lompakko ei täysin suojaa sitä haittaohjelmien aiheuttamilta varkauksilta.</translation>
     </message>
     <message>
@@ -234,7 +234,7 @@
     </message>
 </context>
 <context>
-    <name>AipgGUI</name>
+    <name>EsaGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>&amp;Allekirjoita viesti...</translation>
@@ -340,8 +340,8 @@
         <translation>Ladataan lohkoindeksiä...</translation>
     </message>
     <message>
-        <source>Send coins to a Aipg address</source>
-        <translation>Lähetä kolikoita Aipg-osoitteeseen</translation>
+        <source>Send coins to a Esa address</source>
+        <translation>Lähetä kolikoita Esa-osoitteeseen</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -364,8 +364,8 @@
         <translation>Varmista &amp;viesti...</translation>
     </message>
     <message>
-        <source>Aipg</source>
-        <translation>Aipg</translation>
+        <source>Esa</source>
+        <translation>Esa</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -385,19 +385,19 @@
     </message>
     <message>
         <source>Show or hide the main Window</source>
-        <translation>Näytä tai piilota Aipg-ikkuna</translation>
+        <translation>Näytä tai piilota Esa-ikkuna</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>Suojaa yksityiset avaimet, jotka kuuluvat lompakkoosi</translation>
     </message>
     <message>
-        <source>Sign messages with your Aipg addresses to prove you own them</source>
-        <translation>Allekirjoita viestisi omalla Aipg -osoitteellasi todistaaksesi, että omistat ne</translation>
+        <source>Sign messages with your Esa addresses to prove you own them</source>
+        <translation>Allekirjoita viestisi omalla Esa -osoitteellasi todistaaksesi, että omistat ne</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Aipg addresses</source>
-        <translation>Varmista, että viestisi on allekirjoitettu määritetyllä Aipg -osoitteella</translation>
+        <source>Verify messages to ensure they were signed with specified Esa addresses</source>
+        <translation>Varmista, että viestisi on allekirjoitettu määritetyllä Esa -osoitteella</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -416,8 +416,8 @@
         <translation>Välilehtipalkki</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and aipg: URIs)</source>
-        <translation>Pyydä maksuja (Luo QR koodit ja aipg: URIt)</translation>
+        <source>Request payments (generates QR codes and esa: URIs)</source>
+        <translation>Pyydä maksuja (Luo QR koodit ja esa: URIt)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -428,16 +428,16 @@
         <translation>Näytä vastaanottamiseen käytettyjen osoitteiden ja nimien lista</translation>
     </message>
     <message>
-        <source>Open a aipg: URI or payment request</source>
-        <translation>Avaa aipg: URI tai maksupyyntö</translation>
+        <source>Open a esa: URI or payment request</source>
+        <translation>Avaa esa: URI tai maksupyyntö</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>&amp;Komentorivin valinnat</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Aipg network</source>
-        <translation><numerusform>%n aktiivinen yhteys Aipg-verkkoon</numerusform><numerusform>%n aktiivista yhteyttä Aipg-verkkoon</numerusform></translation>
+        <source>%n active connection(s) to Esa network</source>
+        <translation><numerusform>%n aktiivinen yhteys Esa-verkkoon</numerusform><numerusform>%n aktiivista yhteyttä Esa-verkkoon</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -480,8 +480,8 @@
         <translation>Rahansiirtohistoria on ajan tasalla</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Aipg command-line options</source>
-        <translation>Näytä %1 ohjeet saadaksesi listan mahdollisista Aipg komentorivivalinnoista</translation>
+        <source>Show the %1 help message to get a list with possible Esa command-line options</source>
+        <translation>Näytä %1 ohjeet saadaksesi listan mahdollisista Esa komentorivivalinnoista</translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -550,8 +550,8 @@
         <translation>Lompakko on &lt;b&gt;salattu&lt;/b&gt; ja tällä hetkellä &lt;b&gt;lukittuna&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Aipg can no longer continue safely and will quit.</source>
-        <translation>Peruuttamaton virhe on tapahtunut. Aipg ei voi enää jatkaa turvallisesti ja sammutetaan.</translation>
+        <source>A fatal error occurred. Esa can no longer continue safely and will quit.</source>
+        <translation>Peruuttamaton virhe on tapahtunut. Esa ei voi enää jatkaa turvallisesti ja sammutetaan.</translation>
     </message>
 </context>
 <context>
@@ -736,8 +736,8 @@
         <translation>Muokkaa lähettävää osoitetta</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Aipg address.</source>
-        <translation>Antamasi osoite "%1" ei ole kelvollinen Aipg-osoite.</translation>
+        <source>The entered address "%1" is not a valid Esa address.</source>
+        <translation>Antamasi osoite "%1" ei ole kelvollinen Esa-osoite.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -845,8 +845,8 @@
         <translation>Tämä on ensimmäinen kerta, kun %1 on käynnistetty, joten voit valita data-hakemiston paikan.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Aipg block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>%1 lataa ja tallentaa kopion Aipg lohkoketjusta. Vähintään %2Gt dataa tullaan tallentamaan tähän hakemistoon, ja tarve kasvaa ajan myötä. Lompakko tullaan myös tallentamaan tähän hakemistoon.</translation>
+        <source>%1 will download and store a copy of the Esa block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>%1 lataa ja tallentaa kopion Esa lohkoketjusta. Vähintään %2Gt dataa tullaan tallentamaan tähän hakemistoon, ja tarve kasvaa ajan myötä. Lompakko tullaan myös tallentamaan tähän hakemistoon.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1022,16 +1022,16 @@
         <translation>&amp;Käytä varmistamattomia vaihtorahoja</translation>
     </message>
     <message>
-        <source>Automatically open the Aipg client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Avaa Aipg-asiakasohjelman portti reitittimellä automaattisesti. Tämä toimii vain, jos reitittimesi tukee UPnP:tä ja se on käytössä.</translation>
+        <source>Automatically open the Esa client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Avaa Esa-asiakasohjelman portti reitittimellä automaattisesti. Tämä toimii vain, jos reitittimesi tukee UPnP:tä ja se on käytössä.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Portin uudelleenohjaus &amp;UPnP:llä</translation>
     </message>
     <message>
-        <source>Connect to the Aipg network through a SOCKS5 proxy.</source>
-        <translation>Yhdistä Aipg-verkkoon SOCKS5-välityspalvelimen kautta.</translation>
+        <source>Connect to the Esa network through a SOCKS5 proxy.</source>
+        <translation>Yhdistä Esa-verkkoon SOCKS5-välityspalvelimen kautta.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1070,8 +1070,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Aipg network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Yhdistä Aipg-verkkoon erillisen SOCKS5-välityspalvelimen kautta piilotettuja Tor-palveluja varten.</translation>
+        <source>Connect to the Esa network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Yhdistä Esa-verkkoon erillisen SOCKS5-välityspalvelimen kautta piilotettuja Tor-palveluja varten.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services:</source>
@@ -1107,11 +1107,11 @@
     </message>
     <message>
         <source>&amp;Unit to show amounts in:</source>
-        <translation>Yksikkö jona aipg-määrät näytetään</translation>
+        <translation>Yksikkö jona esa-määrät näytetään</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Valitse mitä yksikköä käytetään ensisijaisesti aipg-määrien näyttämiseen.</translation>
+        <translation>Valitse mitä yksikköä käytetään ensisijaisesti esa-määrien näyttämiseen.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1161,8 +1161,8 @@
         <translation>Lomake</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Aipg network after a connection is established, but this process has not completed yet.</source>
-        <translation>Näytetyt tiedot eivät välttämättä ole ajantasalla. Lompakkosi synkronoituu Aipg-verkon kanssa automaattisesti yhteyden muodostamisen jälkeen, mutta synkronointi on vielä meneillään.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Esa network after a connection is established, but this process has not completed yet.</source>
+        <translation>Näytetyt tiedot eivät välttämättä ole ajantasalla. Lompakkosi synkronoituu Esa-verkon kanssa automaattisesti yhteyden muodostamisen jälkeen, mutta synkronointi on vielä meneillään.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1202,7 +1202,7 @@
     </message>
     <message>
         <source>Your current total balance</source>
-        <translation>Tililläsi tällä hetkellä olevien Aipg määrä</translation>
+        <translation>Tililläsi tällä hetkellä olevien Esa määrä</translation>
     </message>
     <message>
         <source>Your current balance in watch-only addresses</source>
@@ -1254,8 +1254,8 @@
         <translation>Määrä</translation>
     </message>
     <message>
-        <source>Enter a Aipg address (e.g. %1)</source>
-        <translation>Syötä Aipg-osoite (esim. %1)</translation>
+        <source>Enter a Esa address (e.g. %1)</source>
+        <translation>Syötä Esa-osoite (esim. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1622,8 +1622,8 @@
         <translation>&amp;Uudelleenkäytä vastaanotto-osoitetta (ei suositella)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Aipg network.</source>
-        <translation>Valinnainen viesti liitetään maksupyyntöön ja näytetään avattaessa. Viestiä ei lähetetä Aipg-verkkoon.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Esa network.</source>
+        <translation>Valinnainen viesti liitetään maksupyyntöön ja näytetään avattaessa. Viestiä ei lähetetä Esa-verkkoon.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -1748,7 +1748,7 @@
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Lähetä Aipg</translation>
+        <translation>Lähetä Esa</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
@@ -1942,8 +1942,8 @@
         <translation>Tämä on normaali maksu.</translation>
     </message>
     <message>
-        <source>The Aipg address to send the payment to</source>
-        <translation>Aipg-osoite johon maksu lähetetään</translation>
+        <source>The Esa address to send the payment to</source>
+        <translation>Esa-osoite johon maksu lähetetään</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -1962,8 +1962,8 @@
         <translation>Poista tämä alkio</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less aipgss than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>Kulu vähennetään lähetettävästä määrästä. Saaja vastaanottaa vähemmän aipgseja kuin merkitset Määrä-kenttään. Jos saajia on monia, kulu jaetaan tasan.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less esass than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>Kulu vähennetään lähetettävästä määrästä. Saaja vastaanottaa vähemmän esaseja kuin merkitset Määrä-kenttään. Jos saajia on monia, kulu jaetaan tasan.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -1986,8 +1986,8 @@
         <translation>Aseta nimi tälle osoitteelle lisätäksesi sen käytettyjen osoitteiden listalle.</translation>
     </message>
     <message>
-        <source>A message that was attached to the aipg: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Aipg network.</source>
-        <translation>Viesti joka liitettiin aipg: URI:iin tallennetaan rahansiirtoon viitteeksi. Tätä viestiä ei lähetetä Aipg-verkkoon.</translation>
+        <source>A message that was attached to the esa: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Esa network.</source>
+        <translation>Viesti joka liitettiin esa: URI:iin tallennetaan rahansiirtoon viitteeksi. Tätä viestiä ei lähetetä Esa-verkkoon.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2027,8 +2027,8 @@
         <translation>&amp;Allekirjoita viesti</translation>
     </message>
     <message>
-        <source>The Aipg address to sign the message with</source>
-        <translation>Aipg-osoite jolla viesti allekirjoitetaan</translation>
+        <source>The Esa address to sign the message with</source>
+        <translation>Esa-osoite jolla viesti allekirjoitetaan</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2059,8 +2059,8 @@
         <translation>Kopioi tämänhetkinen allekirjoitus leikepöydälle</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Aipg address</source>
-        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän Aipg-osoitteen</translation>
+        <source>Sign the message to prove you own this Esa address</source>
+        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän Esa-osoitteen</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2079,12 +2079,12 @@
         <translation>&amp;Varmista viesti</translation>
     </message>
     <message>
-        <source>The Aipg address the message was signed with</source>
-        <translation>Aipg-osoite jolla viesti on allekirjoitettu</translation>
+        <source>The Esa address the message was signed with</source>
+        <translation>Esa-osoite jolla viesti on allekirjoitettu</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Aipg address</source>
-        <translation>Tarkista viestin allekirjoitus varmistaaksesi, että se allekirjoitettiin tietyllä Aipg-osoitteella</translation>
+        <source>Verify the message to ensure it was signed with the specified Esa address</source>
+        <translation>Tarkista viestin allekirjoitus varmistaaksesi, että se allekirjoitettiin tietyllä Esa-osoitteella</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -2374,7 +2374,7 @@
     </message>
     </context>
 <context>
-    <name>aipg-core</name>
+    <name>esa-core</name>
     <message>
         <source>Options:</source>
         <translation>Asetukset:</translation>
@@ -2432,8 +2432,8 @@
         <translation>HTTP-palvelinta ei voitu käynnistää. Katso debug-lokista lisätietoja.</translation>
     </message>
     <message>
-        <source>Aipg Core</source>
-        <translation>Aipg-ydin</translation>
+        <source>Esa Core</source>
+        <translation>Esa-ydin</translation>
     </message>
     <message>
         <source>The %s developers</source>

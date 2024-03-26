@@ -1,12 +1,12 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_SCRIPT_STANDARD_H
-#define AIPG_SCRIPT_STANDARD_H
+#ifndef ESA_SCRIPT_STANDARD_H
+#define ESA_SCRIPT_STANDARD_H
 
 #include "script/interpreter.h"
 #include "uint256.h"
@@ -66,12 +66,12 @@ enum txnouttype
     TX_NULL_DATA = 5, //!< unspendable OP_RETURN script that carries data
     TX_WITNESS_V0_SCRIPTHASH = 6,
     TX_WITNESS_V0_KEYHASH = 7,
-    /** AIPG START */
+    /** ESA START */
     TX_NEW_ASSET = 8,
     TX_REISSUE_ASSET = 9,
     TX_TRANSFER_ASSET = 10,
-    TX_RESTRICTED_ASSET_DATA = 11, //!< unspendable OP_AIPG_ASSET script that carries data
-    /** AIPG END */
+    TX_RESTRICTED_ASSET_DATA = 11, //!< unspendable OP_ESA_ASSET script that carries data
+    /** ESA END */
 };
 
 class CNoDestination {
@@ -85,7 +85,7 @@ public:
  *  * CNoDestination: no destination set
  *  * CKeyID: TX_PUBKEYHASH destination
  *  * CScriptID: TX_SCRIPTHASH destination
- *  A CTxDestination is the internal data type encoded in a aipg address
+ *  A CTxDestination is the internal data type encoded in a esa address
  */
 typedef boost::variant<CNoDestination, CKeyID, CScriptID> CTxDestination;
 
@@ -127,7 +127,7 @@ bool ExtractDestination(const CScript& scriptPubKey, CTxDestination& addressRet)
 bool ExtractDestinations(const CScript& scriptPubKey, txnouttype& typeRet, std::vector<CTxDestination>& addressRet, int& nRequiredRet);
 
 /**
- * Generate a Aipg scriptPubKey for the given CTxDestination. Returns a P2PKH
+ * Generate a Esa scriptPubKey for the given CTxDestination. Returns a P2PKH
  * script for a CKeyID destination, a P2SH script for a CScriptID, and an empty
  * script for CNoDestination.
  */
@@ -149,4 +149,4 @@ CScript GetScriptForNullAssetDataDestination(const CTxDestination &dest);
  */
 CScript GetScriptForWitness(const CScript& redeemscript);
 
-#endif // AIPG_SCRIPT_STANDARD_H
+#endif // ESA_SCRIPT_STANDARD_H

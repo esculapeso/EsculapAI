@@ -1,36 +1,36 @@
 #!/bin/bash
 #
-#  aipgd The aipg core server.
+#  esad The esa core server.
 #
 #
 # chkconfig: 345 80 20
-# description: aipgd
-# processname: aipgd
+# description: esad
+# processname: esad
 #
 
 # Source function library.
 . /etc/init.d/functions
 
-# you can override defaults in /etc/sysconfig/aipgd, see below
-if [ -f /etc/sysconfig/aipgd ]; then
-        . /etc/sysconfig/aipgd
+# you can override defaults in /etc/sysconfig/esad, see below
+if [ -f /etc/sysconfig/esad ]; then
+        . /etc/sysconfig/esad
 fi
 
 RETVAL=0
 
-prog=aipgd
-# you can override the lockfile via AIPGD_LOCKFILE in /etc/sysconfig/aipgd
-lockfile=${AIPGD_LOCKFILE-/var/lock/subsys/aipgd}
+prog=esad
+# you can override the lockfile via ESAD_LOCKFILE in /etc/sysconfig/esad
+lockfile=${ESAD_LOCKFILE-/var/lock/subsys/esad}
 
-# aipgd defaults to /usr/bin/aipgd, override with AIPGD_BIN
-aipgd=${AIPGD_BIN-/usr/bin/aipgd}
+# esad defaults to /usr/bin/esad, override with ESAD_BIN
+esad=${ESAD_BIN-/usr/bin/esad}
 
-# aipgd opts default to -disablewallet, override with AIPGD_OPTS
-aipgd_opts=${AIPGD_OPTS--disablewallet}
+# esad opts default to -disablewallet, override with ESAD_OPTS
+esad_opts=${ESAD_OPTS--disablewallet}
 
 start() {
     echo -n $"Starting $prog: "
-    daemon $DAEMONOPTS $aipgd $aipgd_opts
+    daemon $DAEMONOPTS $esad $esad_opts
     RETVAL=$?
     echo
     [ $RETVAL -eq 0 ] && touch $lockfile

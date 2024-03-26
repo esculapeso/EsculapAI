@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 # Copyright (c) 2017 The Bitcoin Core developers
 # Copyright (c) 2017-2019 The Raven Core developers
-# Copyright (c) 2020-2021 The AIPG Core developers
+# Copyright (c) 2020-2021 The ESA Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 """Testing unique asset use cases"""
 
 import random
-from test_framework.test_framework import AipgTestFramework
+from test_framework.test_framework import EsaTestFramework
 from test_framework.util import assert_contains, assert_does_not_contain_key, assert_equal, assert_raises_rpc_error
 
 
@@ -31,14 +31,14 @@ def gen_unique_asset_name(root):
     return name
 
 
-class UniqueAssetTest(AipgTestFramework):
+class UniqueAssetTest(EsaTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 3
         self.extra_args = [['-assetindex'], ['-assetindex'], ['-assetindex']]
 
     def activate_assets(self):
-        self.log.info("Generating aipg for node[0] and activating assets...")
+        self.log.info("Generating esa for node[0] and activating assets...")
         n0 = self.nodes[0]
         n0.generate(432)
         self.sync_all()

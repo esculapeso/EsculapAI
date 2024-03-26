@@ -1,14 +1,14 @@
 // Copyright (c) 2014-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_COMPAT_ENDIAN_H
-#define AIPG_COMPAT_ENDIAN_H
+#ifndef ESA_COMPAT_ENDIAN_H
+#define ESA_COMPAT_ENDIAN_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/aipg-config.h"
+#include "config/esa-config.h"
 #endif
 
 #include "compat/byteswap.h"
@@ -195,4 +195,4 @@ inline uint64_t le64toh(uint64_t little_endian_64bits)
 
 #endif // WORDS_BIGENDIAN
 
-#endif // AIPG_COMPAT_ENDIAN_H
+#endif // ESA_COMPAT_ENDIAN_H

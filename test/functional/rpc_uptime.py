@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Copyright (c) 2017 The Bitcoin Core developers
 # Copyright (c) 2017-2019 The Raven Core developers
-# Copyright (c) 2020-2021 The AIPG Core developers
+# Copyright (c) 2020-2021 The ESA Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test the RPC call related to the uptime command.
@@ -11,10 +11,10 @@ Test corresponds to code in rpc/server.cpp.
 
 import time
 
-from test_framework.test_framework import AipgTestFramework
+from test_framework.test_framework import EsaTestFramework
 
 
-class UptimeTest(AipgTestFramework):
+class UptimeTest(EsaTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.setup_clean_chain = True

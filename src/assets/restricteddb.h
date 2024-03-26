@@ -3,8 +3,8 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 
-#ifndef AIPGCOIN_RESTRICTEDDB_H
-#define AIPGCOIN_RESTRICTEDDB_H
+#ifndef ESACOIN_RESTRICTEDDB_H
+#define ESACOIN_RESTRICTEDDB_H
 
 #include <dbwrapper.h>
 
@@ -56,4 +56,4 @@ public:
 };
 
 
-#endif //AIPGCOIN_RESTRICTEDDB_H
+#endif //ESACOIN_RESTRICTEDDB_H

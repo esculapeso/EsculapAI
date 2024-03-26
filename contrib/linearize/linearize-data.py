@@ -4,7 +4,7 @@
 #
 # Copyright (c) 2013-2016 The Bitcoin Core developers
 # Copyright (c) 2017-2019 The Raven Core developers
-# Copyright (c) 2020-2021 The AIPG Core developers
+# Copyright (c) 2020-2021 The ESA Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #
@@ -70,7 +70,7 @@ def calc_hash_str(blk_hdr):
     return hash_str
 
 #def calc_hash_str(blk_hdr):
-	#x16r_hash_cmd = os.path.dirname(os.path.realpath(__file__)) + "/../../src/test/test_aipg_hash"
+	#x16r_hash_cmd = os.path.dirname(os.path.realpath(__file__)) + "/../../src/test/test_esa_hash"
 	#cmd = [x16r_hash_cmd, hexlify(blk_hdr).decode('utf-8'), "2"]
 	#blk_hash = subprocess.run(cmd, stdout=subprocess.PIPE, check=True).stdout.decode('ascii')
 #	return blk_hash

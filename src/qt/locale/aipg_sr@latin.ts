@@ -102,7 +102,7 @@
         <translation>Potvrdite šifrovanje novčanika</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR AIPG&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ESA&lt;/b&gt;!</source>
         <translation>Upozorenje: Ako šifrujete svoj novčanik, i potom izgubite svoju pristupnu frazu &lt;b&gt;IZGUBIĆETE SVE SVOJE BITKOINE&lt;/b&gt;!</translation>
     </message>
     <message>
@@ -126,7 +126,7 @@
     </message>
 </context>
 <context>
-    <name>AipgGUI</name>
+    <name>EsaGUI</name>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Usklađivanje sa mrežom...</translation>
@@ -160,16 +160,16 @@
         <translation>Otvori &amp;URI...</translation>
     </message>
     <message>
-        <source>Send coins to a Aipg address</source>
-        <translation>Pošalji novčiće na Aipg adresu</translation>
+        <source>Send coins to a Esa address</source>
+        <translation>Pošalji novčiće na Esa adresu</translation>
     </message>
     <message>
         <source>&amp;Verify message...</source>
         <translation>&amp;Proveri poruku...</translation>
     </message>
     <message>
-        <source>Aipg</source>
-        <translation>Aipg</translation>
+        <source>Esa</source>
+        <translation>Esa</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -406,10 +406,10 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>aipg-core</name>
+    <name>esa-core</name>
     <message>
-        <source>Aipg Core</source>
-        <translation>Aipg Core</translation>
+        <source>Esa Core</source>
+        <translation>Esa Core</translation>
     </message>
     <message>
         <source>Information</source>

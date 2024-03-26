@@ -6,13 +6,13 @@ import subprocess
 import json
 
 
-#Set this to your aipg-cli program
-cli = "aipg-cli"
+#Set this to your esa-cli program
+cli = "esa-cli"
 
 #mode = "-testnet"
 mode = ""
 rpc_port = 8766
-#Set this information in your aipg.conf file (in datadir, not testnet3)
+#Set this information in your esa.conf file (in datadir, not testnet3)
 rpc_user = 'rpcuser'
 rpc_pass = 'rpcpass555'
 

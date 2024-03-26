@@ -3,9 +3,9 @@ Release Process
 
 Before every release candidate:
 
-* Update translations see [translation_process.md](https://github.com/AIPGProject/AIPGcoin/blob/master/doc/translation_process.md#synchronising-translations).
+* Update translations see [translation_process.md](https://github.com/ESAProject/ESAcoin/blob/master/doc/translation_process.md#synchronising-translations).
 
-* Update manpages, see [gen-manpages.sh](https://github.com/AIPGProject/AIPGcoin/blob/master/contrib/devtools/README.md#gen-manpagessh).
+* Update manpages, see [gen-manpages.sh](https://github.com/ESAProject/ESAcoin/blob/master/contrib/devtools/README.md#gen-manpagessh).
 
 Before every minor and major release:
 
@@ -28,9 +28,9 @@ Before every major release:
 ### First time / New builders
 
 
-    git clone https://github.com/AIPGProject/AIPGcoin.git
+    git clone https://github.com/ESAProject/ESAcoin.git
 
-### AIPG maintainers/release engineers, suggestion for writing release notes
+### ESA maintainers/release engineers, suggestion for writing release notes
 
 Write release notes. git shortlog helps a lot, for example:
 
@@ -56,15 +56,15 @@ Codesigner only: Create Windows/OS X detached signatures:
 
 Codesigner only: Sign the osx binary:
 
-    transfer aipg-osx-unsigned.tar.gz to osx for signing
-    tar xf aipg-osx-unsigned.tar.gz
+    transfer esa-osx-unsigned.tar.gz to osx for signing
+    tar xf esa-osx-unsigned.tar.gz
     ./detached-sig-create.sh -s "Key ID"
     Enter the keychain password and authorize the signature
     Move signature-osx.tar.gz back to the gitian host
 
 Codesigner only: Sign the windows binaries:
 
-    tar xf aipg-win-unsigned.tar.gz
+    tar xf esa-win-unsigned.tar.gz
     ./detached-sig-create.sh -key /path/to/codesign.key
     Enter the passphrase for the key when prompted
     signature-win.tar.gz will be created
@@ -79,14 +79,14 @@ sha256sum * > SHA256SUMS
 
 The list of files should be:
 ```
-aipg-${VERSION}-aarch64-linux-gnu.tar.gz
-aipg-${VERSION}-arm-linux-gnueabihf.tar.gz
-aipg-${VERSION}-x86_64-linux-gnu.tar.gz
-aipg-${VERSION}-osx64.tar.gz
-aipg-${VERSION}-osx.dmg
-aipg-${VERSION}.tar.gz
-aipg-${VERSION}-win64-setup.exe
-aipg-${VERSION}-win64.zip
+esa-${VERSION}-aarch64-linux-gnu.tar.gz
+esa-${VERSION}-arm-linux-gnueabihf.tar.gz
+esa-${VERSION}-x86_64-linux-gnu.tar.gz
+esa-${VERSION}-osx64.tar.gz
+esa-${VERSION}-osx.dmg
+esa-${VERSION}.tar.gz
+esa-${VERSION}-win64-setup.exe
+esa-${VERSION}-win64.zip
 
 - GPG-sign it, delete the unsigned file:
 ```
@@ -98,7 +98,7 @@ Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spur
 
 - Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the github-release page.
 
-- Update aipgcoin.org version
+- Update esacoin.org version
 
 - Announce the release:
 
@@ -108,6 +108,6 @@ Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spur
 
   - Archive release notes for the new version to `doc/release-notes/` (branch `master` and branch of the release)
 
-  - Create a [new GitHub release](https://github.com/AIPGProject/AIPGcoin/releases/new) with a link to the archived release notes.
+  - Create a [new GitHub release](https://github.com/ESAProject/ESAcoin/releases/new) with a link to the archived release notes.
 
   - Celebrate

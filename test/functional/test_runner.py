@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Copyright (c) 2014-2016 The Bitcoin Core developers
 # Copyright (c) 2017-2019 The Raven Core developers
-# Copyright (c) 2020-2021 The AIPG Core developers
+# Copyright (c) 2020-2021 The ESA Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -14,7 +14,7 @@ forward all unrecognized arguments onto the individual test scripts.
 Functional tests are disabled on Windows by default. Use --force to run them anyway.
 
 For a description of arguments recognized by test scripts, see
-`test/functional/test_framework/test_framework.py:AipgTestFramework.main`.
+`test/functional/test_framework/test_framework.py:EsaTestFramework.main`.
 
 
 """
@@ -151,7 +151,7 @@ BASE_SCRIPTS= [
     'feature_notifications.py',
     'rpc_net.py',
     'rpc_misc.py',
-    'interface_aipg_cli.py',
+    'interface_esa_cli.py',
     'mempool_resurrect.py',
     'rpc_signrawtransaction.py',
     'wallet_resendtransactions.py',
@@ -253,23 +253,23 @@ def main():
     logging.basicConfig(format='%(message)s', level=logging_level)
 
     # Create base test directory
-    tmpdir = "%s/aipg_test_runner_%s" % (args.tmpdirprefix, datetime.datetime.now().strftime("%Y%m%d_%H%M%S"))
+    tmpdir = "%s/esa_test_runner_%s" % (args.tmpdirprefix, datetime.datetime.now().strftime("%Y%m%d_%H%M%S"))
     os.makedirs(tmpdir)
     logging.debug("Temporary test directory at %s" % tmpdir)
 
     # Don't run tests on Windows by default
     if config["environment"]["EXEEXT"] == ".exe" and not args.force:
-        # https://github.com/JustAResearcher/Aipg/commit/d52802551752140cf41f0d9a225a43e84404d3e9
+        # https://github.com/JustAResearcher/Esa/commit/d52802551752140cf41f0d9a225a43e84404d3e9
         # https://github.com/Bitcoin/bitcoin/pull/5677#issuecomment-136646964
         print("Tests currently disabled on Windows by default. Use --force option to enable")
         sys.exit(0)
 
-    # Check that the build was configured with wallet, utils, and aipgd
+    # Check that the build was configured with wallet, utils, and esad
     enable_wallet = config["components"].getboolean("ENABLE_WALLET")
     enable_cli = config["components"].getboolean("ENABLE_UTILS")
-    enable_aipgd = config["components"].getboolean("ENABLE_AIPGD")
-    if not (enable_wallet and enable_cli and enable_aipgd):
-        print("No functional tests to run. Wallet, utils, and aipgd must all be enabled")
+    enable_esad = config["components"].getboolean("ENABLE_ESAD")
+    if not (enable_wallet and enable_cli and enable_esad):
+        print("No functional tests to run. Wallet, utils, and esad must all be enabled")
         print("Rerun `configure` with --enable-wallet, --with-cli and --with-daemon and rerun make")
         sys.exit(0)
 
@@ -361,12 +361,12 @@ def main():
 
 
 def run_tests(test_list, src_dir, build_dir, exeext, tmpdir, use_term_control, jobs=1, enable_coverage=False, args=None, combined_logs_len=0, failfast=False, last_loop=False):
-    # Warn if aipgd is already running (unix only)
+    # Warn if esad is already running (unix only)
     if args is None:
         args = []
     try:
-        if subprocess.check_output(["pidof", "aipgd"]) is not None:
-            print("%sWARNING!%s There is already a aipgd process running on this system. Tests may fail unexpectedly due to resource contention!" % (BOLD[1], BOLD[0]))
+        if subprocess.check_output(["pidof", "esad"]) is not None:
+            print("%sWARNING!%s There is already a esad process running on this system. Tests may fail unexpectedly due to resource contention!" % (BOLD[1], BOLD[0]))
     except (OSError, subprocess.SubprocessError):
         pass
 
@@ -376,9 +376,9 @@ def run_tests(test_list, src_dir, build_dir, exeext, tmpdir, use_term_control, j
         print("%sWARNING!%s There is a cache directory here: %s. If tests fail unexpectedly, try deleting the cache directory." % (BOLD[1], BOLD[0], cache_dir))
 
     #Set env vars
-    if "AIPGD" not in os.environ:
-        os.environ["AIPGD"] = build_dir + '/src/aipgd' + exeext
-        os.environ["AIPGCLI"] = build_dir + '/src/aipg-cli' + exeext
+    if "ESAD" not in os.environ:
+        os.environ["ESAD"] = build_dir + '/src/esad' + exeext
+        os.environ["ESACLI"] = build_dir + '/src/esa-cli' + exeext
 
     tests_dir = src_dir + '/test/functional/'
 
@@ -667,7 +667,7 @@ class RPCCoverage:
     Coverage calculation works by having each test script subprocess write
     coverage files into a particular directory. These files contain the RPC
     commands invoked during testing, as well as a complete listing of RPC
-    commands per `aipg-cli help` (`rpc_interface.txt`).
+    commands per `esa-cli help` (`rpc_interface.txt`).
 
     After all tests complete, the commands run are combined and diff'd against
     the complete list to calculate uncovered RPC commands.

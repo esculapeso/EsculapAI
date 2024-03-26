@@ -70,7 +70,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>AipgGUI</name>
+    <name>EsaGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Firmar &amp;mensaje...</translation>
@@ -116,8 +116,8 @@
         <translation>Reindexando bloques en el disco...</translation>
     </message>
     <message>
-        <source>Send coins to a Aipg address</source>
-        <translation>Enviar monedas a una dirección Aipg</translation>
+        <source>Send coins to a Esa address</source>
+        <translation>Enviar monedas a una dirección Esa</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -132,8 +132,8 @@
         <translation>Abre la consola de depuración y diágnostico</translation>
     </message>
     <message>
-        <source>Aipg</source>
-        <translation>Aipg</translation>
+        <source>Esa</source>
+        <translation>Esa</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -160,12 +160,12 @@
         <translation>Encriptar las llaves privadas que pertenecen a tu billetera</translation>
     </message>
     <message>
-        <source>Sign messages with your Aipg addresses to prove you own them</source>
-        <translation>Firma mensajes con tus direcciones Aipg para probar que eres dueño de ellas</translation>
+        <source>Sign messages with your Esa addresses to prove you own them</source>
+        <translation>Firma mensajes con tus direcciones Esa para probar que eres dueño de ellas</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Aipg addresses</source>
-        <translation>Verificar mensajes para asegurar que estaban firmados con direcciones Aipg especificas</translation>
+        <source>Verify messages to ensure they were signed with specified Esa addresses</source>
+        <translation>Verificar mensajes para asegurar que estaban firmados con direcciones Esa especificas</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -584,7 +584,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>aipg-core</name>
+    <name>esa-core</name>
     <message>
         <source>Options:</source>
         <translation>Opciones:</translation>
@@ -610,8 +610,8 @@
         <translation>Correr en segundo plano como daemon y aceptar comandos</translation>
     </message>
     <message>
-        <source>Aipg Core</source>
-        <translation>Aipg Core</translation>
+        <source>Esa Core</source>
+        <translation>Esa Core</translation>
     </message>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>

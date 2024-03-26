@@ -1,16 +1,16 @@
 // Copyright (c) 2011-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_QT_WALLETFRAME_H
-#define AIPG_QT_WALLETFRAME_H
+#ifndef ESA_QT_WALLETFRAME_H
+#define ESA_QT_WALLETFRAME_H
 
 #include <QFrame>
 #include <QMap>
 
-class AipgGUI;
+class EsaGUI;
 class ClientModel;
 class PlatformStyle;
 class SendCoinsRecipient;
@@ -23,9 +23,9 @@ QT_END_NAMESPACE
 
 /**
  * A container for embedding all wallet-related
- * controls into AipgGUI. The purpose of this class is to allow future
+ * controls into EsaGUI. The purpose of this class is to allow future
  * refinements of the wallet controls with minimal need for further
- * modifications to AipgGUI, thus greatly simplifying merges while
+ * modifications to EsaGUI, thus greatly simplifying merges while
  * reducing the risk of breaking top-level stuff.
  */
 class WalletFrame : public QFrame
@@ -33,7 +33,7 @@ class WalletFrame : public QFrame
     Q_OBJECT
 
 public:
-    explicit WalletFrame(const PlatformStyle *platformStyle, AipgGUI *_gui = 0);
+    explicit WalletFrame(const PlatformStyle *platformStyle, EsaGUI *_gui = 0);
     ~WalletFrame();
 
     void setClientModel(ClientModel *clientModel);
@@ -53,7 +53,7 @@ Q_SIGNALS:
 
 private:
     QStackedWidget *walletStack;
-    AipgGUI *gui;
+    EsaGUI *gui;
     ClientModel *clientModel;
     QMap<QString, WalletView*> mapWalletViews;
 
@@ -96,14 +96,14 @@ public Q_SLOTS:
     /** Pass on signal over requested out-of-sync-warning information */
     void outOfSyncWarningClicked();
 
-    /** AIPG START */
+    /** ESA START */
 
     /** Switch to assets page */
     void gotoAssetsPage();
     void gotoCreateAssetsPage();
     void gotoManageAssetsPage();
     void gotoRestrictedAssetsPage();
-    /** AIPG END */
+    /** ESA END */
 };
 
-#endif // AIPG_QT_WALLETFRAME_H
+#endif // ESA_QT_WALLETFRAME_H

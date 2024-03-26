@@ -64,11 +64,11 @@
 			<translation>Адреса получения</translation>
 		</message>
 		<message>
-			<source>These are your Aipg addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+			<source>These are your Esa addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
 			<translation>Это сотовые адреса, по которым вы отправляете платежи.прежде чем отправлять монеты, необходимо проверить их сумму и адрес их получения.</translation>
 		</message>
 		<message>
-			<source>These are your Aipg addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+			<source>These are your Esa addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
 			<translation>это адрес улья, по которому вы получаете оплату.предлагается использовать новый приемный адрес для каждого дела.</translation>
 		</message>
 		<message>
@@ -170,7 +170,7 @@
 			<translation>Подтвердите шифрование бумажника</translation>
 		</message>
 		<message>
-			<source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR AIPG&lt;/b&gt;!</source>
+			<source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ESA&lt;/b&gt;!</source>
 			<translation>Предупреждение: если вы зашифровали бумажник и потеряли пароль, вы потеряете все улейки!</translation>
 		</message>
 		<message>
@@ -182,7 +182,7 @@
 			<translation>Бумажник зашифрован</translation>
 		</message>
 		<message>
-			<source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your aipgss from being stolen by malware infecting your computer.</source>
+			<source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your esass from being stolen by malware infecting your computer.</source>
 			<translation>%1 будет закрыт для завершения процесса шифрования.Помните, зашифровать ваш бумажник не может полностью защитить ваш улей от инфекции, которую вы украли из злонамеренного программного обеспечения вашего компьютера.</translation>
 		</message>
 		<message>
@@ -242,7 +242,7 @@
 		</message>
 	</context>
 	<context>
-		<name>AipgGUI</name>
+		<name>EsaGUI</name>
 		<message>
 			<source>Sign &amp;message...</source>
 			<translation>Подписать сообщение (&amp; M).</translation>
@@ -348,7 +348,7 @@
 			<translation>переиндексировать блок на диске...</translation>
 		</message>
 		<message>
-			<source>Send coins to a Aipg address</source>
+			<source>Send coins to a Esa address</source>
 			<translation>посылать монеты в адрес улья</translation>
 		</message>
 		<message>
@@ -372,7 +372,7 @@
 			<translation>&amp; проверить сообщения...</translation>
 		</message>
 		<message>
-			<source>Aipg</source>
+			<source>Esa</source>
 			<translation>улей</translation>
 		</message>
 		<message>
@@ -400,11 +400,11 @@
 			<translation>Шифрование закрытого ключа в бумажнике</translation>
 		</message>
 		<message>
-			<source>Sign messages with your Aipg addresses to prove you own them</source>
+			<source>Sign messages with your Esa addresses to prove you own them</source>
 			<translation>Используй свой адрес улья для подписи, чтобы доказать, что они у тебя.</translation>
 		</message>
 		<message>
-			<source>Verify messages to ensure they were signed with specified Aipg addresses</source>
+			<source>Verify messages to ensure they were signed with specified Esa addresses</source>
 			<translation>проверить сообщения, чтобы убедиться, что они подписаны с указанным адресом модуля настройки</translation>
 		</message>
 		<message>
@@ -424,7 +424,7 @@
 			<translation>панель вкладок</translation>
 		</message>
 		<message>
-			<source>Request payments (generates QR codes and aipg: URIs)</source>
+			<source>Request payments (generates QR codes and esa: URIs)</source>
 			<translation>запрашивать платеж (генерировать двумерный код и модуль настройки: uri)</translation>
 		</message>
 		<message>
@@ -436,7 +436,7 @@
 			<translation>Показать список доступных адресов и вкладок</translation>
 		</message>
 		<message>
-			<source>Open a aipg: URI or payment request</source>
+			<source>Open a esa: URI or payment request</source>
 			<translation>открыть модуль настройки: URI или запрос платежа</translation>
 		</message>
 		<message>
@@ -444,7 +444,7 @@
 			<translation>&amp; Параметры командной строки</translation>
 		</message>
 		<message>
-			<source>%n active connection(s) to Aipg network</source>
+			<source>%n active connection(s) to Esa network</source>
 			<translation>%n подключено к сети настроек</translation>
 		</message>
 		<message>
@@ -488,7 +488,7 @@
 			<translation>последний</translation>
 		</message>
 		<message>
-			<source>Show the %1 help message to get a list with possible Aipg command-line options</source>
+			<source>Show the %1 help message to get a list with possible Esa command-line options</source>
 			<translation>Показать справку%1 для получения списка возможных параметров командной строки</translation>
 		</message>
 		<message>
@@ -540,7 +540,7 @@
 			<translation>бумажник зашифрован &lt; / b &gt; и в настоящее время заблокирован &lt; / b &gt;.</translation>
 		</message>
 		<message>
-			<source>A fatal error occurred. Aipg can no longer continue safely and will quit.</source>
+			<source>A fatal error occurred. Esa can no longer continue safely and will quit.</source>
 			<translation>Произошла смертельная ошибка.улей не может продолжать работать безопасно, и он будет отключен.</translation>
 		</message>
 		<message>
@@ -548,8 +548,8 @@
 			<translation>&amp; Передать активы</translation>
 		</message>
 		<message>
-			<source>Transfer assets to aipg addresses</source>
-			<translation>переместить активы в aipg - адрес</translation>
+			<source>Transfer assets to esa addresses</source>
+			<translation>переместить активы в esa - адрес</translation>
 		</message>
 		<message>
 			<source>&amp;Create Assets</source>
@@ -600,7 +600,7 @@
 			<translation>открыть Параметры восстановления бумажника</translation>
 		</message>
 		<message>
-			<source>Open a Aipg: URI or payment request</source>
+			<source>Open a Esa: URI or payment request</source>
 			<translation>открыть модуль настройки: URI или запрос платежа</translation>
 		</message>
 		<message>
@@ -608,7 +608,7 @@
 			<translation>&amp; кошелек</translation>
 		</message>
 		<message>
-			<source>Aipg Market Price</source>
+			<source>Esa Market Price</source>
 			<translation>рыночная цена</translation>
 		</message>
 		<message>
@@ -846,7 +846,7 @@
 			<translation>Изменить адрес отправки</translation>
 		</message>
 		<message>
-			<source>The entered address "%1" is not a valid Aipg address.</source>
+			<source>The entered address "%1" is not a valid Esa address.</source>
 			<translation>Введённый адрес «%1 » не является действительным адресом модуля настройки.</translation>
 		</message>
 		<message>
@@ -959,7 +959,7 @@
 			<translation>При первом запуске программы вы можете выбрать где %1 будет хранить свои данные.</translation>
 		</message>
 		<message>
-			<source>%1 will download and store a copy of the Aipg block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+			<source>%1 will download and store a copy of the Esa block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
 			<translation>%1 будет загружен и сохранен в файле настройки блока.данные%2GB будут храниться в этом каталоге и со временем вырастут.бумажник также будет храниться в этом каталоге.</translation>
 		</message>
 		<message>
@@ -1007,7 +1007,7 @@
 			<translation>Невозможно создать каталог данных.</translation>
 		</message>
 		<message>
-			<source>Aipg</source>
+			<source>Esa</source>
 			<translation>улей</translation>
 		</message>
 		<message>
@@ -1019,7 +1019,7 @@
 			<translation>в этом каталоге хранятся данные около%1 Гб.</translation>
 		</message>
 		<message>
-			<source>%1 will download and store a copy of the Aipg block chain.</source>
+			<source>%1 will download and store a copy of the Esa block chain.</source>
 			<translation>%1 будет загружен и сохранен в файле настройки блока.</translation>
 		</message>
 		<message>
@@ -1038,11 +1038,11 @@
 			<translation>Форма</translation>
 		</message>
 		<message>
-			<source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the Aipg network, as detailed below.</source>
+			<source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the Esa network, as detailed below.</source>
 			<translation>последние операции ещё не видны, поэтому остаток вашего бумажника может быть неправильным.как только ваш бумажник будет синхронизирован с сотовой сетью, эта информация будет правильна и подробно описана ниже.</translation>
 		</message>
 		<message>
-			<source>Attempting to spend aipg that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+			<source>Attempting to spend esa that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
 			<translation>сеть не будет принимать попытки использовать модули настройки, которые ещё не показаны.</translation>
 		</message>
 		<message>
@@ -1086,7 +1086,7 @@
 			<translation>Неизвестно. Синхронизация заголовков (%1)...</translation>
 		</message>
 		<message>
-			<source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the aipg network, as detailed below.</source>
+			<source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the esa network, as detailed below.</source>
 			<translation>последние операции ещё не видны, поэтому остаток вашего бумажника может быть неправильным.как только ваш бумажник будет синхронизирован с сотовой сетью, эта информация будет правильна и подробно описана ниже.</translation>
 		</message>
 	</context>
@@ -1212,7 +1212,7 @@
 			<translation>&amp;Тратить неподтверждённую сдачу</translation>
 		</message>
 		<message>
-			<source>Automatically open the Aipg client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+			<source>Automatically open the Esa client port on the router. This only works when your router supports UPnP and it is enabled.</source>
 			<translation>автоматически открывает порт клиента для настройки маршрутизатора.это работает только в том случае, если маршрутизатор поддерживает UPnP и включен.</translation>
 		</message>
 		<message>
@@ -1220,7 +1220,7 @@
 			<translation>Пробросить порт через &amp;UPnP</translation>
 		</message>
 		<message>
-			<source>Connect to the Aipg network through a SOCKS5 proxy.</source>
+			<source>Connect to the Esa network through a SOCKS5 proxy.</source>
 			<translation>подключиться к сети настроек через прокси SOCKS5.</translation>
 		</message>
 		<message>
@@ -1260,7 +1260,7 @@
 			<translation>Tor</translation>
 		</message>
 		<message>
-			<source>Connect to the Aipg network through a separate SOCKS5 proxy for Tor hidden services.</source>
+			<source>Connect to the Esa network through a separate SOCKS5 proxy for Tor hidden services.</source>
 			<translation>подключиться к сети модулей настройки через отдельный прокси SOCKS5 для предоставления скрытых услуг.</translation>
 		</message>
 		<message>
@@ -1383,7 +1383,7 @@
 			<translation>Форма</translation>
 		</message>
 		<message>
-			<source>The displayed information may be out of date. Your wallet automatically synchronizes with the Aipg network after a connection is established, but this process has not completed yet.</source>
+			<source>The displayed information may be out of date. Your wallet automatically synchronizes with the Esa network after a connection is established, but this process has not completed yet.</source>
 			<translation>Показать информацию, которая может быть просрочена.после подключения бумажник будет автоматически синхронизирован с сетью модулей настройки, но этот процесс еще не завершен.</translation>
 		</message>
 		<message>
@@ -1483,8 +1483,8 @@
 			<translation>сальдо активов</translation>
 		</message>
 		<message>
-			<source>aipg Balances</source>
-			<translation>остаток aipg</translation>
+			<source>esa Balances</source>
+			<translation>остаток esa</translation>
 		</message>
 	</context>
 	<context>
@@ -1494,7 +1494,7 @@
 			<translation>Ошибка запроса платежа</translation>
 		</message>
 		<message>
-			<source>Cannot start aipg: click-to-pay handler</source>
+			<source>Cannot start esa: click-to-pay handler</source>
 			<translation>Невозможно запустить модуль настройки: нажмите кнопку Выполнить</translation>
 		</message>
 		<message>
@@ -1510,7 +1510,7 @@
 			<translation>Неверный адрес платежа %1</translation>
 		</message>
 		<message>
-			<source>URI cannot be parsed! This can be caused by an invalid Aipg address or malformed URI parameters.</source>
+			<source>URI cannot be parsed! This can be caused by an invalid Esa address or malformed URI parameters.</source>
 			<translation>невозможно проанализировать URI!Это может быть вызвано неверной настройкой адреса ячейки или неправильным форматом URI.</translation>
 		</message>
 		<message>
@@ -1612,7 +1612,7 @@
 			<translation>Сумма</translation>
 		</message>
 		<message>
-			<source>Enter a Aipg address (e.g. %1)</source>
+			<source>Enter a Esa address (e.g. %1)</source>
 			<translation>Введите адрес модуля настройки (например,%1)</translation>
 		</message>
 		<message>
@@ -2096,7 +2096,7 @@
 			<translation>&amp;Повторно использовать существующий адрес получения (не рекомендуется)</translation>
 		</message>
 		<message>
-			<source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Aipg network.</source>
+			<source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Esa network.</source>
 			<translation>дополнительное сообщение к запросу платежа, которое будет показано при открытии запроса.Примечание: сообщение не будет отправлено вместе с платежом через Сеть настроек модулей.</translation>
 		</message>
 		<message>
@@ -2341,7 +2341,7 @@
 			<translation>Итого как минимум</translation>
 		</message>
 		<message>
-			<source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for aipg transactions than the network can process.</source>
+			<source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for esa transactions than the network can process.</source>
 			<translation>в тех случаях, когда объем торговли меньше места в блоке, оплата может производиться только за минимальную плату.Однако обратите внимание на то, что, как только спрос на услуги по настройке модулей превысит количество, которое может быть обработано сетью, это может привести к тому, что не будет подтверждено.</translation>
 		</message>
 		<message>
@@ -2501,7 +2501,7 @@
 			<translation>Array</translation>
 		</message>
 		<message>
-			<source>Warning: Invalid Aipg address</source>
+			<source>Warning: Invalid Esa address</source>
 			<translation>Предупреждение: неверный адрес модуля настройки</translation>
 		</message>
 		<message>
@@ -2556,7 +2556,7 @@
 			<translation>Это нормальный платёж.</translation>
 		</message>
 		<message>
-			<source>The Aipg address to send the payment to</source>
+			<source>The Esa address to send the payment to</source>
 			<translation>адрес модуля настройки для отправки платежей</translation>
 		</message>
 		<message>
@@ -2576,7 +2576,7 @@
 			<translation>Удалить эту запись</translation>
 		</message>
 		<message>
-			<source>The fee will be deducted from the amount being sent. The recipient will receive less aipgss than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+			<source>The fee will be deducted from the amount being sent. The recipient will receive less esass than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
 			<translation>расходы будут вычтены из отправленной суммы.получатель получит меньше настроек, чем вы введёте в поле сумма.Если выбрано несколько получателей, расходы будут распределяться поровну.</translation>
 		</message>
 		<message>
@@ -2600,8 +2600,8 @@
 			<translation>Введите метку для этого адреса, чтобы добавить его в список использованных</translation>
 		</message>
 		<message>
-			<source>A message that was attached to the aipg: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Aipg network.</source>
-			<translation>добавить к aipg: URI сообщение, которое будет храниться вместе с сервисом для Вашего сведения.Примечание: это сообщение не будет отправлено через Сеть настроек модулей.</translation>
+			<source>A message that was attached to the esa: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Esa network.</source>
+			<translation>добавить к esa: URI сообщение, которое будет храниться вместе с сервисом для Вашего сведения.Примечание: это сообщение не будет отправлено через Сеть настроек модулей.</translation>
 		</message>
 		<message>
 			<source>Pay To:</source>
@@ -2649,11 +2649,11 @@
 			<translation>&amp;Подписать сообщение</translation>
 		</message>
 		<message>
-			<source>You can sign messages/agreements with your addresses to prove you can receive aipgss sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+			<source>You can sign messages/agreements with your addresses to prove you can receive esass sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
 			<translation>Вы можете подписать сообщение / протокол по своему адресу, чтобы доказать, что вы можете принять отправленные им модули настройки.Будьте осторожны, не подписывайте ничего неопределенного или случайного, потому что кибернападение на рыбалку может попытаться обмануть вас, чтобы вы подписали документы для них.Распишитесь только в подробном заявлении, с которым вы согласились.</translation>
 		</message>
 		<message>
-			<source>The Aipg address to sign the message with</source>
+			<source>The Esa address to sign the message with</source>
 			<translation>адрес модуля настройки для подписи</translation>
 		</message>
 		<message>
@@ -2685,7 +2685,7 @@
 			<translation>Скопировать текущую подпись в системный буфер обмена</translation>
 		</message>
 		<message>
-			<source>Sign the message to prove you own this Aipg address</source>
+			<source>Sign the message to prove you own this Esa address</source>
 			<translation>подпись на почте, чтобы доказать, что у вас есть этот сотовый адрес</translation>
 		</message>
 		<message>
@@ -2709,11 +2709,11 @@
 			<translation>Введите ниже адрес получателя, сообщение (убедитесь, что переводы строк, пробелы, табы и т.п. в точности скопированы) и подпись, чтобы проверить сообщение. Убедитесь, что не скопировали лишнего в подпись, по сравнению с самим подписываемым сообщением, чтобы не стать жертвой атаки "man-in-the-middle". Заметьте, что эта операция удостоверяет лишь авторство подписавшего, но не может удостоверить отправителя транзакции.</translation>
 		</message>
 		<message>
-			<source>The Aipg address the message was signed with</source>
+			<source>The Esa address the message was signed with</source>
 			<translation>адрес ячейки настройки, используемой для подписи</translation>
 		</message>
 		<message>
-			<source>Verify the message to ensure it was signed with the specified Aipg address</source>
+			<source>Verify the message to ensure it was signed with the specified Esa address</source>
 			<translation>проверить сообщение, чтобы убедиться, что оно подписано с указанным адресом модуля настройки</translation>
 		</message>
 		<message>
@@ -2974,8 +2974,8 @@
 			<translation>для использования монет, образующихся после истечения срока действия%1 квартала.при создании этого блока он будет передаваться в сеть, чтобы добавить его в блочную цепочку.если она не может войти в цепочку, ее состояние изменится</translation>
 		</message>
 		<message>
-			<source>Net aipg amount</source>
-			<translation>чистый aipg</translation>
+			<source>Net esa amount</source>
+			<translation>чистый esa</translation>
 		</message>
 	</context>
 	<context>
@@ -3128,8 +3128,8 @@
 			<translation>Отправленные активы</translation>
 		</message>
 		<message>
-			<source>The asset (or aipg) removed or added to balance.</source>
-			<translation>активы (или aipg) удаляются или добавляются в остаток.</translation>
+			<source>The asset (or esa) removed or added to balance.</source>
+			<translation>активы (или esa) удаляются или добавляются в остаток.</translation>
 		</message>
 	</context>
 	<context>
@@ -3398,9 +3398,9 @@
 		</message>
 	</context>
 	<context>
-		<name>aipg-core</name>
+		<name>esa-core</name>
 		<message>
-			<location filename="../aipgstrings.cpp" line="+343"/>
+			<location filename="../esastrings.cpp" line="+343"/>
 			<source>Options:</source>
 			<translation>Options:</translation>
 		</message>
@@ -3476,8 +3476,8 @@
 		</message>
 		<message>
 			<location line="-386"/>
-			<source>Aipg Core</source>
-			<translation type="unfinished">Aipg Core</translation>
+			<source>Esa Core</source>
+			<translation type="unfinished">Esa Core</translation>
 		</message>
 		<message>
 			<location line="+1"/>
@@ -4816,7 +4816,7 @@
 			<translation>Ожидается, что подтверждение будет произведено в пределах блока%n.</translation>
 		</message>
 		<message>
-			<source>Warning: Invalid Aipg address</source>
+			<source>Warning: Invalid Esa address</source>
 			<translation>Предупреждение: неверный адрес модуля настройки</translation>
 		</message>
 		<message>
@@ -4926,7 +4926,7 @@
 			<translation>ÐÐµ ÑÐ´Ð°Ð»Ð¸ÑÑ Ð¿Ð¾Ð»ÑÐ·Ð¾Ð²Ð°ÑÑ Ð¿Ð¾Ð»ÑÐ·Ð¾Ð²Ð°ÑÑ Ð¿Ð¾Ð»ÑÐ·Ð¾Ð²Ð°Ñиспользовать эффективное гашение IPFS / Txid</translation>
 		</message>
 		<message>
-			<source>Warning: Invalid Aipg address</source>
+			<source>Warning: Invalid Esa address</source>
 			<translation>Предупреждение: неверный адрес модуля настройки</translation>
 		</message>
 		<message>
@@ -5082,8 +5082,8 @@
 			<translation>адрес:</translation>
 		</message>
 		<message>
-			<source>The aipg address that will hold this asset (You must own this address). Leave blank to create a new address.</source>
-			<translation>Укажите адрес aipg, на котором будет храниться данное имущество (вы должны иметь этот адрес).оставить пустым, чтобы создать новый адрес.</translation>
+			<source>The esa address that will hold this asset (You must own this address). Leave blank to create a new address.</source>
+			<translation>Укажите адрес esa, на котором будет храниться данное имущество (вы должны иметь этот адрес).оставить пустым, чтобы создать новый адрес.</translation>
 		</message>
 		<message>
 			<source>Verifier String:</source>
@@ -5174,7 +5174,7 @@
 			<translation>килобайт</translation>
 		</message>
 		<message>
-			<source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for aipg transactions than the network can process.</source>
+			<source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for esa transactions than the network can process.</source>
 			<translation>в тех случаях, когда объем торговли меньше места в блоке, оплата может производиться только за минимальную плату.Однако обратите внимание на то, что, как только спрос на услуги по настройке модулей превысит количество, которое может быть обработано сетью, это может привести к тому, что не будет подтверждено.</translation>
 		</message>
 		<message>
@@ -5218,14 +5218,14 @@
 			<translation>сальдо</translation>
 		</message>
 		<message>
-			<source>123.456 aipg</source>
+			<source>123.456 esa</source>
 			<translation>фунт стерлингов</translation>
 		</message>
 	</context>
 	<context>
 		<name>GUIUtil</name>
 		<message>
-			<source>Enter a Aipg address (e.g. %1)</source>
+			<source>Enter a Esa address (e.g. %1)</source>
 			<translation>Введите адрес модуля настройки (например,%1)</translation>
 		</message>
 		<message>
@@ -5310,9 +5310,9 @@
 		</message>
 	</context>
 	<context>
-		<name>aipg</name>
+		<name>esa</name>
 		<message>
-			<source>A fatal error occurred. Aipg can no longer continue safely and will quit.</source>
+			<source>A fatal error occurred. Esa can no longer continue safely and will quit.</source>
 			<translation>Произошла смертельная ошибка.улей не может продолжать работать безопасно, и он будет отключен.</translation>
 		</message>
 		<message>
@@ -5394,7 +5394,7 @@
 			<translation>слишком много.максимум 210000000</translation>
 		</message>
 		<message>
-			<source>Invalid Aipg Destination Address</source>
+			<source>Invalid Esa Destination Address</source>
 			<translation>Неверный адрес ячейки</translation>
 		</message>
 		<message>
@@ -5402,7 +5402,7 @@
 			<translation>Предупреждение: ограничительный выпуск активов требует адреса</translation>
 		</message>
 		<message>
-			<source>Warning: Invalid Aipg address</source>
+			<source>Warning: Invalid Esa address</source>
 			<translation>Предупреждение: неверный адрес модуля настройки</translation>
 		</message>
 		<message>
@@ -5606,8 +5606,8 @@
 			<translation>адрес:</translation>
 		</message>
 		<message>
-			<source>The aipg address that will hold this asset (You must own this address). Leave blank to create a new address.</source>
-			<translation>Укажите адрес aipg, на котором будет храниться данное имущество (вы должны иметь этот адрес).оставить пустым, чтобы создать новый адрес.</translation>
+			<source>The esa address that will hold this asset (You must own this address). Leave blank to create a new address.</source>
+			<translation>Укажите адрес esa, на котором будет храниться данное имущество (вы должны иметь этот адрес).оставить пустым, чтобы создать новый адрес.</translation>
 		</message>
 		<message>
 			<source>Verifier String:</source>
@@ -5698,7 +5698,7 @@
 			<translation>килобайт</translation>
 		</message>
 		<message>
-			<source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for aipg transactions than the network can process.</source>
+			<source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for esa transactions than the network can process.</source>
 			<translation>в тех случаях, когда объем торговли меньше места в блоке, оплата может производиться только за минимальную плату.Однако обратите внимание на то, что, как только спрос на услуги по настройке модулей превысит количество, которое может быть обработано сетью, это может привести к тому, что не будет подтверждено.</translation>
 		</message>
 		<message>
@@ -5742,7 +5742,7 @@
 			<translation>сальдо</translation>
 		</message>
 		<message>
-			<source>123.456 aipg</source>
+			<source>123.456 esa</source>
 			<translation>фунт стерлингов</translation>
 		</message>
 	</context>
@@ -6066,8 +6066,8 @@
 			<translation>Это актив</translation>
 		</message>
 		<message>
-			<source>A message that was attached to the aipg: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Aipg network.</source>
-			<translation>добавить к aipg: URI сообщение, которое будет храниться вместе с сервисом для Вашего сведения.Примечание: это сообщение не будет отправлено через Сеть настроек модулей.</translation>
+			<source>A message that was attached to the esa: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Esa network.</source>
+			<translation>добавить к esa: URI сообщение, которое будет храниться вместе с сервисом для Вашего сведения.Примечание: это сообщение не будет отправлено через Сеть настроек модулей.</translation>
 		</message>
 		<message>
 			<source>Memo:</source>
@@ -6090,7 +6090,7 @@
 			<translation>Активы:</translation>
 		</message>
 		<message>
-			<source>The Aipg address to send the payment to</source>
+			<source>The Esa address to send the payment to</source>
 			<translation>адрес модуля настройки для отправки платежей</translation>
 		</message>
 		<message>

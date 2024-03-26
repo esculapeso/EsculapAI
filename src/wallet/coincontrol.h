@@ -1,11 +1,11 @@
 // Copyright (c) 2011-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_WALLET_COINCONTROL_H
-#define AIPG_WALLET_COINCONTROL_H
+#ifndef ESA_WALLET_COINCONTROL_H
+#define ESA_WALLET_COINCONTROL_H
 
 #include "policy/feerate.h"
 #include "policy/fees.h"
@@ -38,10 +38,10 @@ public:
     //! Fee estimation mode to control arguments to estimateSmartFee
     FeeEstimateMode m_fee_mode;
 
-    /** AIPG START */
+    /** ESA START */
     //! Name of the asset that is selected, used when sending assets with coincontrol
     std::string strAssetSelected;
-    /** AIPG END */
+    /** ESA END */
 
     CCoinControl()
     {
@@ -131,4 +131,4 @@ private:
     std::set<COutPoint> setAssetsSelected;
 };
 
-#endif // AIPG_WALLET_COINCONTROL_H
+#endif // ESA_WALLET_COINCONTROL_H

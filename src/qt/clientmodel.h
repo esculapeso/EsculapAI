@@ -1,11 +1,11 @@
 // Copyright (c) 2011-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_QT_CLIENTMODEL_H
-#define AIPG_QT_CLIENTMODEL_H
+#ifndef ESA_QT_CLIENTMODEL_H
+#define ESA_QT_CLIENTMODEL_H
 
 #include <QObject>
 #include <QDateTime>
@@ -36,7 +36,7 @@ enum NumConnections {
     CONNECTIONS_ALL  = (CONNECTIONS_IN | CONNECTIONS_OUT),
 };
 
-/** Model for aipg network client. */
+/** Model for esa network client. */
 class ClientModel : public QObject
 {
     Q_OBJECT
@@ -118,4 +118,4 @@ public Q_SLOTS:
     void updateBanlist();
 };
 
-#endif // AIPG_QT_CLIENTMODEL_H
+#endif // ESA_QT_CLIENTMODEL_H

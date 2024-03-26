@@ -1,17 +1,17 @@
 dist_man1_MANS=
 
-if BUILD_AIPGD
-  dist_man1_MANS+=aipgd.1
+if BUILD_ESAD
+  dist_man1_MANS+=esad.1
 endif
 
 if ENABLE_QT
-  dist_man1_MANS+=aipg-qt.1
+  dist_man1_MANS+=esa-qt.1
 endif
 
-if BUILD_AIPG_CLI
-  dist_man1_MANS+=aipg-cli.1
+if BUILD_ESA_CLI
+  dist_man1_MANS+=esa-cli.1
 endif
 
-if BUILD_AIPG_TX
-  dist_man1_MANS+=aipg-tx.1
+if BUILD_ESA_TX
+  dist_man1_MANS+=esa-tx.1
 endif

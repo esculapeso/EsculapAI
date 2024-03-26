@@ -1,2 +1,2 @@
-contrib/aipgd.bash-completion	aipgd
-contrib/aipg-cli.bash-completion	aipg-cli
+contrib/esad.bash-completion	esad
+contrib/esa-cli.bash-completion	esa-cli

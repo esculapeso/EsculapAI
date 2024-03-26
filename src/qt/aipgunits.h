@@ -1,11 +1,11 @@
 // Copyright (c) 2011-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_QT_AIPGUNITS_H
-#define AIPG_QT_AIPGUNITS_H
+#ifndef ESA_QT_ESAUNITS_H
+#define ESA_QT_ESAUNITS_H
 
 #include "amount.h"
 
@@ -48,24 +48,24 @@
 #define THIN_SP_UTF8 REAL_THIN_SP_UTF8
 #define THIN_SP_HTML HTML_HACK_SP
 
-/** aipg unit definitions. Encapsulates parsing and formatting
+/** esa unit definitions. Encapsulates parsing and formatting
    and serves as list model for drop-down selection boxes.
 */
-class AipgUnits: public QAbstractListModel
+class EsaUnits: public QAbstractListModel
 {
     Q_OBJECT
 
 public:
-    explicit AipgUnits(QObject *parent);
+    explicit EsaUnits(QObject *parent);
 
-    /** aipg units.
+    /** esa units.
       @note Source: https://en.bitcoin.it/wiki/Units . Please add only sensible ones
      */
     enum Unit
     {
-        aipg,
-        maipg,
-        uaipg
+        esa,
+        mesa,
+        uesa
     };
 
     enum SeparatorStyle
@@ -133,8 +133,8 @@ public:
     static CAmount maxMoney();
 
 private:
-    QList<AipgUnits::Unit> unitlist;
+    QList<EsaUnits::Unit> unitlist;
 };
-typedef AipgUnits::Unit AipgUnit;
+typedef EsaUnits::Unit EsaUnit;
 
-#endif // AIPG_QT_AIPGUNITS_H
+#endif // ESA_QT_ESAUNITS_H

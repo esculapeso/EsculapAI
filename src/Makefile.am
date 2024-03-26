@@ -19,28 +19,28 @@ else
 LIBUNIVALUE = $(UNIVALUE_LIBS)
 endif
 
-AIPG_INCLUDES=-I$(builddir) -I$(builddir)/obj $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS)
+ESA_INCLUDES=-I$(builddir) -I$(builddir)/obj $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS)
 
-AIPG_INCLUDES += -I$(srcdir)/secp256k1/include
-AIPG_INCLUDES += $(UNIVALUE_CFLAGS)
+ESA_INCLUDES += -I$(srcdir)/secp256k1/include
+ESA_INCLUDES += $(UNIVALUE_CFLAGS)
 
-LIBAIPG_SERVER=libaipg_server.a
-LIBAIPG_COMMON=libaipg_common.a
-LIBAIPG_CONSENSUS=libaipg_consensus.a
-LIBAIPG_CLI=libaipg_cli.a
-LIBAIPG_UTIL=libaipg_util.a
-LIBAIPG_CRYPTO=crypto/libaipg_crypto.a
-LIBAIPGQT=qt/libaipgqt.a
+LIBESA_SERVER=libesa_server.a
+LIBESA_COMMON=libesa_common.a
+LIBESA_CONSENSUS=libesa_consensus.a
+LIBESA_CLI=libesa_cli.a
+LIBESA_UTIL=libesa_util.a
+LIBESA_CRYPTO=crypto/libesa_crypto.a
+LIBESAQT=qt/libesaqt.a
 LIBSECP256K1=secp256k1/libsecp256k1.la
 
 if ENABLE_ZMQ
-LIBAIPG_ZMQ=libaipg_zmq.a
+LIBESA_ZMQ=libesa_zmq.a
 endif
-if BUILD_AIPG_LIBS
-LIBAIPGCONSENSUS=libaipgconsensus.la
+if BUILD_ESA_LIBS
+LIBESACONSENSUS=libesaconsensus.la
 endif
 if ENABLE_WALLET
-LIBAIPG_WALLET=libaipg_wallet.a
+LIBESA_WALLET=libesa_wallet.a
 endif
 
 $(LIBSECP256K1): $(wildcard secp256k1/src/*) $(wildcard secp256k1/include/*)
@@ -49,37 +49,37 @@ $(LIBSECP256K1): $(wildcard secp256k1/src/*) $(wildcard secp256k1/include/*)
 # Make is not made aware of per-object dependencies to avoid limiting building parallelization
 # But to build the less dependent modules first, we manually select their order here:
 EXTRA_LIBRARIES += \
-  $(LIBAIPG_CRYPTO) \
-  $(LIBAIPG_UTIL) \
-  $(LIBAIPG_COMMON) \
-  $(LIBAIPG_CONSENSUS) \
-  $(LIBAIPG_SERVER) \
-  $(LIBAIPG_CLI) \
-  $(LIBAIPG_WALLET) \
-  $(LIBAIPG_ZMQ)
+  $(LIBESA_CRYPTO) \
+  $(LIBESA_UTIL) \
+  $(LIBESA_COMMON) \
+  $(LIBESA_CONSENSUS) \
+  $(LIBESA_SERVER) \
+  $(LIBESA_CLI) \
+  $(LIBESA_WALLET) \
+  $(LIBESA_ZMQ)
 
-lib_LTLIBRARIES = $(LIBAIPGCONSENSUS)
+lib_LTLIBRARIES = $(LIBESACONSENSUS)
 
 bin_PROGRAMS =
 noinst_PROGRAMS =
 TESTS =
 BENCHMARKS =
 
-if BUILD_AIPGD
-  bin_PROGRAMS += aipgd
+if BUILD_ESAD
+  bin_PROGRAMS += esad
 endif
 
-if BUILD_AIPG_CLI
-  bin_PROGRAMS += aipg-cli
+if BUILD_ESA_CLI
+  bin_PROGRAMS += esa-cli
 endif
 
-if BUILD_AIPG_TX
-  bin_PROGRAMS += aipg-tx
+if BUILD_ESA_TX
+  bin_PROGRAMS += esa-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
-# aipg core #
-AIPG_CORE_H = \
+# esa core #
+ESA_CORE_H = \
   addrdb.h \
   addressindex.h \
   algo/sph_groestl.h \
@@ -240,12 +240,12 @@ obj/build.h: FORCE
 	@$(MKDIR_P) $(builddir)/obj
 	@$(top_srcdir)/share/genbuild.sh "$(abs_top_builddir)/src/obj/build.h" \
 	  "$(abs_top_srcdir)"
-libaipg_util_a-clientversion.$(OBJEXT): obj/build.h
+libesa_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between aipgd and aipg-qt
-libaipg_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(AIPG_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
-libaipg_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libaipg_server_a_SOURCES = \
+# server: shared between esad and esa-qt
+libesa_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(ESA_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
+libesa_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libesa_server_a_SOURCES = \
   addrdb.cpp \
   addrman.cpp \
   bloom.cpp \
@@ -297,23 +297,23 @@ libaipg_server_a_SOURCES = \
   validation.cpp \
   validationinterface.cpp \
   versionbits.cpp \
-  $(AIPG_CORE_H)
+  $(ESA_CORE_H)
 
 if ENABLE_ZMQ
-libaipg_zmq_a_CPPFLAGS = $(AIPG_INCLUDES) $(ZMQ_CFLAGS)
-libaipg_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libaipg_zmq_a_SOURCES = \
+libesa_zmq_a_CPPFLAGS = $(ESA_INCLUDES) $(ZMQ_CFLAGS)
+libesa_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libesa_zmq_a_SOURCES = \
   zmq/zmqabstractnotifier.cpp \
   zmq/zmqnotificationinterface.cpp \
   zmq/zmqpublishnotifier.cpp
 endif
 
 
-# wallet: shared between aipgd and aipg-qt, but only linked
+# wallet: shared between esad and esa-qt, but only linked
 # when wallet enabled
-libaipg_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(AIPG_INCLUDES)
-libaipg_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libaipg_wallet_a_SOURCES = \
+libesa_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(ESA_INCLUDES)
+libesa_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libesa_wallet_a_SOURCES = \
   wallet/crypter.cpp \
   wallet/db.cpp \
   wallet/feebumper.cpp \
@@ -324,12 +324,12 @@ libaipg_wallet_a_SOURCES = \
   wallet/wallet.cpp \
   wallet/walletdb.cpp \
   wallet/bip39.cpp \
-  $(AIPG_CORE_H)
+  $(ESA_CORE_H)
 
 # crypto primitives library
-crypto_libaipg_crypto_a_CPPFLAGS = $(AM_CPPFLAGS)
-crypto_libaipg_crypto_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-crypto_libaipg_crypto_a_SOURCES = \
+crypto_libesa_crypto_a_CPPFLAGS = $(AM_CPPFLAGS)
+crypto_libesa_crypto_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+crypto_libesa_crypto_a_SOURCES = \
   crypto/aes.cpp \
   crypto/aes.h \
   crypto/chacha20.h \
@@ -373,13 +373,13 @@ crypto_libaipg_crypto_a_SOURCES = \
   crypto/ethash/progpow_test_vectors.hpp
 
 if USE_ASM
-crypto_libaipg_crypto_a_SOURCES += crypto/sha256_sse4.cpp
+crypto_libesa_crypto_a_SOURCES += crypto/sha256_sse4.cpp
 endif
 
 # consensus: shared between all executables that validate any consensus rules.
-libaipg_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(AIPG_INCLUDES)
-libaipg_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libaipg_consensus_a_SOURCES = \
+libesa_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(ESA_INCLUDES)
+libesa_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libesa_consensus_a_SOURCES = \
   amount.h \
   arith_uint256.cpp \
   arith_uint256.h \
@@ -396,7 +396,7 @@ libaipg_consensus_a_SOURCES = \
   primitives/transaction.h \
   pubkey.cpp \
   pubkey.h \
-  script/aipgconsensus.cpp \
+  script/esaconsensus.cpp \
   script/interpreter.cpp \
   script/interpreter.h \
   script/script.cpp \
@@ -414,12 +414,12 @@ libaipg_consensus_a_SOURCES = \
   version.h \
   LibBoolEE.cpp \
   LibBoolEE.h \
-  $(AIPG_CORE_H)
+  $(ESA_CORE_H)
 
-# common: shared between aipgd, and aipg-qt and non-server tools
-libaipg_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(AIPG_INCLUDES)
-libaipg_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libaipg_common_a_SOURCES = \
+# common: shared between esad, and esa-qt and non-server tools
+libesa_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(ESA_INCLUDES)
+libesa_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libesa_common_a_SOURCES = \
   base58.cpp \
   chainparams.cpp \
   coins.cpp \
@@ -436,14 +436,14 @@ libaipg_common_a_SOURCES = \
   script/sign.cpp \
   script/standard.cpp \
   warnings.cpp \
-  $(AIPG_CORE_H)
+  $(ESA_CORE_H)
 
 # util: shared between all executables.
 # This library *must* be included to make sure that the glibc
 # backward-compatibility objects and their sanity checks are linked.
-libaipg_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(AIPG_INCLUDES)
-libaipg_util_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libaipg_util_a_SOURCES = \
+libesa_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(ESA_INCLUDES)
+libesa_util_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libesa_util_a_SOURCES = \
   support/lockedpool.cpp \
   chainparamsbase.cpp \
   clientversion.cpp \
@@ -459,105 +459,105 @@ libaipg_util_a_SOURCES = \
   utilmoneystr.cpp \
   utilstrencodings.cpp \
   utiltime.cpp \
-  $(AIPG_CORE_H)
+  $(ESA_CORE_H)
 
 if GLIBC_BACK_COMPAT
-libaipg_util_a_SOURCES += compat/glibc_compat.cpp
+libesa_util_a_SOURCES += compat/glibc_compat.cpp
 AM_LDFLAGS += $(COMPAT_LDFLAGS)
 endif
 
-# cli: shared between aipg-cli and aipg-qt
-libaipg_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(AIPG_INCLUDES)
-libaipg_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libaipg_cli_a_SOURCES = \
+# cli: shared between esa-cli and esa-qt
+libesa_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(ESA_INCLUDES)
+libesa_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libesa_cli_a_SOURCES = \
   rpc/client.cpp \
-  $(AIPG_CORE_H)
+  $(ESA_CORE_H)
 
-nodist_libaipg_util_a_SOURCES = $(srcdir)/obj/build.h
+nodist_libesa_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# aipgd binary #
-aipgd_SOURCES = aipgd.cpp
-aipgd_CPPFLAGS = $(AM_CPPFLAGS) $(AIPG_INCLUDES)
-aipgd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-aipgd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# esad binary #
+esad_SOURCES = esad.cpp
+esad_CPPFLAGS = $(AM_CPPFLAGS) $(ESA_INCLUDES)
+esad_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+esad_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-aipgd_SOURCES += aipgd-res.rc
+esad_SOURCES += esad-res.rc
 endif
 
-aipgd_LDADD = \
-  $(LIBAIPG_SERVER) \
-  $(LIBAIPG_COMMON) \
+esad_LDADD = \
+  $(LIBESA_SERVER) \
+  $(LIBESA_COMMON) \
   $(LIBUNIVALUE) \
-  $(LIBAIPG_UTIL) \
-  $(LIBAIPG_WALLET) \
-  $(LIBAIPG_ZMQ) \
-  $(LIBAIPG_CONSENSUS) \
-  $(LIBAIPG_CRYPTO) \
+  $(LIBESA_UTIL) \
+  $(LIBESA_WALLET) \
+  $(LIBESA_ZMQ) \
+  $(LIBESA_CONSENSUS) \
+  $(LIBESA_CRYPTO) \
   $(LIBLEVELDB) \
   $(LIBLEVELDB_SSE42) \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-aipgd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
+esad_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
-# aipg-cli binary #
-aipg_cli_SOURCES = aipg-cli.cpp
-aipg_cli_CPPFLAGS = $(AM_CPPFLAGS) $(AIPG_INCLUDES) $(EVENT_CFLAGS)
-aipg_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-aipg_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# esa-cli binary #
+esa_cli_SOURCES = esa-cli.cpp
+esa_cli_CPPFLAGS = $(AM_CPPFLAGS) $(ESA_INCLUDES) $(EVENT_CFLAGS)
+esa_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+esa_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-aipg_cli_SOURCES += aipg-cli-res.rc
+esa_cli_SOURCES += esa-cli-res.rc
 endif
 
-aipg_cli_LDADD = \
-  $(LIBAIPG_CLI) \
-  $(LIBAIPG_COMMON) \
-  $(LIBAIPG_CONSENSUS) \
+esa_cli_LDADD = \
+  $(LIBESA_CLI) \
+  $(LIBESA_COMMON) \
+  $(LIBESA_CONSENSUS) \
   $(LIBSECP256K1) \
   $(LIBUNIVALUE) \
-  $(LIBAIPG_UTIL) \
-  $(LIBAIPG_CRYPTO)
+  $(LIBESA_UTIL) \
+  $(LIBESA_CRYPTO)
 
-aipg_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+esa_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
-# aipg-tx binary #
-aipg_tx_SOURCES = aipg-tx.cpp
-aipg_tx_CPPFLAGS = $(AM_CPPFLAGS) $(AIPG_INCLUDES)
-aipg_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-aipg_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# esa-tx binary #
+esa_tx_SOURCES = esa-tx.cpp
+esa_tx_CPPFLAGS = $(AM_CPPFLAGS) $(ESA_INCLUDES)
+esa_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+esa_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-aipg_tx_SOURCES += aipg-tx-res.rc
+esa_tx_SOURCES += esa-tx-res.rc
 endif
 
-aipg_tx_LDADD = \
+esa_tx_LDADD = \
   $(LIBUNIVALUE) \
-  $(LIBAIPG_COMMON) \
-  $(LIBAIPG_UTIL) \
-  $(LIBAIPG_CONSENSUS) \
-  $(LIBAIPG_CRYPTO) \
+  $(LIBESA_COMMON) \
+  $(LIBESA_UTIL) \
+  $(LIBESA_CONSENSUS) \
+  $(LIBESA_CRYPTO) \
   $(LIBSECP256K1)
 
-aipg_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+esa_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
-# aipgconsensus library #
-if BUILD_AIPG_LIBS
-include_HEADERS = script/aipgconsensus.h
-libaipgconsensus_la_SOURCES = $(crypto_libaipg_crypto_a_SOURCES) $(libaipg_consensus_a_SOURCES)
+# esaconsensus library #
+if BUILD_ESA_LIBS
+include_HEADERS = script/esaconsensus.h
+libesaconsensus_la_SOURCES = $(crypto_libesa_crypto_a_SOURCES) $(libesa_consensus_a_SOURCES)
 
 if GLIBC_BACK_COMPAT
-  libaipgconsensus_la_SOURCES += compat/glibc_compat.cpp
+  libesaconsensus_la_SOURCES += compat/glibc_compat.cpp
 endif
 
-libaipgconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
-libaipgconsensus_la_LIBADD = $(LIBSECP256K1) $(BOOST_LIBS)
-libaipgconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_AIPG_INTERNAL
-libaipgconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libesaconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
+libesaconsensus_la_LIBADD = $(LIBSECP256K1) $(BOOST_LIBS)
+libesaconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_ESA_INTERNAL
+libesaconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 endif
 #
@@ -587,12 +587,12 @@ CLEANFILES += obj/build.h
 EXTRA_DIST = $(CTAES_DIST)
 
 
-config/aipg-config.h: config/stamp-h1
+config/esa-config.h: config/stamp-h1
 	@$(MAKE) -C $(top_builddir) $(subdir)/$(@)
-config/stamp-h1: $(top_srcdir)/$(subdir)/config/aipg-config.h.in $(top_builddir)/config.status
+config/stamp-h1: $(top_srcdir)/$(subdir)/config/esa-config.h.in $(top_builddir)/config.status
 	$(AM_V_at)$(MAKE) -C $(top_builddir) $(subdir)/$(@)
-$(top_srcdir)/$(subdir)/config/aipg-config.h.in:  $(am__configure_deps)
-	$(AM_V_at)$(MAKE) -C $(top_srcdir) $(subdir)/config/aipg-config.h.in
+$(top_srcdir)/$(subdir)/config/esa-config.h.in:  $(am__configure_deps)
+	$(AM_V_at)$(MAKE) -C $(top_srcdir) $(subdir)/config/esa-config.h.in
 
 clean-local:
 	-$(MAKE) -C secp256k1 clean

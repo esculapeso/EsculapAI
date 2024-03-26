@@ -1,10 +1,10 @@
 // Copyright (c) 2011-2014 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "aipgaddressvalidator.h"
+#include "esaaddressvalidator.h"
 
 #include "base58.h"
 
@@ -17,12 +17,12 @@
   - All lower-case letters except for 'l'
 */
 
-AipgAddressEntryValidator::AipgAddressEntryValidator(QObject *parent) :
+EsaAddressEntryValidator::EsaAddressEntryValidator(QObject *parent) :
     QValidator(parent)
 {
 }
 
-QValidator::State AipgAddressEntryValidator::validate(QString &input, int &pos) const
+QValidator::State EsaAddressEntryValidator::validate(QString &input, int &pos) const
 {
     Q_UNUSED(pos);
 
@@ -82,15 +82,15 @@ QValidator::State AipgAddressEntryValidator::validate(QString &input, int &pos) 
     return state;
 }
 
-AipgAddressCheckValidator::AipgAddressCheckValidator(QObject *parent) :
+EsaAddressCheckValidator::EsaAddressCheckValidator(QObject *parent) :
     QValidator(parent)
 {
 }
 
-QValidator::State AipgAddressCheckValidator::validate(QString &input, int &pos) const
+QValidator::State EsaAddressCheckValidator::validate(QString &input, int &pos) const
 {
     Q_UNUSED(pos);
-    // Validate the passed aipg address
+    // Validate the passed esa address
     if (IsValidDestinationString(input.toStdString())) {
         return QValidator::Acceptable;
     }

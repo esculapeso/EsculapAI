@@ -1,19 +1,19 @@
 // Copyright (c) 2014-2015 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_CHAINPARAMSBASE_H
-#define AIPG_CHAINPARAMSBASE_H
+#ifndef ESA_CHAINPARAMSBASE_H
+#define ESA_CHAINPARAMSBASE_H
 
 #include <memory>
 #include <string>
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between aipg-cli and aipgd)
- * of a given instance of the Aipg system.
+ * CBaseChainParams defines the base parameters (shared between esa-cli and esad)
+ * of a given instance of the Esa system.
  */
 class CBaseChainParams
 {
@@ -62,4 +62,4 @@ void SelectBaseParams(const std::string& chain);
  */
 std::string ChainNameFromCommandLine();
 
-#endif // AIPG_CHAINPARAMSBASE_H
+#endif // ESA_CHAINPARAMSBASE_H

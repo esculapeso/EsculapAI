@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_CHAIN_H
-#define AIPG_CHAIN_H
+#ifndef ESA_CHAIN_H
+#define ESA_CHAIN_H
 
 #include "arith_uint256.h"
 #include "primitives/block.h"
@@ -521,4 +521,4 @@ public:
     CBlockIndex* FindEarliestAtLeast(int64_t nTime) const;
 };
 
-#endif // AIPG_CHAIN_H
+#endif // ESA_CHAIN_H

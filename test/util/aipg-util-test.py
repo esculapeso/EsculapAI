@@ -2,10 +2,10 @@
 # Copyright 2014 BitPay Inc.
 # Copyright 2016-2017 The Bitcoin Core developers
 # Copyright (c) 2017-2019 The Raven Core developers
-# Copyright (c) 2020-2021 The AIPG Core developers
+# Copyright (c) 2020-2021 The ESA Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Test framework for aipg utils.
+"""Test framework for esa utils.
 
 Runs automatically during `make check`.
 
@@ -31,7 +31,7 @@ import sys
 
 def main():
     sys.exit(
-        0)  # ~~ This test is to test Aipg-TX which currently does not compile, so for now do not run this test, just return success so make check passes.
+        0)  # ~~ This test is to test Esa-TX which currently does not compile, so for now do not run this test, just return success so make check passes.
     config = configparser.ConfigParser()
     config.optionxform = str
     config.readfp(open(os.path.join(os.path.dirname(__file__), "../config.ini"), encoding="utf8"))
@@ -50,7 +50,7 @@ def main():
     # Add the format/level to the logger
     logging.basicConfig(format=formatter, level=level)
 
-    bctester(os.path.join(env_conf["SRCDIR"], "test/util/data"), "aipg-util-test.json", env_conf)
+    bctester(os.path.join(env_conf["SRCDIR"], "test/util/data"), "esa-util-test.json", env_conf)
 
 
 def bctester(testDir, input_basename, buildenv):
@@ -162,7 +162,7 @@ def bctest(testDir, testObj, buildenv):
         want_error = testObj["error_txt"]
         # Compare error text
         # TODO: ideally, we'd compare the strings exactly and also assert
-        # That stderr is empty if no errors are expected. However, aipg-tx
+        # That stderr is empty if no errors are expected. However, esa-tx
         # emits DISPLAY errors when running as a windows application on
         # linux through wine. Just assert that the expected error text appears
         # somewhere in stderr.

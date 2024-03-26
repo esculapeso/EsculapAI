@@ -1,6 +1,6 @@
 // Copyright (c) 2014-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -29,8 +29,8 @@ NetworkStyle::NetworkStyle(const QString &_appName, const int iconColorHueShift,
     titleAddText(qApp->translate("SplashScreen", _titleAddText))
 {
     // load pixmap
-    QPixmap pixmap2(":/icons/aipg");
-    QPixmap pixmap(":/icons/aipg_sc");
+    QPixmap pixmap2(":/icons/esa");
+    QPixmap pixmap(":/icons/esa_sc");
 
     if(iconColorHueShift != 0 && iconColorSaturationReduction != 0)
     {

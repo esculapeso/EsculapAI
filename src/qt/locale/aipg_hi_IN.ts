@@ -50,7 +50,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>AipgGUI</name>
+    <name>EsaGUI</name>
     <message>
         <source>Synchronizing with network...</source>
         <translation>नेटवर्क से समकालिक (मिल) रहा है ...</translation>
@@ -93,7 +93,7 @@
         <translation>पहचान शब्द/अक्षर जो वॉलेट एनक्रिपशन के लिए इस्तेमाल किया है उसे बदलिए!</translation>
     </message>
     <message>
-        <source>Aipg</source>
+        <source>Esa</source>
         <translation>बीटकोइन</translation>
     </message>
     <message>
@@ -419,7 +419,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>aipg-core</name>
+    <name>esa-core</name>
     <message>
         <source>Options:</source>
         <translation>विकल्प:</translation>

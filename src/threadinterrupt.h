@@ -1,11 +1,11 @@
 // Copyright (c) 2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_THREADINTERRUPT_H
-#define AIPG_THREADINTERRUPT_H
+#ifndef ESA_THREADINTERRUPT_H
+#define ESA_THREADINTERRUPT_H
 
 #include <atomic>
 #include <chrono>
@@ -33,4 +33,4 @@ private:
     std::atomic<bool> flag;
 };
 
-#endif //AIPG_THREADINTERRUPT_H
+#endif //ESA_THREADINTERRUPT_H

@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_CONSENSUS_PARAMS_H
-#define AIPG_CONSENSUS_PARAMS_H
+#ifndef ESA_CONSENSUS_PARAMS_H
+#define ESA_CONSENSUS_PARAMS_H
 
 #include "uint256.h"
 #include <map>
@@ -82,4 +82,4 @@ struct Params {
 };
 } // namespace Consensus
 
-#endif // AIPG_CONSENSUS_PARAMS_H
+#endif // ESA_CONSENSUS_PARAMS_H

@@ -1,13 +1,13 @@
 // Copyright (c) 2011-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "guiutil.h"
 
-#include "aipgaddressvalidator.h"
-#include "aipgunits.h"
+#include "esaaddressvalidator.h"
+#include "esaunits.h"
 #include "qvalidatedlineedit.h"
 #include "walletmodel.h"
 
@@ -213,11 +213,11 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent)
 #if QT_VERSION >= 0x040700
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
-    widget->setPlaceholderText(QObject::tr("Enter a aipg address (e.g. %1)").arg(
+    widget->setPlaceholderText(QObject::tr("Enter a esa address (e.g. %1)").arg(
         QString::fromStdString(DummyAddress(GetParams()))));
 #endif
-    widget->setValidator(new AipgAddressEntryValidator(parent));
-    widget->setCheckValidator(new AipgAddressCheckValidator(parent));
+    widget->setValidator(new EsaAddressEntryValidator(parent));
+    widget->setCheckValidator(new EsaAddressCheckValidator(parent));
 }
 
 void setupAmountWidget(QLineEdit *widget, QWidget *parent)
@@ -229,10 +229,10 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
     widget->setAlignment(Qt::AlignRight|Qt::AlignVCenter);
 }
 
-bool parseAipgURI(const QUrl &uri, SendCoinsRecipient *out)
+bool parseEsaURI(const QUrl &uri, SendCoinsRecipient *out)
 {
-    // return if URI is not valid or is no aipg: URI
-    if(!uri.isValid() || uri.scheme() != QString("aipg"))
+    // return if URI is not valid or is no esa: URI
+    if(!uri.isValid() || uri.scheme() != QString("esa"))
         return false;
 
     SendCoinsRecipient rv;
@@ -272,7 +272,7 @@ bool parseAipgURI(const QUrl &uri, SendCoinsRecipient *out)
         {
             if(!i->second.isEmpty())
             {
-                if(!AipgUnits::parse(AipgUnits::aipg, i->second, &rv.amount))
+                if(!EsaUnits::parse(EsaUnits::esa, i->second, &rv.amount))
                 {
                     return false;
                 }
@@ -290,28 +290,28 @@ bool parseAipgURI(const QUrl &uri, SendCoinsRecipient *out)
     return true;
 }
 
-bool parseAipgURI(QString uri, SendCoinsRecipient *out)
+bool parseEsaURI(QString uri, SendCoinsRecipient *out)
 {
-    // Convert aipg:// to aipg:
+    // Convert esa:// to esa:
     //
-    //    Cannot handle this later, because aipg:// will cause Qt to see the part after // as host,
+    //    Cannot handle this later, because esa:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
-    if(uri.startsWith("aipg://", Qt::CaseInsensitive))
+    if(uri.startsWith("esa://", Qt::CaseInsensitive))
     {
-        uri.replace(0, 10, "aipg:");
+        uri.replace(0, 10, "esa:");
     }
     QUrl uriInstance(uri);
-    return parseAipgURI(uriInstance, out);
+    return parseEsaURI(uriInstance, out);
 }
 
-QString formatAipgURI(const SendCoinsRecipient &info)
+QString formatEsaURI(const SendCoinsRecipient &info)
 {
-    QString ret = QString("aipg:%1").arg(info.address);
+    QString ret = QString("esa:%1").arg(info.address);
     int paramCount = 0;
 
     if (info.amount)
     {
-        ret += QString("?amount=%1").arg(AipgUnits::format(AipgUnits::aipg, info.amount, false, AipgUnits::separatorNever));
+        ret += QString("?amount=%1").arg(EsaUnits::format(EsaUnits::esa, info.amount, false, EsaUnits::separatorNever));
         paramCount++;
     }
  
@@ -501,11 +501,11 @@ void openDebugLogfile()
         QDesktopServices::openUrl(QUrl::fromLocalFile(boostPathToQString(pathDebug)));
 }
 
-bool openAipgConf()
+bool openEsaConf()
 {
-    fs::path pathConfig = GetConfigFile(gArgs.GetArg("-conf", AIPG_CONF_FILENAME));
+    fs::path pathConfig = GetConfigFile(gArgs.GetArg("-conf", ESA_CONF_FILENAME));
 
-    /* Open aipg.conf with the associated application */
+    /* Open esa.conf with the associated application */
     if (fs::exists(pathConfig))
         return QDesktopServices::openUrl(QUrl::fromLocalFile(boostPathToQString(pathConfig)));
 }
@@ -715,15 +715,15 @@ fs::path static StartupShortcutPath()
 {
     std::string chain = ChainNameFromCommandLine();
     if (chain == CBaseChainParams::MAIN)
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "Aipg.lnk";
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "Esa.lnk";
     if (chain == CBaseChainParams::TESTNET) // Remove this special case when CBaseChainParams::TESTNET = "testnet4"
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "Aipg (testnet).lnk";
-    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("Aipg (%s).lnk", chain);
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "Esa (testnet).lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("Esa (%s).lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
 {
-    // check for Aipg*.lnk
+    // check for Esa*.lnk
     return fs::exists(StartupShortcutPath());
 }
 
@@ -813,8 +813,8 @@ fs::path static GetAutostartFilePath()
 {
     std::string chain = ChainNameFromCommandLine();
     if (chain == CBaseChainParams::MAIN)
-        return GetAutostartDir() / "aipg.desktop";
-    return GetAutostartDir() / strprintf("aipg-%s.lnk", chain);
+        return GetAutostartDir() / "esa.desktop";
+    return GetAutostartDir() / strprintf("esa-%s.lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
@@ -854,13 +854,13 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         if (!optionFile.good())
             return false;
         std::string chain = ChainNameFromCommandLine();
-        // Write a aipg.desktop file to the autostart directory:
+        // Write a esa.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
         if (chain == CBaseChainParams::MAIN)
-            optionFile << "Name=Aipg\n";
+            optionFile << "Name=Esa\n";
         else
-            optionFile << strprintf("Name=Aipg (%s)\n", chain);
+            optionFile << strprintf("Name=Esa (%s)\n", chain);
         optionFile << "Exec=" << pszExePath << strprintf(" -min -testnet=%d -regtest=%d\n", gArgs.GetBoolArg("-testnet", false), gArgs.GetBoolArg("-regtest", false));
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";
@@ -886,7 +886,7 @@ LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef
         return nullptr;
     }
     
-    // loop through the list of startup items and try to find the aipg app
+    // loop through the list of startup items and try to find the esa app
     for(int i = 0; i < CFArrayGetCount(listSnapshot); i++) {
         LSSharedFileListItemRef item = (LSSharedFileListItemRef)CFArrayGetValueAtIndex(listSnapshot, i);
         UInt32 resolutionFlags = kLSSharedFileListNoUserInteraction | kLSSharedFileListDoNotMountVolumes;
@@ -920,38 +920,38 @@ LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef
 
 bool GetStartOnSystemStartup()
 {
-    CFURLRef aipgAppUrl = CFBundleCopyBundleURL(CFBundleGetMainBundle());
-    if (aipgAppUrl == nullptr) {
+    CFURLRef esaAppUrl = CFBundleCopyBundleURL(CFBundleGetMainBundle());
+    if (esaAppUrl == nullptr) {
         return false;
     }
     
     LSSharedFileListRef loginItems = LSSharedFileListCreate(nullptr, kLSSharedFileListSessionLoginItems, nullptr);
-    LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, aipgAppUrl);
+    LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, esaAppUrl);
 
-    CFRelease(aipgAppUrl);
+    CFRelease(esaAppUrl);
     return !!foundItem; // return boolified object
 }
 
 bool SetStartOnSystemStartup(bool fAutoStart)
 {
-    CFURLRef aipgAppUrl = CFBundleCopyBundleURL(CFBundleGetMainBundle());
-    if (aipgAppUrl == nullptr) {
+    CFURLRef esaAppUrl = CFBundleCopyBundleURL(CFBundleGetMainBundle());
+    if (esaAppUrl == nullptr) {
         return false;
     }
     
     LSSharedFileListRef loginItems = LSSharedFileListCreate(nullptr, kLSSharedFileListSessionLoginItems, nullptr);
-    LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, aipgAppUrl);
+    LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, esaAppUrl);
 
     if(fAutoStart && !foundItem) {
-        // add aipg app to startup item list
-        LSSharedFileListInsertItemURL(loginItems, kLSSharedFileListItemBeforeFirst, nullptr, nullptr, aipgAppUrl, nullptr, nullptr);
+        // add esa app to startup item list
+        LSSharedFileListInsertItemURL(loginItems, kLSSharedFileListItemBeforeFirst, nullptr, nullptr, esaAppUrl, nullptr, nullptr);
     }
     else if(!fAutoStart && foundItem) {
         // remove item
         LSSharedFileListItemRemove(loginItems, foundItem);
     }
     
-    CFRelease(aipgAppUrl);
+    CFRelease(esaAppUrl);
     return true;
 }
 #pragma GCC diagnostic pop

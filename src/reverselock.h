@@ -1,11 +1,11 @@
 // Copyright (c) 2015-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_REVERSELOCK_H
-#define AIPG_REVERSELOCK_H
+#ifndef ESA_REVERSELOCK_H
+#define ESA_REVERSELOCK_H
 
 /**
  * An RAII-style reverse lock. Unlocks on construction and locks on destruction.
@@ -33,4 +33,4 @@ private:
     Lock templock;
 };
 
-#endif // AIPG_REVERSELOCK_H
+#endif // ESA_REVERSELOCK_H

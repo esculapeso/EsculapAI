@@ -1,11 +1,11 @@
 // Copyright (c) 2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_SUPPORT_EVENTS_H
-#define AIPG_SUPPORT_EVENTS_H
+#ifndef ESA_SUPPORT_EVENTS_H
+#define ESA_SUPPORT_EVENTS_H
 
 #include <ios>
 #include <memory>
@@ -55,4 +55,4 @@ inline raii_evhttp_connection obtain_evhttp_connection_base(struct event_base* b
     return result;
 }
 
-#endif // AIPG_SUPPORT_EVENTS_H
+#endif // ESA_SUPPORT_EVENTS_H

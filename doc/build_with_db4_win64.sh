@@ -1,4 +1,4 @@
-## Please read https://github.com/JustAResearcher/Aipg/blob/master/doc/build-windows.md
+## Please read https://github.com/JustAResearcher/Esa/blob/master/doc/build-windows.md
 
 ## STEP1: Setup dependency
 # sudo apt-get install build-essential libtool autotools-dev automake pkg-config bsdmainutils curl nsis
@@ -10,10 +10,10 @@
 
 ## STEP3: Run this script
 
-AIPG_ROOT=$(pwd)
+ESA_ROOT=$(pwd)
 
-# Pick some path to install BDB to, here we create a directory within the Aipg directory
-BDB_PREFIX="${AIPG_ROOT}/db4"
+# Pick some path to install BDB to, here we create a directory within the Esa directory
+BDB_PREFIX="${ESA_ROOT}/db4"
 mkdir -p $BDB_PREFIX
 
 # Fetch the source and verify that it is not tampered with
@@ -33,8 +33,8 @@ cd db-4.8.30.NC/build_unix/
 make
 make install
 
-# Configure Aipg Core to use our own-built instance of BDB
-cd $AIPG_ROOT
+# Configure Esa Core to use our own-built instance of BDB
+cd $ESA_ROOT
 PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g') # strip out problematic Windows %PATH% imported var
 cd depends
 make HOST=x86_64-w64-mingw32

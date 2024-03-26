@@ -70,7 +70,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>AipgGUI</name>
+    <name>EsaGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>&amp;Хабар ёзиш...</translation>
@@ -148,8 +148,8 @@
         <translation>Дискдаги блоклар қайта индексланмоқда...</translation>
     </message>
     <message>
-        <source>Send coins to a Aipg address</source>
-        <translation>Тангаларни Aipg манзилига жўнатиш</translation>
+        <source>Send coins to a Esa address</source>
+        <translation>Тангаларни Esa манзилига жўнатиш</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -172,8 +172,8 @@
         <translation>Хабарни &amp;тасдиқлаш...</translation>
     </message>
     <message>
-        <source>Aipg</source>
-        <translation>Aipg</translation>
+        <source>Esa</source>
+        <translation>Esa</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -200,12 +200,12 @@
         <translation>Ҳамёнингизга тегишли махфий калитларни кодлаш</translation>
     </message>
     <message>
-        <source>Sign messages with your Aipg addresses to prove you own them</source>
-        <translation>Aipg манзилидан унинг эгаси эканлигингизни исботлаш учун хабарлар ёзинг</translation>
+        <source>Sign messages with your Esa addresses to prove you own them</source>
+        <translation>Esa манзилидан унинг эгаси эканлигингизни исботлаш учун хабарлар ёзинг</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Aipg addresses</source>
-        <translation>Хабарларни махсус Aipg манзилларингиз билан ёзилганлигига ишонч ҳосил қилиш учун уларни тасдиқланг</translation>
+        <source>Verify messages to ensure they were signed with specified Esa addresses</source>
+        <translation>Хабарларни махсус Esa манзилларингиз билан ёзилганлигига ишонч ҳосил қилиш учун уларни тасдиқланг</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -224,8 +224,8 @@
         <translation>Ички ойналар асбоблар панели</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and aipg: URIs)</source>
-        <translation>Тўловлар (QR кодлари ва aipg ёрдамида яратишлар: URI’лар) сўраш</translation>
+        <source>Request payments (generates QR codes and esa: URIs)</source>
+        <translation>Тўловлар (QR кодлари ва esa ёрдамида яратишлар: URI’лар) сўраш</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -236,16 +236,16 @@
         <translation>Фойдаланилган қабул қилинган манзиллар ва ёрлиқлар рўйхатини кўрсатиш</translation>
     </message>
     <message>
-        <source>Open a aipg: URI or payment request</source>
-        <translation>Aipg’ни очиш: URI ёки тўлов сўрови</translation>
+        <source>Open a esa: URI or payment request</source>
+        <translation>Esa’ни очиш: URI ёки тўлов сўрови</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>&amp;Буйруқлар сатри мосламалари</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Aipg network</source>
-        <translation><numerusform>%n та Aipg тармоғига фаол уланиш мавжуд</numerusform></translation>
+        <source>%n active connection(s) to Esa network</source>
+        <translation><numerusform>%n та Esa тармоғига фаол уланиш мавжуд</numerusform></translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -603,8 +603,8 @@
         <translation>Шакл</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Aipg network after a connection is established, but this process has not completed yet.</source>
-        <translation>Кўрсатилган маълумот эскирган бўлиши мумкин. Ҳамёнингиз алоқа ўрнатилгандан сўнг Aipg тармоқ билан автоматик тарзда синхронланади, аммо жараён ҳалигача тугалланмади.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Esa network after a connection is established, but this process has not completed yet.</source>
+        <translation>Кўрсатилган маълумот эскирган бўлиши мумкин. Ҳамёнингиз алоқа ўрнатилгандан сўнг Esa тармоқ билан автоматик тарзда синхронланади, аммо жараён ҳалигача тугалланмади.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -684,8 +684,8 @@
         <translation>Миқдори</translation>
     </message>
     <message>
-        <source>Enter a Aipg address (e.g. %1)</source>
-        <translation>Aipg манзилини киритинг (масалан.  %1)</translation>
+        <source>Enter a Esa address (e.g. %1)</source>
+        <translation>Esa манзилини киритинг (масалан.  %1)</translation>
     </message>
     <message>
         <source>%1 m</source>
@@ -1192,7 +1192,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>aipg-core</name>
+    <name>esa-core</name>
     <message>
         <source>Options:</source>
         <translation>Танламалар:</translation>
@@ -1210,8 +1210,8 @@
         <translation>Демон сифатида орқа фонда ишга туширинг ва буйруқларга рози бўлинг</translation>
     </message>
     <message>
-        <source>Aipg Core</source>
-        <translation>Aipg Core</translation>
+        <source>Esa Core</source>
+        <translation>Esa Core</translation>
     </message>
     <message>
         <source>Connection options:</source>

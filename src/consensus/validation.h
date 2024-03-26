@@ -1,12 +1,12 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_CONSENSUS_VALIDATION_H
-#define AIPG_CONSENSUS_VALIDATION_H
+#ifndef ESA_CONSENSUS_VALIDATION_H
+#define ESA_CONSENSUS_VALIDATION_H
 
 #include <string>
 #include "version.h"
@@ -23,9 +23,9 @@ static const unsigned char REJECT_NONSTANDARD = 0x40;
 // static const unsigned char REJECT_DUST = 0x41; // part of BIP 61
 static const unsigned char REJECT_INSUFFICIENTFEE = 0x42;
 static const unsigned char REJECT_CHECKPOINT = 0x43;
-/** AIPG START */
+/** ESA START */
 static const unsigned char REJECT_MAXREORGDEPTH = 0x44;
-/** AIPG END */
+/** ESA END */
 
 /** Capture information about block/transaction validation */
 class CValidationState {
@@ -118,4 +118,4 @@ static inline int64_t GetBlockWeight(const CBlock& block)
     return ::GetSerializeSize(block, SER_NETWORK, PROTOCOL_VERSION | SERIALIZE_TRANSACTION_NO_WITNESS) * (WITNESS_SCALE_FACTOR - 1) + ::GetSerializeSize(block, SER_NETWORK, PROTOCOL_VERSION);
 }
 
-#endif // AIPG_CONSENSUS_VALIDATION_H
+#endif // ESA_CONSENSUS_VALIDATION_H

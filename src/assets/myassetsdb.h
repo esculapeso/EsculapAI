@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPGCOIN_MYASSETSDB_H
-#define AIPGCOIN_MYASSETSDB_H
+#ifndef ESACOIN_MYASSETSDB_H
+#define ESACOIN_MYASSETSDB_H
 
 #include <dbwrapper.h>
 
@@ -79,4 +79,4 @@ public:
 };
 
 
-#endif //AIPGCOIN_MYASSETSDB_H
+#endif //ESACOIN_MYASSETSDB_H

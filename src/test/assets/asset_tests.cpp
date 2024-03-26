@@ -1,11 +1,11 @@
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <assets/assets.h>
 
-#include <test/test_aipg.h>
+#include <test/test_esa.h>
 
 #include <boost/test/unit_test.hpp>
 #include "core_write.cpp"
@@ -48,23 +48,23 @@ BOOST_FIXTURE_TEST_SUITE(asset_tests, BasicTestingSetup)
         BOOST_CHECK(!IsAssetNameValid("A._BC", type));
         BOOST_CHECK(!IsAssetNameValid("AB_.C", type));
 
-        //- Versions of AIPG NOT allowed
+        //- Versions of ESA NOT allowed
         BOOST_CHECK(!IsAssetNameValid("RVN", type));
         BOOST_CHECK(!IsAssetNameValid("RAVEN", type));
         BOOST_CHECK(!IsAssetNameValid("RAVENCOIN", type));
-        BOOST_CHECK(!IsAssetNameValid("aipg", type));
-        BOOST_CHECK(!IsAssetNameValid("AIPG", type));
+        BOOST_CHECK(!IsAssetNameValid("esa", type));
+        BOOST_CHECK(!IsAssetNameValid("ESA", type));
 
-        //- Versions of AIPG ALLOWED
+        //- Versions of ESA ALLOWED
         BOOST_CHECK(IsAssetNameValid("RAVEN.COIN", type));
-        BOOST_CHECK(IsAssetNameValid("AIPG.COIN", type));
+        BOOST_CHECK(IsAssetNameValid("ESA.COIN", type));
         BOOST_CHECK(IsAssetNameValid("RAVEN_COIN", type));
-        BOOST_CHECK(IsAssetNameValid("AIPG_COIN", type));
+        BOOST_CHECK(IsAssetNameValid("ESA_COIN", type));
         BOOST_CHECK(IsAssetNameValid("RVNSPYDER", type));
         BOOST_CHECK(IsAssetNameValid("SPYDERRVN", type));
         BOOST_CHECK(IsAssetNameValid("RAVENSPYDER", type));
         BOOST_CHECK(IsAssetNameValid("SPYDERAVEN", type));
-        BOOST_CHECK(IsAssetNameValid("BLACK_AIPG", type));
+        BOOST_CHECK(IsAssetNameValid("BLACK_ESA", type));
         BOOST_CHECK(IsAssetNameValid("SERVNOT", type));
 
         // subs

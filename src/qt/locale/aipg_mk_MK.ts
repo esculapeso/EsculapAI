@@ -66,7 +66,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>AipgGUI</name>
+    <name>EsaGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Потпиши &amp;порака...</translation>
@@ -140,7 +140,7 @@
         <translation>Повторно индексирање на блокови од дискот...</translation>
     </message>
     <message>
-        <source>Send coins to a Aipg address</source>
+        <source>Send coins to a Esa address</source>
         <translation>Испрати биткоини на Биткоин адреса</translation>
     </message>
     <message>
@@ -148,7 +148,7 @@
         <translation>&amp;Потврди порака...</translation>
     </message>
     <message>
-        <source>Aipg</source>
+        <source>Esa</source>
         <translation>Биткоин</translation>
     </message>
     <message>
@@ -574,13 +574,13 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>aipg-core</name>
+    <name>esa-core</name>
     <message>
         <source>Options:</source>
         <translation>Опции:</translation>
     </message>
     <message>
-        <source>Aipg Core</source>
+        <source>Esa Core</source>
         <translation>Биткоин Core</translation>
     </message>
     <message>

@@ -1,15 +1,15 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_COMPAT_H
-#define AIPG_COMPAT_H
+#ifndef ESA_COMPAT_H
+#define ESA_COMPAT_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/aipg-config.h"
+#include "config/esa-config.h"
 #endif
 
 #ifdef WIN32
@@ -102,4 +102,4 @@ bool static inline IsSelectableSocket(const SOCKET& s) {
 #endif
 }
 
-#endif // AIPG_COMPAT_H
+#endif // ESA_COMPAT_H

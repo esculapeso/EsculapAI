@@ -64,11 +64,11 @@
 			<translation>受け取りアドレス</translation>
 		</message>
 		<message>
-			<source>These are your Aipg addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-			<translation>これらは支払いを送信するためのあなたの Aipg アドレスです.コインを送信する前に、常に額と受信アドレスを確認してください.</translation>
+			<source>These are your Esa addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+			<translation>これらは支払いを送信するためのあなたの Esa アドレスです.コインを送信する前に、常に額と受信アドレスを確認してください.</translation>
 		</message>
 		<message>
-			<source>These are your Aipg addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+			<source>These are your Esa addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
 			<translation>これらは支払いを受け取るためのビットコインアドレスです.トランザクションごとに新しい受け取り用アドレスを作成することが推奨されます.</translation>
 		</message>
 		<message>
@@ -170,8 +170,8 @@
 			<translation>ウォレットの暗号化を確認する</translation>
 		</message>
 		<message>
-			<source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR AIPG&lt;/b&gt;!</source>
-			<translation>警告: もしもあなたのウォレットを暗号化してパスフレーズを失ってしまったなら、&lt;b&gt;あなたの Aipg はすべて失われます&lt;/b&gt;!</translation>
+			<source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ESA&lt;/b&gt;!</source>
+			<translation>警告: もしもあなたのウォレットを暗号化してパスフレーズを失ってしまったなら、&lt;b&gt;あなたの Esa はすべて失われます&lt;/b&gt;!</translation>
 		</message>
 		<message>
 			<source>Are you sure you wish to encrypt your wallet?</source>
@@ -182,7 +182,7 @@
 			<translation>ウォレットは暗号化されました</translation>
 		</message>
 		<message>
-			<source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your aipgss from being stolen by malware infecting your computer.</source>
+			<source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your esass from being stolen by malware infecting your computer.</source>
 			<translation>暗号化処理を完了させるため %1 をいますぐ終了します.ウォレットの暗号化では、コンピュータに感染したマルウェアなどによるビットコインの盗難から完全に守ることはできないことにご注意ください.</translation>
 		</message>
 		<message>
@@ -242,7 +242,7 @@
 		</message>
 	</context>
 	<context>
-		<name>AipgGUI</name>
+		<name>EsaGUI</name>
 		<message>
 			<source>Sign &amp;message...</source>
 			<translation>メッセージの署名... (&amp;m)</translation>
@@ -348,8 +348,8 @@
 			<translation>ディスク上のブロックのインデックスを再作成中...</translation>
 		</message>
 		<message>
-			<source>Send coins to a Aipg address</source>
-			<translation>Aipg アドレスにコインを送る</translation>
+			<source>Send coins to a Esa address</source>
+			<translation>Esa アドレスにコインを送る</translation>
 		</message>
 		<message>
 			<source>Backup wallet to another location</source>
@@ -372,8 +372,8 @@
 			<translation>メッセージの検証... (&amp;V)</translation>
 		</message>
 		<message>
-			<source>Aipg</source>
-			<translation>Aipg</translation>
+			<source>Esa</source>
+			<translation>Esa</translation>
 		</message>
 		<message>
 			<source>Wallet</source>
@@ -400,12 +400,12 @@
 			<translation>あなたのウォレットの秘密鍵を暗号化します</translation>
 		</message>
 		<message>
-			<source>Sign messages with your Aipg addresses to prove you own them</source>
-			<translation>あなたが所有していることを証明するために、あなたの Aipg アドレスでメッセージに署名してください</translation>
+			<source>Sign messages with your Esa addresses to prove you own them</source>
+			<translation>あなたが所有していることを証明するために、あなたの Esa アドレスでメッセージに署名してください</translation>
 		</message>
 		<message>
-			<source>Verify messages to ensure they were signed with specified Aipg addresses</source>
-			<translation>指定された Aipg アドレスで署名されたことを確認するためにメッセージを検証します</translation>
+			<source>Verify messages to ensure they were signed with specified Esa addresses</source>
+			<translation>指定された Esa アドレスで署名されたことを確認するためにメッセージを検証します</translation>
 		</message>
 		<message>
 			<source>&amp;File</source>
@@ -424,8 +424,8 @@
 			<translation>タブツールバー</translation>
 		</message>
 		<message>
-			<source>Request payments (generates QR codes and aipg: URIs)</source>
-			<translation>支払いを要求する (QRコードとaipg:ではじまるURIを生成する)</translation>
+			<source>Request payments (generates QR codes and esa: URIs)</source>
+			<translation>支払いを要求する (QRコードとesa:ではじまるURIを生成する)</translation>
 		</message>
 		<message>
 			<source>Show the list of used sending addresses and labels</source>
@@ -436,15 +436,15 @@
 			<translation>支払いを受け取るアドレスとラベルのリストを表示する</translation>
 		</message>
 		<message>
-			<source>Open a aipg: URI or payment request</source>
-			<translation>aipg: URIまたは支払いリクエストを開く</translation>
+			<source>Open a esa: URI or payment request</source>
+			<translation>esa: URIまたは支払いリクエストを開く</translation>
 		</message>
 		<message>
 			<source>&amp;Command-line options</source>
 			<translation>コマンドラインオプション (&amp;C)</translation>
 		</message>
 		<message>
-			<source>%n active connection(s) to Aipg network</source>
+			<source>%n active connection(s) to Esa network</source>
 			<translation>%nアクティブネットワーク接続</translation>
 		</message>
 		<message>
@@ -488,8 +488,8 @@
 			<translation>バージョンは最新です</translation>
 		</message>
 		<message>
-			<source>Show the %1 help message to get a list with possible Aipg command-line options</source>
-			<translation>有効な Aipg のコマンドライン オプションを見るために %1 のヘルプメッセージを表示します.</translation>
+			<source>Show the %1 help message to get a list with possible Esa command-line options</source>
+			<translation>有効な Esa のコマンドライン オプションを見るために %1 のヘルプメッセージを表示します.</translation>
 		</message>
 		<message>
 			<source>%1 client</source>
@@ -540,16 +540,16 @@
 			<translation>ウォレットは&lt;b&gt;暗号化されて、ロックされています&lt;/b&gt;</translation>
 		</message>
 		<message>
-			<source>A fatal error occurred. Aipg can no longer continue safely and will quit.</source>
-			<translation>致命的なエラーが発生しました.Aipg は安全に継続することができず終了するでしょう.</translation>
+			<source>A fatal error occurred. Esa can no longer continue safely and will quit.</source>
+			<translation>致命的なエラーが発生しました.Esa は安全に継続することができず終了するでしょう.</translation>
 		</message>
 		<message>
 			<source>&amp;Transfer Assets</source>
 			<translation>資産の移転</translation>
 		</message>
 		<message>
-			<source>Transfer assets to aipg addresses</source>
-			<translation>aipgアドレスへの資産の転送</translation>
+			<source>Transfer assets to esa addresses</source>
+			<translation>esaアドレスへの資産の転送</translation>
 		</message>
 		<message>
 			<source>&amp;Create Assets</source>
@@ -600,7 +600,7 @@
 			<translation>オープン財布の修理オプション</translation>
 		</message>
 		<message>
-			<source>Open a Aipg: URI or payment request</source>
+			<source>Open a Esa: URI or payment request</source>
 			<translation>巣を開く：URIまたは支払い要求</translation>
 		</message>
 		<message>
@@ -608,7 +608,7 @@
 			<translation>ウォレット</translation>
 		</message>
 		<message>
-			<source>Aipg Market Price</source>
+			<source>Esa Market Price</source>
 			<translation>市場価格</translation>
 		</message>
 		<message>
@@ -846,8 +846,8 @@
 			<translation>送信アドレスを編集</translation>
 		</message>
 		<message>
-			<source>The entered address "%1" is not a valid Aipg address.</source>
-			<translation>入力されたアドレス "%1" は無効な Aipg アドレスです.</translation>
+			<source>The entered address "%1" is not a valid Esa address.</source>
+			<translation>入力されたアドレス "%1" は無効な Esa アドレスです.</translation>
 		</message>
 		<message>
 			<source>The entered address "%1" is already in the address book.</source>
@@ -959,7 +959,7 @@
 			<translation>これはプログラム最初の起動です.%1 がデータを保存する場所を選択して下さい.</translation>
 		</message>
 		<message>
-			<source>%1 will download and store a copy of the Aipg block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+			<source>%1 will download and store a copy of the Esa block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
 			<translation>%1 は、ビットコインのブロックチェーンのコピーを、ダウンロードして保存します.少なくとも %2 ギガバイトのデータが、このディレクトリに保存されます.そしてそれは時間と共に増加します.またウォレットもこのディレクトリに保存されます.</translation>
 		</message>
 		<message>
@@ -1007,7 +1007,7 @@
 			<translation>ここでデータディレクトリを作成できません.</translation>
 		</message>
 		<message>
-			<source>Aipg</source>
+			<source>Esa</source>
 			<translation>ハイブ</translation>
 		</message>
 		<message>
@@ -1019,7 +1019,7 @@
 			<translation>約1 GBのデータがこのディレクトリに保存されます.</translation>
 		</message>
 		<message>
-			<source>%1 will download and store a copy of the Aipg block chain.</source>
+			<source>%1 will download and store a copy of the Esa block chain.</source>
 			<translation>%1はハイブブロックチェーンのコピーをダウンロードして保存します.</translation>
 		</message>
 		<message>
@@ -1038,11 +1038,11 @@
 			<translation>フォーム</translation>
 		</message>
 		<message>
-			<source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the Aipg network, as detailed below.</source>
+			<source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the Esa network, as detailed below.</source>
 			<translation>最近の取引はまだ見えないかもしれません、したがって、あなたの財布のバランスは不正確であるかもしれません.以下の詳細として、あなたの財布がハイブネットワークと同期し終わったならば、この情報は正しいでしょう.</translation>
 		</message>
 		<message>
-			<source>Attempting to spend aipg that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+			<source>Attempting to spend esa that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
 			<translation>まだ表示されていないトランザクションが影響するビットコインを使用しようとすると、ネットワークから認証がなされないでしょう.</translation>
 		</message>
 		<message>
@@ -1086,7 +1086,7 @@
 			<translation>未知.ヘッダを同期しています (%1)...</translation>
 		</message>
 		<message>
-			<source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the aipg network, as detailed below.</source>
+			<source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the esa network, as detailed below.</source>
 			<translation>確認できない最近のトランザクションがあるかもしれません.これによりウォレットの残高は不正確なものである可能性があります.この情報はウォレットが一度ビットコインネットワークへの同期が完了すると正確なものとなります.詳細は下記を参照してください.</translation>
 		</message>
 	</context>
@@ -1212,16 +1212,16 @@
 			<translation>未検証のおつりを使用する (&amp;S)</translation>
 		</message>
 		<message>
-			<source>Automatically open the Aipg client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-			<translation>自動的にルーター上の Aipg クライアントのポートを開きます.あなたのルーターが UPnP に対応していて、それが有効になっている場合に作動します.</translation>
+			<source>Automatically open the Esa client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+			<translation>自動的にルーター上の Esa クライアントのポートを開きます.あなたのルーターが UPnP に対応していて、それが有効になっている場合に作動します.</translation>
 		</message>
 		<message>
 			<source>Map port using &amp;UPnP</source>
 			<translation>UPnP を使ってポートを割り当てる (&amp;U)</translation>
 		</message>
 		<message>
-			<source>Connect to the Aipg network through a SOCKS5 proxy.</source>
-			<translation>SOCKS5 プロキシ経由でAipgネットワークに接続する</translation>
+			<source>Connect to the Esa network through a SOCKS5 proxy.</source>
+			<translation>SOCKS5 プロキシ経由でEsaネットワークに接続する</translation>
 		</message>
 		<message>
 			<source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1260,8 +1260,8 @@
 			<translation>Tor</translation>
 		</message>
 		<message>
-			<source>Connect to the Aipg network through a separate SOCKS5 proxy for Tor hidden services.</source>
-			<translation>Tor秘匿サービスを利用するため、独立なSOCKS5プロキシ経由でAipgネットワークに接続する</translation>
+			<source>Connect to the Esa network through a separate SOCKS5 proxy for Tor hidden services.</source>
+			<translation>Tor秘匿サービスを利用するため、独立なSOCKS5プロキシ経由でEsaネットワークに接続する</translation>
 		</message>
 		<message>
 			<source>Use separate SOCKS&amp;5 proxy to reach peers via Tor hidden services:</source>
@@ -1383,8 +1383,8 @@
 			<translation>フォーム</translation>
 		</message>
 		<message>
-			<source>The displayed information may be out of date. Your wallet automatically synchronizes with the Aipg network after a connection is established, but this process has not completed yet.</source>
-			<translation>表示された情報は古いかもしれません.接続が確立されると、あなたのウォレットは Aipg ネットワークと自動的に同期しますが、このプロセスはまだ完了していません.</translation>
+			<source>The displayed information may be out of date. Your wallet automatically synchronizes with the Esa network after a connection is established, but this process has not completed yet.</source>
+			<translation>表示された情報は古いかもしれません.接続が確立されると、あなたのウォレットは Esa ネットワークと自動的に同期しますが、このプロセスはまだ完了していません.</translation>
 		</message>
 		<message>
 			<source>Watch-only:</source>
@@ -1483,8 +1483,8 @@
 			<translation>資産収支</translation>
 		</message>
 		<message>
-			<source>aipg Balances</source>
-			<translation>aipgバランス</translation>
+			<source>esa Balances</source>
+			<translation>esaバランス</translation>
 		</message>
 	</context>
 	<context>
@@ -1494,8 +1494,8 @@
 			<translation>支払いのリクエストのエラーです</translation>
 		</message>
 		<message>
-			<source>Cannot start aipg: click-to-pay handler</source>
-			<translation>Aipg を起動できません: click-to-pay handler</translation>
+			<source>Cannot start esa: click-to-pay handler</source>
+			<translation>Esa を起動できません: click-to-pay handler</translation>
 		</message>
 		<message>
 			<source>URI handling</source>
@@ -1510,8 +1510,8 @@
 			<translation>支払いのアドレス「%1」は無効です</translation>
 		</message>
 		<message>
-			<source>URI cannot be parsed! This can be caused by an invalid Aipg address or malformed URI parameters.</source>
-			<translation>URI を解析できません! これは無効な Aipg アドレスあるいや不正な形式の URI パラメーターによって引き起こされる場合があります.</translation>
+			<source>URI cannot be parsed! This can be caused by an invalid Esa address or malformed URI parameters.</source>
+			<translation>URI を解析できません! これは無効な Esa アドレスあるいや不正な形式の URI パラメーターによって引き起こされる場合があります.</translation>
 		</message>
 		<message>
 			<source>Payment request file handling</source>
@@ -1612,8 +1612,8 @@
 			<translation>総額</translation>
 		</message>
 		<message>
-			<source>Enter a Aipg address (e.g. %1)</source>
-			<translation>Aipgアドレスを入力してください (例 %1)</translation>
+			<source>Enter a Esa address (e.g. %1)</source>
+			<translation>Esaアドレスを入力してください (例 %1)</translation>
 		</message>
 		<message>
 			<source>%1 d</source>
@@ -2096,8 +2096,8 @@
 			<translation>既存の受取用アドレスを再利用する (非推奨) (&amp;E)</translation>
 		</message>
 		<message>
-			<source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Aipg network.</source>
-			<translation>支払リクエストが開始された時に表示される、支払リクエストに添える任意のメッセージです.注意：メッセージはAipgネットワークを通じて、支払と共に送られるわけではありません.</translation>
+			<source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Esa network.</source>
+			<translation>支払リクエストが開始された時に表示される、支払リクエストに添える任意のメッセージです.注意：メッセージはEsaネットワークを通じて、支払と共に送られるわけではありません.</translation>
 		</message>
 		<message>
 			<source>An optional label to associate with the new receiving address.</source>
@@ -2341,8 +2341,8 @@
 			<translation>最小手数料</translation>
 		</message>
 		<message>
-			<source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for aipg transactions than the network can process.</source>
-			<translation>ブロックの容量に比べてトランザクション流量が少ないうちは最小手数料のみの支払で十分です.しかしながらネットワークが処理しきれないほどaipgトランザクションの需要がひとたび生まれてしまった場合には、永遠に検証がされないトランザクションになってしまう可能性があることに注意してください.</translation>
+			<source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for esa transactions than the network can process.</source>
+			<translation>ブロックの容量に比べてトランザクション流量が少ないうちは最小手数料のみの支払で十分です.しかしながらネットワークが処理しきれないほどesaトランザクションの需要がひとたび生まれてしまった場合には、永遠に検証がされないトランザクションになってしまう可能性があることに注意してください.</translation>
 		</message>
 		<message>
 			<source>(read the tooltip)</source>
@@ -2501,8 +2501,8 @@
 			<translation>%nブロック内で確認を開始すると推定した.</translation>
 		</message>
 		<message>
-			<source>Warning: Invalid Aipg address</source>
-			<translation>警告：無効なAipgアドレスです</translation>
+			<source>Warning: Invalid Esa address</source>
+			<translation>警告：無効なEsaアドレスです</translation>
 		</message>
 		<message>
 			<source>Warning: Unknown change address</source>
@@ -2556,8 +2556,8 @@
 			<translation>これは通常の支払です.</translation>
 		</message>
 		<message>
-			<source>The Aipg address to send the payment to</source>
-			<translation>支払の送金先Aipgアドレス</translation>
+			<source>The Esa address to send the payment to</source>
+			<translation>支払の送金先Esaアドレス</translation>
 		</message>
 		<message>
 			<source>Alt+A</source>
@@ -2576,7 +2576,7 @@
 			<translation>この項目を削除する</translation>
 		</message>
 		<message>
-			<source>The fee will be deducted from the amount being sent. The recipient will receive less aipgss than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+			<source>The fee will be deducted from the amount being sent. The recipient will receive less esass than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
 			<translation>送金する金額から手数料が差し引かれます.受取人は数量フィールドで指定した量よりも少ないビットコインを受け取ります.受取人が複数いる場合には、手数料は均等割されます.</translation>
 		</message>
 		<message>
@@ -2600,8 +2600,8 @@
 			<translation>このアドレスに対するラベルを入力することで、使用済みアドレスの一覧に追加することができます</translation>
 		</message>
 		<message>
-			<source>A message that was attached to the aipg: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Aipg network.</source>
-			<translation>aipg: URIに添付されていたメッセージです.これは参照用としてトランザクションとともに保存されます.注意：このメッセージはAipgネットワークを通して送信されるわけではありません.</translation>
+			<source>A message that was attached to the esa: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Esa network.</source>
+			<translation>esa: URIに添付されていたメッセージです.これは参照用としてトランザクションとともに保存されます.注意：このメッセージはEsaネットワークを通して送信されるわけではありません.</translation>
 		</message>
 		<message>
 			<source>Pay To:</source>
@@ -2649,12 +2649,12 @@
 			<translation>メッセージの署名 (&amp;S)</translation>
 		</message>
 		<message>
-			<source>You can sign messages/agreements with your addresses to prove you can receive aipgss sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+			<source>You can sign messages/agreements with your addresses to prove you can receive esass sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
 			<translation>あなたの所有しているアドレスによりメッセージや合意書に署名をすることで、それらアドレスに対して送られたビットコインを受け取ることができることを証明できます.フィッシング攻撃により不正にあなたの識別情報を署名させられてしまうことを防ぐために、不明確なものやランダムなものに対して署名しないよう注意してください.合意することが可能な、よく詳細の記された文言にのみ署名するようにしてください.</translation>
 		</message>
 		<message>
-			<source>The Aipg address to sign the message with</source>
-			<translation>メッセージを署名するAipgアドレス</translation>
+			<source>The Esa address to sign the message with</source>
+			<translation>メッセージを署名するEsaアドレス</translation>
 		</message>
 		<message>
 			<source>Choose previously used address</source>
@@ -2685,8 +2685,8 @@
 			<translation>現在の署名をシステムのクリップボードにコピーする</translation>
 		</message>
 		<message>
-			<source>Sign the message to prove you own this Aipg address</source>
-			<translation>この Aipg アドレスを所有していることを証明するためにメッセージに署名</translation>
+			<source>Sign the message to prove you own this Esa address</source>
+			<translation>この Esa アドレスを所有していることを証明するためにメッセージに署名</translation>
 		</message>
 		<message>
 			<source>Sign &amp;Message</source>
@@ -2709,12 +2709,12 @@
 			<translation>受取人のアドレスとメッセージ(改行やスペース、タブなども完全に一致するよう注意してください)および署名を以下に入力し、メッセージの署名を検証してください.中間者攻撃により騙されるのを防ぐため、署名対象のメッセージに書かれていること以上の意味を署名から読み取ろうとしないよう注意してください.これは署名作成者がこのアドレスで受け取ったことを証明するだけであり、トランザクションの送信権限を証明するものではないことに注意してください!</translation>
 		</message>
 		<message>
-			<source>The Aipg address the message was signed with</source>
-			<translation>メッセージの署名に使われたAipgアドレス</translation>
+			<source>The Esa address the message was signed with</source>
+			<translation>メッセージの署名に使われたEsaアドレス</translation>
 		</message>
 		<message>
-			<source>Verify the message to ensure it was signed with the specified Aipg address</source>
-			<translation>指定された Aipg アドレスで署名されたことを保証するメッセージを検証</translation>
+			<source>Verify the message to ensure it was signed with the specified Esa address</source>
+			<translation>指定された Esa アドレスで署名されたことを保証するメッセージを検証</translation>
 		</message>
 		<message>
 			<source>Verify &amp;Message</source>
@@ -2974,8 +2974,8 @@
 			<translation>彼らが費やされることができる前に、生成されたコインは成熟した%1ブロックをしなければなりません.このブロックを生成すると、ブロックチェーンに追加されるようにネットワークにブロードキャストされました.チェインに失敗した場合、その状態は</translation>
 		</message>
 		<message>
-			<source>Net aipg amount</source>
-			<translation>ネットaipg量</translation>
+			<source>Net esa amount</source>
+			<translation>ネットesa量</translation>
 		</message>
 	</context>
 	<context>
@@ -3128,8 +3128,8 @@
 			<translation>資産</translation>
 		</message>
 		<message>
-			<source>The asset (or aipg) removed or added to balance.</source>
-			<translation>資産(またはaipg)を削除したり、バランスに追加しました.</translation>
+			<source>The asset (or esa) removed or added to balance.</source>
+			<translation>資産(またはesa)を削除したり、バランスに追加しました.</translation>
 		</message>
 	</context>
 	<context>
@@ -3398,7 +3398,7 @@
 		</message>
 	</context>
 	<context>
-		<name>aipg-core</name>
+		<name>esa-core</name>
 		<message>
 			<source>Options:</source>
 			<translation>オプション:</translation>
@@ -3456,8 +3456,8 @@
 			<translation>HTTPサーバを開始できませんでした.詳細はデバッグログをご確認ください.</translation>
 		</message>
 		<message>
-			<source>Aipg Core</source>
-			<translation>Aipg のコア</translation>
+			<source>Esa Core</source>
+			<translation>Esa のコア</translation>
 		</message>
 		<message>
 			<source>The %s developers</source>
@@ -4511,7 +4511,7 @@
 			<translation>%nブロック内で確認を開始すると推定した.</translation>
 		</message>
 		<message>
-			<source>Warning: Invalid Aipg address</source>
+			<source>Warning: Invalid Esa address</source>
 			<translation>警告:無効なハイブアドレス</translation>
 		</message>
 		<message>
@@ -4621,7 +4621,7 @@
 			<translation>IPFS / TXIDハッシュは有効ではありません.有効なIPFS / TXIDハッシュを使用してください</translation>
 		</message>
 		<message>
-			<source>Warning: Invalid Aipg address</source>
+			<source>Warning: Invalid Esa address</source>
 			<translation>警告:無効なハイブアドレス</translation>
 		</message>
 		<message>
@@ -4777,8 +4777,8 @@
 			<translation>アドレス</translation>
 		</message>
 		<message>
-			<source>The aipg address that will hold this asset (You must own this address). Leave blank to create a new address.</source>
-			<translation>この資産を保持するaipgアドレス(このアドレスを所有しなければなりません).空白のままに新しいアドレスを作成します.</translation>
+			<source>The esa address that will hold this asset (You must own this address). Leave blank to create a new address.</source>
+			<translation>この資産を保持するesaアドレス(このアドレスを所有しなければなりません).空白のままに新しいアドレスを作成します.</translation>
 		</message>
 		<message>
 			<source>Verifier String:</source>
@@ -4869,7 +4869,7 @@
 			<translation>キロバイト当たり</translation>
 		</message>
 		<message>
-			<source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for aipg transactions than the network can process.</source>
+			<source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for esa transactions than the network can process.</source>
 			<translation>最低料金のみを支払うのは、ブロック内のスペースより少ないトランザクション量がある限り、罰金です.しかし、一旦ネットワークが処理することができるより、ハイブ取引のためにより多くの要求があるならば、これが決して確認しない取引で終わることができることに気づいてください.</translation>
 		</message>
 		<message>
@@ -4913,15 +4913,15 @@
 			<translation>バランス</translation>
 		</message>
 		<message>
-			<source>123.456 aipg</source>
-			<translation>123.456 aipg</translation>
+			<source>123.456 esa</source>
+			<translation>123.456 esa</translation>
 		</message>
 	</context>
 	<context>
 		<name>GUIUtil</name>
 		<message>
-			<source>Enter a Aipg address (e.g. %1)</source>
-			<translation>aipgアドレスを入力します(例1 %)</translation>
+			<source>Enter a Esa address (e.g. %1)</source>
+			<translation>esaアドレスを入力します(例1 %)</translation>
 		</message>
 		<message>
 			<source>Warning: transaction while syncing wallet!</source>
@@ -5005,10 +5005,10 @@
 		</message>
 	</context>
 	<context>
-		<name>aipg</name>
+		<name>esa</name>
 		<message>
-			<source>A fatal error occurred. Aipg can no longer continue safely and will quit.</source>
-			<translation>致命的なエラーが発生しました.Aipgはもはや安全に継続することができますし、終了します.</translation>
+			<source>A fatal error occurred. Esa can no longer continue safely and will quit.</source>
+			<translation>致命的なエラーが発生しました.Esaはもはや安全に継続することができますし、終了します.</translation>
 		</message>
 		<message>
 			<source>Error: Specified data directory \</source>
@@ -5089,7 +5089,7 @@
 			<translation>量は大きい.マックスは21000000000</translation>
 		</message>
 		<message>
-			<source>Invalid Aipg Destination Address</source>
+			<source>Invalid Esa Destination Address</source>
 			<translation>無効なハイブ宛先アドレス</translation>
 		</message>
 		<message>
@@ -5097,7 +5097,7 @@
 			<translation>警告：制限資産発行にはアドレスが必要です</translation>
 		</message>
 		<message>
-			<source>Warning: Invalid Aipg address</source>
+			<source>Warning: Invalid Esa address</source>
 			<translation>警告:無効なハイブアドレス</translation>
 		</message>
 		<message>
@@ -5301,8 +5301,8 @@
 			<translation>アドレス</translation>
 		</message>
 		<message>
-			<source>The aipg address that will hold this asset (You must own this address). Leave blank to create a new address.</source>
-			<translation>この資産を保持するaipgアドレス(このアドレスを所有しなければなりません).空白のままに新しいアドレスを作成します.</translation>
+			<source>The esa address that will hold this asset (You must own this address). Leave blank to create a new address.</source>
+			<translation>この資産を保持するesaアドレス(このアドレスを所有しなければなりません).空白のままに新しいアドレスを作成します.</translation>
 		</message>
 		<message>
 			<source>Verifier String:</source>
@@ -5393,7 +5393,7 @@
 			<translation>キロバイト当たり</translation>
 		</message>
 		<message>
-			<source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for aipg transactions than the network can process.</source>
+			<source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for esa transactions than the network can process.</source>
 			<translation>最低料金のみを支払うのは、ブロック内のスペースより少ないトランザクション量がある限り、罰金です.しかし、一旦ネットワークが処理することができるより、ハイブ取引のためにより多くの要求があるならば、これが決して確認しない取引で終わることができることに気づいてください.</translation>
 		</message>
 		<message>
@@ -5437,8 +5437,8 @@
 			<translation>バランス</translation>
 		</message>
 		<message>
-			<source>123.456 aipg</source>
-			<translation>123.456 aipg</translation>
+			<source>123.456 esa</source>
+			<translation>123.456 esa</translation>
 		</message>
 	</context>
 	<context>
@@ -5761,8 +5761,8 @@
 			<translation>これは資産払いだ</translation>
 		</message>
 		<message>
-			<source>A message that was attached to the aipg: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Aipg network.</source>
-			<translation>Aipgに接続されたメッセージ：あなたの参照のためのトランザクションで格納されるURI.注意:このメッセージは、ハイブネットワーク上で送信されません.</translation>
+			<source>A message that was attached to the esa: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Esa network.</source>
+			<translation>Esaに接続されたメッセージ：あなたの参照のためのトランザクションで格納されるURI.注意:このメッセージは、ハイブネットワーク上で送信されません.</translation>
 		</message>
 		<message>
 			<source>Memo:</source>
@@ -5785,7 +5785,7 @@
 			<translation>資産</translation>
 		</message>
 		<message>
-			<source>The Aipg address to send the payment to</source>
+			<source>The Esa address to send the payment to</source>
 			<translation>支払いを送るためのハイブアドレス</translation>
 		</message>
 		<message>

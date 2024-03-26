@@ -1,12 +1,12 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/aipg-config.h"
+#include "config/esa-config.h"
 #endif
 
 #include "util.h"
@@ -89,8 +89,8 @@
 // Application startup time (used for uptime calculation)
 const int64_t nStartupTime = GetTime();
 
-const char *const AIPG_CONF_FILENAME = "aipg.conf";
-const char *const AIPG_PID_FILENAME = "aipgd.pid";
+const char *const ESA_CONF_FILENAME = "esa.conf";
+const char *const ESA_PID_FILENAME = "esad.pid";
 
 ArgsManager gArgs;
 bool fPrintToConsole = false;
@@ -531,7 +531,7 @@ static std::string FormatException(const std::exception *pex, const char *pszThr
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(nullptr, pszModule, sizeof(pszModule));
 #else
-    const char *pszModule = "aipg";
+    const char *pszModule = "esa";
 #endif
     if (pex)
         return strprintf(
@@ -550,13 +550,13 @@ void PrintExceptionContinue(const std::exception *pex, const char *pszThread)
 
 fs::path GetDefaultDataDir()
 {
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\Aipg
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\Aipg
-    // Mac: ~/Library/Application Support/Aipg
-    // Unix: ~/.aipg
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\Esa
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\Esa
+    // Mac: ~/Library/Application Support/Esa
+    // Unix: ~/.esa
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Aipg";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "Esa";
 #else
     fs::path pathRet;
     char *pszHome = getenv("HOME");
@@ -566,10 +566,10 @@ fs::path GetDefaultDataDir()
         pathRet = fs::path(pszHome);
 #ifdef MAC_OSX
     // Mac
-    return pathRet / "Library/Application Support/Aipg";
+    return pathRet / "Library/Application Support/Esa";
 #else
     // Unix
-    return pathRet / ".aipg";
+    return pathRet / ".esa";
 #endif
 #endif
 }
@@ -631,7 +631,7 @@ void ArgsManager::ReadConfigFile(const std::string &confPath)
 {
     fs::ifstream streamConfig(GetConfigFile(confPath));
     if (!streamConfig.good())
-        return; // No aipg.conf file is OK
+        return; // No esa.conf file is OK
 
     {
         LOCK(cs_args);
@@ -640,7 +640,7 @@ void ArgsManager::ReadConfigFile(const std::string &confPath)
 
         for (boost::program_options::detail::config_file_iterator it(streamConfig, setOptions), end; it != end; ++it)
         {
-            // Don't overwrite existing settings so command line settings override aipg.conf
+            // Don't overwrite existing settings so command line settings override esa.conf
             std::string strKey = std::string("-") + it->string_key;
             std::string strValue = it->value[0];
             InterpretNegativeSetting(strKey, strValue);
@@ -657,7 +657,7 @@ void ArgsManager::ReadConfigFile(const std::string &confPath)
 
 fs::path GetPidFile()
 {
-    fs::path pathPidFile(gArgs.GetArg("-pid", AIPG_PID_FILENAME));
+    fs::path pathPidFile(gArgs.GetArg("-pid", ESA_PID_FILENAME));
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }
@@ -927,10 +927,10 @@ std::string CopyrightHolders(const std::string &strPrefix)
 {
     std::string strCopyrightHolders = strPrefix + strprintf(_(COPYRIGHT_HOLDERS), _(COPYRIGHT_HOLDERS_SUBSTITUTION));
 
-    // Check for untranslated substitution to make sure Aipg Core copyright is not removed by accident
-    if (strprintf(COPYRIGHT_HOLDERS, COPYRIGHT_HOLDERS_SUBSTITUTION).find("Aipg Core") == std::string::npos)
+    // Check for untranslated substitution to make sure Esa Core copyright is not removed by accident
+    if (strprintf(COPYRIGHT_HOLDERS, COPYRIGHT_HOLDERS_SUBSTITUTION).find("Esa Core") == std::string::npos)
     {
-        strCopyrightHolders += "\n" + strPrefix + "The Aipg Core developers";
+        strCopyrightHolders += "\n" + strPrefix + "The Esa Core developers";
     }
     return strCopyrightHolders;
 }

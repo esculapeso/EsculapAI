@@ -1,6 +1,6 @@
 #!/bin/sh
 # Copyright (c) 2014-2016 The Bitcoin Core developers
-# Copyright (c) 2017-2019 The AIPG Core developers
+# Copyright (c) 2017-2019 The ESA Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -52,15 +52,15 @@ while true; do
 	fi
 
 	if [ "$NO_SHA1" = "1" ]; then
-		export AIPG_VERIFY_COMMITS_ALLOW_SHA1=0
+		export ESA_VERIFY_COMMITS_ALLOW_SHA1=0
 	else
-		export AIPG_VERIFY_COMMITS_ALLOW_SHA1=1
+		export ESA_VERIFY_COMMITS_ALLOW_SHA1=1
 	fi
 
 	if [ "${REVSIG_ALLOWED#*$CURRENT_COMMIT}" != "$REVSIG_ALLOWED" ]; then
-		export AIPG_VERIFY_COMMITS_ALLOW_REVSIG=1
+		export ESA_VERIFY_COMMITS_ALLOW_REVSIG=1
 	else
-		export AIPG_VERIFY_COMMITS_ALLOW_REVSIG=0
+		export ESA_VERIFY_COMMITS_ALLOW_REVSIG=0
 	fi
 
 	if ! git -c "gpg.program=${DIR}/gpg.sh" verify-commit "$CURRENT_COMMIT" > /dev/null; then

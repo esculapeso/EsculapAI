@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_CUCKOOCACHE_H
-#define AIPG_CUCKOOCACHE_H
+#ifndef ESA_CUCKOOCACHE_H
+#define ESA_CUCKOOCACHE_H
 
 #include <array>
 #include <algorithm>
@@ -478,4 +478,4 @@ public:
 };
 } // namespace CuckooCache
 
-#endif // AIPG_CUCKOOCACHE_H
+#endif // ESA_CUCKOOCACHE_H

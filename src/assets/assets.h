@@ -1,11 +1,11 @@
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 
-#ifndef AIPGCOIN_ASSET_PROTOCOL_H
-#define AIPGCOIN_ASSET_PROTOCOL_H
+#ifndef ESACOIN_ASSET_PROTOCOL_H
+#define ESACOIN_ASSET_PROTOCOL_H
 
 #include "amount.h"
 #include "tinyformat.h"
@@ -18,12 +18,12 @@
 #include <list>
 
 
-#define aipg_N 114
-#define aipg_E 118
-#define aipg_X 110
-#define aipg_Q 113
-#define aipg_T 116
-#define aipg_O 111
+#define esa_N 114
+#define esa_E 118
+#define esa_X 110
+#define esa_Q 113
+#define esa_T 116
+#define esa_O 111
 
 
 #define DEFAULT_UNITS 0
@@ -469,10 +469,10 @@ bool CheckIssueBurnTx(const CTxOut& txOut, const AssetType& type);
 bool CheckReissueBurnTx(const CTxOut& txOut);
 
 //! issue asset scripts to make sure script meets the standards
-bool CheckIssueDataTx(const CTxOut& txOut); // OP_AIPG_ASSET aipgQ (That is a Q as in Que not an O)
-bool CheckOwnerDataTx(const CTxOut& txOut);// OP_AIPG_ASSET aipgO
-bool CheckReissueDataTx(const CTxOut& txOut);// OP_AIPG_ASSET aipgR
-bool CheckTransferOwnerTx(const CTxOut& txOut);// OP_AIPG_ASSET aipgT
+bool CheckIssueDataTx(const CTxOut& txOut); // OP_ESA_ASSET esaQ (That is a Q as in Que not an O)
+bool CheckOwnerDataTx(const CTxOut& txOut);// OP_ESA_ASSET esaO
+bool CheckReissueDataTx(const CTxOut& txOut);// OP_ESA_ASSET esaR
+bool CheckTransferOwnerTx(const CTxOut& txOut);// OP_ESA_ASSET esaT
 
 //! Check the Encoded hash and make sure it is either an IPFS hash or a OIP hash
 bool CheckEncoded(const std::string& hash, std::string& strError);
@@ -585,4 +585,4 @@ bool ContextualCheckReissueAsset(CAssetsCache* assetCache, const CReissueAsset& 
 bool ContextualCheckUniqueAssetTx(CAssetsCache* assetCache, std::string& strError, const CTransaction& tx);
 bool ContextualCheckUniqueAsset(CAssetsCache* assetCache, const CNewAsset& unique_asset, std::string& strError);
 
-#endif //AIPGCOIN_ASSET_PROTOCOL_H
+#endif //ESACOIN_ASSET_PROTOCOL_H

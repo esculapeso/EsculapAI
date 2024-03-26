@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Copyright (c) 2017 The Bitcoin Core developers
 # Copyright (c) 2017-2019 The Raven Core developers
-# Copyright (c) 2020-2021 The AIPG Core developers
+# Copyright (c) 2020-2021 The ESA Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -21,7 +21,7 @@ from collections import defaultdict
 
 # Avoid wildcard * imports if possible
 from test_framework.mininode import CInv, NetworkThread, NodeConn, NodeConnCB, mininode_lock, MsgGetdata
-from test_framework.test_framework import AipgTestFramework
+from test_framework.test_framework import EsaTestFramework
 from test_framework.util import assert_equal, connect_nodes, p2p_port
 
 # NodeConnCB is a class containing callbacks to be executed when a P2P
@@ -59,11 +59,11 @@ def custom_function():
 
     If this function is more generally useful for other tests, consider
     moving it to a module in test_framework."""
-    # self.log.info("running custom_function")  # Oops! Can't run self.log outside the AipgTestFramework
+    # self.log.info("running custom_function")  # Oops! Can't run self.log outside the EsaTestFramework
     pass
 
-class ExampleTest(AipgTestFramework):
-    # Each functional test is a subclass of the AipgTestFramework class.
+class ExampleTest(EsaTestFramework):
+    # Each functional test is a subclass of the EsaTestFramework class.
 
     # Override the set_test_params(), add_options(), setup_chain(), setup_network()
     # and setup_nodes() methods to customize the test setup as required.
@@ -118,7 +118,7 @@ class ExampleTest(AipgTestFramework):
 
         Define it in a method here because you're going to use it repeatedly.
         If you think it's useful in general, consider moving it to the base
-        AipgTestFramework class so other tests can use it."""
+        EsaTestFramework class so other tests can use it."""
 
         self.log.info("Running custom_method")
 

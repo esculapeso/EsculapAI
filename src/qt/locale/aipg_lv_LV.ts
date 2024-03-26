@@ -66,7 +66,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>AipgGUI</name>
+    <name>EsaGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Parakstīt &amp;ziņojumu...</translation>
@@ -144,8 +144,8 @@
         <translation>Bloku reindeksēšana no diska...</translation>
     </message>
     <message>
-        <source>Send coins to a Aipg address</source>
-        <translation>Nosūtīt bitkoinus uz Aipg adresi</translation>
+        <source>Send coins to a Esa address</source>
+        <translation>Nosūtīt bitkoinus uz Esa adresi</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -168,8 +168,8 @@
         <translation>&amp;Pārbaudīt ziņojumu...</translation>
     </message>
     <message>
-        <source>Aipg</source>
-        <translation>Aipg</translation>
+        <source>Esa</source>
+        <translation>Esa</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -196,12 +196,12 @@
         <translation>Šifrēt privātās atslēgas kuras pieder tavam maciņam</translation>
     </message>
     <message>
-        <source>Sign messages with your Aipg addresses to prove you own them</source>
-        <translation>Parakstīt ziņojumus ar savām Aipg adresēm lai pierādītu ka tās pieder tev</translation>
+        <source>Sign messages with your Esa addresses to prove you own them</source>
+        <translation>Parakstīt ziņojumus ar savām Esa adresēm lai pierādītu ka tās pieder tev</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Aipg addresses</source>
-        <translation>Pārbaudīt ziņojumus lai pārliecinātos, ka tie tika parakstīti ar norādītajām Aipg adresēm</translation>
+        <source>Verify messages to ensure they were signed with specified Esa addresses</source>
+        <translation>Pārbaudīt ziņojumus lai pārliecinātos, ka tie tika parakstīti ar norādītajām Esa adresēm</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -220,12 +220,12 @@
         <translation>Ciļņu rīkjosla</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and aipg: URIs)</source>
-        <translation>Pieprasīt maksājumus (izveido QR kodu un aipg: URIs)</translation>
+        <source>Request payments (generates QR codes and esa: URIs)</source>
+        <translation>Pieprasīt maksājumus (izveido QR kodu un esa: URIs)</translation>
     </message>
     <message>
-        <source>Open a aipg: URI or payment request</source>
-        <translation>Atvērt aipg URI vai maksājuma pieprasījumu</translation>
+        <source>Open a esa: URI or payment request</source>
+        <translation>Atvērt esa URI vai maksājuma pieprasījumu</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -501,15 +501,15 @@
     </message>
     <message>
         <source>Enable coin &amp;control features</source>
-        <translation>Ieslēgt aipg &amp;kontroles funkcijas</translation>
+        <translation>Ieslēgt esa &amp;kontroles funkcijas</translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>
         <translation>&amp;Tērēt neapstiprinātu atlikumu</translation>
     </message>
     <message>
-        <source>Automatically open the Aipg client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Uz rūtera automātiski atvērt Aipg klienta portu. Tas strādā tikai tad, ja rūteris atbalsta UPnP un tas ir ieslēgts.</translation>
+        <source>Automatically open the Esa client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Uz rūtera automātiski atvērt Esa klienta portu. Tas strādā tikai tad, ja rūteris atbalsta UPnP un tas ir ieslēgts.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -561,7 +561,7 @@
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
-        <translation>Vai rādīt Aipg kontroles funkcijas vai nē.</translation>
+        <translation>Vai rādīt Esa kontroles funkcijas vai nē.</translation>
     </message>
     <message>
         <source>&amp;OK</source>
@@ -595,8 +595,8 @@
         <translation>Forma</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Aipg network after a connection is established, but this process has not completed yet.</source>
-        <translation>Attēlotā informācija var būt novecojusi. Jūsu maciņš pēc savienojuma izveides automātiski sinhronizējas ar Aipg tīklu, taču šis process vēl nav beidzies.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Esa network after a connection is established, but this process has not completed yet.</source>
+        <translation>Attēlotā informācija var būt novecojusi. Jūsu maciņš pēc savienojuma izveides automātiski sinhronizējas ar Esa tīklu, taču šis process vēl nav beidzies.</translation>
     </message>
     <message>
         <source>Available:</source>
@@ -854,7 +854,7 @@
     </message>
     <message>
         <source>Coin Control Features</source>
-        <translation>Aipg Kontroles Funkcijas</translation>
+        <translation>Esa Kontroles Funkcijas</translation>
     </message>
     <message>
         <source>Inputs...</source>
@@ -1029,8 +1029,8 @@
         <translation>Kopēt parakstu uz sistēmas starpliktuvi</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Aipg address</source>
-        <translation>Parakstīt ziņojumu lai pierādītu, ka esi šīs Aipg adreses īpašnieks.</translation>
+        <source>Sign the message to prove you own this Esa address</source>
+        <translation>Parakstīt ziņojumu lai pierādītu, ka esi šīs Esa adreses īpašnieks.</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1100,7 +1100,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>aipg-core</name>
+    <name>esa-core</name>
     <message>
         <source>Options:</source>
         <translation>Iespējas:</translation>
@@ -1126,8 +1126,8 @@
         <translation>Darbināt fonā kā servisu un pieņemt komandas</translation>
     </message>
     <message>
-        <source>Aipg Core</source>
-        <translation>Aipg Core</translation>
+        <source>Esa Core</source>
+        <translation>Esa Core</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:</source>

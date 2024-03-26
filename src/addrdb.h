@@ -1,12 +1,12 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_ADDRDB_H
-#define AIPG_ADDRDB_H
+#ifndef ESA_ADDRDB_H
+#define ESA_ADDRDB_H
 
 #include "fs.h"
 #include "serialize.h"
@@ -101,4 +101,4 @@ public:
     bool Read(banmap_t& banSet);
 };
 
-#endif // AIPG_ADDRDB_H
+#endif // ESA_ADDRDB_H

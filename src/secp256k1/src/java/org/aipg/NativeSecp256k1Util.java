@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.aipg;
+package org.esa;
 
 public class NativeSecp256k1Util{
 

@@ -1,11 +1,11 @@
 // Copyright (c) 2017 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_FS_H
-#define AIPG_FS_H
+#ifndef ESA_FS_H
+#define ESA_FS_H
 
 #include <stdio.h>
 #include <string>
@@ -26,4 +26,4 @@ namespace fsbridge {
     FILE *freopen(const fs::path& p, const char *mode, FILE *stream);
 };
 
-#endif // AIPG_FS_H
+#endif // ESA_FS_H

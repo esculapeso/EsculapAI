@@ -1,28 +1,28 @@
 (note: this is a temporary file, to be added-to by anybody, and moved to
 release-notes at release time)
 
-AIPG Core version *version* is now available from:
+ESA Core version *version* is now available from:
 
-  <https://aipg.org/bin/aipg-core-*version*/>
+  <https://esa.org/bin/esa-core-*version*/>
 
 This is a new major version release, including new features, various bugfixes
 and performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/AIPGProject/AIPGcoin/issues>
+  <https://github.com/ESAProject/ESAcoin/issues>
 
 To receive security and update notifications, please subscribe to:
 
-  <https://aipgcoin.org/en/list/announcements/join/>
+  <https://esacoin.org/en/list/announcements/join/>
 
 How to Upgrade
 ==============
 
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the
-installer (on Windows) or just copy over `/Applications/AIPG-Qt` (on Mac)
-or `aipgd`/`aipg-qt` (on Linux).
+installer (on Windows) or just copy over `/Applications/ESA-Qt` (on Mac)
+or `esad`/`esa-qt` (on Linux).
 
 The first time you run version 0.15.0, your chainstate database will be converted to a
 new format, which will take anywhere from a few minutes to half an hour,
@@ -47,10 +47,10 @@ processing the entire blockchain.
 Compatibility
 ==============
 
-AIPG Core is extensively tested on multiple operating systems using
+ESA Core is extensively tested on multiple operating systems using
 the Linux kernel, macOS 10.8+, and Windows Vista and later. Windows XP is not supported.
 
-AIPG Core should also work on most other Unix-like systems but is not
+ESA Core should also work on most other Unix-like systems but is not
 frequently tested on them.
 
 Notable changes
@@ -92,4 +92,4 @@ Credits
 Thanks to everyone who directly contributed to this release:
 
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/aipg/).
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/esa/).

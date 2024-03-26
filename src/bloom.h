@@ -1,11 +1,11 @@
 // Copyright (c) 2012-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_BLOOM_H
-#define AIPG_BLOOM_H
+#ifndef ESA_BLOOM_H
+#define ESA_BLOOM_H
 
 #include "serialize.h"
 
@@ -142,4 +142,4 @@ private:
     int nHashFuncs;
 };
 
-#endif // AIPG_BLOOM_H
+#endif // ESA_BLOOM_H

@@ -1,12 +1,12 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_SCRIPT_SIGN_H
-#define AIPG_SCRIPT_SIGN_H
+#ifndef ESA_SCRIPT_SIGN_H
+#define ESA_SCRIPT_SIGN_H
 
 #include "script/interpreter.h"
 
@@ -83,4 +83,4 @@ SignatureData CombineSignatures(const CScript& scriptPubKey, const BaseSignature
 SignatureData DataFromTransaction(const CMutableTransaction& tx, unsigned int nIn);
 void UpdateTransaction(CMutableTransaction& tx, unsigned int nIn, const SignatureData& data);
 
-#endif // AIPG_SCRIPT_SIGN_H
+#endif // ESA_SCRIPT_SIGN_H

@@ -2,7 +2,7 @@
 #include "ui_encryptdialog.h"
 #include "guiutil.h"
 #include "guiconstants.h"
-#include "aipggui.h"
+#include "esagui.h"
 
 #include <QMessageBox>
 #include <QCloseEvent>

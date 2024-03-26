@@ -66,7 +66,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>AipgGUI</name>
+    <name>EsaGUI</name>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Sincronizando con la red...</translation>
@@ -128,8 +128,8 @@
         <translation>Abrir &amp;URL...</translation>
     </message>
     <message>
-        <source>Send coins to a Aipg address</source>
-        <translation>Enviando monedas a una dirección de Aipg</translation>
+        <source>Send coins to a Esa address</source>
+        <translation>Enviando monedas a una dirección de Esa</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
@@ -148,8 +148,8 @@
         <translation>&amp;Verificar Mensaje...</translation>
     </message>
     <message>
-        <source>Aipg</source>
-        <translation>Aipg</translation>
+        <source>Esa</source>
+        <translation>Esa</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -296,10 +296,10 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>aipg-core</name>
+    <name>esa-core</name>
     <message>
-        <source>Aipg Core</source>
-        <translation>Aipg Core</translation>
+        <source>Esa Core</source>
+        <translation>Esa Core</translation>
     </message>
     <message>
         <source>Insufficient funds</source>

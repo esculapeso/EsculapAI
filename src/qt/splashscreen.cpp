@@ -1,11 +1,11 @@
 // Copyright (c) 2011-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2019 The Raven Core developers
-// Copyright (c) 2020-2021 The AIPG Core developers
+// Copyright (c) 2020-2021 The ESA Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/aipg-config.h"
+#include "config/esa-config.h"
 #endif
 
 #include "splashscreen.h"
@@ -78,7 +78,7 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle *networkStyle) 
     QRect rGradient(QPoint(0,0), splashSize);
     pixPaint.fillRect(rGradient, gradient);
 
-    // draw the aipg icon, expected size of PNG: 1024x1024
+    // draw the esa icon, expected size of PNG: 1024x1024
     QRect rectIcon(QPoint(-40,0), QSize(545,333));
 
     const QSize requiredSize(1024,1024);

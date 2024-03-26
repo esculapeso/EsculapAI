@@ -1,5 +1,5 @@
-#ifndef AIPG_QT_CALLBACK_H
-#define AIPG_QT_CALLBACK_H
+#ifndef ESA_QT_CALLBACK_H
+#define ESA_QT_CALLBACK_H
 
 #include <QObject>
 
@@ -27,4 +27,4 @@ FunctionCallback<F>* makeCallback(F f)
     return new FunctionCallback<F>(std::move(f));
 }
 
-#endif // AIPG_QT_CALLBACK_H
+#endif // ESA_QT_CALLBACK_H

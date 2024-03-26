@@ -1,4 +1,4 @@
-Build instructions for AIPGcoin 
+Build instructions for ESAcoin 
 =================================
 FreeBSD 13.0
 ---------------------------------
@@ -25,12 +25,12 @@ libqrencode for QR Code support.
 
 Directory structure
 ------------------
-AIPGcoin sources in `$HOME/src`
+ESAcoin sources in `$HOME/src`
 
 Berkeley DB will be installed to `$HOME/src/db4`
 
 
-AIPGcoin
+ESAcoin
 ------------------
 
 Start in $HOME
@@ -41,11 +41,11 @@ Make the directory for sources and go into it.
 
 `cd src`
 
-__Download AIPGcoin source.__
+__Download ESAcoin source.__
 
-`git clone https://github.com/AIPGProject/AIPGcoin`
+`git clone https://github.com/ESAProject/ESAcoin`
 
-`cd AIPGcoin`
+`cd ESAcoin`
 
 `git checkout develop` # this checks out the develop branch.
 
@@ -68,11 +68,11 @@ _Adjust to own needs. `--prefix=/usr/local` will install the binaries to `/usr/l
 
 `gmake -j8`  # 8 for 8 build threads, adjust to fit your setup.
 
-You can now start aipg-qt from the build directory.
+You can now start esa-qt from the build directory.
 
-`src/qt/aipg-qt`
+`src/qt/esa-qt`
 
-aipgd and aipg-cli are in `src/`
+esad and esa-cli are in `src/`
 
 
 __Optional:__

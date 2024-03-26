@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef AIPG_RPC_BLOCKCHAIN_H
-#define AIPG_RPC_BLOCKCHAIN_H
+#ifndef ESA_RPC_BLOCKCHAIN_H
+#define ESA_RPC_BLOCKCHAIN_H
 #include <map>
 #include <string>
 
@@ -14,7 +14,7 @@ class UniValue;
 
 
 // To be used by local rpc GPU mining only
-extern std::map<std::string, CBlock> mapaipgKAWBlockTemplates;
+extern std::map<std::string, CBlock> mapesaKAWBlockTemplates;
 
 /**
  * Get the difficulty of the net wrt to the given block index, or the chain tip if

@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2016 The Bitcoin Core developers
 // Copyright (c) 2017-2021 The Raven Core developers
-// Copyright (c) 2022-2023 AIPG developers
+// Copyright (c) 2022-2023 ESA developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -192,7 +192,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
 
-        // AIPG BIP44 cointype in mainnet is '2686'
+        // ESA BIP44 cointype in mainnet is '2686'
         nExtCoinType = 2686;
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
@@ -228,7 +228,7 @@ public:
             0.025 // * estimated number of transactions per second after that timestamp
         };
 
-        /** AIPG Start **/
+        /** ESA Start **/
         // Burn Amounts
         nIssueAssetBurnAmount = 50 * COIN;
         nReissueAssetBurnAmount = 10 * COIN;
@@ -240,7 +240,7 @@ public:
         nIssueRestrictedAssetBurnAmount = 150 * COIN;
         nAddNullQualifierTagBurnAmount = 0.01 * COIN;
 		
-        // 5% of 500 AIPG to operations wallet
+        // 5% of 500 ESA to operations wallet
 	    nCommunityAutonomousAmount = 5;
         // Operations wallet placeholder
 
@@ -259,7 +259,7 @@ public:
         //Global Burn Address
         strGlobalBurnAddress = "AIBurnXXXXXXXXXXXXXXXXXXXXXXWUo9FV";
 
-        // AIPG Operations Fund
+        // ESA Operations Fund
         strCommunityAutonomousAddress = "Ab8KBCTTJgy7XnsPsHbnwRMJD4MFjG12hU";
 
         // DGW Activation
@@ -381,7 +381,7 @@ public:
         };
 
         chainTxData = ChainTxData{
-            // Update as we know more about the contents of the AIPG chain
+            // Update as we know more about the contents of the ESA chain
             // Stats as of 00000023b66f46d74890287a7b1157dd780c7c5fdda2b561eb96684d2b39d62e window size 43200
             0, // * UNIX timestamp of last known number of transactions
             0,     // * total number of transactions between genesis and that timestamp
@@ -389,7 +389,7 @@ public:
             0.0        // * estimated number of transactions per second after that timestamp
         };
 
-        /** AIPG Start **/
+        /** ESA Start **/
         // Burn Amounts
         nIssueAssetBurnAmount = 50 * COIN;
         nReissueAssetBurnAmount = 10 * COIN;
@@ -401,7 +401,7 @@ public:
         nIssueRestrictedAssetBurnAmount = 150 * COIN;
         nAddNullQualifierTagBurnAmount = 0.01 * COIN;
 		
-	    // 5% of 500 AIPG to operations fund
+	    // 5% of 500 ESA to operations fund
 	    nCommunityAutonomousAmount = 5;
 
         // Burn Addresses
@@ -434,7 +434,7 @@ public:
 
         nKAAAWWWPOWActivationTime = 1688764800; // Thu Nov 10 2023 00:00:00 UTC
         nKAWPOWActivationTime = nKAAAWWWPOWActivationTime;
-        /** AIPG End **/
+        /** ESA End **/
     }
 };
 
@@ -535,10 +535,10 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        // AIPG BIP44 cointype in regtest
+        // ESA BIP44 cointype in regtest
         nExtCoinType = 1;
 
-        /** AIPG Start **/
+        /** ESA Start **/
         // Burn Amounts
         nIssueAssetBurnAmount = 50 * COIN;
         nReissueAssetBurnAmount = 10 * COIN;
@@ -583,7 +583,7 @@ public:
         // If you are looking to test the kawpow hashing function in regtest. You will need to change this number
         nKAAAWWWPOWActivationTime = 3582830167;
         nKAWPOWActivationTime = nKAAAWWWPOWActivationTime;
-        /** AIPG End **/
+        /** ESA End **/
     }
 };
 

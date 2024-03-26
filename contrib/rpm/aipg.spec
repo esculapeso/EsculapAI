@@ -13,31 +13,31 @@
 %endif
 %endif
 
-Name:		aipg
+Name:		esa
 Version:	0.12.0
 Release:	2%{?dist}
 Summary:	Peer to Peer Cryptographic Currency
 
 Group:		Applications/System
 License:	MIT
-URL:		https://aipgcrypto.com
-Source0:	https://aipgcrypto.com/bin/aipg-core-%{version}/aipg-%{version}.tar.gz
+URL:		https://esacrypto.com
+Source0:	https://esacrypto.com/bin/esa-core-%{version}/esa-%{version}.tar.gz
 Source1:	http://download.oracle.com/berkeley-db/db-%{bdbv}.NC.tar.gz
 
-Source10:	https://raw.githubusercontent.com/aipg/aipg/v%{version}/contrib/debian/examples/aipg.conf
+Source10:	https://raw.githubusercontent.com/esa/esa/v%{version}/contrib/debian/examples/esa.conf
 
 #man pages
-Source20:	https://raw.githubusercontent.com/aipg/aipg/v%{version}/doc/man/aipgd.1
-Source21:	https://raw.githubusercontent.com/aipg/aipg/v%{version}/doc/man/aipg-cli.1
-Source22:	https://raw.githubusercontent.com/aipg/aipg/v%{version}/doc/man/aipg-qt.1
+Source20:	https://raw.githubusercontent.com/esa/esa/v%{version}/doc/man/esad.1
+Source21:	https://raw.githubusercontent.com/esa/esa/v%{version}/doc/man/esa-cli.1
+Source22:	https://raw.githubusercontent.com/esa/esa/v%{version}/doc/man/esa-qt.1
 
 #selinux
-Source30:	https://raw.githubusercontent.com/aipg/aipg/v%{version}/contrib/rpm/aipg.te
-# Source31 - what about aipg-tx and bench_aipg ???
-Source31:	https://raw.githubusercontent.com/aipg/aipg/v%{version}/contrib/rpm/aipg.fc
-Source32:	https://raw.githubusercontent.com/aipg/aipg/v%{version}/contrib/rpm/aipg.if
+Source30:	https://raw.githubusercontent.com/esa/esa/v%{version}/contrib/rpm/esa.te
+# Source31 - what about esa-tx and bench_esa ???
+Source31:	https://raw.githubusercontent.com/esa/esa/v%{version}/contrib/rpm/esa.fc
+Source32:	https://raw.githubusercontent.com/esa/esa/v%{version}/contrib/rpm/esa.if
 
-Source100:	https://upload.wikimedia.org/wikipedia/commons/4/46/Aipg.svg
+Source100:	https://upload.wikimedia.org/wikipedia/commons/4/46/Esa.svg
 
 %if 0%{?_use_libressl:1}
 BuildRequires:	libressl-devel
@@ -50,13 +50,13 @@ BuildRequires:	autoconf automake libtool
 BuildRequires:	libevent-devel
 
 
-Patch0:		aipg-0.12.0-libressl.patch
+Patch0:		esa-0.12.0-libressl.patch
 
 
 %description
-Aipg is a digital cryptographic currency that uses peer-to-peer technology to
+Esa is a digital cryptographic currency that uses peer-to-peer technology to
 operate with no central authority or banks; managing transactions and the
-issuing of aipg is carried out collectively by the network.
+issuing of esa is carried out collectively by the network.
 
 %if %{_buildqt}
 %package core
@@ -79,42 +79,42 @@ BuildRequires:	%{_bindir}/inkscape
 BuildRequires:	%{_bindir}/convert
 
 %description core
-Aipg is a digital cryptographic currency that uses peer-to-peer technology to
+Esa is a digital cryptographic currency that uses peer-to-peer technology to
 operate with no central authority or banks; managing transactions and the
-issuing of aipg is carried out collectively by the network.
+issuing of esa is carried out collectively by the network.
 
 This package contains the Qt based graphical client and node. If you are looking
-to run a Aipg wallet, this is probably the package you want.
+to run a Esa wallet, this is probably the package you want.
 %endif
 
 
 %package libs
-Summary:	Aipg shared libraries
+Summary:	Esa shared libraries
 Group:		System Environment/Libraries
 
 %description libs
-This package provides the aipgconsensus shared libraries. These libraries
+This package provides the esaconsensus shared libraries. These libraries
 may be used by third party software to provide consensus verification
 functionality.
 
 Unless you know need this package, you probably do not.
 
 %package devel
-Summary:	Development files for aipg
+Summary:	Development files for esa
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 
 %description devel
 This package contains the header files and static library for the
-aipgconsensus shared library. If you are developing or compiling software
+esaconsensus shared library. If you are developing or compiling software
 that wants to link against that library, then you need this package installed.
 
 Most people do not need this package installed.
 
 %package server
-Summary:	The aipg daemon
+Summary:	The esa daemon
 Group:		System Environment/Daemons
-Requires:	aipg-utils = %{version}-%{release}
+Requires:	esa-utils = %{version}-%{release}
 Requires:	selinux-policy policycoreutils-python
 Requires(pre):	shadow-utils
 Requires(post):	%{_sbindir}/semodule %{_sbindir}/restorecon %{_sbindir}/fixfiles %{_sbindir}/sestatus
@@ -124,34 +124,34 @@ BuildRequires:	checkpolicy
 BuildRequires:	%{_datadir}/selinux/devel/Makefile
 
 %description server
-This package provides a stand-alone aipg-core daemon. For most users, this
+This package provides a stand-alone esa-core daemon. For most users, this
 package is only needed if they need a full-node without the graphical client.
 
 Some third party wallet software will want this package to provide the actual
-aipg-core node they use to connect to the network.
+esa-core node they use to connect to the network.
 
-If you use the graphical aipg-core client then you almost certainly do not
+If you use the graphical esa-core client then you almost certainly do not
 need this package.
 
 %package utils
-Summary:	Aipg utilities
+Summary:	Esa utilities
 Group:		Applications/System
 
 %description utils
 This package provides several command line utilities for interacting with a
-aipg-core daemon.
+esa-core daemon.
 
-The aipg-cli utility allows you to communicate and control a aipg daemon
-over RPC, the aipg-tx utility allows you to create a custom transaction, and
-the bench_aipg utility can be used to perform some benchmarks.
+The esa-cli utility allows you to communicate and control a esa daemon
+over RPC, the esa-tx utility allows you to create a custom transaction, and
+the bench_esa utility can be used to perform some benchmarks.
 
-This package contains utilities needed by the aipg-server package.
+This package contains utilities needed by the esa-server package.
 
 
 %prep
 %setup -q
 %patch0 -p1 -b .libressl
-cp -p %{SOURCE10} ./aipg.conf.example
+cp -p %{SOURCE10} ./esa.conf.example
 tar -zxf %{SOURCE1}
 cp -p db-%{bdbv}.NC/LICENSE ./db-%{bdbv}.NC-LICENSE
 mkdir db4 SELinux
@@ -172,7 +172,7 @@ make %{?_smp_mflags}
 pushd SELinux
 for selinuxvariant in %{selinux_variants}; do
 	make NAME=${selinuxvariant} -f %{_datadir}/selinux/devel/Makefile
-	mv aipg.pp aipg.pp.${selinuxvariant}
+	mv esa.pp esa.pp.${selinuxvariant}
 	make NAME=${selinuxvariant} -f %{_datadir}/selinux/devel/Makefile clean
 done
 popd
@@ -182,42 +182,42 @@ popd
 make install DESTDIR=%{buildroot}
 
 mkdir -p -m755 %{buildroot}%{_sbindir}
-mv %{buildroot}%{_bindir}/aipgd %{buildroot}%{_sbindir}/aipgd
+mv %{buildroot}%{_bindir}/esad %{buildroot}%{_sbindir}/esad
 
 # systemd stuff
 mkdir -p %{buildroot}%{_tmpfilesdir}
-cat <<EOF > %{buildroot}%{_tmpfilesdir}/aipg.conf
-d /run/aipgd 0750 aipg aipg -
+cat <<EOF > %{buildroot}%{_tmpfilesdir}/esa.conf
+d /run/esad 0750 esa esa -
 EOF
-touch -a -m -t 201504280000 %{buildroot}%{_tmpfilesdir}/aipg.conf
+touch -a -m -t 201504280000 %{buildroot}%{_tmpfilesdir}/esa.conf
 
 mkdir -p %{buildroot}%{_sysconfdir}/sysconfig
-cat <<EOF > %{buildroot}%{_sysconfdir}/sysconfig/aipg
-# Provide options to the aipg daemon here, for example
+cat <<EOF > %{buildroot}%{_sysconfdir}/sysconfig/esa
+# Provide options to the esa daemon here, for example
 # OPTIONS="-testnet -disable-wallet"
 
 OPTIONS=""
 
 # System service defaults.
 # Don't change these unless you know what you're doing.
-CONFIG_FILE="%{_sysconfdir}/aipg/aipg.conf"
-DATA_DIR="%{_localstatedir}/lib/aipg"
-PID_FILE="/run/aipgd/aipgd.pid"
+CONFIG_FILE="%{_sysconfdir}/esa/esa.conf"
+DATA_DIR="%{_localstatedir}/lib/esa"
+PID_FILE="/run/esad/esad.pid"
 EOF
-touch -a -m -t 201504280000 %{buildroot}%{_sysconfdir}/sysconfig/aipg
+touch -a -m -t 201504280000 %{buildroot}%{_sysconfdir}/sysconfig/esa
 
 mkdir -p %{buildroot}%{_unitdir}
-cat <<EOF > %{buildroot}%{_unitdir}/aipg.service
+cat <<EOF > %{buildroot}%{_unitdir}/esa.service
 [Unit]
-Description=Aipg daemon
+Description=Esa daemon
 After=syslog.target network.target
 
 [Service]
 Type=forking
-ExecStart=%{_sbindir}/aipgd -daemon -conf=\${CONFIG_FILE} -datadir=\${DATA_DIR} -pid=\${PID_FILE} \$OPTIONS
-EnvironmentFile=%{_sysconfdir}/sysconfig/aipg
-User=aipg
-Group=aipg
+ExecStart=%{_sbindir}/esad -daemon -conf=\${CONFIG_FILE} -datadir=\${DATA_DIR} -pid=\${PID_FILE} \$OPTIONS
+EnvironmentFile=%{_sysconfdir}/sysconfig/esa
+User=esa
+Group=esa
 
 Restart=on-failure
 PrivateTmp=true
@@ -229,63 +229,63 @@ StartLimitBurst=5
 [Install]
 WantedBy=multi-user.target
 EOF
-touch -a -m -t 201504280000 %{buildroot}%{_unitdir}/aipg.service
+touch -a -m -t 201504280000 %{buildroot}%{_unitdir}/esa.service
 #end systemd stuff
 
-mkdir %{buildroot}%{_sysconfdir}/aipg
-mkdir -p %{buildroot}%{_localstatedir}/lib/aipg
+mkdir %{buildroot}%{_sysconfdir}/esa
+mkdir -p %{buildroot}%{_localstatedir}/lib/esa
 
 #SELinux
 for selinuxvariant in %{selinux_variants}; do
 	install -d %{buildroot}%{_datadir}/selinux/${selinuxvariant}
-	install -p -m 644 SELinux/aipg.pp.${selinuxvariant} %{buildroot}%{_datadir}/selinux/${selinuxvariant}/aipg.pp
+	install -p -m 644 SELinux/esa.pp.${selinuxvariant} %{buildroot}%{_datadir}/selinux/${selinuxvariant}/esa.pp
 done
 
 %if %{_buildqt}
 # qt icons
-install -D -p share/pixmaps/aipg.ico %{buildroot}%{_datadir}/pixmaps/aipg.ico
+install -D -p share/pixmaps/esa.ico %{buildroot}%{_datadir}/pixmaps/esa.ico
 install -p share/pixmaps/nsis-header.bmp %{buildroot}%{_datadir}/pixmaps/
 install -p share/pixmaps/nsis-wizard.bmp %{buildroot}%{_datadir}/pixmaps/
-install -p %{SOURCE100} %{buildroot}%{_datadir}/pixmaps/aipg.svg
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/aipg16.png -w16 -h16
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/aipg32.png -w32 -h32
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/aipg64.png -w64 -h64
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/aipg128.png -w128 -h128
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/aipg256.png -w256 -h256
-%{_bindir}/convert -resize 16x16 %{buildroot}%{_datadir}/pixmaps/aipg256.png %{buildroot}%{_datadir}/pixmaps/aipg16.xpm
-%{_bindir}/convert -resize 32x32 %{buildroot}%{_datadir}/pixmaps/aipg256.png %{buildroot}%{_datadir}/pixmaps/aipg32.xpm
-%{_bindir}/convert -resize 64x64 %{buildroot}%{_datadir}/pixmaps/aipg256.png %{buildroot}%{_datadir}/pixmaps/aipg64.xpm
-%{_bindir}/convert -resize 128x128 %{buildroot}%{_datadir}/pixmaps/aipg256.png %{buildroot}%{_datadir}/pixmaps/aipg128.xpm
-%{_bindir}/convert %{buildroot}%{_datadir}/pixmaps/aipg256.png %{buildroot}%{_datadir}/pixmaps/aipg256.xpm
+install -p %{SOURCE100} %{buildroot}%{_datadir}/pixmaps/esa.svg
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/esa16.png -w16 -h16
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/esa32.png -w32 -h32
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/esa64.png -w64 -h64
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/esa128.png -w128 -h128
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/esa256.png -w256 -h256
+%{_bindir}/convert -resize 16x16 %{buildroot}%{_datadir}/pixmaps/esa256.png %{buildroot}%{_datadir}/pixmaps/esa16.xpm
+%{_bindir}/convert -resize 32x32 %{buildroot}%{_datadir}/pixmaps/esa256.png %{buildroot}%{_datadir}/pixmaps/esa32.xpm
+%{_bindir}/convert -resize 64x64 %{buildroot}%{_datadir}/pixmaps/esa256.png %{buildroot}%{_datadir}/pixmaps/esa64.xpm
+%{_bindir}/convert -resize 128x128 %{buildroot}%{_datadir}/pixmaps/esa256.png %{buildroot}%{_datadir}/pixmaps/esa128.xpm
+%{_bindir}/convert %{buildroot}%{_datadir}/pixmaps/esa256.png %{buildroot}%{_datadir}/pixmaps/esa256.xpm
 touch %{buildroot}%{_datadir}/pixmaps/*.png -r %{SOURCE100}
 touch %{buildroot}%{_datadir}/pixmaps/*.xpm -r %{SOURCE100}
 
 # Desktop File - change the touch timestamp if modifying
 mkdir -p %{buildroot}%{_datadir}/applications
-cat <<EOF > %{buildroot}%{_datadir}/applications/aipg-core.desktop
+cat <<EOF > %{buildroot}%{_datadir}/applications/esa-core.desktop
 [Desktop Entry]
 Encoding=UTF-8
-Name=Aipg
-Comment=Aipg P2P Cryptocurrency
-Comment[fr]=Aipg, monnaie virtuelle cryptographique pair à pair
-Comment[tr]=Aipg, eşten eşe kriptografik sanal para birimi
-Exec=aipg-qt %u
+Name=Esa
+Comment=Esa P2P Cryptocurrency
+Comment[fr]=Esa, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Esa, eşten eşe kriptografik sanal para birimi
+Exec=esa-qt %u
 Terminal=false
 Type=Application
-Icon=aipg128
-MimeType=x-scheme-handler/aipg;
+Icon=esa128
+MimeType=x-scheme-handler/esa;
 Categories=Office;Finance;
 EOF
 # change touch date when modifying desktop
-touch -a -m -t 201511100546 %{buildroot}%{_datadir}/applications/aipg-core.desktop
-%{_bindir}/desktop-file-validate %{buildroot}%{_datadir}/applications/aipg-core.desktop
+touch -a -m -t 201511100546 %{buildroot}%{_datadir}/applications/esa-core.desktop
+%{_bindir}/desktop-file-validate %{buildroot}%{_datadir}/applications/esa-core.desktop
 
 # KDE protocol - change the touch timestamp if modifying
 mkdir -p %{buildroot}%{_datadir}/kde4/services
-cat <<EOF > %{buildroot}%{_datadir}/kde4/services/aipg-core.protocol
+cat <<EOF > %{buildroot}%{_datadir}/kde4/services/esa-core.protocol
 [Protocol]
-exec=aipg-qt '%u'
-protocol=aipg
+exec=esa-qt '%u'
+protocol=esa
 input=none
 output=none
 helper=true
@@ -296,14 +296,14 @@ makedir=false
 deleting=false
 EOF
 # change touch date when modifying protocol
-touch -a -m -t 201511100546 %{buildroot}%{_datadir}/kde4/services/aipg-core.protocol
+touch -a -m -t 201511100546 %{buildroot}%{_datadir}/kde4/services/esa-core.protocol
 %endif
 
 # man pages
-install -D -p %{SOURCE20} %{buildroot}%{_mandir}/man1/aipgd.1
-install -p %{SOURCE21} %{buildroot}%{_mandir}/man1/aipg-cli.1
+install -D -p %{SOURCE20} %{buildroot}%{_mandir}/man1/esad.1
+install -p %{SOURCE21} %{buildroot}%{_mandir}/man1/esa-cli.1
 %if %{_buildqt}
-install -p %{SOURCE22} %{buildroot}%{_mandir}/man1/aipg-qt.1
+install -p %{SOURCE22} %{buildroot}%{_mandir}/man1/esa-qt.1
 %endif
 
 # nuke these, we do extensive testing of binaries in %%check before packaging
@@ -311,7 +311,7 @@ rm -f %{buildroot}%{_bindir}/test_*
 
 %check
 make check
-srcdir=src test/aipg-util-test.py
+srcdir=src test/esa-util-test.py
 test/functional/test_runner.py --extended
 
 %post libs -p /sbin/ldconfig
@@ -319,37 +319,37 @@ test/functional/test_runner.py --extended
 %postun libs -p /sbin/ldconfig
 
 %pre server
-getent group aipg >/dev/null || groupadd -r aipg
-getent passwd aipg >/dev/null ||
-	useradd -r -g aipg -d /var/lib/aipg -s /sbin/nologin \
-	-c "Aipg wallet server" aipg
+getent group esa >/dev/null || groupadd -r esa
+getent passwd esa >/dev/null ||
+	useradd -r -g esa -d /var/lib/esa -s /sbin/nologin \
+	-c "Esa wallet server" esa
 exit 0
 
 %post server
-%systemd_post aipg.service
+%systemd_post esa.service
 # SELinux
 if [ `%{_sbindir}/sestatus |grep -c "disabled"` -eq 0 ]; then
 for selinuxvariant in %{selinux_variants}; do
-	%{_sbindir}/semodule -s ${selinuxvariant} -i %{_datadir}/selinux/${selinuxvariant}/aipg.pp &> /dev/null || :
+	%{_sbindir}/semodule -s ${selinuxvariant} -i %{_datadir}/selinux/${selinuxvariant}/esa.pp &> /dev/null || :
 done
-%{_sbindir}/semanage port -a -t aipg_port_t -p tcp 8766
-%{_sbindir}/semanage port -a -t aipg_port_t -p tcp 8767
-%{_sbindir}/semanage port -a -t aipg_port_t -p tcp 18766
-%{_sbindir}/semanage port -a -t aipg_port_t -p tcp 18767
-%{_sbindir}/semanage port -a -t aipg_port_t -p tcp 18443
-%{_sbindir}/semanage port -a -t aipg_port_t -p tcp 18444
-%{_sbindir}/fixfiles -R aipg-server restore &> /dev/null || :
-%{_sbindir}/restorecon -R %{_localstatedir}/lib/aipg || :
+%{_sbindir}/semanage port -a -t esa_port_t -p tcp 8766
+%{_sbindir}/semanage port -a -t esa_port_t -p tcp 8767
+%{_sbindir}/semanage port -a -t esa_port_t -p tcp 18766
+%{_sbindir}/semanage port -a -t esa_port_t -p tcp 18767
+%{_sbindir}/semanage port -a -t esa_port_t -p tcp 18443
+%{_sbindir}/semanage port -a -t esa_port_t -p tcp 18444
+%{_sbindir}/fixfiles -R esa-server restore &> /dev/null || :
+%{_sbindir}/restorecon -R %{_localstatedir}/lib/esa || :
 fi
 
 %posttrans server
 %{_bindir}/systemd-tmpfiles --create
 
 %preun server
-%systemd_preun aipg.service
+%systemd_preun esa.service
 
 %postun server
-%systemd_postun aipg.service
+%systemd_postun esa.service
 # SELinux
 if [ $1 -eq 0 ]; then
 	if [ `%{_sbindir}/sestatus |grep -c "disabled"` -eq 0 ]; then
@@ -360,11 +360,11 @@ if [ $1 -eq 0 ]; then
 	%{_sbindir}/semanage port -d -p tcp 18443
 	%{_sbindir}/semanage port -d -p tcp 18444
 	for selinuxvariant in %{selinux_variants}; do
-		%{_sbindir}/semodule -s ${selinuxvariant} -r aipg &> /dev/null || :
+		%{_sbindir}/semodule -s ${selinuxvariant} -r esa &> /dev/null || :
 	done
-	%{_sbindir}/fixfiles -R aipg-server restore &> /dev/null || :
-	[ -d %{_localstatedir}/lib/aipg ] && \
-		%{_sbindir}/restorecon -R %{_localstatedir}/lib/aipg &> /dev/null || :
+	%{_sbindir}/fixfiles -R esa-server restore &> /dev/null || :
+	[ -d %{_localstatedir}/lib/esa ] && \
+		%{_sbindir}/restorecon -R %{_localstatedir}/lib/esa &> /dev/null || :
 	fi
 fi
 
@@ -375,16 +375,16 @@ rm -rf %{buildroot}
 %files core
 %defattr(-,root,root,-)
 %license COPYING db-%{bdbv}.NC-LICENSE
-%doc COPYING aipg.conf.example doc/README.md doc/bips.md doc/files.md doc/multiwallet-qt.md doc/reduce-traffic.md doc/release-notes.md doc/tor.md
-%attr(0755,root,root) %{_bindir}/aipg-qt
-%attr(0644,root,root) %{_datadir}/applications/aipg-core.desktop
-%attr(0644,root,root) %{_datadir}/kde4/services/aipg-core.protocol
+%doc COPYING esa.conf.example doc/README.md doc/bips.md doc/files.md doc/multiwallet-qt.md doc/reduce-traffic.md doc/release-notes.md doc/tor.md
+%attr(0755,root,root) %{_bindir}/esa-qt
+%attr(0644,root,root) %{_datadir}/applications/esa-core.desktop
+%attr(0644,root,root) %{_datadir}/kde4/services/esa-core.protocol
 %attr(0644,root,root) %{_datadir}/pixmaps/*.ico
 %attr(0644,root,root) %{_datadir}/pixmaps/*.bmp
 %attr(0644,root,root) %{_datadir}/pixmaps/*.svg
 %attr(0644,root,root) %{_datadir}/pixmaps/*.png
 %attr(0644,root,root) %{_datadir}/pixmaps/*.xpm
-%attr(0644,root,root) %{_mandir}/man1/aipg-qt.1*
+%attr(0644,root,root) %{_mandir}/man1/esa-qt.1*
 %endif
 
 %files libs
@@ -406,30 +406,30 @@ rm -rf %{buildroot}
 %files server
 %defattr(-,root,root,-)
 %license COPYING db-%{bdbv}.NC-LICENSE
-%doc COPYING aipg.conf.example doc/README.md doc/REST-interface.md doc/bips.md doc/dnsseed-policy.md doc/files.md doc/reduce-traffic.md doc/release-notes.md doc/tor.md
-%attr(0755,root,root) %{_sbindir}/aipgd
-%attr(0644,root,root) %{_tmpfilesdir}/aipg.conf
-%attr(0644,root,root) %{_unitdir}/aipg.service
-%dir %attr(0750,aipg,aipg) %{_sysconfdir}/aipg
-%dir %attr(0750,aipg,aipg) %{_localstatedir}/lib/aipg
-%config(noreplace) %attr(0600,root,root) %{_sysconfdir}/sysconfig/aipg
+%doc COPYING esa.conf.example doc/README.md doc/REST-interface.md doc/bips.md doc/dnsseed-policy.md doc/files.md doc/reduce-traffic.md doc/release-notes.md doc/tor.md
+%attr(0755,root,root) %{_sbindir}/esad
+%attr(0644,root,root) %{_tmpfilesdir}/esa.conf
+%attr(0644,root,root) %{_unitdir}/esa.service
+%dir %attr(0750,esa,esa) %{_sysconfdir}/esa
+%dir %attr(0750,esa,esa) %{_localstatedir}/lib/esa
+%config(noreplace) %attr(0600,root,root) %{_sysconfdir}/sysconfig/esa
 %attr(0644,root,root) %{_datadir}/selinux/*/*.pp
-%attr(0644,root,root) %{_mandir}/man1/aipgd.1*
+%attr(0644,root,root) %{_mandir}/man1/esad.1*
 
 %files utils
 %defattr(-,root,root,-)
 %license COPYING
-%doc COPYING aipg.conf.example doc/README.md
-%attr(0755,root,root) %{_bindir}/aipg-cli
-%attr(0755,root,root) %{_bindir}/aipg-tx
-%attr(0755,root,root) %{_bindir}/bench_aipg
-%attr(0644,root,root) %{_mandir}/man1/aipg-cli.1*
+%doc COPYING esa.conf.example doc/README.md
+%attr(0755,root,root) %{_bindir}/esa-cli
+%attr(0755,root,root) %{_bindir}/esa-tx
+%attr(0755,root,root) %{_bindir}/bench_esa
+%attr(0644,root,root) %{_mandir}/man1/esa-cli.1*
 
 
 
 %changelog
 * Fri Feb 26 2016 Alice Wonder <buildmaster@librelamp.com> - 0.12.0-2
-- Rename Qt package from aipg to aipg-core
+- Rename Qt package from esa to esa-core
 - Make building of the Qt package optional
 - When building the Qt package, default to Qt5 but allow building
 -  against Qt4
@@ -439,4 +439,4 @@ rm -rf %{buildroot}
 - Initial spec file for 0.12.0 release
 
 # This spec file is written from scratch but a lot of the packaging decisions are directly
-# based upon the 0.11.2 package spec file from https://www.ringingliberty.com/aipg/
+# based upon the 0.11.2 package spec file from https://www.ringingliberty.com/esa/

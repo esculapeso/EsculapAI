@@ -1,6 +1,6 @@
 # Copyright (c) 2013-2016 The Bitcoin Core developers
 # Copyright (c) 2017-2019 The Raven Core developers
-# Copyright (c) 2020-2021 The AIPG Core developers
+# Copyright (c) 2020-2021 The ESA Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -14,21 +14,21 @@ endif
 override GZIP_ENV = "-9n"
 export PYTHONPATH
 
-if BUILD_AIPG_LIBS
+if BUILD_ESA_LIBS
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = libaipgconsensus.pc
+pkgconfig_DATA = libesaconsensus.pc
 endif
 
-AIPGD_BIN=$(top_builddir)/src/$(AIPG_DAEMON_NAME)$(EXEEXT)
-AIPG_QT_BIN=$(top_builddir)/src/qt/$(AIPG_GUI_NAME)$(EXEEXT)
-aipg_cli_BIN=$(top_builddir)/src/$(AIPG_CLI_NAME)$(EXEEXT)
-AIPG_WIN_INSTALLER=$(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EXEEXT)
-aipg_cli_INSTALL=$(top_builddir)/contrib/install_cli.sh
+ESAD_BIN=$(top_builddir)/src/$(ESA_DAEMON_NAME)$(EXEEXT)
+ESA_QT_BIN=$(top_builddir)/src/qt/$(ESA_GUI_NAME)$(EXEEXT)
+esa_cli_BIN=$(top_builddir)/src/$(ESA_CLI_NAME)$(EXEEXT)
+ESA_WIN_INSTALLER=$(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EXEEXT)
+esa_cli_INSTALL=$(top_builddir)/contrib/install_cli.sh
 
 empty :=
 space := $(empty) $(empty)
 
-OSX_APP=Aipg-Qt.app
+OSX_APP=Esa-Qt.app
 OSX_VOLNAME = $(subst $(space),-,$(PACKAGE_NAME))
 OSX_DMG = $(OSX_VOLNAME).dmg
 OSX_BACKGROUND_SVG=background.svg
@@ -37,14 +37,14 @@ OSX_BACKGROUND_IMAGE_DPIS=36 72
 OSX_DSSTORE_GEN=$(top_srcdir)/contrib/macdeploy/custom_dsstore.py
 OSX_DEPLOY_SCRIPT=$(top_srcdir)/contrib/macdeploy/macdeployqtplus
 OSX_FANCY_PLIST=$(top_srcdir)/contrib/macdeploy/fancy.plist
-OSX_INSTALLER_ICONS=$(top_srcdir)/src/qt/res/icons/aipg.icns
+OSX_INSTALLER_ICONS=$(top_srcdir)/src/qt/res/icons/esa.icns
 OSX_PLIST=$(top_builddir)/share/qt/Info.plist #not installed
 OSX_QT_TRANSLATIONS = da,de,es,hu,ru,uk,zh_CN,zh_TW
 
 DIST_DOCS = $(wildcard doc/*.md) $(wildcard doc/release-notes/*.md)
-DIST_CONTRIB = $(top_srcdir)/contrib/aipg-cli.bash-completion \
-	       $(top_srcdir)/contrib/aipg-tx.bash-completion \
-	       $(top_srcdir)/contrib/aipgd.bash-completion \
+DIST_CONTRIB = $(top_srcdir)/contrib/esa-cli.bash-completion \
+	       $(top_srcdir)/contrib/esa-tx.bash-completion \
+	       $(top_srcdir)/contrib/esad.bash-completion \
 	       $(top_srcdir)/contrib/init \
 	       $(top_srcdir)/contrib/rpm
 DIST_SHARE = \
@@ -54,7 +54,7 @@ DIST_SHARE = \
 BIN_CHECKS=$(top_srcdir)/contrib/devtools/symbol-check.py \
            $(top_srcdir)/contrib/devtools/security-check.py
 
-WINDOWS_PACKAGING = $(top_srcdir)/share/pixmaps/aipg.ico \
+WINDOWS_PACKAGING = $(top_srcdir)/share/pixmaps/esa.ico \
   $(top_srcdir)/share/pixmaps/nsis-header.bmp \
   $(top_srcdir)/share/pixmaps/nsis-wizard.bmp \
   $(top_srcdir)/doc/README_windows.txt
@@ -66,18 +66,18 @@ OSX_PACKAGING = $(OSX_DEPLOY_SCRIPT) $(OSX_FANCY_PLIST) $(OSX_INSTALLER_ICONS) \
   $(top_srcdir)/contrib/macdeploy/detached-sig-create.sh
 
 COVERAGE_INFO = baseline.info \
-  test_aipg_filtered.info total_coverage.info \
+  test_esa_filtered.info total_coverage.info \
   baseline_filtered.info functional_test.info functional_test_filtered.info \
-  test_aipg_coverage.info test_aipg.info
+  test_esa_coverage.info test_esa.info
 
 dist-hook:
 	-$(GIT) archive --format=tar HEAD -- src/clientversion.cpp | $(AMTAR) -C $(top_distdir) -xf -
 
-$(AIPG_WIN_INSTALLER): all-recursive
+$(ESA_WIN_INSTALLER): all-recursive
 	$(MKDIR_P) $(top_builddir)/release
-	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(AIPGD_BIN) $(top_builddir)/release
-	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(AIPG_QT_BIN) $(top_builddir)/release
-	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(aipg_cli_BIN) $(top_builddir)/release
+	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(ESAD_BIN) $(top_builddir)/release
+	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(ESA_QT_BIN) $(top_builddir)/release
+	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(esa_cli_BIN) $(top_builddir)/release
 	@test -f $(MAKENSIS) && $(MAKENSIS) -V2 $(top_builddir)/share/setup.nsi || \
 	  echo error: could not build $@
 	@echo built $@
@@ -94,23 +94,23 @@ $(OSX_APP)/Contents/Info.plist: $(OSX_PLIST)
 	$(MKDIR_P) $(@D)
 	$(INSTALL_DATA) $< $@
 
-$(OSX_APP)/Contents/Resources/aipg.icns: $(OSX_INSTALLER_ICONS)
+$(OSX_APP)/Contents/Resources/esa.icns: $(OSX_INSTALLER_ICONS)
 	$(MKDIR_P) $(@D)
 	$(INSTALL_DATA) $< $@
 
-$(OSX_APP)/Contents/MacOS/install_cli.sh: $(aipg_cli_INSTALL)
+$(OSX_APP)/Contents/MacOS/install_cli.sh: $(esa_cli_INSTALL)
 	$(MKDIR_P) $(@D)
 	$(INSTALL_DATA) $< $@
 
-$(OSX_APP)/Contents/MacOS/Aipg-Qt: $(AIPG_QT_BIN)
+$(OSX_APP)/Contents/MacOS/Esa-Qt: $(ESA_QT_BIN)
 	$(MKDIR_P) $(@D)
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM)  $< $@
 
-$(OSX_APP)/Contents/MacOS/aipgd: $(AIPGD_BIN)
+$(OSX_APP)/Contents/MacOS/esad: $(ESAD_BIN)
 	$(MKDIR_P) $(@D)
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM)  $< $@
 
-$(OSX_APP)/Contents/MacOS/aipg-cli: $(aipg_cli_BIN)
+$(OSX_APP)/Contents/MacOS/esa-cli: $(esa_cli_BIN)
 	$(MKDIR_P) $(@D)
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM)  $< $@
 
@@ -119,9 +119,9 @@ $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings:
 	echo '{	CFBundleDisplayName = "$(PACKAGE_NAME)"; CFBundleName = "$(PACKAGE_NAME)"; }' > $@
 
 OSX_APP_BUILT=$(OSX_APP)/Contents/PkgInfo $(OSX_APP)/Contents/Resources/empty.lproj \
-  $(OSX_APP)/Contents/Resources/aipg.icns $(OSX_APP)/Contents/Info.plist \
-  $(OSX_APP)/Contents/MacOS/Aipg-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings \
-  $(OSX_APP)/Contents/MacOS/aipgd $(OSX_APP)/Contents/MacOS/aipg-cli $(OSX_APP)/Contents/MacOS/install_cli.sh
+  $(OSX_APP)/Contents/Resources/esa.icns $(OSX_APP)/Contents/Info.plist \
+  $(OSX_APP)/Contents/MacOS/Esa-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings \
+  $(OSX_APP)/Contents/MacOS/esad $(OSX_APP)/Contents/MacOS/esa-cli $(OSX_APP)/Contents/MacOS/install_cli.sh
 
 osx_volname:
 	echo $(OSX_VOLNAME) >$@
@@ -146,7 +146,7 @@ $(APP_DIST_DIR)/Applications:
 	@rm -f $@
 	@cd $(@D); $(LN_S) /Applications $(@F)
 
-$(APP_DIST_EXTRAS): $(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Aipg-Qt
+$(APP_DIST_EXTRAS): $(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Esa-Qt
 
 $(OSX_DMG): $(APP_DIST_EXTRAS)
 	$(GENISOIMAGE) -no-cache-inodes -D -l -probe -V "$(OSX_VOLNAME)" -no-pad -r -dir-mode 0755 -apple -o $@ dist
@@ -161,7 +161,7 @@ $(APP_DIST_DIR)/.background/$(OSX_BACKGROUND_IMAGE): $(OSX_BACKGROUND_IMAGE_DPIF
 $(APP_DIST_DIR)/.DS_Store: $(OSX_DSSTORE_GEN)
 	$(PYTHON) $< "$@" "$(OSX_VOLNAME)"
 
-$(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Aipg-Qt: $(OSX_APP_BUILT) $(OSX_PACKAGING)
+$(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Esa-Qt: $(OSX_APP_BUILT) $(OSX_PACKAGING)
 	INSTALLNAMETOOL=$(INSTALLNAMETOOL)  OTOOL=$(OTOOL) STRIP=$(STRIP) $(PYTHON) $(OSX_DEPLOY_SCRIPT) $(OSX_APP) -translations-dir=$(QT_TRANSLATION_DIR) -add-qt-tr $(OSX_QT_TRANSLATIONS) -verbose 2
 
 deploydir: $(APP_DIST_EXTRAS)
@@ -172,16 +172,16 @@ appbundle: $(OSX_APP_BUILT)
 deploy: $(OSX_DMG)
 endif
 if TARGET_WINDOWS
-deploy: $(AIPG_WIN_INSTALLER)
+deploy: $(ESA_WIN_INSTALLER)
 endif
 
-$(AIPG_QT_BIN): FORCE
+$(ESA_QT_BIN): FORCE
 	$(MAKE) -C src qt/$(@F)
 
-$(AIPGD_BIN): FORCE
+$(ESAD_BIN): FORCE
 	$(MAKE) -C src $(@F)
 
-$(aipg_cli_BIN): FORCE
+$(esa_cli_BIN): FORCE
 	$(MAKE) -C src $(@F)
 
 if USE_LCOV
@@ -194,16 +194,16 @@ baseline_filtered.info: baseline.info
 	$(abs_builddir)/contrib/filter-lcov.py $(LCOV_FILTER_PATTERN) $< $@
 	$(LCOV) -a $@ $(LCOV_OPTS) -o $@
 
-test_aipg.info: baseline_filtered.info
+test_esa.info: baseline_filtered.info
 	$(MAKE) -C src/ check
-	$(LCOV) -c $(LCOV_OPTS) -d $(abs_builddir)/src -t test_aipg -o $@
+	$(LCOV) -c $(LCOV_OPTS) -d $(abs_builddir)/src -t test_esa -o $@
 	$(LCOV) -z $(LCOV_OPTS) -d $(abs_builddir)/src
 
-test_aipg_filtered.info: test_aipg.info
+test_esa_filtered.info: test_esa.info
 	$(abs_builddir)/contrib/filter-lcov.py $(LCOV_FILTER_PATTERN) $< $@
 	$(LCOV) -a $@ $(LCOV_OPTS) -o $@
 
-functional_test.info: test_aipg_filtered.info
+functional_test.info: test_esa_filtered.info
 	-@TIMEOUT=15 test/functional/test_runner.py $(EXTENDED_FUNCTIONAL_TESTS)
 	$(LCOV) -c $(LCOV_OPTS) -d $(abs_builddir)/src --t functional-tests -o $@
 	$(LCOV) -z $(LCOV_OPTS) -d $(abs_builddir)/src
@@ -212,13 +212,13 @@ functional_test_filtered.info: functional_test.info
 	$(abs_builddir)/contrib/filter-lcov.py $(LCOV_FILTER_PATTERN) $< $@
 	$(LCOV) -a $@ $(LCOV_OPTS) -o $@
 
-test_aipg_coverage.info: baseline_filtered.info test_aipg_filtered.info
-	$(LCOV) -a $(LCOV_OPTS) baseline_filtered.info -a test_aipg_filtered.info -o $@
+test_esa_coverage.info: baseline_filtered.info test_esa_filtered.info
+	$(LCOV) -a $(LCOV_OPTS) baseline_filtered.info -a test_esa_filtered.info -o $@
 
-total_coverage.info: test_aipg_filtered.info functional_test_filtered.info
-	$(LCOV) -a $(LCOV_OPTS) baseline_filtered.info -a test_aipg_filtered.info -a functional_test_filtered.info -o $@ | $(GREP) "\%" | $(AWK) '{ print substr($$3,2,50) "/" $$5 }' > coverage_percent.txt
+total_coverage.info: test_esa_filtered.info functional_test_filtered.info
+	$(LCOV) -a $(LCOV_OPTS) baseline_filtered.info -a test_esa_filtered.info -a functional_test_filtered.info -o $@ | $(GREP) "\%" | $(AWK) '{ print substr($$3,2,50) "/" $$5 }' > coverage_percent.txt
 
-test_aipg.coverage/.dirstamp:  test_aipg_coverage.info
+test_esa.coverage/.dirstamp:  test_esa_coverage.info
 	$(GENHTML) -s $(LCOV_OPTS) $< -o $(@D)
 	@touch $@
 
@@ -226,7 +226,7 @@ total.coverage/.dirstamp: total_coverage.info
 	$(GENHTML) -s $(LCOV_OPTS) $< -o $(@D)
 	@touch $@
 
-cov: test_aipg.coverage/.dirstamp total.coverage/.dirstamp
+cov: test_esa.coverage/.dirstamp total.coverage/.dirstamp
 
 endif
 
@@ -235,8 +235,8 @@ dist_noinst_SCRIPTS = autogen.sh
 EXTRA_DIST = $(DIST_SHARE) test/functional/test_runner.py test/functional $(DIST_CONTRIB) $(DIST_DOCS) $(WINDOWS_PACKAGING) $(OSX_PACKAGING) $(BIN_CHECKS)
 
 EXTRA_DIST += \
-    test/util/aipg-util-test.py \
-    test/util/data/aipg-util-test.json \
+    test/util/esa-util-test.py \
+    test/util/data/esa-util-test.json \
     test/util/data/blanktxv1.hex \
     test/util/data/blanktxv1.json \
     test/util/data/blanktxv2.hex \
@@ -287,7 +287,7 @@ EXTRA_DIST += \
     test/util/data/txcreatesignv1.json \
     test/util/data/txcreatesignv2.hex
 
-CLEANFILES = $(OSX_DMG) $(AIPG_WIN_INSTALLER)
+CLEANFILES = $(OSX_DMG) $(ESA_WIN_INSTALLER)
 
 .INTERMEDIATE: $(COVERAGE_INFO)
 
@@ -309,5 +309,5 @@ clean-docs:
 	rm -rf doc/doxygen
 
 clean-local: clean-docs
-	rm -rf coverage_percent.txt test_aipg.coverage/ total.coverage/ test/tmp/ cache/ $(OSX_APP)
+	rm -rf coverage_percent.txt test_esa.coverage/ total.coverage/ test/tmp/ cache/ $(OSX_APP)
 	rm -rf test/functional/__pycache__

@@ -1,15 +1,15 @@
-AIPG Core
+ESA Core
 ==============
 
 Setup
 ---------------------
-AIPGcoin Core is the original AIPGcoin client and it builds the backbone of the network. It downloads and, by default, stores the entire history of AIPGcoin transactions; depending on the speed of your computer and network connection, the synchronization process is typically complete in under an hour.
+ESAcoin Core is the original ESAcoin client and it builds the backbone of the network. It downloads and, by default, stores the entire history of ESAcoin transactions; depending on the speed of your computer and network connection, the synchronization process is typically complete in under an hour.
 
-To download compiled binaries of the AIPGcoin Core and wallet, visit the [GitHub release page](https://github.com/AIPGProject/AIPGcoin/releases).
+To download compiled binaries of the ESAcoin Core and wallet, visit the [GitHub release page](https://github.com/ESAProject/ESAcoin/releases).
 
 Running
 ---------------------
-The following are some helpful notes on how to run AIPGcoin on your native platform.
+The following are some helpful notes on how to run ESAcoin on your native platform.
 
 ### Linux
 
@@ -17,15 +17,15 @@ The following are some helpful notes on how to run AIPGcoin on your native platf
 
 2) Install distribution-specific dependencies listed below.
 
-3) Run the GUI wallet or only the AIPGcoin core deamon
+3) Run the GUI wallet or only the ESAcoin core deamon
 
    a. GUI wallet:
 
-   `./aipg-qt`
+   `./esa-qt`
 
    b. Core deamon:
 
-   `./aipgd -deamon`
+   `./esad -deamon`
 
 #### Ubuntu
 
@@ -72,15 +72,15 @@ sudo yum install qrencode protobuf
 
 ### OS X
 
-1) Download AIPG-Qt.dmg.
+1) Download ESA-Qt.dmg.
 
 2) Double click the DMG to mount it.
 
-3) Drag AIPG Core icon to the Applications Folder
+3) Drag ESA Core icon to the Applications Folder
 
 ![alt tag](https://i.imgur.com/GLhBFUV.png)
 
-4) Open the Applications folder and Launch AIPG Core. The client will begin synchronizing with the network.
+4) Open the Applications folder and Launch ESA Core. The client will begin synchronizing with the network.
 
 ![alt tag](https://i.imgur.com/v3962qo.png)
 
@@ -88,66 +88,66 @@ Note: You may get the follow error on first launch:
 ```
 Dyld Error Message:
   Library not loaded: @loader_path/libboost_system-mt.dylib
-  Referenced from: /Applications/AIPG-Qt.app/Contents/Frameworks/libboost_thread-mt.dylib
+  Referenced from: /Applications/ESA-Qt.app/Contents/Frameworks/libboost_thread-mt.dylib
   Reason: image not found
 ```
-To resolve, you will need to copy `libboost_system.dylib` to `libboost_system-mt.dylib` in the `/Applications/AIPG-Qt.app/Contents/Frameworks` folder
+To resolve, you will need to copy `libboost_system.dylib` to `libboost_system-mt.dylib` in the `/Applications/ESA-Qt.app/Contents/Frameworks` folder
 
 ### Windows
 
 1) Download `windows-x86_64.zip` and unpack executables to desired folder.
 
-2) Double click the `aipg-qt.exe` to launch it.
+2) Double click the `esa-qt.exe` to launch it.
 
 ### Need Help?
 
-- See the documentation at the [AIPGcoin Wiki](https://aipg.wiki/wiki/AIPGcoin_Wiki) for help and more information.
-- Ask for help on [Discord](https://discord.gg/DUkcBst), [Telegram](https://t.me/AIPGcoinDev) or [Reddit](https://www.reddit.com/r/AIPGcoin/).
+- See the documentation at the [ESAcoin Wiki](https://esa.wiki/wiki/ESAcoin_Wiki) for help and more information.
+- Ask for help on [Discord](https://discord.gg/DUkcBst), [Telegram](https://t.me/ESAcoinDev) or [Reddit](https://www.reddit.com/r/ESAcoin/).
 
 Building from source
 ---------------------
-The following are developer notes on how to build the AIPGcoin core software on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build the ESAcoin core software on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
-- [Dependencies](https://github.com/AIPGProject/AIPGcoin/tree/master/doc/dependencies.md)
-- [OS X Build Notes](https://github.com/AIPGProject/AIPGcoin/tree/master/doc/build-osx.md)
-- [Unix Build Notes](https://github.com/AIPGProject/AIPGcoin/tree/master/doc/build-unix.md)
-- [Windows Build Notes](https://github.com/AIPGProject/AIPGcoin/tree/master/doc/build-windows.md)
-- [OpenBSD Build Notes](https://github.com/AIPGProject/AIPGcoin/tree/master/doc/build-openbsd.md)
-- [Gitian Building Guide](https://github.com/AIPGProject/AIPGcoin/tree/master/doc/gitian-building.md)
+- [Dependencies](https://github.com/ESAProject/ESAcoin/tree/master/doc/dependencies.md)
+- [OS X Build Notes](https://github.com/ESAProject/ESAcoin/tree/master/doc/build-osx.md)
+- [Unix Build Notes](https://github.com/ESAProject/ESAcoin/tree/master/doc/build-unix.md)
+- [Windows Build Notes](https://github.com/ESAProject/ESAcoin/tree/master/doc/build-windows.md)
+- [OpenBSD Build Notes](https://github.com/ESAProject/ESAcoin/tree/master/doc/build-openbsd.md)
+- [Gitian Building Guide](https://github.com/ESAProject/ESAcoin/tree/master/doc/gitian-building.md)
 
 Development
 ---------------------
-AIPGcoin repo's [root README](https://github.com/AIPGProject/AIPGcoin/blob/master/README.md) contains relevant information on the development process and automated testing.
+ESAcoin repo's [root README](https://github.com/ESAProject/ESAcoin/blob/master/README.md) contains relevant information on the development process and automated testing.
 
-- [Developer Notes](https://github.com/AIPGProject/AIPGcoin/blob/master/doc/developer-notes.md)
-- [Release Notes](https://github.com/AIPGProject/AIPGcoin/blob/master/doc/release-notes.md)
-- [Release Process](https://github.com/AIPGProject/AIPGcoin/blob/master/doc/release-process.md)
-- [Source Code Documentation (External Link)](https://dev.visucore.com/aipg/doxygen/) -- 2018-05-11 -- Broken link
-- [Translation Process](https://github.com/AIPGProject/AIPGcoin/blob/master/doc/translation_process.md)
-- [Translation Strings Policy](https://github.com/AIPGProject/AIPGcoin/blob/master/doc/translation_strings_policy.md)
-- [Travis CI](https://github.com/AIPGProject/AIPGcoin/blob/master/doc/travis-ci.md)
-- [Unauthenticated REST Interface](https://github.com/AIPGProject/AIPGcoin/blob/master/doc/REST-interface.md)
-- [Shared Libraries](https://github.com/AIPGProject/AIPGcoin/blob/master/doc/shared-libraries.md)
-- [BIPS](https://github.com/AIPGProject/AIPGcoin/blob/master/doc/bips.md)
-- [Dnsseed Policy](https://github.com/AIPGProject/AIPGcoin/blob/master/doc/dnsseed-policy.md)
-- [Benchmarking](https://github.com/AIPGProject/AIPGcoin/blob/master/doc/benchmarking.md)
+- [Developer Notes](https://github.com/ESAProject/ESAcoin/blob/master/doc/developer-notes.md)
+- [Release Notes](https://github.com/ESAProject/ESAcoin/blob/master/doc/release-notes.md)
+- [Release Process](https://github.com/ESAProject/ESAcoin/blob/master/doc/release-process.md)
+- [Source Code Documentation (External Link)](https://dev.visucore.com/esa/doxygen/) -- 2018-05-11 -- Broken link
+- [Translation Process](https://github.com/ESAProject/ESAcoin/blob/master/doc/translation_process.md)
+- [Translation Strings Policy](https://github.com/ESAProject/ESAcoin/blob/master/doc/translation_strings_policy.md)
+- [Travis CI](https://github.com/ESAProject/ESAcoin/blob/master/doc/travis-ci.md)
+- [Unauthenticated REST Interface](https://github.com/ESAProject/ESAcoin/blob/master/doc/REST-interface.md)
+- [Shared Libraries](https://github.com/ESAProject/ESAcoin/blob/master/doc/shared-libraries.md)
+- [BIPS](https://github.com/ESAProject/ESAcoin/blob/master/doc/bips.md)
+- [Dnsseed Policy](https://github.com/ESAProject/ESAcoin/blob/master/doc/dnsseed-policy.md)
+- [Benchmarking](https://github.com/ESAProject/ESAcoin/blob/master/doc/benchmarking.md)
 
 ### Resources
-- Discuss on chat [Discord](https://discord.gg/jn6uhur), [Telegram](https://t.me/AIPGcoinDev) or [Reddit](https://www.reddit.com/r/AIPGcoin/).
-- Find out more on the [AIPGcoin Wiki](https://aipg.wiki/wiki/AIPGcoin_Wiki)
-- Visit the project home [AIPGcoin.org](https://aipgcoin.org)
+- Discuss on chat [Discord](https://discord.gg/jn6uhur), [Telegram](https://t.me/ESAcoinDev) or [Reddit](https://www.reddit.com/r/ESAcoin/).
+- Find out more on the [ESAcoin Wiki](https://esa.wiki/wiki/ESAcoin_Wiki)
+- Visit the project home [ESAcoin.org](https://esacoin.org)
 
 ### Miscellaneous
-- [Assets Attribution](https://github.com/AIPGProject/AIPGcoin/blob/master/doc/assets-attribution.md)
-- [Files](https://github.com/AIPGProject/AIPGcoin/blob/master/doc/files.md)
-- [Fuzz-testing](https://github.com/AIPGProject/AIPGcoin/blob/master/doc/fuzzing.md)
-- [Reduce Traffic](https://github.com/AIPGProject/AIPGcoin/blob/master/doc/reduce-traffic.md)
-- [Tor Support](https://github.com/AIPGProject/AIPGcoin/blob/master/doc/tor.md)
-- [Init Scripts (systemd/upstart/openrc)](https://github.com/AIPGProject/AIPGcoin/blob/master/doc/init.md)
-- [ZMQ](https://github.com/AIPGProject/AIPGcoin/blob/master/doc/zmq.md)
+- [Assets Attribution](https://github.com/ESAProject/ESAcoin/blob/master/doc/assets-attribution.md)
+- [Files](https://github.com/ESAProject/ESAcoin/blob/master/doc/files.md)
+- [Fuzz-testing](https://github.com/ESAProject/ESAcoin/blob/master/doc/fuzzing.md)
+- [Reduce Traffic](https://github.com/ESAProject/ESAcoin/blob/master/doc/reduce-traffic.md)
+- [Tor Support](https://github.com/ESAProject/ESAcoin/blob/master/doc/tor.md)
+- [Init Scripts (systemd/upstart/openrc)](https://github.com/ESAProject/ESAcoin/blob/master/doc/init.md)
+- [ZMQ](https://github.com/ESAProject/ESAcoin/blob/master/doc/zmq.md)
 
 License
 ---------------------
-Distributed under the [MIT software license](https://github.com/AIPGProject/AIPGcoin/blob/master/COPYING).
+Distributed under the [MIT software license](https://github.com/ESAProject/ESAcoin/blob/master/COPYING).
 This product includes software developed by the OpenSSL Project for use in the [OpenSSL Toolkit](https://www.openssl.org/). This product includes
 cryptographic software written by Eric Young ([eay@cryptsoft.com](mailto:eay@cryptsoft.com)), and UPnP software written by Thomas Bernard.
