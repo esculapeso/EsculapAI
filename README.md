@@ -1,12 +1,12 @@
-AI Power Grid Core integration/staging tree
+Esculap Core integration/staging tree
 =====================================
 
 To see how to run ESA, please read the respective files in [the doc folder](doc)
 
-What is AI Power Grid?
+What is Esculap?
 ----------------
 
-AI Power Grid is a revolutionary digital currency that stands at the intersection of blockchain and artificial intelligence. It is designed to democratize access to AI technology and foster open-source AI initiatives. ESA enables instant payments to anyone, anywhere in the world, and allows the creation of assets (tokens) on its network. These assets can be used for various purposes, including AI generated NFT's.
+Esculap is a revolutionary digital currency that stands at the intersection of blockchain and artificial intelligence. It is designed to democratize access to AI technology and foster open-source AI initiatives. ESA enables instant payments to anyone, anywhere in the world, and allows the creation of assets (tokens) on its network. These assets can be used for various purposes, including AI generated NFT's.
 
 ESA operates on a peer-to-peer technology with no central authority, meaning transactions and money or NFT issuance are carried out collectively by the network.
 
@@ -33,7 +33,7 @@ ESA is more than just a digital currency; it's a platform for AI enthusiasts to 
 License
 -------
 
-AI Power Grid Core is released under the terms of the MIT license. See [COPYING](COPYING) for more information or see https://opensource.org/licenses/MIT.
+Esculap Core is released under the terms of the MIT license. See [COPYING](COPYING) for more information or see https://opensource.org/licenses/MIT.
 
 Development Process
 -------------------
