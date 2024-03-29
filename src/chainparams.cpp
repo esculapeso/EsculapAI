@@ -344,11 +344,11 @@ public:
         nDefaultPort = 18865;
         nPruneAfterHeight = 1000;
 
-	    uint32_t nGenesisTime = 1685869871; // June 04, 2023, at 00:00:00 UTC	
+	    uint32_t nGenesisTime = 1711710298; // June 04, 2023, at 00:00:00 UTC	
 
                            // This is used inorder to mine the genesis block. Once found, we can use the nonce and block hash found to create a valid genesis block
            /////////////////////////////////////////////////////////////////
-/*
+///*
         arith_uint256 test;
         bool fNegative;
         bool fOverflow;
@@ -361,13 +361,13 @@ public:
             genesis = CreateGenesisBlock(nGenesisTime, i, 0x1e00ffff, 4, 5000 * COIN);
             genesis.hashPrevBlock = TempHashHolding;
 			// Depending on when the timestamp is on the genesis block. You will need to use GetX16RHash or GetX16RV2Hash. Replace GetHash() with these below
-            consensus.hashGenesisBlock = genesis.GetX16RHash();
+            consensus.hashGenesisBlock = genesis.GetX16RV2Hash();
             arith_uint256 BestBlockHashArith = UintToArith256(BestBlockHash);
             if (UintToArith256(consensus.hashGenesisBlock) < BestBlockHashArith) {
                 BestBlockHash = consensus.hashGenesisBlock;
                 std::cout << "CHOOSE: consensus.hashGenesisBlock.GetHex(): " << consensus.hashGenesisBlock.GetHex() << " Nonce: " << i << " nGenesisTime: " << nGenesisTime << "\n";
                 std::cout << "CHOOSE: BestBlockHash.GetHex(): " << BestBlockHash.GetHex() << " Nonce: " << i << " nGenesisTime: " << nGenesisTime << "\n";
-                std::cout << "CHOOSE: genesis.GetX16RHash().GetHex(): " << genesis.GetX16RHash().GetHex() << " Nonce: " << i << " nGenesisTime: " << nGenesisTime << "\n";
+                std::cout << "CHOOSE: genesis.GetX16RV2Hash().GetHex(): " << genesis.GetX16RV2Hash().GetHex() << " Nonce: " << i << " nGenesisTime: " << nGenesisTime << "\n";
                 std::cout << "CHOOSE: PrevBlockHash: " << genesis.hashPrevBlock.GetHex() << "\n";
             }
             //TempHashHolding = consensus.hashGenesisBlock;
@@ -382,7 +382,7 @@ public:
         std::cout << "\n";
         std::cout << "\n";
         std::cout << "BestBlockHash.GetHex() to 0x" << BestBlockHash.GetHex() << std::endl;
-        std::cout << "genesis.GetX16RHash().GetHex() to 0x" << genesis.GetX16RHash().GetHex() << std::endl;
+        std::cout << "genesis.GetX16RV2Hash().GetHex() to 0x" << genesis.GetX16RV2Hash().GetHex() << std::endl;
         std::cout << "Genesis Nonce to " << genesisNonce << std::endl;
         std::cout << "Genesis Merkle " << genesis.hashMerkleRoot.GetHex() << std::endl;
         std::cout << "\n";
@@ -399,7 +399,7 @@ public:
         return;           
         /////////////////////////////////////////////////////////////////
            // end of genesis block creation
-*/
+//*/
 
         genesis = CreateGenesisBlock(nGenesisTime, 38308737, 0x1e00ffff, 4, 5000 *  COIN);
         consensus.hashGenesisBlock = genesis.GetX16RV2Hash();
