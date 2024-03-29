@@ -348,7 +348,7 @@ public:
 
                            // This is used inorder to mine the genesis block. Once found, we can use the nonce and block hash found to create a valid genesis block
            /////////////////////////////////////////////////////////////////
-///*
+/*
         arith_uint256 test;
         bool fNegative;
         bool fOverflow;
@@ -399,12 +399,12 @@ public:
         return;           
         /////////////////////////////////////////////////////////////////
            // end of genesis block creation
-//*/
+*/
 
         genesis = CreateGenesisBlock(nGenesisTime, 38308737, 0x1e00ffff, 4, 5000 *  COIN);
         consensus.hashGenesisBlock = genesis.GetX16RV2Hash();
         //Test MerkleRoot and GenesisBlock
-        assert(consensus.hashGenesisBlock == uint256S("0x000000644be622efd07eb1e5e9bf46fe2bdc1879e859c68dc3de7bc50374b838"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000000de7c89fa394b43d5a98e4499ea406a6e8eeddb02834dc9d569b3f849"));
         assert(genesis.hashMerkleRoot == uint256S("294f2454727f3371f5b5213e64ec3ce28e74ab0d6be2050452be9b72755dae74"));
 
         vFixedSeeds.clear();
