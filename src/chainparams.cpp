@@ -361,13 +361,13 @@ public:
             genesis = CreateGenesisBlock(nGenesisTime, i, 0x1e00ffff, 2, 5000 * COIN);
             genesis.hashPrevBlock = TempHashHolding;
 			// Depending on when the timestamp is on the genesis block. You will need to use GetX16RHash or GetX16RV2Hash. Replace GetHash() with these below
-            consensus.hashGenesisBlock = genesis.GetHash();
+            consensus.hashGenesisBlock = genesis.GetX16RHash();
             arith_uint256 BestBlockHashArith = UintToArith256(BestBlockHash);
             if (UintToArith256(consensus.hashGenesisBlock) < BestBlockHashArith) {
                 BestBlockHash = consensus.hashGenesisBlock;
                 std::cout << "CHOOSE: consensus.hashGenesisBlock.GetHex(): " << consensus.hashGenesisBlock.GetHex() << " Nonce: " << i << " nGenesisTime: " << nGenesisTime << "\n";
                 std::cout << "CHOOSE: BestBlockHash.GetHex(): " << BestBlockHash.GetHex() << " Nonce: " << i << " nGenesisTime: " << nGenesisTime << "\n";
-                std::cout << "CHOOSE: genesis.GetHash().GetHex(): " << genesis.GetHash().GetHex() << " Nonce: " << i << " nGenesisTime: " << nGenesisTime << "\n";
+                std::cout << "CHOOSE: genesis.GetX16RHash().GetHex(): " << genesis.GetX16RHash().GetHex() << " Nonce: " << i << " nGenesisTime: " << nGenesisTime << "\n";
                 std::cout << "CHOOSE: PrevBlockHash: " << genesis.hashPrevBlock.GetHex() << "\n";
             }
             //TempHashHolding = consensus.hashGenesisBlock;
@@ -382,7 +382,7 @@ public:
         std::cout << "\n";
         std::cout << "\n";
         std::cout << "BestBlockHash.GetHex() to 0x" << BestBlockHash.GetHex() << std::endl;
-        std::cout << "genesis.GetHash().GetHex() to 0x" << genesis.GetHash().GetHex() << std::endl;
+        std::cout << "genesis.GetX16RHash().GetHex() to 0x" << genesis.GetX16RHash().GetHex() << std::endl;
         std::cout << "Genesis Nonce to " << genesisNonce << std::endl;
         std::cout << "Genesis Merkle " << genesis.hashMerkleRoot.GetHex() << std::endl;
         std::cout << "\n";
@@ -402,7 +402,7 @@ public:
 //*/
 
         genesis = CreateGenesisBlock(nGenesisTime, 7268597, 0x1e00ffff, 2, 5000 *  COIN);
-        consensus.hashGenesisBlock = genesis.GetHash();
+        consensus.hashGenesisBlock = genesis.GetX16RHash();
         //Test MerkleRoot and GenesisBlock
         assert(consensus.hashGenesisBlock == uint256S("0x00000000de7c89fa394b43d5a98e4499ea406a6e8eeddb02834dc9d569b3f849"));
         assert(genesis.hashMerkleRoot == uint256S("294f2454727f3371f5b5213e64ec3ce28e74ab0d6be2050452be9b72755dae74"));
