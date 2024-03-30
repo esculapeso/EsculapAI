@@ -401,10 +401,10 @@ public:
            // end of genesis block creation
 //*/
 
-        genesis = CreateGenesisBlock(nGenesisTime, 7268597, 0x1e00ffff, 2, 5000 *  COIN);
+        genesis = CreateGenesisBlock(nGenesisTime, 1940452, 0x1e00ffff, 2, 5000 *  COIN);
         consensus.hashGenesisBlock = genesis.GetX16RHash();
         //Test MerkleRoot and GenesisBlock
-        assert(consensus.hashGenesisBlock == uint256S("0x00000000de7c89fa394b43d5a98e4499ea406a6e8eeddb02834dc9d569b3f849"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000081efffc74209fd11e9eca3ad0434cd33731fedb222fa1a5922dacdd7fe"));
         assert(genesis.hashMerkleRoot == uint256S("294f2454727f3371f5b5213e64ec3ce28e74ab0d6be2050452be9b72755dae74"));
 
         vFixedSeeds.clear();
