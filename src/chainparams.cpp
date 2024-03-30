@@ -348,7 +348,7 @@ public:
 
                            // This is used inorder to mine the genesis block. Once found, we can use the nonce and block hash found to create a valid genesis block
            /////////////////////////////////////////////////////////////////
-///*
+/*
         arith_uint256 test;
         bool fNegative;
         bool fOverflow;
@@ -399,7 +399,7 @@ public:
         return;           
         /////////////////////////////////////////////////////////////////
            // end of genesis block creation
-//*/
+*/
 
         genesis = CreateGenesisBlock(nGenesisTime, 1940452, 0x1e00ffff, 2, 5000 *  COIN);
         consensus.hashGenesisBlock = genesis.GetX16RHash();
