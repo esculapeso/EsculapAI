@@ -156,7 +156,7 @@ public:
 
 
         // The best chain should have at least this much work
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // New blockchain, no work done yet
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000355cd0ac1503c83052"); // New blockchain, no work done yet
 
         // By default assume that the signatures in ancestors of this block are valid. Block# 0
         consensus.defaultAssumeValid = uint256S("0x000000fe8c99a7aacc5aff074278a8378e625c0d02e4894db8f09bab185f4eb6"); // Genesis block
@@ -285,14 +285,14 @@ class CTestNetParams : public CChainParams {
 public:
     CTestNetParams() {
         strNetworkID = "test";
-        consensus.nSubsidyHalvingInterval = 100000;  //~2 months
+        consensus.nSubsidyHalvingInterval = 2100000;  //~2 months
         consensus.nBIP34Enabled = true;
         consensus.nBIP65Enabled = true; // 
         consensus.nBIP66Enabled = true;
         consensus.nSegwitEnabled = true;
         consensus.nCSVEnabled 	= true;
-        consensus.powLimit 	= uint256S("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.kawpowLimit 	= uint256S("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // Estimated starting diff for first 180 kawpow blocks
+        consensus.powLimit 	= uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.kawpowLimit 	= uint256S("000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // Estimated starting diff for first 180 kawpow blocks
         consensus.nPowTargetTimespan = 2016 * 60; // 1.4 days
         consensus.nPowTargetSpacing = 1 * 60;
 	    consensus.fPowAllowMinDifficultyBlocks = false;
@@ -331,7 +331,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_COINBASE_ASSETS].nOverrideMinerConfirmationWindow = 2016;
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000");
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000168050db560b4");
 
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x000000f798386703ae778eeaf8a2f426dc2715eb8989b4226cddc1681b567760");
@@ -348,7 +348,7 @@ public:
 
                            // This is used inorder to mine the genesis block. Once found, we can use the nonce and block hash found to create a valid genesis block
            /////////////////////////////////////////////////////////////////
-/*
+
         arith_uint256 test;
         bool fNegative;
         bool fOverflow;
@@ -358,7 +358,7 @@ public:
         uint256 TempHashHolding = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000");
         uint256 BestBlockHash = uint256S("0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         for (int i=0;i<40000000;i++) {
-            genesis = CreateGenesisBlock(nGenesisTime, i, 0x1e00ffff, 4, 5000 * COIN);
+            genesis = CreateGenesisBlock(nGenesisTime, i, 0x1e00ffff, 2, 5000 * COIN);
             genesis.hashPrevBlock = TempHashHolding;
 			// Depending on when the timestamp is on the genesis block. You will need to use GetX16RHash or GetX16RV2Hash. Replace GetHash() with these below
             consensus.hashGenesisBlock = genesis.GetX16RV2Hash();
@@ -399,9 +399,9 @@ public:
         return;           
         /////////////////////////////////////////////////////////////////
            // end of genesis block creation
-*/
+//*/
 
-        genesis = CreateGenesisBlock(nGenesisTime, 7268597, 0x1e00ffff, 4, 5000 *  COIN);
+        genesis = CreateGenesisBlock(nGenesisTime, 7268597, 0x1e00ffff, 2, 5000 *  COIN);
         consensus.hashGenesisBlock = genesis.GetX16RV2Hash();
         //Test MerkleRoot and GenesisBlock
         assert(consensus.hashGenesisBlock == uint256S("0x00000000de7c89fa394b43d5a98e4499ea406a6e8eeddb02834dc9d569b3f849"));
