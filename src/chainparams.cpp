@@ -345,7 +345,7 @@ public:
         nPruneAfterHeight = 1000;
 
         uint32_t nGenesisTime = 1688350555;  // October 30, 2023
-
+/*
         arith_uint256 test;
         bool fNegative;
         bool fOverflow;
@@ -401,12 +401,12 @@ public:
 
         return;
 
+*/
 
-
-        genesis = CreateGenesisBlock(nGenesisTime, 18991761, 0x1e00ffff, 4, 5000 *  COIN);
+        genesis = CreateGenesisBlock(nGenesisTime, 14370039, 0x1e00ffff, 2, 5000 *  COIN);
         consensus.hashGenesisBlock = genesis.GetX16RV2Hash();
         //Test MerkleRoot and GenesisBlock
-        assert(consensus.hashGenesisBlock == uint256S("0x000000f798386703ae778eeaf8a2f426dc2715eb8989b4226cddc1681b567760"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000000d26659e58da2b8ea83770b5d1daf6e997bb8bdc166973b00ea116e809a"));
         assert(genesis.hashMerkleRoot == uint256S("e04a78dcf0ad3d5c7f1ac4460c4c04bc333e677d52371b7453b5b09603b41d54"));
 
         vFixedSeeds.clear();
