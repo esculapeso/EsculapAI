@@ -4905,7 +4905,11 @@ CWallet* CWallet:: CreateWalletFromFile(const std::string walletFile)
         LogPrintf("setKeyPool.size() = %u\n",      walletInstance->GetKeyPoolSize());
         LogPrintf("mapWallet.size() = %u\n",       walletInstance->mapWallet.size());
         LogPrintf("mapAddressBook.size() = %u\n",  walletInstance->mapAddressBook.size());
+
+        LogPrintf("Hello wallet");
     }
+
+    LogPrintf("Hello wallet after");
 
     return walletInstance;
 }
