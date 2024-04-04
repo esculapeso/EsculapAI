@@ -1812,7 +1812,7 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
 #endif
 
     // ********************************************************* Step 9: data directory maintenance
-        LogPrintf("start pruning");
+        LogPrintf("start pruning %s\n");
     // if pruning, unset the service bit and perform the initial blockstore prune
     // after any wallet rescanning has taken place.
     if (fPruneMode) {
