@@ -200,5 +200,7 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
         LogPrintf("false amout \n");
         return false;
 
+    LogPrintf("is it true \n");
+
     return true;
 }
