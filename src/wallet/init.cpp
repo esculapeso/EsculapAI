@@ -259,7 +259,6 @@ bool OpenWallets()
         vpwallets.push_back(pwallet);
     }
     
-    LogPrintf("finished wallet %s\n");
 
     return true;
 }
