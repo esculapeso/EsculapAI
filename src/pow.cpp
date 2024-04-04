@@ -195,6 +195,8 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
         
         return false;
 
+    LogPrintf("pfoor vals: %s %s\n", bnTarget.ToString().c_str(), UintToArith256(hash).ToString().c_str());
+
     // Check proof of work matches claimed amount
     if (UintToArith256(hash) > bnTarget)
         LogPrintf("false amout \n");
