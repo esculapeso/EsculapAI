@@ -1851,6 +1851,7 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
     }
 
     threadGroup.create_thread(boost::bind(&ThreadImport, vImportFiles));
+    LogPrintf("Wait for genesis block to be processed\n");
 
     // Wait for genesis block to be processed
     {
@@ -1860,6 +1861,7 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
         }
         uiInterface.NotifyBlockTip.disconnect(BlockNotifyGenesisWait);
     }
+    LogPrintf("genesis block processed\n");
 
     // ********************************************************* Step 11: start node
 
