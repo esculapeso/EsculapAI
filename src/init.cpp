@@ -1822,18 +1822,21 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
             PruneAndFlush();
         }
     }
-
+    LogPrintf("nSegwitEnabled\n");
     if(chainparams.GetConsensus().nSegwitEnabled) {
     		nLocalServices = ServiceFlags(nLocalServices | NODE_WITNESS);
     }
     // ********************************************************* Step 10: import blocks
 
+    LogPrintf("CheckDiskSpace\n");
     if (!CheckDiskSpace())
         return false;
 
     // Either install a handler to notify us when genesis activates, or set fHaveGenesis directly.
     // No locking, as this happens before any background thread is started.
+    LogPrintf("CheckDiskSpace\n");
     if (chainActive.Tip() == nullptr) {
+        LogPrintf("chainActive is null\n");
         uiInterface.NotifyBlockTip.connect(BlockNotifyGenesisWait);
     } else {
         fHaveGenesis = true;
