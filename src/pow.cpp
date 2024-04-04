@@ -187,7 +187,7 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
     LogPrintf("sets compact \n");
 
     bnTarget.SetCompact(nBits, &fNegative, &fOverflow);
-    LogPrintf("compact set \n");
+    LogPrintf("compact set: %s %s %s %s\n", bnTarget.ToString().c_str(), fNegative, fOverflow, UintToArith256(params.powLimit).ToString().c_str());
 
     // Check range
     if (fNegative || bnTarget == 0 || fOverflow || bnTarget > UintToArith256(params.powLimit))
