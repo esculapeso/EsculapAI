@@ -665,6 +665,7 @@ static CConditionVariable condvar_GenesisWait;
 
 static void BlockNotifyGenesisWait(bool, const CBlockIndex *pBlockIndex)
 {
+    LogPrintf("BlockNotifyGenesisWait start\n");
     if (pBlockIndex != nullptr) {
         {
             boost::unique_lock<boost::mutex> lock_GenesisWait(cs_GenesisWait);
@@ -1856,9 +1857,11 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
     // Wait for genesis block to be processed
     {
         boost::unique_lock<boost::mutex> lock(cs_GenesisWait);
+        LogPrintf("unique_locked\n");
         while (!fHaveGenesis) {
             condvar_GenesisWait.wait(lock);
         }
+        LogPrintf("has genesis\n");
         uiInterface.NotifyBlockTip.disconnect(BlockNotifyGenesisWait);
     }
     LogPrintf("genesis block processed\n");
