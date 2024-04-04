@@ -2138,6 +2138,7 @@ UniValue listsinceblock(const JSONRPCRequest& request)
     UniValue assetRemoved(UniValue::VARR);
     while (include_removed && paltindex && paltindex != pindex) {
         CBlock block;
+    LogPrintf("ReadBlockFromDisk 17 %s\n");
         if (!ReadBlockFromDisk(block, paltindex, GetParams().GetConsensus())) {
             throw JSONRPCError(RPC_INTERNAL_ERROR, "Can't read block from disk");
         }

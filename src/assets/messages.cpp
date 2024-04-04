@@ -202,6 +202,7 @@ bool ScanForMessageChannels(std::string& strError)
 
     while (blockIndex) {
         CBlock block;
+    LogPrintf("ReadBlockFromDisk 13 %s\n");
         if (!ReadBlockFromDisk(block, blockIndex, GetParams().GetConsensus())) {
             strError = "Block not found on disk";
             return false;
