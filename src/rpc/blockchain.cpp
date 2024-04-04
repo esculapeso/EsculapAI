@@ -766,7 +766,6 @@ UniValue getblockdeltas(const JSONRPCRequest& request)
     if (fHavePruned && !(pblockindex->nStatus & BLOCK_HAVE_DATA) && pblockindex->nTx > 0)
         throw JSONRPCError(RPC_INTERNAL_ERROR, "Block not available (pruned data)");
 
-    LogPrintf("ReadBlockFromDisk 14 %s\n");
     if(!ReadBlockFromDisk(block, pblockindex, GetParams().GetConsensus()))
         throw JSONRPCError(RPC_INTERNAL_ERROR, "Can't read block from disk");
 
@@ -1002,7 +1001,6 @@ UniValue getblock(const JSONRPCRequest& request)
     if (fHavePruned && !(pblockindex->nStatus & BLOCK_HAVE_DATA) && pblockindex->nTx > 0)
         throw JSONRPCError(RPC_MISC_ERROR, "Block not available (pruned data)");
 
-    LogPrintf("ReadBlockFromDisk 15 %s\n");
     if (!ReadBlockFromDisk(block, pblockindex, GetParams().GetConsensus()))
         // Block not found on disk. This could be because we have the block
         // header in our index but don't have the block (for example if a

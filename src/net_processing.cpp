@@ -1080,7 +1080,6 @@ void static ProcessGetData(CNode* pfrom, const Consensus::Params& consensusParam
                     } else {
                         // Send block from disk
                         std::shared_ptr<CBlock> pblockRead = std::make_shared<CBlock>();
-    LogPrintf("ReadBlockFromDisk 10 %s\n");
                         if (!ReadBlockFromDisk(*pblockRead, (*mi).second, consensusParams))
                             assert(!"cannot load block from disk");
                         pblock = pblockRead;
@@ -2098,7 +2097,6 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
         }
 
         CBlock block;
-    LogPrintf("ReadBlockFromDisk 11 %s\n");
         bool ret = ReadBlockFromDisk(block, it->second, chainparams.GetConsensus());
         assert(ret);
 
@@ -3470,7 +3468,7 @@ bool PeerLogicValidation::SendMessages(CNode* pto, std::atomic<bool>& interruptM
                     }
                     if (!fGotBlockFromCache) {
                         CBlock block;
-    LogPrintf("ReadBlockFromDisk 12 %s\n");
+    
                         bool ret = ReadBlockFromDisk(block, pBestIndex, consensusParams);
                         assert(ret);
                         CBlockHeaderAndShortTxIDs cmpctblock(block, state.fWantsCmpctWitness);
