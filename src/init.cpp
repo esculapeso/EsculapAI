@@ -1844,10 +1844,12 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
     }
     LogPrintf("CheckDiskSpace CHECKED\n");  
     if (gArgs.IsArgSet("-blocknotify"))
+        LogPrintf("notifies block\n");  
         uiInterface.NotifyBlockTip.connect(BlockNotifyCallback);
 
     std::vector<fs::path> vImportFiles;
     for (const std::string& strFile : gArgs.GetArgs("-loadblock")) {
+        LogPrintf("adds vFiles\n");  
         vImportFiles.push_back(strFile);
     }
 
