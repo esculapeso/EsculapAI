@@ -3318,7 +3318,8 @@ public:
  */
 bool static ConnectTip(CValidationState& state, const CChainParams& chainparams, CBlockIndex* pindexNew, const std::shared_ptr<const CBlock>& pblock, ConnectTrace& connectTrace, DisconnectedBlockTransactions &disconnectpool)
 {
-    LogPrintf("chainActive: %s\n", chainActive );
+    LogPrintf("chainActive: %s\n", chainActive->ToString() );
+    LogPrintf("chainActive tip: %s\n", chainActive.Tip()->ToString() );
     assert(pindexNew->pprev == chainActive.Tip());
     // Read block from disk.
     int64_t nTime1 = GetTimeMicros();
