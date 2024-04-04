@@ -1841,7 +1841,7 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
     } else {
         fHaveGenesis = true;
     }
-
+    LogPrintf("CheckDiskSpace CHECKED\n");  
     if (gArgs.IsArgSet("-blocknotify"))
         uiInterface.NotifyBlockTip.connect(BlockNotifyCallback);
 
