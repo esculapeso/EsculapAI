@@ -3321,11 +3321,11 @@ bool static ConnectTip(CValidationState& state, const CChainParams& chainparams,
     assert(pindexNew->pprev == chainActive.Tip());
     // Read block from disk.
     LogPrintf("pre chainActive \n" );
-    LogPrintf("chainActive: %s\n", chainActive.Tip()->ToString() );
     int64_t nTime1 = GetTimeMicros();
     std::shared_ptr<const CBlock> pthisBlock;
     if (!pblock) {
         std::shared_ptr<CBlock> pblockNew = std::make_shared<CBlock>();
+        LogPrintf("pindexNew: %s\n", pindexNew->GetBlockHash().ToString() );
         if (!ReadBlockFromDisk(*pblockNew, pindexNew, chainparams.GetConsensus()))
             return AbortNode(state, "Failed to read block");
         pthisBlock = pblockNew;
