@@ -1314,6 +1314,9 @@ bool ReadBlockFromDisk(CBlock& block, const CBlockIndex* pindex, const Consensus
 {
     if (!ReadBlockFromDisk(block, pindex->GetBlockPos(), consensusParams))
         return false;
+    
+    LogPrintf("block.GetHash(): %s\n", block.GetHash().ToString());
+    LogPrintf("pindex->GetBlockHash(): %s\n", pindex->GetBlockHash().ToString());
     if (block.GetHash() != pindex->GetBlockHash())
         return error("ReadBlockFromDisk(CBlock&, CBlockIndex*): GetHash() doesn't match index for %s at %s",
                 pindex->ToString(), pindex->GetBlockPos().ToString());
@@ -3570,6 +3573,7 @@ static bool ActivateBestChainStep(CValidationState& state, const CChainParams& c
         // Connect new blocks.
         for (CBlockIndex *pindexConnect : reverse_iterate(vpindexToConnect)) {
             if (!ConnectTip(state, chainparams, pindexConnect, pindexConnect == pindexMostWork ? pblock : std::shared_ptr<const CBlock>(), connectTrace, disconnectpool)) {
+    LogPrintf("Inside ConnectTip \n");
                 if (state.IsInvalid()) {
                     // The block violates a consensus rule.
                     if (!state.CorruptionPossible()) {
