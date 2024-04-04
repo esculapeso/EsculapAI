@@ -1313,6 +1313,7 @@ bool ReadBlockFromDisk(CBlock& block, const CDiskBlockPos& pos, const Consensus:
 bool ReadBlockFromDisk(CBlock& block, const CBlockIndex* pindex, const Consensus::Params& consensusParams)
 {
     if (!ReadBlockFromDisk(block, pindex->GetBlockPos(), consensusParams))
+    LogPrintf("Ill return false \n");
         return false;
     
     LogPrintf("block.GetHash(): %s\n", block.GetHash().ToString());

@@ -184,15 +184,20 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
     bool fNegative;
     bool fOverflow;
     arith_uint256 bnTarget;
+    LogPrintf("sets compact \n");
 
     bnTarget.SetCompact(nBits, &fNegative, &fOverflow);
+    LogPrintf("compact set \n");
 
     // Check range
     if (fNegative || bnTarget == 0 || fOverflow || bnTarget > UintToArith256(params.powLimit))
+        LogPrintf("false range \n");
+        
         return false;
 
     // Check proof of work matches claimed amount
     if (UintToArith256(hash) > bnTarget)
+        LogPrintf("false amout \n");
         return false;
 
     return true;
