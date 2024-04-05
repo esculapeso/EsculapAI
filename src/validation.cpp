@@ -3326,6 +3326,12 @@ bool static ConnectTip(CValidationState& state, const CChainParams& chainparams,
 {
     LogPrintf("genesis in ConnectTip: %s\n", chainparams.GetConsensus().hashGenesisBlock.GetHex());
 
+    if (chainActive.Tip()) {
+        LogPrintf("Current chain tip: %s\n", chainActive.Tip()->GetBlockHash().GetHex());
+    } else {
+        LogPrintf("ChainActive tip is null, blockchain might be empty or not properly initialized\n");
+    }
+
     assert(pindexNew->pprev == chainActive.Tip());
     // Read block from disk.
     LogPrintf("pre chainActive \n" );
