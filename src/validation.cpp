@@ -2416,6 +2416,7 @@ static int64_t nBlocksTotal = 0;
 static bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pindex,
                   CCoinsViewCache& view, const CChainParams& chainparams, CAssetsCache* assetsCache = nullptr, bool fJustCheck = false, bool ignoreAddressIndex = false)
 {
+    LogPrintf("genesis in ConnectBlock: %s\n", chainparams.GetConsensus().hashGenesisBlock.GetHex());
 
     AssertLockHeld(cs_main);
     assert(pindex);
@@ -2434,7 +2435,6 @@ static bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockInd
 
     // Special case for the genesis block, skipping connection of its transactions
     // (its coinbase is unspendable)
-    LogPrintf("genesis in ConnectBlock: %s\n", chainparams.GetConsensus().hashGenesisBlock.GetHex());
 
     if (block.GetHash() == chainparams.GetConsensus().hashGenesisBlock) {
         if (!fJustCheck)
