@@ -3324,6 +3324,8 @@ public:
  */
 bool static ConnectTip(CValidationState& state, const CChainParams& chainparams, CBlockIndex* pindexNew, const std::shared_ptr<const CBlock>& pblock, ConnectTrace& connectTrace, DisconnectedBlockTransactions &disconnectpool)
 {
+    LogPrintf("genesis in ConnectTip: %s\n", chainparams.GetConsensus().hashGenesisBlock.GetHex());
+
     assert(pindexNew->pprev == chainActive.Tip());
     // Read block from disk.
     LogPrintf("pre chainActive \n" );
