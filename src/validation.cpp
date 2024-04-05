@@ -3332,15 +3332,48 @@ bool static ConnectTip(CValidationState& state, const CChainParams& chainparams,
         LogPrintf("ChainActive tip is null, blockchain might be empty or not properly initialized\n");
     }
 
+    // Log the current chain tip
+    if (chainActive.Tip()) {
+        LogPrintf("Current chainActive Tip: %s\n", chainActive.Tip()->GetBlockHash().GetHex());
+    } else {
+        LogPrintf("chainActive.Tip() is null. The blockchain might be empty or not properly initialized.\n");
+    }
+
+    // Log the previous block of pindexNew
+    if (pindexNew && pindexNew->pprev) {
+        LogPrintf("pindexNew->pprev: %s\n", pindexNew->pprev->GetBlockHash().GetHex());
+    } else {
+        if (!pindexNew) {
+            LogPrintf("pindexNew is null.\n");
+        } else {
+            LogPrintf("pindexNew->pprev is null. This might be the genesis block.\n");
+        }
+    }
+
+    // Assert that the previous block of pindexNew is the current chain tip
     assert(pindexNew->pprev == chainActive.Tip());
     // Read block from disk.
-    LogPrintf("pre chainActive \n" );
+    LogPrintf("pre chainActive \n");
     int64_t nTime1 = GetTimeMicros();
     std::shared_ptr<const CBlock> pthisBlock;
+
+    // Check if pblock is null and log its status
+    LogPrintf("pblock is %s\n", pblock ? "already loaded" : "null, loading from disk...");
+
     if (!pblock) {
         std::shared_ptr<CBlock> pblockNew = std::make_shared<CBlock>();
-        LogPrintf("pindexNew: %s\n", pindexNew->GetBlockHash().ToString() );
-        if (!ReadBlockFromDisk(*pblockNew, pindexNew, chainparams.GetConsensus()))
+        LogPrintf("pindexNew: %s\n", pindexNew->GetBlockHash().ToString());
+        
+        // Attempt to read the block from disk and log the attempt
+        bool readSuccess = ReadBlockFromDisk(*pblockNew, pindexNew, chainparams.GetConsensus());
+        LogPrintf("ReadBlockFromDisk result: %s\n", readSuccess ? "Success" : "Failure");
+
+        if (pindexNew) {
+            LogPrintf("Attempting to read block at height %d, hash: %s\n", pindexNew->nHeight, pindexNew->GetBlockHash().GetHex());
+        }
+        // Additional code handling the result of ReadBlockFromDisk and further operations would go here
+
+        if(!readSuccess)
             return AbortNode(state, "Failed to read block");
         pthisBlock = pblockNew;
     } else {
