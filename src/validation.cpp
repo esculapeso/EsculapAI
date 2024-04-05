@@ -2434,6 +2434,8 @@ static bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockInd
 
     // Special case for the genesis block, skipping connection of its transactions
     // (its coinbase is unspendable)
+    LogPrintf("genesis in ConnectBlock: %s\n", chainparams.GetConsensus().hashGenesisBlock);
+
     if (block.GetHash() == chainparams.GetConsensus().hashGenesisBlock) {
         if (!fJustCheck)
             view.SetBestBlock(pindex->GetBlockHash());
