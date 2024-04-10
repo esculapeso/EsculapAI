@@ -1,4 +1,11 @@
 esa() {
+    
+    export conf="$HOME/.aipg"
+    export daemon="aipgd"
+    export cli="$main/src/aipg-cli"
+    export pathd="$main/src/$daemon"
+    export testnet="$conf/testnet_aipg"
+    
     if [ "$1" = "start" ]; then
         $pathd > /dev/null 2>&1 &
     elif [ "$1" = "conf" ]; then
