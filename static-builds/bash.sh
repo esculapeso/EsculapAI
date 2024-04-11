@@ -7,6 +7,12 @@ esa() {
     export testnet="$conf/testnet_aipg"
     
     if [ "$1" = "start" ]; then
+        if [ "$2" = "h" ]; then
+            $pathd > /dev/null 2>&1 &
+        else
+            $pathd
+        fi
+    if [ "$1" = "start" ]; then
         $pathd > /dev/null 2>&1 &
     elif [ "$1" = "conf" ]; then
         nano $conf/esa.conf
