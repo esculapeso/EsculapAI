@@ -12,8 +12,6 @@ esa() {
         else
             $pathd
         fi
-    if [ "$1" = "start" ]; then
-        $pathd > /dev/null 2>&1 &
     elif [ "$1" = "conf" ]; then
         nano $conf/esa.conf
     elif [ "$1" = "tor" ]; then
