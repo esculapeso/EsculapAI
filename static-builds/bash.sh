@@ -32,7 +32,13 @@ esa() {
         $cli stop
         $pathd > /dev/null 2>&1 &
     elif [ "$1" = "cli" ]; then
-        $cli $2
+        if [ "$2" = "p" ]; then
+            $cli getpeerinfo
+        elif [ "$2" = "n" ]; then
+            $cli getnetworkinfo
+        elif
+            $cli $2
+        fi
     elif [ "$1" = "status" ]; then
         runs $daemon
     elif [ "$1" = "debug" ]; then
