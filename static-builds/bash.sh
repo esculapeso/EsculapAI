@@ -75,3 +75,12 @@ esa() {
         daqhelp
     fi
 }
+
+
+be() {
+    nano $HOME/.bashrc
+}
+
+bs() {
+    source $HOME/.bashrc
+}
