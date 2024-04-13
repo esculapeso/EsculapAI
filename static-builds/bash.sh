@@ -21,6 +21,8 @@ esa() {
     elif [ "$1" = "restart" ]; then
         $cli stop
         $pathd > /dev/null 2>&1 &
+    elif [ "$1" = "cli" ]; then
+        $cli $2
     elif [ "$1" = "status" ]; then
         runs $daemon
     elif [ "$1" = "debug" ]; then
