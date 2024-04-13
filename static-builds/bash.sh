@@ -36,7 +36,7 @@ esa() {
             $cli getpeerinfo
         elif [ "$2" = "n" ]; then
             $cli getnetworkinfo
-        elif
+        else
             $cli $2
         fi
     elif [ "$1" = "status" ]; then
