@@ -46,7 +46,7 @@ esa() {
             if [[ $3 =~ ^[0-9]+$ ]]; then
                 tail -n $3 $testnet/debug.log
             else
-                tail $testnet/debug.log
+                tail -n 30 $testnet/debug.log
             fi
         else
             nano $testnet/debug.log
