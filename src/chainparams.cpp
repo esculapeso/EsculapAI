@@ -341,7 +341,7 @@ public:
         pchMessageStart[1] = 0x53; // S
         pchMessageStart[2] = 0x53; // S
         pchMessageStart[3] = 0x41; // A
-        nDefaultPort = 18865;
+        nDefaultPort = 8767;
         nPruneAfterHeight = 1000;
 
         uint32_t nGenesisTime = 1685836800;  // June 04, 2023
