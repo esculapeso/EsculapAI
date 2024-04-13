@@ -48,8 +48,10 @@ esa() {
             else
                 tail -n 30 $testnet/debug.log
             fi
-        else
+        elif [ "$2" = "file" ]; then
             nano $testnet/debug.log
+        else
+            tail -n 30 $testnet/debug.log
         fi
     elif [ "$1" = "configure" ]; then
         ./configure BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --prefix=/usr/local --with-boost=/opt/boost --with-boost-libdir=/opt/boost/lib
