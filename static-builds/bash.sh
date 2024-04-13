@@ -17,7 +17,11 @@ esa() {
     elif [ "$1" = "tor" ]; then
         sudo nano /etc/tor/torrc
     elif [ "$1" = "stop" ]; then
-        $cli stop
+        if [[ $2 =~ ^[0-9]+$ ]]; then
+            kill -9 $2
+        else
+            $cli stop
+        fi 
     elif [ "$1" = "restart" ]; then
         $cli stop
         $pathd > /dev/null 2>&1 &
