@@ -11,10 +11,10 @@ esa() {
     export testnet="$conf/testnet_$project"
     
     if [ "$1" = "start" ]; then
-        if [ "$2" = "h" ]; then
-            $pathd > /dev/null 2>&1 &
-        else
+        if [ "$2" = "v" ]; then
             $pathd
+        else
+            $pathd > /dev/null 2>&1 &
         fi
     elif [ "$1" = "conf" ]; then
         nano $conf/$project.conf
