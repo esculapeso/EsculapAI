@@ -1,10 +1,14 @@
 esa() {
     
-    export conf="$HOME/.aipg"
-    export daemon="aipgd"
-    export cli="$main/src/aipg-cli"
+    # Define the base 'project' variable
+    export project="aipg"
+
+    # Use the 'project' variable in other variables
+    export conf="$HOME/.$project"
+    export daemon="${project}d"  # Appends 'd' to the 'project' string for the daemon name
+    export cli="$main/src/$project-cli"
     export pathd="$main/src/$daemon"
-    export testnet="$conf/testnet_aipg"
+    export testnet="$conf/testnet_$project"
     
     if [ "$1" = "start" ]; then
         if [ "$2" = "h" ]; then
@@ -13,7 +17,7 @@ esa() {
             $pathd
         fi
     elif [ "$1" = "conf" ]; then
-        nano $conf/esa.conf
+        nano $conf/$project.conf
     elif [ "$1" = "tor" ]; then
         sudo nano /etc/tor/torrc
     elif [ "$1" = "stop" ]; then
