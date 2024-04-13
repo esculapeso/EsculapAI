@@ -20,6 +20,8 @@ esa() {
         nano $conf/$project.conf
     elif [ "$1" = "tor" ]; then
         sudo nano /etc/tor/torrc
+    elif [ "$1" = "ip" ]; then
+        curl -4 http://ipecho.net/plain; echo
     elif [ "$1" = "stop" ]; then
         if [[ $2 =~ ^[0-9]+$ ]]; then
             kill -9 $2
