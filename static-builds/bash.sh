@@ -24,9 +24,10 @@ esa() {
         curl -4 http://ipecho.net/plain; echo
     elif [ "$1" = "stop" ]; then
         if [[ $2 =~ ^[0-9]+$ ]]; then
-            kill -9 $2
+            kill $2
         elif [ "$2" = "f" ]; then
-            kill -9 ps aux | grep "[${project:0:1}]${project:1}" | awk '{print $2}'
+            pid=$(ps aux | grep "[${project:0:1}]${project:1}" | awk '{print $2}')
+            kill $pid
         else
             $cli stop
         fi 
