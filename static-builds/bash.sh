@@ -25,6 +25,8 @@ esa() {
     elif [ "$1" = "stop" ]; then
         if [[ $2 =~ ^[0-9]+$ ]]; then
             kill -9 $2
+        elif [ "$2" = "f" ]; then
+            kill -9 ps aux | grep "[${project:0:1}]${project:1}" | awk '{print $2}'
         else
             $cli stop
         fi 
@@ -40,7 +42,7 @@ esa() {
             $cli $2
         fi
     elif [ "$1" = "status" ]; then
-        runs $daemon
+        ps aux | grep "[${project:0:1}]${project:1}" | awk '{print $2}'
     elif [ "$1" = "debug" ]; then
         if [ "$2" = "tail" ]; then
             if [[ $3 =~ ^[0-9]+$ ]]; then
