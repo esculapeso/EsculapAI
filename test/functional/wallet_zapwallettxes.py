@@ -8,7 +8,7 @@
 """
 Test the zapwallettxes functionality.
 
-- start two aipgd nodes
+- start two esad nodes
 - create two transactions on node 0 - one is confirmed and one is unconfirmed.
 - restart node 0 and verify that both the confirmed and the unconfirmed
   transactions are still available.

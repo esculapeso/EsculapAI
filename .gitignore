@@ -4,7 +4,7 @@ Jenkinsfile
 
 *.exe
 src/aipg
-src/aipgd
+src/esad
 src/aipg-cli
 src/aipg-tx
 src/test/test_aipg

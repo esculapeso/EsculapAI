@@ -1,8 +1,8 @@
 
 Debian
 ====================
-This directory contains files used to package aipgd/aipg-qt
-for Debian-based Linux systems. If you compile aipgd/aipg-qt yourself, there are some useful files here.
+This directory contains files used to package esad/aipg-qt
+for Debian-based Linux systems. If you compile esad/aipg-qt yourself, there are some useful files here.
 
 ## aipg: URI support ##
 

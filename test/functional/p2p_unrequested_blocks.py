@@ -70,8 +70,8 @@ from test_framework.blocktools import create_block, create_coinbase
 class AcceptBlockTest(AipgTestFramework):
     def add_options(self, parser):
         parser.add_option("--testbinary", dest="testbinary",
-                          default=os.getenv("AIPGD", "aipgd"),
-                          help="aipgd binary to test")
+                          default=os.getenv("ESAD", "esad"),
+                          help="esad binary to test")
 
     def set_test_params(self):
         self.setup_clean_chain = True

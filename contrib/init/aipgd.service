@@ -7,9 +7,9 @@ User=aipg
 Group=aipg
 
 Type=forking
-PIDFile=/var/lib/aipgd/aipgd.pid
-ExecStart=/usr/bin/aipgd -daemon -pid=/var/lib/aipgd/aipgd.pid \
--conf=/etc/aipg/aipg.conf -datadir=/var/lib/aipgd -disablewallet
+PIDFile=/var/lib/esad/esad.pid
+ExecStart=/usr/bin/esad -daemon -pid=/var/lib/esad/esad.pid \
+-conf=/etc/aipg/aipg.conf -datadir=/var/lib/esad -disablewallet
 
 Restart=always
 PrivateTmp=true

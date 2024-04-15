@@ -72,7 +72,7 @@ void PrepareShutdown();
 /** The help message mode determines what help message to show */
 enum HelpMessageMode
 {
-    HMM_AIPGD,
+    HMM_ESAD,
     HMM_AIPG_QT
 };
 

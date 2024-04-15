@@ -264,12 +264,12 @@ def main():
         print("Tests currently disabled on Windows by default. Use --force option to enable")
         sys.exit(0)
 
-    # Check that the build was configured with wallet, utils, and aipgd
+    # Check that the build was configured with wallet, utils, and esad
     enable_wallet = config["components"].getboolean("ENABLE_WALLET")
     enable_cli = config["components"].getboolean("ENABLE_UTILS")
-    enable_aipgd = config["components"].getboolean("ENABLE_AIPGD")
-    if not (enable_wallet and enable_cli and enable_aipgd):
-        print("No functional tests to run. Wallet, utils, and aipgd must all be enabled")
+    enable_esad = config["components"].getboolean("ENABLE_ESAD")
+    if not (enable_wallet and enable_cli and enable_esad):
+        print("No functional tests to run. Wallet, utils, and esad must all be enabled")
         print("Rerun `configure` with --enable-wallet, --with-cli and --with-daemon and rerun make")
         sys.exit(0)
 
@@ -361,12 +361,12 @@ def main():
 
 
 def run_tests(test_list, src_dir, build_dir, exeext, tmpdir, use_term_control, jobs=1, enable_coverage=False, args=None, combined_logs_len=0, failfast=False, last_loop=False):
-    # Warn if aipgd is already running (unix only)
+    # Warn if esad is already running (unix only)
     if args is None:
         args = []
     try:
-        if subprocess.check_output(["pidof", "aipgd"]) is not None:
-            print("%sWARNING!%s There is already a aipgd process running on this system. Tests may fail unexpectedly due to resource contention!" % (BOLD[1], BOLD[0]))
+        if subprocess.check_output(["pidof", "esad"]) is not None:
+            print("%sWARNING!%s There is already a esad process running on this system. Tests may fail unexpectedly due to resource contention!" % (BOLD[1], BOLD[0]))
     except (OSError, subprocess.SubprocessError):
         pass
 
@@ -376,8 +376,8 @@ def run_tests(test_list, src_dir, build_dir, exeext, tmpdir, use_term_control, j
         print("%sWARNING!%s There is a cache directory here: %s. If tests fail unexpectedly, try deleting the cache directory." % (BOLD[1], BOLD[0], cache_dir))
 
     #Set env vars
-    if "AIPGD" not in os.environ:
-        os.environ["AIPGD"] = build_dir + '/src/aipgd' + exeext
+    if "ESAD" not in os.environ:
+        os.environ["ESAD"] = build_dir + '/src/esad' + exeext
         os.environ["AIPGCLI"] = build_dir + '/src/aipg-cli' + exeext
 
     tests_dir = src_dir + '/test/functional/'

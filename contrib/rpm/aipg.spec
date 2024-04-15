@@ -27,7 +27,7 @@ Source1:	http://download.oracle.com/berkeley-db/db-%{bdbv}.NC.tar.gz
 Source10:	https://raw.githubusercontent.com/aipg/aipg/v%{version}/contrib/debian/examples/aipg.conf
 
 #man pages
-Source20:	https://raw.githubusercontent.com/aipg/aipg/v%{version}/doc/man/aipgd.1
+Source20:	https://raw.githubusercontent.com/aipg/aipg/v%{version}/doc/man/esad.1
 Source21:	https://raw.githubusercontent.com/aipg/aipg/v%{version}/doc/man/aipg-cli.1
 Source22:	https://raw.githubusercontent.com/aipg/aipg/v%{version}/doc/man/aipg-qt.1
 
@@ -182,12 +182,12 @@ popd
 make install DESTDIR=%{buildroot}
 
 mkdir -p -m755 %{buildroot}%{_sbindir}
-mv %{buildroot}%{_bindir}/aipgd %{buildroot}%{_sbindir}/aipgd
+mv %{buildroot}%{_bindir}/esad %{buildroot}%{_sbindir}/esad
 
 # systemd stuff
 mkdir -p %{buildroot}%{_tmpfilesdir}
 cat <<EOF > %{buildroot}%{_tmpfilesdir}/aipg.conf
-d /run/aipgd 0750 aipg aipg -
+d /run/esad 0750 aipg aipg -
 EOF
 touch -a -m -t 201504280000 %{buildroot}%{_tmpfilesdir}/aipg.conf
 
@@ -202,7 +202,7 @@ OPTIONS=""
 # Don't change these unless you know what you're doing.
 CONFIG_FILE="%{_sysconfdir}/aipg/aipg.conf"
 DATA_DIR="%{_localstatedir}/lib/aipg"
-PID_FILE="/run/aipgd/aipgd.pid"
+PID_FILE="/run/esad/esad.pid"
 EOF
 touch -a -m -t 201504280000 %{buildroot}%{_sysconfdir}/sysconfig/aipg
 
@@ -214,7 +214,7 @@ After=syslog.target network.target
 
 [Service]
 Type=forking
-ExecStart=%{_sbindir}/aipgd -daemon -conf=\${CONFIG_FILE} -datadir=\${DATA_DIR} -pid=\${PID_FILE} \$OPTIONS
+ExecStart=%{_sbindir}/esad -daemon -conf=\${CONFIG_FILE} -datadir=\${DATA_DIR} -pid=\${PID_FILE} \$OPTIONS
 EnvironmentFile=%{_sysconfdir}/sysconfig/aipg
 User=aipg
 Group=aipg
@@ -300,7 +300,7 @@ touch -a -m -t 201511100546 %{buildroot}%{_datadir}/kde4/services/aipg-core.prot
 %endif
 
 # man pages
-install -D -p %{SOURCE20} %{buildroot}%{_mandir}/man1/aipgd.1
+install -D -p %{SOURCE20} %{buildroot}%{_mandir}/man1/esad.1
 install -p %{SOURCE21} %{buildroot}%{_mandir}/man1/aipg-cli.1
 %if %{_buildqt}
 install -p %{SOURCE22} %{buildroot}%{_mandir}/man1/aipg-qt.1
@@ -407,14 +407,14 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %license COPYING db-%{bdbv}.NC-LICENSE
 %doc COPYING aipg.conf.example doc/README.md doc/REST-interface.md doc/bips.md doc/dnsseed-policy.md doc/files.md doc/reduce-traffic.md doc/release-notes.md doc/tor.md
-%attr(0755,root,root) %{_sbindir}/aipgd
+%attr(0755,root,root) %{_sbindir}/esad
 %attr(0644,root,root) %{_tmpfilesdir}/aipg.conf
 %attr(0644,root,root) %{_unitdir}/aipg.service
 %dir %attr(0750,aipg,aipg) %{_sysconfdir}/aipg
 %dir %attr(0750,aipg,aipg) %{_localstatedir}/lib/aipg
 %config(noreplace) %attr(0600,root,root) %{_sysconfdir}/sysconfig/aipg
 %attr(0644,root,root) %{_datadir}/selinux/*/*.pp
-%attr(0644,root,root) %{_mandir}/man1/aipgd.1*
+%attr(0644,root,root) %{_mandir}/man1/esad.1*
 
 %files utils
 %defattr(-,root,root,-)

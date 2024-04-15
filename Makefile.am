@@ -19,7 +19,7 @@ pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libaipgconsensus.pc
 endif
 
-AIPGD_BIN=$(top_builddir)/src/$(AIPG_DAEMON_NAME)$(EXEEXT)
+ESAD_BIN=$(top_builddir)/src/$(AIPG_DAEMON_NAME)$(EXEEXT)
 AIPG_QT_BIN=$(top_builddir)/src/qt/$(AIPG_GUI_NAME)$(EXEEXT)
 aipg_cli_BIN=$(top_builddir)/src/$(AIPG_CLI_NAME)$(EXEEXT)
 AIPG_WIN_INSTALLER=$(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EXEEXT)
@@ -44,7 +44,7 @@ OSX_QT_TRANSLATIONS = da,de,es,hu,ru,uk,zh_CN,zh_TW
 DIST_DOCS = $(wildcard doc/*.md) $(wildcard doc/release-notes/*.md)
 DIST_CONTRIB = $(top_srcdir)/contrib/aipg-cli.bash-completion \
 	       $(top_srcdir)/contrib/aipg-tx.bash-completion \
-	       $(top_srcdir)/contrib/aipgd.bash-completion \
+	       $(top_srcdir)/contrib/esad.bash-completion \
 	       $(top_srcdir)/contrib/init \
 	       $(top_srcdir)/contrib/rpm
 DIST_SHARE = \
@@ -75,7 +75,7 @@ dist-hook:
 
 $(AIPG_WIN_INSTALLER): all-recursive
 	$(MKDIR_P) $(top_builddir)/release
-	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(AIPGD_BIN) $(top_builddir)/release
+	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(ESAD_BIN) $(top_builddir)/release
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(AIPG_QT_BIN) $(top_builddir)/release
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(aipg_cli_BIN) $(top_builddir)/release
 	@test -f $(MAKENSIS) && $(MAKENSIS) -V2 $(top_builddir)/share/setup.nsi || \
@@ -106,7 +106,7 @@ $(OSX_APP)/Contents/MacOS/Aipg-Qt: $(AIPG_QT_BIN)
 	$(MKDIR_P) $(@D)
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM)  $< $@
 
-$(OSX_APP)/Contents/MacOS/aipgd: $(AIPGD_BIN)
+$(OSX_APP)/Contents/MacOS/esad: $(ESAD_BIN)
 	$(MKDIR_P) $(@D)
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM)  $< $@
 
@@ -121,7 +121,7 @@ $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings:
 OSX_APP_BUILT=$(OSX_APP)/Contents/PkgInfo $(OSX_APP)/Contents/Resources/empty.lproj \
   $(OSX_APP)/Contents/Resources/aipg.icns $(OSX_APP)/Contents/Info.plist \
   $(OSX_APP)/Contents/MacOS/Aipg-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings \
-  $(OSX_APP)/Contents/MacOS/aipgd $(OSX_APP)/Contents/MacOS/aipg-cli $(OSX_APP)/Contents/MacOS/install_cli.sh
+  $(OSX_APP)/Contents/MacOS/esad $(OSX_APP)/Contents/MacOS/aipg-cli $(OSX_APP)/Contents/MacOS/install_cli.sh
 
 osx_volname:
 	echo $(OSX_VOLNAME) >$@
@@ -178,7 +178,7 @@ endif
 $(AIPG_QT_BIN): FORCE
 	$(MAKE) -C src qt/$(@F)
 
-$(AIPGD_BIN): FORCE
+$(ESAD_BIN): FORCE
 	$(MAKE) -C src $(@F)
 
 $(aipg_cli_BIN): FORCE

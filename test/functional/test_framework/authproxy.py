@@ -21,7 +21,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 """
-HTTP proxy for opening RPC connection to aipgd.
+HTTP proxy for opening RPC connection to esad.
 
 AuthServiceProxy has the following improvements over python-jsonrpc's
 ServiceProxy class:

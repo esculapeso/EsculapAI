@@ -2,7 +2,7 @@
 
   1. Check PROTOCOL_VERSION in the following location: src/version.h
 
-  2. Check AIPGd Version in the following locations: configure.ac, src/version.h
+  2. Check ESAD Version in the following locations: configure.ac, src/version.h
 
   3. All unit and functional tests pass
 

@@ -48,7 +48,7 @@ operation.
 
 By default, the ZeroMQ feature is automatically compiled in if the
 necessary prerequisites are found.  To disable, use --disable-zmq
-during the *configure* step of building aipgd:
+during the *configure* step of building esad:
 
     $ ./configure --disable-zmq (other options)
 
@@ -70,8 +70,8 @@ The same notification can be specified more than once.
 
 For instance:
 
-    $ aipgd -zmqpubhashtx=tcp://127.0.0.1:28766 \
-               -zmqpubrawtx=ipc:///tmp/aipgd.tx.raw
+    $ esad -zmqpubhashtx=tcp://127.0.0.1:28766 \
+               -zmqpubrawtx=ipc:///tmp/esad.tx.raw
 
 Each PUB notification has a topic and body, where the header
 corresponds to the notification type. For instance, for the
@@ -91,9 +91,9 @@ arriving. Please see `contrib/zmq/zmq_sub.py` for a working example.
 
 ## Remarks
 
-From the perspective of aipgd, the ZeroMQ socket is write-only; PUB
+From the perspective of esad, the ZeroMQ socket is write-only; PUB
 sockets don't even have a read function. Thus, there is no state
-introduced into aipgd directly. Furthermore, no information is
+introduced into esad directly. Furthermore, no information is
 broadcast that wasn't already received from the public P2P network.
 
 No authentication or authorization is done on connecting clients; it
@@ -110,5 +110,5 @@ disconnections.
 
 There are several possibilities that ZMQ notification can get lost
 during transmission depending on the communication type your are
-using. AIPGd appends an up-counting sequence number to each
+using. ESAD appends an up-counting sequence number to each
 notification which allows listeners to detect lost notifications.

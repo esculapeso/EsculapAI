@@ -72,7 +72,7 @@ You can now start aipg-qt from the build directory.
 
 `src/qt/aipg-qt`
 
-aipgd and aipg-cli are in `src/`
+esad and aipg-cli are in `src/`
 
 
 __Optional:__
