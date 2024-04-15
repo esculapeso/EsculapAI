@@ -1,11 +1,11 @@
 esa() {
     
     # Define the base 'project' variable
-    export project="esa"
+    export project="aipg"
 
     # Use the 'project' variable in other variables
     export conf="$HOME/.$project"
-    export daemon="${project}d"  # Appends 'd' to the 'project' string for the daemon name
+    export daemon="esad" #"${project}d"  # Appends 'd' to the 'project' string for the daemon name
     export cli="$main/src/$project-cli"
     export pathd="$main/src/$daemon"
     export testnet="$conf/testnet_$project"
