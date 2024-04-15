@@ -43,7 +43,7 @@ esa() {
             $cli $2
         fi
     elif [ "$1" = "status" ]; then
-        ps aux | grep "[${project:0:1}]${project:1}" | awk '{print $2}'
+        ps aux | grep "[${daemon:0:1}]${daemon:1}" | awk '{print $2}'
     elif [ "$1" = "debug" ]; then
         if [ "$2" = "tail" ]; then
             if [[ $3 =~ ^[0-9]+$ ]]; then
