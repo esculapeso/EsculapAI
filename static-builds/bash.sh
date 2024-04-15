@@ -1,7 +1,7 @@
 esa() {
     
     # Define the base 'project' variable
-    export project="aipg"
+    export project="esa"
 
     # Use the 'project' variable in other variables
     export conf="$HOME/.$project"
