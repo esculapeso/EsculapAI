@@ -43,7 +43,7 @@ esa() {
             $cli $2
         fi
     elif [ "$1" = "status" ]; then
-        ps aux | grep "[${daemon:0:1}]${daemon:1}" | awk '{print $2}'
+        getdaemonid
     elif [ "$1" = "debug" ]; then
         if [ "$2" = "tail" ]; then
             if [[ $3 =~ ^[0-9]+$ ]]; then
@@ -81,6 +81,27 @@ esa() {
     else
         daqhelp
     fi
+}
+
+getdaemonid() {
+    ps aux | grep "[${daemon:0:1}]${daemon:1}" | awk '{print $2}'
+}
+
+esahelp() {
+        echo ""
+        echo "Usage: daq <process_name>"
+        echo ""
+        echo "Process names:"
+        echo ""
+        echo "  start                   runs ranevd daemon, outputs process ID"
+        echo "  stop                    stops ravend via raven-cli"
+        echo "  status                  checks for running processes with raven in the name"
+        echo "  debug                   shows tails of debug.log"
+        echo "  search <phrase>         searches debug.log for specified phrase"
+        echo "  remove testnet          removed testnet output folder"
+        echo "  ls testnet              previews testnet output folder"
+        echo "  cd [testnet, conf, daqcoin]     navigates to respective directories"
+        echo ""
 }
 
 
