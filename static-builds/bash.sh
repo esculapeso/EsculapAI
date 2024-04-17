@@ -5,7 +5,7 @@ esa() {
 
     # Use the 'project' variable in other variables
     export conf="$HOME/.$project"
-    export daemon="${project}d"  # Appends 'd' to the 'project' string for the daemon name
+    export daemon="aipgd" #"${project}d"  # Appends 'd' to the 'project' string for the daemon name
     export cli="$main/src/$project-cli"
     export pathd="$main/src/$daemon"
     export testnet="$conf/testnet_$project"
@@ -43,7 +43,7 @@ esa() {
             $cli $2
         fi
     elif [ "$1" = "status" ]; then
-        ps aux | grep "[${project:0:1}]${project:1}" | awk '{print $2}'
+        ps aux | grep "[${daemon:0:1}]${daemon:1}" | awk '{print $2}'
     elif [ "$1" = "debug" ]; then
         if [ "$2" = "tail" ]; then
             if [[ $3 =~ ^[0-9]+$ ]]; then
@@ -56,8 +56,10 @@ esa() {
         else
             tail -n 30 $testnet/debug.log
         fi
+    elif [ "$1" = "auto" ]; then
+        $main/autogen.sh
     elif [ "$1" = "configure" ]; then
-        ./configure BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --prefix=/usr/local --with-boost=/opt/boost --with-boost-libdir=/opt/boost/lib
+        $main/configure BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --prefix=/usr/local --with-boost=/opt/boost --with-boost-libdir=/opt/boost/lib
     elif [ "$1" = "search" ]; then
         grep $2 -i $testnet/debug.log
 	elif [ "$1" = "remove" ]; then
