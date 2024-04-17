@@ -56,8 +56,10 @@ esa() {
         else
             tail -n 30 $testnet/debug.log
         fi
+    elif [ "$1" = "auto" ]; then
+        $main/autogen.sh
     elif [ "$1" = "configure" ]; then
-        ./configure BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --prefix=/usr/local --with-boost=/opt/boost --with-boost-libdir=/opt/boost/lib
+        $main/configure BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --prefix=/usr/local --with-boost=/opt/boost --with-boost-libdir=/opt/boost/lib
     elif [ "$1" = "search" ]; then
         grep $2 -i $testnet/debug.log
 	elif [ "$1" = "remove" ]; then
