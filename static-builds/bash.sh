@@ -9,6 +9,7 @@ esa() {
     export cli="$main/src/$project-cli"
     export pathd="$main/src/$daemon"
     export testnet="$conf/testnet_$project"
+    export BDB_PREFIX="$main/../db4"
     
     if [ "$1" = "start" ]; then
         if [ "$2" = "v" ]; then
@@ -26,8 +27,7 @@ esa() {
         if [[ $2 =~ ^[0-9]+$ ]]; then
             kill $2
         elif [ "$2" = "f" ]; then
-            pid=$(ps aux | grep "[${project:0:1}]${project:1}" | awk '{print $2}')
-            kill $pid
+            kill $(getdaemonid)
         else
             $cli stop
         fi 
@@ -43,7 +43,7 @@ esa() {
             $cli $2
         fi
     elif [ "$1" = "status" ]; then
-        ps aux | grep "[${daemon:0:1}]${daemon:1}" | awk '{print $2}'
+        getdaemonid
     elif [ "$1" = "debug" ]; then
         if [ "$2" = "tail" ]; then
             if [[ $3 =~ ^[0-9]+$ ]]; then
@@ -78,9 +78,35 @@ esa() {
         elif [ "$2" = "" ]; then
             cd $main
         fi
+    elif [ "$1" = "help" ]; then
+        esahelp
     else
-        daqhelp
+        esahelp
     fi
+}
+
+getdaemonid() {
+    ps aux | grep "[${daemon:0:1}]${daemon:1}" | awk '{print $2}'
+}
+
+esahelp() {
+        echo ""
+        echo "Usage: daq <process_name>"
+        echo ""
+        echo "Process names:"
+        echo ""
+        echo "  start                   runs ranevd daemon, outputs process ID"
+        echo "  stop                    stops ravend via raven-cli"
+        echo "  stop f                  if cannot stop via raven-cli, force stops process by ID"
+        echo "  status                  checks for running processes with raven in the name"
+        echo "  debug                   shows tails of debug.log"
+        echo "  debug [number]          shows tails of debug.log"
+        echo "  debug file              opens debug.log file in nano"
+        echo "  search <phrase>         searches debug.log for specified phrase"
+        echo "  remove testnet          removed testnet output folder"
+        echo "  ls testnet              previews testnet output folder"
+        echo "  cd [testnet, conf, daqcoin]     navigates to respective directories"
+        echo ""
 }
 
 
