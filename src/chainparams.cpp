@@ -411,10 +411,9 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        vSeeds.emplace_back("seed1-testnet.aipowergrid.io", false);
-        vSeeds.emplace_back("seed2-testnet.aipowergrid.io", false);
-        vSeeds.emplace_back("seed3-testnet.aipowergrid.io", false);
-        vSeeds.emplace_back("seed4-testnet.aipowergrid.io", false);
+
+        vSeeds.emplace_back("aiesaseed1.esculap.co.in", false);
+        vSeeds.emplace_back("aiesaseed1.esculap.co.in", false);
 
 	    base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,20);  // 'A' prefix
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,20);  // 'A' prefix
